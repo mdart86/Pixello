@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const { UploadImage } = require('../controllers/uploadImage')
+const {UploadImage} = require('../controllers/uploadImage')
 
 const parser = require('../middleware/cloudinaryConfig')
 

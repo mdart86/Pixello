@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 
 // requiring routes into app file
 const authRouter = require('./routes/authRoutes') 
+const imageRouter = require('./routes/imageRouter') 
+
 
 
 // port object connecting to Mongo Atlas OR MongoDB
@@ -66,8 +68,10 @@ app.get("/", (req, res) => {
     res.send("Hello world!")
     })
 
-
+// routers used in application
 app.use("/auth", authRouter)
+app.use("/api", imageRouter)
+
 
 // Listening for connections on port 4000 and has a callback function that is printed to the console
 app.listen(4000, () => {console.log(`Pixello is running on port: ${[port]}`)})

@@ -31,6 +31,11 @@ const User = new Schema({
         type: String,
         default: "user"
     }
+    // isAdmin: {
+    //     type: Boolean, 
+    //     default: false,
+    //     required: true
+    // }
 })
 
 User.methods.comparePassword = function(password){

@@ -1,5 +1,7 @@
+// Requiring Multer API for middleware
 const multer = require('multer')
 
+// Requiring Cloudinary for Cloud Storage
 const cloudinary = require('cloudinary')
 
 const { CloudinaryStorage } = require('multer-storage-cloudinary')
@@ -34,6 +36,8 @@ const storage = new CloudinaryStorage ({
     }
 })
 
+// Multer API used to store the inteded upload to a storage property. This will be used as middleware in the post route in the router
 const parser = multer ({ storage: storage })
 
+// Exported Parser to be used as middleware in router
 module.exports = parser
