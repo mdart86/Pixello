@@ -1,7 +1,6 @@
 // Requiring packages into the application
 const express = require('express')
 const cors = require('cors')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 // port object connecting to Mongo Atlas OR MongoDB
@@ -28,17 +27,17 @@ mongoose.connect(dbConn,
     }, 
     err => {
         if (err){
-            console.log("No database connection", err)
+            console.log("Sorry, a connection to the database has not been established", err)
         } else {
-            console.log("Connected to the database")        }
+            console.log("You are connected to the Pixello database")        }
     })
 
     
 // Middleware added to application
 app.use(cors())
 
-app.use(bodyParser())
-
+app.use(express.urlencoded({extended: true}));
+app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 
 
