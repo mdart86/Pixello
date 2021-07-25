@@ -11,7 +11,7 @@ const signUp = function(req, res){
             return res.json({error: err.message})
         }
         //return res.json(user)
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, _id: user._id},process.env.SECRET_KEY) })
+        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, bio: user.bio, _id: user._id},process.env.MONGODB_SECRET_KEY) })
     })
 
 }
@@ -26,7 +26,7 @@ const signIn = function(req,res){
             res.status(400)
             return res.json({message: "Authentication failed"})
         }
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, _id: user._id},process.env.SECRET_KEY) })
+        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, _id: user._id},process.env.MONGODB_SECRET_KEY) })
     })
 }
 
@@ -34,7 +34,7 @@ const loginRequired = function(req,res, next){
     if(req.user){
         next()
     }else{
-        return res.status(401).json({message: "Unauthorized operation"})
+        return res.status(401).json({message: "You are not authorised to do this"})
     }
 }
 

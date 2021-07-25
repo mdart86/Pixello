@@ -1,9 +1,13 @@
 // package that allows connection to database
 const mongoose = require("mongoose")
 
+// Creates connection between Mongoose and the Scheema created
 const Schema = mongoose.Schema
+
+// package to ensure password is stored in database with encryption
 const bcrypt = require('bcrypt')
 
+// Scheema for User
 const User = new Schema({
     username:{
         type: String,
@@ -22,6 +26,10 @@ const User = new Schema({
     bio: {
         type: String,
         required: true
+    },
+    role: {
+        type: String,
+        default: "user"
     }
 })
 
