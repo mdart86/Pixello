@@ -1,11 +1,14 @@
 import React from 'react'
+import GlobalStyles from './GlobalStyles'
+import { Nav } from './components/Nav'
 
-const App = () => {
+export const App = () => {
   return (
-    <div >
-          The basic empty template
-    </div>
+    <>
+    <GlobalStyles/>
+   
+      <Nav/>
+    </>
   )
 }
 
-export default App
