@@ -13,10 +13,10 @@ export const Nav = () => {
             <Box>
                 <PlusIcon src={plus} alt=""/>
                 <IconsContainer>
-                    <Icon category src={category} alt="search by category"/>
+                    <Icon category="true" src={category} alt="search by category"/>
                     <Icon src={messages} alt=""/>
                     <Icon src={notifications} alt=""/>
-                    <Icon src={profile} alt=""/>
+                    <Icon profile="true" src={profile} alt=""/>
                 </IconsContainer>
             </Box>
         </>
@@ -25,45 +25,43 @@ export const Nav = () => {
 
 const Box = styled.nav`
     background: var(--white);
-    height: 75vw;
-    width: 150vw;
-    border-radius: 50% 50% 0 0; 
+    width: 100%;
+    height: 80px;
     position: fixed;
-    bottom: -50vw;
-    left: -25vw;
-    box-shadow: 0 0 5px grey;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 3px grey; 
 
     &:before {
         content: "";
-        width: 20vw;
-        height: 20vw;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         background: var(--charcoal);
         position: absolute;
-        top: -10vw;
-        left: 65vw;
+        top: -30px;
+        left: 50%;
+        margin-left: -30px;
     }
 `
 
 const PlusIcon = styled.img`
-    position: relative;
-    top: -11vw;
-    left: 64vw;
-    height: 75px;
-    color: white;
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    margin-left: -35px;
+    height: 70px;
+    width: 70px;  
 `
 
 const IconsContainer = styled.div`
-    position: relative;
-    top: -10vw;
-    height: auto;
-    width: 100vw;
-    left: 25vw;
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    margin-top: 30px;
 `
 
 const Icon = styled.img`
     height: 30px;
-    ${props => props.profile ? "height: 25px; margin-top: 3px;" : null}
+    ${props => props.profile ? "height: 25px; margin-top: 2px;" : null}
 `
