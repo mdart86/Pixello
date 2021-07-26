@@ -1,11 +1,18 @@
 import React from 'react'
+import GlobalStyles from './GlobalStyles'
+import { Nav } from './components/Nav'
+import { Logout } from './components/Logout'
+import { Home } from './components/Home'
 
-const App = () => {
+
+export const App = () => {
   return (
-    <div >
-          The basic empty template
-    </div>
+    <>
+    <GlobalStyles/>
+      <Home/>
+      <Logout/>
+      <Nav/>
+    </>
   )
 }
 
-export default App
