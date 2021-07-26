@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import logout from '../images/log-out.svg'
+
 export const Logout = () => {
     return (
         <>
@@ -11,13 +12,12 @@ export const Logout = () => {
     )
 }
 
-
 const BackgroundCircle = styled.div`
     height: 60px;
     width: 60px;
     border-radius: 50%;
     background: var(--green);
-    position: absolute;
+    position: fixed;
     right: -15px;
     top: -15px;
     display: flex;

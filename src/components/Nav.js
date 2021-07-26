@@ -6,7 +6,6 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.png'
 
-
 export const Nav = () => {
     return (
         <>

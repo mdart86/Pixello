@@ -1,13 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyles = createGlobalStyle`
-
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
     html, body {
         margin: 0;
         overflow-x: hidden;
         font-family: 'Roboto', sans-serif;
+        color: var(--charcoal);
         --green: #85DEC3;
         --light-pink: #EFD1CE;
         --dark-pink: #EC9E9E;
