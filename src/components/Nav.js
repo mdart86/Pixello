@@ -11,12 +11,12 @@ export const Nav = () => {
     return (
         <>
             <Box>
-                <PlusIcon src={plus} alt=""/>
+                <PlusIcon src={plus} alt="plus sign icon"/>
                 <IconsContainer>
-                    <Icon category="true" src={category} alt="search by category"/>
-                    <Icon src={messages} alt=""/>
-                    <Icon src={notifications} alt=""/>
-                    <Icon profile="true" src={profile} alt=""/>
+                    <Icon category="true" src={category} alt="search by category icon"/>
+                    <Icon src={messages} alt="private messages icon"/>
+                    <Icon src={notifications} alt="notification bell icon"/>
+                    <Icon profile="true" src={profile} alt="user profile icon"/>
                 </IconsContainer>
             </Box>
         </>
@@ -26,6 +26,7 @@ export const Nav = () => {
 const Box = styled.nav`
     background: var(--white);
     width: 100%;
+    max-width: 600px;
     height: 80px;
     position: fixed;
     bottom: 0;
