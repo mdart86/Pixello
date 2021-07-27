@@ -1,12 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import logout from '../images/log-out.svg'
+
+//logout is currently redirecting to the home page
+//this is because home is currently the only content
+//will adjust this eventually to the AppStart page
 
 export const Logout = () => {
     return (
         <>
             <BackgroundCircle>
-                <Icon src={logout} alt="logout icon"/>
+                <Link to="/home"><Icon src={logout} alt="logout icon"/></Link>
             </BackgroundCircle>
         </>
     )
