@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 import category from '../images/category-search.svg'
 import plus from '../images/plus.svg'
 import messages from '../images/messages.svg'
@@ -10,12 +11,12 @@ export const Nav = () => {
     return (
         <>
             <Box>
-                <PlusIcon src={plus} alt="plus sign icon"/>
+                <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link>
                 <IconsContainer>
-                    <Icon category="true" src={category} alt="search by category icon"/>
-                    <Icon src={messages} alt="private messages icon"/>
-                    <Icon src={notifications} alt="notification bell icon"/>
-                    <Icon profile="true" src={profile} alt="user profile icon"/>
+                    <Link to="/filter"><Icon category="true" src={category} alt="search by category icon"/></Link>
+                    <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
+                    <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
+                    <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
                 </IconsContainer>
             </Box>
         </>
