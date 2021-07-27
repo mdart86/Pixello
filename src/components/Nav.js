@@ -4,7 +4,7 @@ import category from '../images/category-search.svg'
 import plus from '../images/plus.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
-import profile from '../images/profile.png'
+import profile from '../images/profile.svg'
 
 export const Nav = () => {
     return (
@@ -63,5 +63,4 @@ const IconsContainer = styled.div`
 
 const Icon = styled.img`
     height: 30px;
-    ${props => props.profile ? "height: 25px; margin-top: 2px;" : null}
 `
