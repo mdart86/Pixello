@@ -9,9 +9,16 @@ export const Home = () => {
             <Post/>
             <Post/>
             <Post/>
+            <Clearance/>
         </>
     )
 }
+
+const Clearance = styled.div`
+    width: 100%;
+    height: 110px;
+    background: var(--white);
+`
 
 const Title = styled.h1`
     text-align: center;
