@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import GlobalStyles from './GlobalStyles'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Nav } from './components/Nav'
 import { Logout } from './components/Logout'
+import { AppStart } from './components/AppStart'
 import { About } from './components/About';
 import { LogIn } from './components/LogIn';
 import { SignUp } from './components/SignUp';
@@ -16,19 +17,17 @@ import { Message } from './components/Message';
 import { Notifications } from './components/Notifications';
 import { NotFound } from './components/NotFound';
 
-// "/" is currently routing to the home page
-//this is because it's the only content atm
-//I will change this later to the AppStart page
-
 export const App = () => {
+
+  const [pathname, setPathname] = useState(window.location.pathname)
+  console.log(pathname)
   return (
     <>
       <Router>
             <GlobalStyles/>
                 <Switch>
                     <Route exact path="/">
-                        {/* <AppStart/> */}
-                        <Home/>
+                        <AppStart/>
                     </Route>
                     <Route exact path="/about">
                         <About/>
@@ -67,7 +66,8 @@ export const App = () => {
                         <NotFound/>
                     </Route>
                 </Switch>
-            <Nav/>
+            
+            {pathname === "/" || pathname === "/about" || pathname === "/log-in" || pathname === "/sign-up" ? null : <Nav/>}
             <Logout/>
       </Router>
     </>
