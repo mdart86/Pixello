@@ -11,7 +11,7 @@ export const Logout = () => {
     return (
         <>
             <BackgroundCircle>
-                <Link to="/home"><Icon src={logout} alt="logout icon"/></Link>
+                <Link to="/"><Icon src={logout} alt="logout icon"/></Link>
             </BackgroundCircle>
         </>
     )
