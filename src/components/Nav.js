@@ -32,7 +32,8 @@ const Box = styled.nav`
     bottom: 0;
     border-radius: 50% 50% 0 0;
     box-shadow: 0 0 3px grey; 
-
+    z-index: 5;
+    
     &:before {
         content: "";
         width: 60px;

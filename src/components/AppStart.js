@@ -1,34 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const AppStart = () => {
     return (
-        <Container>
+        <>
             <Title>Pixello</Title>
             <Tagline>where the magic happens</Tagline>
             <Circle pink small></Circle>
             <Circle pink xlarge>
-                <Options signup>sign up</Options>
+                <StyledLink to="/sign-up"><Options signup>sign up</Options></StyledLink>
             </Circle>
             <Circle green xsmall></Circle>
             <Circle green small></Circle>
             <Circle green xxlarge>
-                <Options about>About the creators</Options>
+                <StyledLink to="/about"><Options about="true">About the creators</Options></StyledLink>
             </Circle>
             <Circle blue small></Circle>
             <Circle blue medium>
-                <Options login>log in</Options>
+                <StyledLink to="/log-in"><Options login>log in</Options></StyledLink>
             </Circle>
             <Circle blue large></Circle>
-        </Container>
+        </>
     )
 }
-
-const Container = styled.body`
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-`
 
 const Title = styled.h1`
     text-align: center;
@@ -76,9 +71,15 @@ const Circle = styled.div`
 `
 
 const Options = styled.div`
-    ${props => !props.about ? "font-family: 'Pacifico', cursive;" : null}
+    ${props => !props.about ? "font-family: 'Pacifico', cursive; text-shadow: 1px 1px 4px grey;" : null}
     ${props => props.about ? "font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
     ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
-    ${props => props.login ? "font-size: 1.3rem; margin-top: -110px;": null}
+    ${props => props.login ? "font-size: 1.3rem; margin-top: -75px;": null}
+`
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--white);
+    }
 `

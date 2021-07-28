@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
         --blue: #CAEFE8;
         --charcoal: #362D2D;
         --white: #FFFFFF;
+        ${window.location.pathname === "/" ? "overflow: hidden;" : null}
     }
     @media only screen and (min-width: 600px) {
         html, body {
