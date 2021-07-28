@@ -22,55 +22,52 @@ export const App = () => {
   const [pathname, setPathname] = useState(window.location.pathname)
   console.log(pathname)
   return (
-    <>
-      <Router>
-            <GlobalStyles/>
-                <Switch>
-                    <Route exact path="/">
-                        <AppStart/>
-                    </Route>
-                    <Route exact path="/about">
-                        <About/>
-                    </Route>
-                    <Route exact path="/log-in">
-                        <LogIn/>
-                    </Route>
-                    <Route exact path="/sign-up">
-                        <SignUp/>
-                    </Route>
-                    <Route exact path="/home">
-                        <Home/>
-                    </Route>
-                    <Route exact path="/filter">
-                        <Filter/>
-                    </Route>
-                    <Route exact path="/view-post">
-                        <ViewPost/>
-                    </Route>
-                    <Route exact path="/profile">
-                        <Profile/>
-                    </Route>
-                    <Route exact path="/new">
-                        <CreatePost/>
-                    </Route>
-                    <Route exact path="/messages">
-                        <Messages/>
-                    </Route>
-                    <Route exact path="/message">
-                        <Message/>
-                    </Route>
-                    <Route exact path="/notifications">
-                        <Notifications/>
-                    </Route>
-                    <Route>
-                        <NotFound/>
-                    </Route>
-                </Switch>
-            
-            {pathname === "/" || pathname === "/about" || pathname === "/log-in" || pathname === "/sign-up" ? null : <Nav/>}
-            <Logout/>
-      </Router>
-    </>
+    <Router>
+        <GlobalStyles/>
+        <Switch>
+            <Route exact path="/">
+                <AppStart/>
+            </Route>
+            <Route exact path="/about">
+                <About/>
+            </Route>
+            <Route exact path="/log-in">
+                <LogIn/>
+            </Route>
+            <Route exact path="/sign-up">
+                <SignUp/>
+            </Route>
+            <Route exact path="/home">
+                <Home/>
+            </Route>
+            <Route exact path="/filter">
+                <Filter/>
+            </Route>
+            <Route exact path="/view-post">
+                <ViewPost/>
+            </Route>
+            <Route exact path="/profile">
+                <Profile/>
+            </Route>
+            <Route exact path="/new">
+                <CreatePost/>
+            </Route>
+            <Route exact path="/messages">
+                <Messages/>
+            </Route>
+            <Route exact path="/message">
+                <Message/>
+            </Route>
+            <Route exact path="/notifications">
+                <Notifications/>
+            </Route>
+            <Route>
+                <NotFound/>
+            </Route>
+        </Switch>
+        {pathname === "/" || pathname === "/about" || pathname === "/log-in" || pathname === "/sign-up" ? null : <Nav/>}
+        {pathname === "/" || pathname === "/about" || pathname === "/log-in" || pathname === "/sign-up" ? null : <Logout/>}
+    </Router>
   )
 }
 
