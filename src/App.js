@@ -19,8 +19,8 @@ import { NotFound } from './components/NotFound';
 
 export const App = () => {
 
-  const [pathname, setPathname] = useState(window.location.pathname)
-  console.log(pathname)
+  const [pathname] = useState(window.location.pathname)
+  
   return (
     <Router>
         <GlobalStyles/>
