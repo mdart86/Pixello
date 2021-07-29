@@ -18,6 +18,14 @@ const Post = new Schema({
     category: {
         type: String,
         required: true
+    },
+    created_at: {
+        type: Date,
+        required: true
+    },
+    modified_at: {
+        type: Date,
+        required: true
     }
 })
 Card.plugin(normalize)
