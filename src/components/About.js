@@ -59,7 +59,7 @@ const Circle = styled.div`
     ${props => props.blue && props.large ? "top: -70px; right: -70px;" : null}
     ${props => props.blue && props.medium ? "top: 330px; left: 105px; z-index: 1;" : null}
     ${props => props.pink && props.small ? "top: 300px; left: 190px; z-index: 2;" : null}
-    ${props => props.pink && props.medium ? "top: -20px; left: -20px;" : null}
+    ${props => props.pink && props.medium ? "top: -20px; left: -20px; z-index: 1;" : null}
 
 `
 
