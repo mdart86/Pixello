@@ -10,13 +10,13 @@ const Logout = ({ excludedUrls }) => {
         return null
     }
     return (
-        <>
-            <Container>
-                <BackgroundCircle>
-                    <Link to="/"><Icon src={logout} alt="logout icon"/></Link>
-                </BackgroundCircle>
-            </Container>
-        </>
+       
+        <Container>
+            <BackgroundCircle>
+                <Link to="/"><Icon src={logout} alt="logout icon"/></Link>
+            </BackgroundCircle>
+        </Container>
+      
     )
 }
 

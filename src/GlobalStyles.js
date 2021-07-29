@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 let hideOverflow = ["/", "/about", "/log-in"]
-// let whiteBackground = ["/", "/about", "/home"]
 
 const GlobalStyles = createGlobalStyle`
     html, body {
@@ -18,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
         --charcoal: #362D2D;
         --white: #FFFFFF;    
         ${hideOverflow.includes(window.location.pathname) ? "overflow-y: hidden;" : null}
+        ${window.location.pathname === "/sign-up" ? "height: 150vh;" : null}
     }
     @media only screen and (min-width: 500px) {
         html, body {

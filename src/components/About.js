@@ -27,7 +27,7 @@ export const About = () => {
             </Circle>
             <Circle blue large></Circle>
             <Circle green xlarge>
-                <Header title>Hey there!</Header>
+                <Header title="true">Hey there!</Header>
                 <Text>We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
                 <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
                 <Text>&#169; 2021</Text>
