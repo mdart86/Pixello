@@ -10,12 +10,22 @@ import logout from '../images/log-out.svg'
 export const Logout = () => {
     return (
         <>
-            <BackgroundCircle>
-                <Link to="/"><Icon src={logout} alt="logout icon"/></Link>
-            </BackgroundCircle>
+            <Container>
+                <BackgroundCircle>
+                    <Link to="/"><Icon src={logout} alt="logout icon"/></Link>
+                </BackgroundCircle>
+            </Container>
         </>
     )
 }
+
+const Container = styled.div`
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 50px;
+    width: 50px;
+`
 
 const BackgroundCircle = styled.div`
     height: 60px;
@@ -23,16 +33,16 @@ const BackgroundCircle = styled.div`
     border-radius: 50%;
     background: var(--green);
     position: fixed;
-    right: -15px;
-    top: -15px;
+    margin: -15px -15px 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    clip-path: inset(0 10px 0 0); 
 `
 
 const Icon = styled.img`
     height: 23px;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 15px;
+    margin-right: 5px;
     
 `
