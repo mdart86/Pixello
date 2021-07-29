@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 let hideOverflow = ["/", "/about", "/log-in"]
+// let whiteBackground = ["/", "/about", "/home"]
 
 const GlobalStyles = createGlobalStyle`
     html, body {
