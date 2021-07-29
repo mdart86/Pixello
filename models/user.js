@@ -27,13 +27,16 @@ const User = new Schema({
         type: String,
         required: true
     },
-    role: {
-        type: String,
-        default: "user"
+    isAdmin: {
+        type: Boolean, 
+        default: false,
+        required: true
     }
-    // isAdmin: {
-    //     type: Boolean, 
-    //     default: false,
+    // Previously was implementing logic using a string however as the app requires only 2 admin roles a boolean is more suited 
+    // as it has less room for error ie typing errors
+    // role: {
+    //     type: String,
+    //     default: "user", 
     //     required: true
     // }
 })
