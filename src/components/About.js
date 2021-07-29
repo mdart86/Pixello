@@ -9,7 +9,7 @@ export const About = () => {
     return (
         <>
             <Circle pink small>
-                <Name>Emily</Name>
+                <Header>Emily</Header>
                 <IconsContainer>
                     <a href="https://github.com/emigraced/" target="blank"><Icon emily src={github} alt="Emily's github social icon"/></a>
                     <a href="https://twitter.com/emigraced" target="blank"><Icon emily src={twitter} alt="Emily's twitter social icon"/></a> 
@@ -19,7 +19,7 @@ export const About = () => {
                 <Link to="/"><Icon arrow src={arrow} alt="go back arrow"/></Link>
             </Circle>
             <Circle blue medium>
-                <Name>Michael</Name>
+                <Header>Michael</Header>
                 <IconsContainer>
                     <a href="https://github.com/mdart86/" target="blank"><Icon michael src={github} alt="Michael's github social icon"/></a>
                     <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael src={twitter} alt="Michael's twitter social icon"/></a>
@@ -27,7 +27,7 @@ export const About = () => {
             </Circle>
             <Circle blue large></Circle>
             <Circle green xlarge>
-                <Title>Hey there!</Title>
+                <Header title>Hey there!</Header>
                 <Text>We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
                 <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
                 <Text>&#169; 2021</Text>
@@ -63,10 +63,10 @@ const Circle = styled.div`
 
 `
 
-const Title = styled.h2`
+const Header = styled.h2`
     font-family: 'Pacifico', cursive;
-    font-size: 2rem;
     margin: 0;
+    ${props => props.title ? "font-size: 2rem;": "font-size: 1rem;"}
 `
 
 const Text = styled.p`
@@ -75,11 +75,6 @@ const Text = styled.p`
     font-size: 0.8rem;
     font-weight: bold;
     font-style: italic;
-`
-
-const Name = styled.h3`
-    margin: 0;
-    font-family: 'Pacifico', cursive;
 `
 
 const Logo = styled.h1`

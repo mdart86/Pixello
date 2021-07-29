@@ -13,26 +13,25 @@ const Nav = ({ excludedUrls }) => {
         return null
     }
     return (
-        <>
-            <Box>
-                <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link>
-                <IconsContainer>
-                    <Link to="/filter"><Icon category="true" src={category} alt="search by category icon"/></Link>
-                    <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
-                    <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
-                    <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
-                </IconsContainer>
-            </Box>
-        </>
+        <Box>
+            <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link>
+            <IconsContainer>
+                <Link to="/filter"><Icon category="true" src={category} alt="search by category icon"/></Link>
+                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
+                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
+                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
+            </IconsContainer>
+        </Box>
     )
 }
 
 export default withRouter(Nav)
 
+
 const Box = styled.nav`
     background: var(--white);
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: 80px;
     position: fixed;
     bottom: 0;

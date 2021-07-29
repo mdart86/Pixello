@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
+let hideOverflow = ["/", "/about", "/log-in"]
+
 const GlobalStyles = createGlobalStyle`
     html, body {
         position: relative;
@@ -13,17 +15,19 @@ const GlobalStyles = createGlobalStyle`
         --dark-pink: #EC9E9E;
         --blue: #CAEFE8;
         --charcoal: #362D2D;
-        --white: #FFFFFF;   
-        ${window.location.pathname === "/" || window.location.pathname === "/about" || window.location.pathname === "/log-in" ? "height: 100vh; overflow: hidden;" : null}
- 
+        --white: #FFFFFF;    
+        ${hideOverflow.includes(window.location.pathname) ? "overflow-y: hidden;" : null}
     }
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 500px) {
         html, body {
-            width: 600px;
+            width: 500px;
             margin: 0 auto;
         }
     }
     
 `
+
+// if the @media width is changed, the max-width
+// in the Nav component needs to be changed too
 
 export default GlobalStyles
