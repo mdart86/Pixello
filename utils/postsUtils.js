@@ -2,7 +2,7 @@ const Card = require ('../models/post')
 
 // Helper function to get all posts from Model associated to user
 const getAllPosts = function (req){
-    return Card.find({username: req.user.username})
+    return Post.find({username: req.user.username})
 }
 
 // Helper function to add a post to Model associated to user
@@ -11,17 +11,17 @@ const addPost = function(req){
     req.body.username = req.user.username
     req.body.created_at = date
     req.body.modified_at = date
-    return Card(req.body)
+    return Post(req.body)
 }
 
 // Helper function to get post by id from Model associated to user
 const getPostById = function (id){
-    return Card.findById(id)
+    return Post.findById(id)
 }
 
 // Helper function to delete a post to Model associated to user
 const deletePost = function(id){
-    return Card.findByIdAndRemove(id)
+    return Post.findByIdAndRemove(id)
 }
 
 // Helper function to update a post to Model associated to user

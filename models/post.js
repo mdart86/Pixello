@@ -28,5 +28,5 @@ const Post = new Schema({
         required: true
     }
 })
-Card.plugin(normalize)
+Post.plugin(normalize)
 module.exports = mongoose.model("Post", Post)

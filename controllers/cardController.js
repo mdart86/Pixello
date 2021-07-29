@@ -1,4 +1,4 @@
-const {getAllPosts, addPost, getPostById, deletePost, updatePost} = require('../utils/cardsUtils')
+const {getAllPosts, addPost, getPostById, deletePost, updatePost} = require('../utils/postsUtils')
 
 const getPosts = function (req, res){
     getAllPosts(req).exec((err, cards)=>{
