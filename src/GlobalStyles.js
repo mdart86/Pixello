@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
         position: relative;
         margin: 0;
         overflow-x: hidden;
+        min-height: 100vh;
         font-family: 'Roboto', sans-serif;
         color: var(--charcoal);
         --green: #85DEC3;

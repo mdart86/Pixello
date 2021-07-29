@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
 import category from '../images/category-search.svg'
 import plus from '../images/plus.svg'
@@ -7,7 +8,10 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 
-export const Nav = () => {
+const Nav = ({ excludedUrls }) => {
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    }
     return (
         <>
             <Box>
@@ -22,6 +26,8 @@ export const Nav = () => {
         </>
     )
 }
+
+export default withRouter(Nav)
 
 const Box = styled.nav`
     background: var(--white);
