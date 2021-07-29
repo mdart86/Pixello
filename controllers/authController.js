@@ -10,7 +10,6 @@ const signUp = function(req, res){
             res.status(400)
             return res.json({error: err.message})
         }
-        //return res.json(user)
         return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, bio: user.bio, _id: user._id},process.env.MONGODB_SECRET_KEY) })
     })
 
