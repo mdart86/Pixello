@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like.svg'
 import profilePicture from '../images/profile-picture.jpeg'
@@ -7,7 +8,7 @@ import profilePicture from '../images/profile-picture.jpeg'
 export const Post = () => {
     return (
         <>
-            <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+            <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
             <Container>
                 <Avatar src={profilePicture} alt="A man's profile picture."/>
                 <Icon src={like} alt="like button"/>
