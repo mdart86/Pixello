@@ -1,13 +1,14 @@
 import React from 'react'
+import { withRouter } from 'react-router'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import logout from '../images/log-out.svg'
 
-//logout is currently redirecting to the home page
-//this is because home is currently the only content
-//will adjust this eventually to the AppStart page
+const Logout = ({ excludedUrls }) => {
 
-export const Logout = () => {
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    }
     return (
         <>
             <Container>
@@ -18,6 +19,8 @@ export const Logout = () => {
         </>
     )
 }
+
+export default withRouter(Logout)
 
 const Container = styled.div`
     position: absolute;

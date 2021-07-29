@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export const AppStart = () => {
     return (
         <>
-            <Title>Pixello</Title>
+            <Logo>Pixello</Logo>
             <Tagline>where the magic happens</Tagline>
             <Circle pink small></Circle>
             <Circle pink xlarge>
@@ -25,7 +25,7 @@ export const AppStart = () => {
     )
 }
 
-const Title = styled.h1`
+const Logo = styled.h1`
     text-align: center;
     color: var(--dark-pink);
     font-family: 'Pacifico', cursive;

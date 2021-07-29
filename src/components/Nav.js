@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
 import category from '../images/category-search.svg'
 import plus from '../images/plus.svg'
@@ -7,26 +8,30 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 
-export const Nav = () => {
+const Nav = ({ excludedUrls }) => {
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    }
     return (
-        <>
-            <Box>
-                <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link>
-                <IconsContainer>
-                    <Link to="/filter"><Icon category="true" src={category} alt="search by category icon"/></Link>
-                    <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
-                    <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
-                    <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
-                </IconsContainer>
-            </Box>
-        </>
+        <Box>
+            <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link>
+            <IconsContainer>
+                <Link to="/filter"><Icon category="true" src={category} alt="search by category icon"/></Link>
+                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
+                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
+                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
+            </IconsContainer>
+        </Box>
     )
 }
+
+export default withRouter(Nav)
+
 
 const Box = styled.nav`
     background: var(--white);
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: 80px;
     position: fixed;
     bottom: 0;

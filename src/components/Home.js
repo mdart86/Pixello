@@ -5,7 +5,7 @@ import { Post } from './Post'
 export const Home = () => {
     return (
         <>
-            <Title>Pixello</Title>
+            <Logo>Pixello</Logo>
             <Post/>
             <Post/>
             <Post/>
@@ -20,7 +20,7 @@ const Clearance = styled.div`
     background: var(--white);
 `
 
-const Title = styled.h1`
+const Logo = styled.h1`
     text-align: center;
     color: var(--dark-pink);
     font-family: 'Pacifico', cursive;
