@@ -29,6 +29,3 @@
     "node": "14.x"
   }
 }
-
-// "nodemon only applicable for development to prevent application crashes
-
