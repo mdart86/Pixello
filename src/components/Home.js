@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Post } from './Post'
+import { Post } from './Post' 
 
 export const Home = () => {
+
     return (
         <>
             <Logo>Pixello</Logo>

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
 
 export const LogIn = () => {
+    
     return (
         <>
             <PinkFeature>
@@ -54,10 +55,10 @@ const Icon = styled.img`
 
 const BackgroundBox = styled.div`
     width: 65%;
-    height: 55vh;
+    height: 50vh;
     background: var(--green);
     position: absolute;
-    top: 25vh;
+    top: 140px;
     left: 50%;
     margin-left: -32.5%;
     border: 5px solid var(--blue);

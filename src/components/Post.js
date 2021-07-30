@@ -6,6 +6,7 @@ import like from '../images/like.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 
 export const Post = () => {
+
     return (
         <>
             <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>

@@ -6,6 +6,7 @@ import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 
 export const About = () => {
+    
     return (
         <>
             <Circle pink small>
