@@ -59,6 +59,24 @@ app.use((req, res, next) => {
     }
 })
 
+// Async await for image upload 
+app.post('/upload', async (req, res) => {
+    try {
+            const newImage = new Image({
+                imageUrl: req.body.imageUrl
+    });
+    await newImage.save();
+        res.json(newImage.imageUrl);
+    } 
+    catch (err) {
+        console.error('Something went wrong', err);
+    }
+});
+  ​
+app.get('/getLatest', async (req, res) => {
+    const getImage = await Image.findOne().sort({ _id: -1 });
+    res.json(getImage.imageUrl);
+});
     
 // Middleware added to application
 app.use(cors())
@@ -68,7 +86,7 @@ app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 
 app.get("/", (req, res) => {
-    res.send("Hello world!")
+    res.send("Pixello testing... 1, 2, 3")
     })
 
 // routers used in application
