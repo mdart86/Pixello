@@ -30,6 +30,7 @@ const newPost = function (req, res){
     })
 }
 
+
 const removePost = function(req, res){
     deletePost(req.params.id).exec((err)=>{
         if (err){

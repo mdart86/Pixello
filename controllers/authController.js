@@ -10,13 +10,13 @@ const signUp = function(req, res){
             res.status(400)
             return res.json({error: err.message})
         }
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, bio: user.bio, _id: user._id},process.env.MONGODB_SECRET_KEY) })
+        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, bio: user.bio, _id: user._id},process.env.SECRET_KEY) })
     })
 
 }
 
 const signIn = function(req,res){
-    User.findOne({email: req.body.email}, (err, user)=>{
+    User.findOne({username: req.body.username}, (err, user)=>{
         if(err){
             res.status(400)
             return res.json({error: err.message})
@@ -25,11 +25,11 @@ const signIn = function(req,res){
             res.status(400)
             return res.json({message: "Authentication failed"})
         }
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, _id: user._id},process.env.MONGODB_SECRET_KEY) })
+        return res.json({username: user.username, jwt: jwt.sign({username: user.username, _id: user._id},process.env.SECRET_KEY) })
     })
 }
 
-const loginRequired = function(req,res, next){
+const loginRequired = function(req, res, next){
     if(req.user){
         next()
     }else{
