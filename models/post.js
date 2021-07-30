@@ -13,7 +13,8 @@ const Post = new Schema({
     },
     likes: {
         type: Number,
-        required: false
+        default: 0,
+        required: true
     },
     category: {
         type: String,
@@ -21,11 +22,11 @@ const Post = new Schema({
     },
     created_at: {
         type: Date,
-        required: true
+        required: false
     },
     modified_at: {
         type: Date,
-        required: true
+        required: false
     }
 })
 Post.plugin(normalize)

@@ -1,4 +1,4 @@
-const Card = require ('../models/post')
+const Post = require ('../models/post')
 
 // Helper function to get all posts from Model associated to user
 const getAllPosts = function (req){

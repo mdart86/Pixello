@@ -1,10 +1,12 @@
 // Requiring packages into the application
 const express = require('express')
 const cors = require('cors')
+const jwt = require('jsonwebtoken')
 const mongoose = require('mongoose')
 
 // requiring routes into app file
 const authRouter = require('./routes/authRoutes') 
+const postRouter = require('./routes/postRoutes') 
 const imageRouter = require('./routes/imageRouter') 
 
 
@@ -35,7 +37,8 @@ mongoose.connect(dbConn,
         if (err){
             console.log("Sorry, a connection to the database has not been established", err)
         } else {
-            console.log("You are connected to the Pixello database")        }
+            console.log("You are connected to the Pixello database")        
+        }
 })
 
 
@@ -70,6 +73,7 @@ app.get("/", (req, res) => {
 
 // routers used in application
 app.use("/auth", authRouter)
+app.use("/posts", postRouter)
 app.use("/api", imageRouter)
 
 
