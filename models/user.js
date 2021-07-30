@@ -32,6 +32,10 @@ const User = new Schema({
         default: false,
         required: true
     }
+    // avatar: {
+    //     type: String,
+    //     required: true
+    // }
     // Previously was implementing logic using a string however as the app requires only 2 admin roles a boolean is more suited 
     // as it has less room for error ie typing errors
     // role: {
