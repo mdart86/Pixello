@@ -106,7 +106,7 @@ const Icon = styled.img`
 const CommentsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(60px, auto);
+    grid-auto-rows: minmax(80px, auto);
     column-gap: 10px;
     row-gap: 10px;
     margin-top: 5px;
