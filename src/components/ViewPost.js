@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Comment } from './Comment'
+import { AddComment } from './AddComment'
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-posts.svg'
 import profilePicture from '../images/profile-picture.jpeg'
@@ -27,7 +28,8 @@ export const ViewPost = () => {
                     <Icon src={candid} alt="candid category"/>
                 </CategoryContainer>
                 <CommentsContainer>
-                    <Comment create/>
+                    <AddComment/>
+                    <Comment/>
                     <Comment/>
                     <Comment/>
                     <Comment/>
@@ -104,7 +106,7 @@ const Icon = styled.img`
 const CommentsContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(80px, auto);
+    grid-auto-rows: minmax(60px, auto);
     column-gap: 10px;
     row-gap: 10px;
     margin-top: 5px;
