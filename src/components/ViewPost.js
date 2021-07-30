@@ -31,9 +31,12 @@ export const ViewPost = () => {
                     <Comment/>
                     <Comment/>
                     <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
                 </CommentsContainer>
+                <Clearance/>
             </PostContainer>
-            <Clearance/>
         </>
     )
 }
