@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Comment } from './Comment'
 import placeholder from '../images/placeholder.jpg'
-import like from '../images/like.svg'
+import like from '../images/like-posts.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 import film from '../images/film.svg'
 import water from '../images/water.svg'
@@ -18,14 +19,21 @@ export const ViewPost = () => {
                 <Avatar src={profilePicture} alt="A man's profile picture."/>
                 <Username>john_wilson</Username>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
-            <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-            <Icon src={like} alt="like button"/>
-            <CategoryContainer>
-                <Icon src={film} alt="film category"/>
-                <Icon water src={water} alt="water category"/>
-                <Icon src={candid} alt="candid category"/>
-            </CategoryContainer>
+                <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                <Icon src={like} alt="like button"/>
+                <CategoryContainer>
+                    <Icon src={film} alt="film category"/>
+                    <Icon water src={water} alt="water category"/>
+                    <Icon src={candid} alt="candid category"/>
+                </CategoryContainer>
+                <CommentsContainer>
+                    <Comment create/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                </CommentsContainer>
             </PostContainer>
+            <Clearance/>
         </>
     )
 }
@@ -70,8 +78,7 @@ const Avatar = styled.img`
     height: 60px;
     object-fit: cover;
     float: left;
-    margin-right: 10px;
-    margin-top: 2px;
+    margin: 10px 10px 10px 0;
     border-radius: 50%;
     border: 2px solid var(--white);
 `
@@ -89,4 +96,19 @@ const Caption = styled.p`
 
 const Icon = styled.img`
     ${props => props.water ? "margin-left: 4px;" : null}
+`
+
+const CommentsContainer = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(80px, auto);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 5px;
+`
+
+const Clearance = styled.div`
+    width: 100%;
+    height: 110px;
+    background: var(--white);
 `
