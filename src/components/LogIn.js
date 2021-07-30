@@ -79,5 +79,8 @@ const Logo = styled.h1`
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     width: 150px;
-    margin: 0 auto; 
+    position: absolute;
+    bottom: -26px;
+    left: 50%;
+    margin-left: -75px;
 `
