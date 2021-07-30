@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
 
 export const SignUp = () => {
+
     return (
         <>
             <PinkFeature>
@@ -28,7 +29,7 @@ const Header = styled.h1`
 `
 
 const PinkFeature = styled.div`
-    position: relative; 
+    position: absolute; 
     height: 100vh; 
     width: 100%; 
     background: var(--light-pink); 
@@ -49,7 +50,7 @@ const WhiteFeature = styled.div`
 const Icon = styled.img`
     position: absolute;
     z-index: 1;
-    ${props => props.forward ? "height: 70px; bottom: -12.5px; right: -12.5px;" : null}
+    ${props => props.forward ? "height: 70px; position: absolute; top: 600px; right: 55px;" : null}
     ${props => props.back ? "transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
 `
 
@@ -57,14 +58,9 @@ const BackgroundBox = styled.div`
     width: 65%;
     height: 530px;
     background: var(--green);
-    position: absolute;
-    top: 25vh;
-    left: 50%;
-    margin-left: -32.5%;
-    margin-bottom: 100px;
     border: 5px solid var(--blue);
     box-sizing: border-box;
-
+    margin: 140px auto 40px;
     &:after{
         content: "";
         height: 90px;
@@ -72,8 +68,8 @@ const BackgroundBox = styled.div`
         border-radius: 50%;
         background: var(--blue);
         position: absolute;
-        bottom: -22.5px;
-        right: -22.5px;
+        top: 590px;
+        right: 45px;
     }
 `
 
@@ -83,8 +79,5 @@ const Logo = styled.h1`
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     width: 150px;
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    margin: 0 0 0 -75px; 
+    margin: 0 auto;
 `

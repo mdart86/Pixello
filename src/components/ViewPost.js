@@ -8,6 +8,7 @@ import water from '../images/water.svg'
 import candid from '../images/candid.svg'
 
 export const ViewPost = () => {
+
     return (
         <>
             <PinkFeature>

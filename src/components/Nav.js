@@ -32,7 +32,7 @@ export default withRouter(Nav)
 const Box = styled.nav`
     background: var(--white);
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
     height: 80px;
     position: fixed;
     bottom: 0;
