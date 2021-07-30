@@ -19,9 +19,9 @@ const GlobalStyles = createGlobalStyle`
         ${hideOverflow.includes(window.location.pathname) ? "overflow-y: hidden;" : null}
         ${window.location.pathname === "/sign-up" ? "height: 800px;" : null}
     }
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: 450px) {
         html, body {
-            width: 500px;
+            width: 450px;
             margin: 0 auto;
         }
     }

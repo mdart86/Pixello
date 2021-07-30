@@ -28,9 +28,9 @@ export const About = () => {
             <Circle blue large></Circle>
             <Circle green xlarge>
                 <Header title="true">Hey there!</Header>
-                <Text>We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
+                <Text para1>We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
                 <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
-                <Text>&#169; 2021</Text>
+                <Text copywrite>&#169; 2021</Text>
             </Circle>
             <Logo>Pixello</Logo>
         </>
@@ -71,10 +71,13 @@ const Header = styled.h2`
 
 const Text = styled.p`
     margin-left: 30px;
+    margin-bottom: 0;
     width: 200px;
     font-size: 0.8rem;
     font-weight: bold;
     font-style: italic;
+    ${props => props.para1 ? "width: 210px; margin-left: 40px;" : null}
+    ${props => props.copywrite ? "margin-bottom: 20px;" : null}
 `
 
 const Logo = styled.h1`
