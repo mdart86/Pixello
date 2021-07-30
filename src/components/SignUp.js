@@ -58,7 +58,7 @@ const BackgroundBox = styled.div`
     height: 530px;
     background: var(--green);
     position: absolute;
-    top: 25vh;
+    top: 135px;
     left: 50%;
     margin-left: -32.5%;
     margin-bottom: 100px;

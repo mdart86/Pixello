@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
         --charcoal: #362D2D;
         --white: #FFFFFF;    
         ${hideOverflow.includes(window.location.pathname) ? "overflow-y: hidden;" : null}
-        ${window.location.pathname === "/sign-up" ? "height: 150vh;" : null}
+        ${window.location.pathname === "/sign-up" ? "height: 800px;" : null}
     }
     @media only screen and (min-width: 500px) {
         html, body {
