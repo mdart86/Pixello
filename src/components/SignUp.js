@@ -50,7 +50,7 @@ const WhiteFeature = styled.div`
 const Icon = styled.img`
     position: absolute;
     z-index: 1;
-    ${props => props.forward ? "height: 70px; position: absolute; top: 600px; right: 55px;" : null}
+    ${props => props.forward ? "height: 70px; position: absolute; top: 610px; right: 55px;" : null}
     ${props => props.back ? "transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
 `
 
@@ -68,7 +68,7 @@ const BackgroundBox = styled.div`
         border-radius: 50%;
         background: var(--blue);
         position: absolute;
-        top: 590px;
+        top: 600px;
         right: 45px;
     }
 `
