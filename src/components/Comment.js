@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
-import like from '../images/like-comments.svg'
+import like from '../images/like-pink.svg'
 
 export const Comment = () => {
     return (

@@ -4,7 +4,7 @@ import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
 import home from '../images/home.svg'
 import category from '../images/category-search.svg'
-import plus from '../images/plus.svg'
+import plus from '../images/plus-green.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
@@ -15,7 +15,7 @@ const Nav = ({ excludedUrls }) => {
     }
     return (
         <Box>
-            <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link>
+            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
             <IconsContainer>
                 {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
                 <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
@@ -41,15 +41,7 @@ const Box = styled.nav`
     z-index: 5;
     
     &:before {
-        content: "";
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: var(--charcoal);
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        margin-left: -30px;
+        ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: -30px; left: 50%; margin-left: -30px;" : null}
     }
 `
 
