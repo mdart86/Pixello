@@ -12,15 +12,25 @@ export const Profile = () => {
                 <WhiteFeature/>
             </PinkFeature>
             <ProfileContainer>
-                    <Photo src={placeholder} src="A candid photo of people on the beach."/>
-
+                <PhotoGrid>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                </PhotoGrid>
+                <Clearance/>
             </ProfileContainer>
         </>
     )
 }
 
 const PinkFeature = styled.div`
-    position: relative; 
+    position: absolute; 
     height: 100vh; 
     width: 100%; 
     background: var(--light-pink); 
@@ -58,6 +68,27 @@ const ProfileContainer = styled.div`
     background: yello;
 `
 
+const PhotoGrid = styled.div`
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-auto-rows: 100px;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin: 230px 0 10px 0;
+    width: 100%;
+    justify-content: center;
+`
+
 const Photo = styled.img`
-    z-index: 50;
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 0;
+`
+
+const Clearance = styled.div`
+    width: 100%;
+    height: 110px;
+    background: var(--white);
 `
