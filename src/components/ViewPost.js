@@ -20,7 +20,7 @@ export const ViewPost = () => {
             <PostContainer>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
+                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
                 <Photo src={placeholder} alt="A candid photo of people on the beach."/>
                 <Icon src={like} alt="like button"/>
                 <CategoryContainer>

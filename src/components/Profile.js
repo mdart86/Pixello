@@ -9,10 +9,16 @@ export const Profile = () => {
     return (
         <>
             <PinkFeature>
-                <Avatar src={profilePicture} alt="profile picture"/>
                 <WhiteFeature/>
             </PinkFeature>
             <ProfileContainer>
+                <Username>john_wilson</Username>
+                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
+                <Avatar src={profilePicture} alt="profile picture"/>
+                <Summary>
+                    <Count><Cursive>Posts: </Cursive>9</Count>
+                    <Count><Cursive>Likes: </Cursive>2.5K</Count>
+                </Summary>
                 <PhotoGrid>
                     <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
                     <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
@@ -51,22 +57,49 @@ const WhiteFeature = styled.div`
     left: -25%;
 `
 
+const ProfileContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+`
+
+const Username = styled.p`
+    font-family: 'pacifico', cursive;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    width: 200px;
+`
+
+const Caption = styled.p`
+    margin: 5px auto;
+    font-size: 0.8rem;
+    width: 280px;
+`
+
 const Avatar = styled.img`
     width: 90px;
     height: 90px;
     object-fit: cover;
-    margin: 0;
+    margin: 0 auto;
     border-radius: 50%;
     border: 5px solid var(--white);
-    position: absolute;
-    top: 110px;
-    z-index: 1;
 `
 
-const ProfileContainer = styled.div`
-    height: 50px;
+const Summary = styled.div`
+    margin: 0 auto;
     width: 100%;
-    background: yello;
+`
+
+const Count = styled.p`
+    margin: 0 20px;
+    font-size: 0.9rem;
+    display: inline;
+`
+
+const Cursive = styled.span`
+    font-family: 'Pacifico', cursive;
 `
 
 const PhotoGrid = styled.div`
@@ -75,7 +108,7 @@ const PhotoGrid = styled.div`
     grid-auto-rows: 100px;
     row-gap: 10px;
     column-gap: 10px;
-    margin: 230px 0 10px 0;
+    margin: 10px 0;
     width: 100%;
     justify-content: center;
 `
