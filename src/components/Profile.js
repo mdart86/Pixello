@@ -123,14 +123,17 @@ const GridContainer = styled.div`
 
 const PhotoGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-auto-rows: 100px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: auto;
     row-gap: 8px;
     column-gap: 8px;
-    margin: 10px 0;
+    margin: 10px auto;
     margin-bottom: 115px;
-    width: 100%;
+    width: 90%;
     justify-content: center;
+    &>*{
+        aspect-ratio: 1 / 1;
+    }
 `
 
 const Photo = styled.img`
