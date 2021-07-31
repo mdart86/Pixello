@@ -14,7 +14,9 @@ export const Profile = () => {
             <ProfileContainer>
                 <Username>john_wilson</Username>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
-                <Avatar src={profilePicture} alt="profile picture"/>
+                <AvatarContainer>
+                    <Avatar src={profilePicture} alt="profile picture"/>
+                </AvatarContainer>
                 <Summary>
                     <Count><Cursive>Posts: </Cursive>9</Count>
                     <Count><Cursive>Likes: </Cursive>2.5K</Count>
@@ -92,11 +94,17 @@ const Caption = styled.p`
     width: 70%;
 `
 
-const Avatar = styled.img`
+const AvatarContainer = styled.div`
     width: 90px;
     height: 90px;
-    object-fit: cover;
     margin: 0 auto;
+    margin-bottom: 10px;
+`
+
+const Avatar = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--white);
 `
@@ -123,14 +131,17 @@ const GridContainer = styled.div`
 
 const PhotoGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-auto-rows: 100px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: auto;
     row-gap: 8px;
     column-gap: 8px;
-    margin: 10px 0;
+    margin: 10px auto;
     margin-bottom: 115px;
-    width: 100%;
+    width: 90%;
     justify-content: center;
+    &>*{
+        aspect-ratio: 1 / 1;
+    }
 `
 
 const Photo = styled.img`
