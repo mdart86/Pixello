@@ -11,14 +11,21 @@ export const Post = () => {
         <>
             <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
             <Container>
-                <Avatar src={profilePicture} alt="A man's profile picture."/>
+                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>
-                <Username>john_wilson</Username>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
             </Container>
         </>
     )
 }
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
+`
 
 const Photo = styled.img`
     max-width: 92%;
