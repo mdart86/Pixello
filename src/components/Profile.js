@@ -19,18 +19,30 @@ export const Profile = () => {
                     <Count><Cursive>Posts: </Cursive>9</Count>
                     <Count><Cursive>Likes: </Cursive>2.5K</Count>
                 </Summary>
-                <PhotoGrid>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                </PhotoGrid>
-                <Clearance/>
+                <GridContainer>
+                    <PhotoGrid>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    </PhotoGrid>
+                </GridContainer>
             </ProfileContainer>
         </>
     )
@@ -59,6 +71,7 @@ const WhiteFeature = styled.div`
 
 const ProfileContainer = styled.div`
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -69,13 +82,14 @@ const Username = styled.p`
     margin: 0 auto;
     margin-top: 20px;
     font-size: 1.5rem;
-    width: 200px;
+    width: 70%;
 `
 
 const Caption = styled.p`
     margin: 5px auto;
+    margin-bottom: 10px;
     font-size: 0.8rem;
-    width: 280px;
+    width: 70%;
 `
 
 const Avatar = styled.img`
@@ -102,27 +116,28 @@ const Cursive = styled.span`
     font-family: 'Pacifico', cursive;
 `
 
+const GridContainer = styled.div`
+    width: 100%;
+    height: auto;
+`
+
 const PhotoGrid = styled.div`
     display: grid;
-    grid-template-columns: 100px 100px 100px;
+    grid-template-columns: repeat(3, 100px);
     grid-auto-rows: 100px;
-    row-gap: 10px;
-    column-gap: 10px;
+    row-gap: 8px;
+    column-gap: 8px;
     margin: 10px 0;
+    margin-bottom: 115px;
     width: 100%;
     justify-content: center;
 `
 
 const Photo = styled.img`
     object-fit: cover;
-    height: 100px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
     border-radius: 5px;
     margin: 0;
 `
 
-const Clearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-`
