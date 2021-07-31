@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 // requiring routes into app file
 const authRouter = require('./routes/authRoutes') 
 const postRouter = require('./routes/postRoutes') 
-const imageRouter = require('./routes/imageRouter') 
+const userRouter = require('./routes/userRoutes') 
 
 
 
@@ -92,7 +92,7 @@ app.get("/", (req, res) => {
 // routers used in application
 app.use("/auth", authRouter)
 app.use("/posts", postRouter)
-app.use("/api", imageRouter)
+app.use("/user", userRouter)
 
 
 // Listening for connections on port 4000 and has a callback function that is printed to the console
