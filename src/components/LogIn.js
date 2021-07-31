@@ -13,7 +13,13 @@ export const LogIn = () => {
             </PinkFeature>
             <Link to="/"><Icon back src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
-                <Link to="/home"><Icon forward src={arrow} alt="next steps arrow"/></Link>
+                <Form>
+                    <Input username="true" placeholder="username"/>
+                    <Input placeholder="password"/>
+                    <Circle>
+                        <Link to="/home"><Icon forward src={arrow} alt="next steps arrow"/></Link>
+                    </Circle>
+                </Form>
             </BackgroundBox>
             <Logo>Pixello</Logo>
         </>
@@ -46,31 +52,52 @@ const WhiteFeature = styled.div`
     left: -25%;
 `
 
-const Icon = styled.img`
-    position: absolute;
-    z-index: 1;
-    ${props => props.forward ? "height: 70px; top: 330px; right: 55px;" : null}
-    ${props => props.back ? "transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
-`
 
 const BackgroundBox = styled.div`
     width: 65%;
-    height: 250px;
+    height: 55vh;
     background: var(--green);
     margin: 140px auto 40px;
     border: 5px solid var(--blue);
     box-sizing: border-box;
+    position: relative;
+`
 
-    &:after{
-        content: "";
-        height: 90px;
-        width: 90px;
-        border-radius: 50%;
-        background: var(--blue);
-        position: absolute;
-        top: 320px;
-        right: 45px;
-    }
+const Circle = styled.div`
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -22.5px;
+    right: -22.5px;
+    
+`
+
+const Icon = styled.img`
+    z-index: 1;
+    ${props => props.forward ? "height: 70px; top: 400px; right: 70px;" : null}
+    ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
+`
+
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+`
+
+const Input = styled.input`
+    background: var(--green);
+    border: none;
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
+    font-style: italic;
+    font-size: 1rem;
+    width: 70%;
+    margin: 25px auto;
+    ${props => props.username ? "margin-top: 35%" : null}
 `
 
 const Logo = styled.h1`
