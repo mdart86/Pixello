@@ -1,12 +1,12 @@
 const {getUserById, updateUser, deleteUser} = require('../utils/usersUtils')
 
 const getUser = function (req, res){
-    getUserById(req.params.id).exec((err, post)=>{
+    getUserById(req.params.id).exec((err, user)=>{
         if (err){
             res.status(404)
             return res.json({error: err.message})
         } 
-        res.send(post)
+        res.send(user)
     })
 }
 
@@ -21,13 +21,13 @@ const removeUser = function(req, res){
 }
 
 const changeUser = function(req,res){
-    updateUser(req).exec((err, post)=>{
+    updateUser(req).exec((err, user)=>{
         if (err){
             res.status(404)
             return res.json({error: err.message})
         }
         res.status(200)
-        res.send(post)
+        res.send(user)
     })
 }
 
