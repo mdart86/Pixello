@@ -14,7 +14,9 @@ export const Profile = () => {
             <ProfileContainer>
                 <Username>john_wilson</Username>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
-                <Avatar src={profilePicture} alt="profile picture"/>
+                <AvatarContainer>
+                    <Avatar src={profilePicture} alt="profile picture"/>
+                </AvatarContainer>
                 <Summary>
                     <Count><Cursive>Posts: </Cursive>9</Count>
                     <Count><Cursive>Likes: </Cursive>2.5K</Count>
@@ -92,11 +94,17 @@ const Caption = styled.p`
     width: 70%;
 `
 
-const Avatar = styled.img`
+const AvatarContainer = styled.div`
     width: 90px;
     height: 90px;
-    object-fit: cover;
     margin: 0 auto;
+    margin-bottom: 10px;
+`
+
+const Avatar = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--white);
 `
