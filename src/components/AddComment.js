@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import plus from '../images/plus-comment.svg'
+import plus from '../images/plus-white.svg'
 
 export const AddComment = () => {
     return (

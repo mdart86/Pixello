@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import placeholder from '../images/placeholder.jpg'
-import like from '../images/like-posts.svg'
+import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 
 export const Post = () => {
