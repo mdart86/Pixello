@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Comment } from './Comment'
 import { AddComment } from './AddComment'
@@ -17,15 +18,15 @@ export const ViewPost = () => {
                 <WhiteFeature/>
             </PinkFeature>
             <PostContainer>
-                <Avatar src={profilePicture} alt="A man's profile picture."/>
-                <Username>john_wilson</Username>
+                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
                 <Photo src={placeholder} alt="A candid photo of people on the beach."/>
                 <Icon src={like} alt="like button"/>
                 <CategoryContainer>
-                    <Icon src={film} alt="film category"/>
-                    <Icon water src={water} alt="water category"/>
-                    <Icon src={candid} alt="candid category"/>
+                    <Link to="/filter"><Icon src={film} alt="film category"/></Link>
+                    <Link to="/filter"><Icon water src={water} alt="water category"/></Link>
+                    <Link to="/filter"><Icon src={candid} alt="candid category"/></Link>
                 </CategoryContainer>
                 <CommentsContainer>
                     <AddComment/>
@@ -42,6 +43,13 @@ export const ViewPost = () => {
         </>
     )
 }
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
+`
 
 const PinkFeature = styled.div`
     position: relative; 

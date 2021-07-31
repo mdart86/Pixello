@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-comments.svg'
@@ -7,14 +8,21 @@ export const Comment = () => {
     return (
         <>
             <Box>
-                <Avatar src={profilePicture} alt="A man's profile picture."/>
+                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>
-                <Username>john_wilson</Username>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
             </Box>
         </>
     )
 }
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
+`
 
 const Box = styled.div`
     background: var(--blue);

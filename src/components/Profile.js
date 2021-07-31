@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
@@ -13,15 +14,15 @@ export const Profile = () => {
             </PinkFeature>
             <ProfileContainer>
                 <PhotoGrid>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                    <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                    <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
                 </PhotoGrid>
                 <Clearance/>
             </ProfileContainer>
