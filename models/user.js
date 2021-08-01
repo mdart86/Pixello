@@ -1,6 +1,10 @@
 // package that allows connection to database
 const mongoose = require("mongoose")
 
+// package that enables the application to refer to id instead of _id in the application
+const normalize = require('normalize-mongoose')
+
+
 // Creates connection between Mongoose and the Scheema created
 const Schema = mongoose.Schema
 
@@ -27,6 +31,10 @@ const User = new Schema({
         type: String,
         required: true
     },
+    avatar: {
+        type: String,
+        required: false
+    },
     imageUrl: {
         type: String,
         required: false
@@ -48,6 +56,8 @@ const User = new Schema({
     //     required: true
     // }
 })
+
+User.plugin(normalize)
 
 User.methods.comparePassword = function(password){
     return bcrypt.compareSync(password, this.hash_password)
