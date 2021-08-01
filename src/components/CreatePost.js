@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import plus from '../images/plus-white.svg'
 
 export const CreatePost = () => {
+    
+    const [fileName, setFileName] = useState("No File Chosen")
+
+    function displayFileInfo(e) {
+        setFileName(e.target.files[0].name)
+    }
     
     return (
         <>
@@ -12,16 +18,17 @@ export const CreatePost = () => {
             <Container>
                 <Header>Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
-                <UploadBox>
-                    <Circle>
-                        <Icon src={plus} alt="plus sign"/>
-                        <Text upload="true">Upload your photo</Text>
-                    </Circle>
-                </UploadBox>
-                <CaptionBox>
-                    <Text caption="true">Give it a caption</Text>
-                </CaptionBox>
-                <Share><Text>Share!</Text></Share>
+                <Form>
+                    <Label htmlFor="photo-upload">
+                        <PlusCircle>
+                            <Icon src={plus} alt="plus sign"/>
+                        </PlusCircle>
+                        <FileName>{fileName}</FileName>
+                    </Label>
+                    <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <TextArea id="caption" placeholder="Give it a caption"/>
+                    <Input share="true" type="submit" value="Share!"/>
+                </Form>
             </Container>
         </>
     )
@@ -65,51 +72,79 @@ const SubHeader = styled.h2`
     font-style: italic;
 `
 
-const UploadBox = styled.div`
-    width: 100%;
-    height: 150px;
-    border: 7px dashed var(--blue);
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+`
+
+//for the share button, as the other input is hidden
+const Input = styled.input`
+    border: none;
+    font-style: italic;
+    font-size: 1rem;
+    margin: 10px auto;
+    color: var(--white); 
+    background: var(--green); 
+    width: 80px; 
+    height: 35px; 
+    border-radius: 5px; 
+    font-family: 'Pacifico', cursive;
+    &:focus {
+        outline: none;
+        border: 3px solid var(--dark-pink);
+    }
+`
+
+const TextArea = styled.textarea`
+    box-sizing: border-box;
+    border: 3px solid var(--blue); 
+    height: 50px;
+    font-style: italic;
+    font-size: 1rem;
+    width: 70%;
+    margin: 20px auto;
+    background: var(--white);
+    color: var(--green);
+    max-width: 90%;
+    &:focus {
+        outline: none;
+        border: 3px solid var(--dark-pink);
+    }
+`
+
+const FileName = styled.p`
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--green);
+`
+
+const Label = styled.label`
+    width: 90%;
+    margin: 0 auto;
+    height: 140px;
+    border: 5px dashed var(--blue);
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: var(--white);
+    &:hover {
+        cursor: pointer;
+    }
 `
 
-const Circle = styled.div`
+const PlusCircle = styled.div`
     height: 60px;
     width: 60px;
     border-radius: 50%;
     background: var(--green);
+    margin: 0;
+    margin-bottom: 5px;
 `
 
 const Icon = styled.img`
     height: 60px;
-`
-
-const Text = styled.p`
-    ${props => props.upload ? "width: 200px; font-size: 0.8rem; margin-top: 10px; margin-left: -25px;" : null}
-    ${props => props.caption ? "margin: 0 auto" : null}
-`
-
-const CaptionBox = styled.div`
-    border: 2px solid var(--blue);
-    box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 85%;
-    height: 40px;
-`
-
-const Share = styled.div`
-    background: var(--green);
-    width: 80px;
-    height: 30px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Pacifico', cursive;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 0;
 `

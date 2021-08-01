@@ -11,7 +11,7 @@ export const SignUp = () => {
     function displayFileInfo(e) {
         setFileName(e.target.files[0].name)
     }
-
+    
     return (
         <>
             <PinkFeature>
@@ -27,13 +27,13 @@ export const SignUp = () => {
                     <Input type="password" id="password-confirmation" placeholder="Confirm password"/>
                     <TextArea id="bio" placeholder="Your bio"/>
                     <p>Your avatar:</p>
-                    <FileName id="file-info">{fileName}</FileName>
-                    <Label htmlFor="image-upload">
+                    <FileName>{fileName}</FileName>
+                    <Label htmlFor="avatar-upload">
                         <PlusCircle>
                             <Icon upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>
-                    <Input type="file" id="image-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <Input type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Circle>
                         <Link to="/home"><Icon forward src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
