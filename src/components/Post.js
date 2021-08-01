@@ -39,6 +39,7 @@ const Avatar = styled.img`
     margin-top: 2px;
     border-radius: 50%;
     border: 2px solid var(--green);
+    box-sizing: border-box;
 `
 
 const StyledLink = styled(Link)`
