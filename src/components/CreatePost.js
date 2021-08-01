@@ -88,7 +88,7 @@ const Label = styled.label`
     width: 90%;
     margin: 0 auto;
     height: 140px;
-    border: 5px dashed var(--blue);
+    border: 4px dashed var(--blue);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -122,6 +122,7 @@ const FileName = styled.p`
 
 const TextArea = styled.textarea`
     box-sizing: border-box;
+    border-radius: 5px;
     border: 3px solid var(--blue); 
     height: 50px;
     font-style: italic;
@@ -143,6 +144,7 @@ const Select = styled.select`
     margin-bottom: 10px;
     background: var(--white);
     border: 3px solid var(--blue);
+    border-radius: 5px;
 `
 
 //for the share button, as the other input is hidden

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
 import { UserMessage } from './UserMessage'
+import plus from '../images/plus-white.svg'
 
 export const Message = () => {
     
@@ -18,9 +19,13 @@ export const Message = () => {
             </DetailsContainer>
             <MessagesContainer>
                 <UserMessage/>
-                <UserMessage type="right"/>
                 <UserMessage/>
-                
+                <UserMessage/>
+                <NewMessage>
+                    <Circle>
+                        <Icon src={plus} alt="plus sign"/>
+                    </Circle>
+                </NewMessage>
             <Clearance/>
             </MessagesContainer>
         </>
@@ -83,11 +88,40 @@ const Bio = styled.p`
 `
 
 const MessagesContainer = styled.section`
-    margin: 0 auto;
+    margin: 27px auto 5px;
     width: 90%;
-    position: absolute;
-    left: 5%;
+    position: relative;
+    left: 0;
     top: 25%;
+`
+
+const NewMessage = styled.div`
+    height: 50px;
+    width: 75%;
+    background: var(--white);
+    border-radius: 5px;
+    margin: 10px 0;
+    position: absolute;
+    right: 0;
+    border: 4px dashed var(--blue);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const Circle = styled.div`
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const Icon = styled.img`
+    
 `
 
 const Clearance = styled.div`
