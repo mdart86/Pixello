@@ -84,6 +84,7 @@ const Avatar = styled.img`
     margin: 10px 10px 10px 0;
     border-radius: 50%;
     border: 2px solid var(--white);
+    box-sizing: border-box;
 `
 
 const Username = styled.p`

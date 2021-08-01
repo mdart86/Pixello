@@ -96,6 +96,7 @@ const Avatar = styled.img`
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--white);
+    box-sizing: border-box;
 `
 
 const Summary = styled.div`
