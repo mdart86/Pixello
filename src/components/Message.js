@@ -14,7 +14,7 @@ export const Message = () => {
             <DetailsContainer>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
+                <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
             </DetailsContainer>
             <MessagesContainer>
                 <UserMessage/>
@@ -67,7 +67,7 @@ const Avatar = styled.img`
     float: left;
     margin: 0 15px 10px 0px;
     border-radius: 50%;
-    border: 2px solid var(--white);
+    border: 4px solid var(--white);
     box-sizing: border-box;
 `
 
@@ -77,9 +77,9 @@ const Username = styled.p`
     font-size: 1.2rem;
 `
 
-const Caption = styled.p`
+const Bio = styled.p`
     margin: 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 `
 
 const MessagesContainer = styled.section`

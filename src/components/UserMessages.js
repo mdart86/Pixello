@@ -25,7 +25,7 @@ const Avatar = styled.img`
     object-fit: cover; 
     border-radius: 50%;
     box-sizing: border-box;
-    border: 3px solid var(--blue);
+    border: 4px solid var(--blue);
     margin-right: 10px;
 `
 

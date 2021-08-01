@@ -13,7 +13,7 @@ export const Profile = () => {
             </PinkFeature>
             <ProfileContainer>
                 <Username>john_wilson</Username>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. Nullam non est quis purus luctus iaculis sed sit amet risus.</Caption>
+                <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>
                     <Avatar src={profilePicture} alt="profile picture"/>
                 </AvatarContainer>
@@ -76,7 +76,7 @@ const Username = styled.p`
     width: 70%;
 `
 
-const Caption = styled.p`
+const Bio = styled.p`
     margin: 5px auto;
     margin-bottom: 10px;
     font-size: 0.8rem;
@@ -95,7 +95,7 @@ const Avatar = styled.img`
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid var(--white);
+    border: 4px solid var(--white);
     box-sizing: border-box;
 `
 

@@ -13,7 +13,7 @@ export const Notifications = () => {
             <DetailsContainer>
                 <Avatar src={profilePicture} alt="Pixello Logo"/>
                 <Username>Pixello</Username>
-                <Caption>Here's where we'll notify you of activity related to your account.</Caption>
+                <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>
             <MessagesContainer>
                 <UserMessage/>
@@ -59,7 +59,7 @@ const Avatar = styled.img`
     float: left;
     margin: 0px 15px 10px 0px;
     border-radius: 50%;
-    border: 2px solid var(--white);
+    border: 4px solid var(--white);
     box-sizing: border-box;
 `
 
@@ -69,9 +69,9 @@ const Username = styled.p`
     font-size: 1.2rem;
 `
 
-const Caption = styled.p`
+const Bio = styled.p`
     margin: 0;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 `
 
 const MessagesContainer = styled.section`
