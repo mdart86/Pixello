@@ -71,7 +71,7 @@ const ProfileContainer = styled.section`
 const Username = styled.p`
     font-family: 'pacifico', cursive;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 30px;
     font-size: 1.5rem;
     width: 70%;
 `
@@ -86,13 +86,12 @@ const Bio = styled.p`
 const AvatarContainer = styled.div`
     width: 90px;
     height: 90px;
-    margin: 0 auto;
-    margin-bottom: 10px;
+    margin: 10px auto;
 `
 
 const Avatar = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
     border-radius: 50%;
     border: 4px solid var(--white);
