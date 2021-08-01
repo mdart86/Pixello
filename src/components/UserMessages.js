@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import profilePicture from '../images/profile-picture.jpeg'
 
 export const UserMessages = () => {
     return (
         
         <UserMessage>
-            <Avatar src={profilePicture} alt="profile picture"/>
-            <Text>john_wilson</Text>
+            <Link to="/message"><Avatar src={profilePicture} alt="profile picture"/></Link>
+            <StyledLink to="/message"><Text>john_wilson</Text></StyledLink>
         </UserMessage>
         
     )
@@ -33,4 +34,11 @@ const Text = styled.p`
     font-size: 1.2rem;
     margin: 10px;
     height: 20px;
+`
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
 `
