@@ -55,7 +55,7 @@ const WhiteFeature = styled.div`
     left: -25%;
 `
 
-const Container = styled.div`
+const Container = styled.section`
     margin: 0 20px;
 `
 
@@ -76,47 +76,6 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     text-align: center;
-`
-
-//for the share button, as the other input is hidden
-const Input = styled.input`
-    border: none;
-    font-style: italic;
-    font-size: 1rem;
-    margin: 10px auto;
-    color: var(--white); 
-    background: var(--green); 
-    width: 80px; 
-    height: 35px; 
-    border-radius: 5px; 
-    font-family: 'Pacifico', cursive;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-`
-
-const TextArea = styled.textarea`
-    box-sizing: border-box;
-    border: 3px solid var(--blue); 
-    height: 50px;
-    font-style: italic;
-    font-size: 1rem;
-    width: 70%;
-    margin: 20px auto;
-    background: var(--white);
-    color: var(--green);
-    max-width: 90%;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-`
-
-const FileName = styled.p`
-    margin: 0;
-    font-size: 0.8rem;
-    color: var(--green);
 `
 
 const Label = styled.label`
@@ -147,4 +106,45 @@ const PlusCircle = styled.div`
 const Icon = styled.img`
     height: 60px;
     margin: 0;
+`
+
+const FileName = styled.p`
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--green);
+`
+
+const TextArea = styled.textarea`
+    box-sizing: border-box;
+    border: 3px solid var(--blue); 
+    height: 50px;
+    font-style: italic;
+    font-size: 1rem;
+    width: 70%;
+    margin: 20px auto;
+    background: var(--white);
+    color: var(--green);
+    max-width: 90%;
+    &:focus {
+        outline: none;
+        border: 3px solid var(--dark-pink);
+    }
+`
+
+//for the share button, as the other input is hidden
+const Input = styled.input`
+    border: none;
+    font-style: italic;
+    font-size: 1rem;
+    margin: 10px auto;
+    color: var(--white); 
+    background: var(--green); 
+    width: 80px; 
+    height: 35px; 
+    border-radius: 5px; 
+    font-family: 'Pacifico', cursive;
+    &:focus {
+        outline: none;
+        border: 3px solid var(--dark-pink);
+    }
 `

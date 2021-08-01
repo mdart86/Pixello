@@ -6,40 +6,25 @@ export const AppStart = () => {
 
     return (
         <>
+            <Circle blue="true" large="true"></Circle>
+            <Circle pink="true" small="true"></Circle>
+            <Circle blue="true" small="true"></Circle>
+            <Circle green="true" xsmall="true"></Circle>
             <Logo>Pixello</Logo>
             <Tagline>where the magic happens</Tagline>
-            <Circle pink small></Circle>
-            <Circle pink xlarge>
-                <StyledLink to="/sign-up"><Options signup>sign up</Options></StyledLink>
+            <Circle green="true" small="true"></Circle>
+            <Circle pink="true" xlarge="true">
+                <StyledLink to="/sign-up" signup="true">sign up</StyledLink>
             </Circle>
-            <Circle green xsmall></Circle>
-            <Circle green small></Circle>
-            <Circle green xxlarge>
-                <StyledLink to="/about"><Options about="true">About the creators</Options></StyledLink>
+            <Circle green="true" xxlarge="true">
+                <StyledLink to="/about" about="true">About the creators</StyledLink>
             </Circle>
-            <Circle blue small></Circle>
-            <Circle blue medium>
-                <StyledLink to="/log-in"><Options login>log in</Options></StyledLink>
+            <Circle blue="true" medium="true">
+                <StyledLink to="/log-in" login="true">log in</StyledLink>
             </Circle>
-            <Circle blue large></Circle>
         </>
     )
 }
-
-const Logo = styled.h1`
-    text-align: center;
-    color: var(--dark-pink);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin: 90px 0 0 0;
-`
-
-const Tagline = styled.h2`
-    text-align: center;
-    color: var(--green);
-    font-size: 0.7rem;
-    margin-top: -10px;
-`
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -68,14 +53,21 @@ const Circle = styled.div`
     ${props => props.xsmall && props.green ? "top: 65px; left: -20px; z-index: 2;" : null}
     ${props => props.small && props.green ? "top: 150px; right: -30px;" : null}
     ${props => props.xxlarge && props.green ? "bottom: -150px; left: -85px;" : null}
-
 `
 
-const Options = styled.div`
-    ${props => !props.about ? "font-family: 'Pacifico', cursive; text-shadow: 1px 1px 4px grey;" : null}
-    ${props => props.about ? "font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
-    ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
-    ${props => props.login ? "font-size: 1.3rem; margin-top: -75px;": null}
+const Logo = styled.h1`
+    text-align: center;
+    color: var(--dark-pink);
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    margin: 90px 0 0 0;
+`
+
+const Tagline = styled.h2`
+    text-align: center;
+    color: var(--green);
+    font-size: 0.7rem;
+    margin-top: -10px;
 `
 
 const StyledLink = styled(Link)`
@@ -83,4 +75,8 @@ const StyledLink = styled(Link)`
     &:visited {
         color: var(--white);
     }
+    ${props => !props.about ? "font-family: 'Pacifico', cursive; text-shadow: 1px 1px 4px grey;" : null}
+    ${props => props.about ? "font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
+    ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
+    ${props => props.login ? "font-size: 1.3rem; margin-top: -110px;": null}
 `

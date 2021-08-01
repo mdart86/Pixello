@@ -18,7 +18,7 @@ export const SignUp = () => {
                 <Header>Create your account</Header>
                 <WhiteFeature/>
             </PinkFeature>
-            <Link to="/"><Icon back src={arrow} alt="go back arrow"/></Link>
+            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
                 <Form>
                     <Input username="true" type="text" id="username" placeholder="Username"/>
@@ -35,23 +35,14 @@ export const SignUp = () => {
                     </Label>
                     <Input type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Circle>
-                        <Link to="/home"><Icon forward src={arrow} alt="next steps arrow"/></Link>
+                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
-
                 </Form>
             </BackgroundBox>
             <Logo>Pixello</Logo>
         </>
     )
 }
-
-
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    margin: 0;
-    padding-top: 40px;
-`
 
 const PinkFeature = styled.div`
     position: absolute; 
@@ -60,6 +51,13 @@ const PinkFeature = styled.div`
     background: var(--light-pink); 
     top: 0;  
     z-index: -1;   
+`
+
+const Header = styled.h1`
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin: 0;
+    padding-top: 40px;
 `
 
 const WhiteFeature = styled.div`
@@ -80,26 +78,6 @@ const BackgroundBox = styled.div`
     box-sizing: border-box;
     margin: 140px auto 40px;
     position: relative;
-`
-
-const Circle = styled.div`
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
-`
-
-const Icon = styled.img`
-    z-index: 1;
-    ${props => props.upload ? "height: 40px;" : null}
-    ${props => props.forward ? "height: 70px;" : null}
-    ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
 `
 
 const Form = styled.form`
@@ -170,6 +148,26 @@ const PlusCircle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+const Icon = styled.img`
+    z-index: 1;
+    ${props => props.upload ? "height: 40px;" : null}
+    ${props => props.forward ? "height: 70px;" : null}
+    ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
+`
+
+const Circle = styled.div`
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -22.5px;
+    right: -22.5px;
 `
 
 const Logo = styled.h1`

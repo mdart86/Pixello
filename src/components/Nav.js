@@ -28,7 +28,6 @@ const Nav = ({ excludedUrls }) => {
 
 export default withRouter(Nav)
 
-
 const Box = styled.nav`
     background: var(--white);
     width: 100%;
@@ -39,7 +38,6 @@ const Box = styled.nav`
     border-radius: 50% 50% 0 0;
     box-shadow: 0 0 3px grey; 
     z-index: 5;
-    
     &:before {
         ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: -30px; left: 50%; margin-left: -30px;" : null}
     }
