@@ -14,8 +14,8 @@ export const LogIn = () => {
             <Link to="/"><Icon back src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
                 <Form>
-                    <Input username="true" placeholder="username"/>
-                    <Input placeholder="password"/>
+                    <Input username="true" type="text" placeholder="Username"/>
+                    <Input type="password" placeholder="Password"/>
                     <Circle>
                         <Link to="/home"><Icon forward src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
@@ -79,7 +79,7 @@ const Circle = styled.div`
 
 const Icon = styled.img`
     z-index: 1;
-    ${props => props.forward ? "height: 70px; top: 400px; right: 70px;" : null}
+    ${props => props.forward ? "height: 70px;" : null}
     ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
 `
 
@@ -94,7 +94,7 @@ const Input = styled.input`
     border-bottom: 1px solid var(--white);
     color: var(--white);
     font-style: italic;
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 70%;
     margin: 25px auto;
     ${props => props.username ? "margin-top: 35%" : null}
