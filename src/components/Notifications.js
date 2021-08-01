@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import profilePicture from '../images/logo-round-with-outline.png'
+import profilePicture from '../images/pixello-logo.png'
 import { UserMessage } from './UserMessage'
 
 export const Notifications = () => {
