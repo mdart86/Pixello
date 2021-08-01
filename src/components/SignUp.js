@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
 import plus from '../images/plus-white.svg'
 
 export const SignUp = () => {
+
+    const [fileName, setFileName] = useState("No File Chosen")
+
+    function displayFileInfo(e) {
+        setFileName(e.target.files[0].name)
+    }
 
     return (
         <>
@@ -21,12 +27,13 @@ export const SignUp = () => {
                     <Input type="password" id="password-confirmation" placeholder="Confirm password"/>
                     <TextArea id="bio" placeholder="Your bio"/>
                     <p>Your avatar:</p>
+                    <FileName id="file-info">{fileName}</FileName>
                     <Label htmlFor="image-upload">
-                        <UploadCircle>
+                        <PlusCircle>
                             <Icon upload="true" src={plus} alt="plus sign"/>
-                        </UploadCircle>
+                        </PlusCircle>
                     </Label>
-                    <Input type="file" id="image-upload" accept=".png, .jpg, .jpeg" hidden/>
+                    <Input type="file" id="image-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Circle>
                         <Link to="/home"><Icon forward src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
@@ -67,7 +74,7 @@ const WhiteFeature = styled.div`
 
 const BackgroundBox = styled.div`
     width: 65%;
-    height: 700px;
+    height: 720px;
     background: var(--green);
     border: 5px solid var(--blue);
     box-sizing: border-box;
@@ -134,9 +141,13 @@ const TextArea = styled.textarea`
     }
 `
 
+const FileName = styled.p`
+    margin-top: -5px;
+    font-size: 0.8rem;
+`
+
 const Label = styled.label`
     background: var(--white);
-    margin-top: 25px;
     height: 120px;
     width: 120px;
     border-radius: 50%;
@@ -151,7 +162,7 @@ const Label = styled.label`
     }
 `
 
-const UploadCircle = styled.div`
+const PlusCircle = styled.div`
     height: 35px;
     width: 35px;
     background: var(--blue);
