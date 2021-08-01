@@ -9,20 +9,13 @@ export const Comment = () => {
         <>
             <Box>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <Icon src={like} alt="like button"/>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <Icon src={like} alt="like button"/>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
             </Box>
         </>
     )
 }
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
 
 const Box = styled.div`
     background: var(--blue);
@@ -47,13 +40,20 @@ const Username = styled.p`
     font-size: 0.8rem;
 `
 
+const Icon = styled.img`
+    float: right;
+    height: 20px;
+    margin: 5px;
+`
+
 const Caption = styled.p`
     margin: 5px;
     font-size: 0.7rem;
 `
 
-const Icon = styled.img`
-    float: right;
-    height: 20px;
-    margin: 5px;
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
 `

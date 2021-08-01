@@ -25,7 +25,7 @@ export const ViewPost = () => {
                 <Icon src={like} alt="like button"/>
                 <CategoryContainer>
                     <Link to="/filter"><Icon src={film} alt="film category"/></Link>
-                    <Link to="/filter"><Icon water src={water} alt="water category"/></Link>
+                    <Link to="/filter"><Icon water="true" src={water} alt="water category"/></Link>
                     <Link to="/filter"><Icon src={candid} alt="candid category"/></Link>
                 </CategoryContainer>
                 <CommentsContainer>
@@ -43,13 +43,6 @@ export const ViewPost = () => {
         </>
     )
 }
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
 
 const PinkFeature = styled.div`
     position: relative; 
@@ -76,14 +69,11 @@ const PostContainer = styled.section`
     top: 25px;
 `
 
-const CategoryContainer = styled.div`
-    float: right;
-`
-
-const Photo = styled.img`
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
 `
 
 const Avatar = styled.img`
@@ -107,8 +97,18 @@ const Caption = styled.p`
     font-size: 0.8rem;
 `
 
+const Photo = styled.img`
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+`
+
 const Icon = styled.img`
     ${props => props.water ? "margin-left: 4px;" : null}
+`
+
+const CategoryContainer = styled.div`
+    float: right;
 `
 
 const CommentsContainer = styled.div`

@@ -32,17 +32,6 @@ export const Profile = () => {
                         <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
                         <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
                         <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
                     </PhotoGrid>
                 </GridContainer>
             </ProfileContainer>
@@ -71,7 +60,7 @@ const WhiteFeature = styled.div`
     left: -25%;
 `
 
-const ProfileContainer = styled.div`
+const ProfileContainer = styled.section`
     width: 100%;
     height: 100vh;
     display: flex;
@@ -151,4 +140,3 @@ const Photo = styled.img`
     border-radius: 5px;
     margin: 0;
 `
-

@@ -9,29 +9,29 @@ export const About = () => {
     
     return (
         <>
-            <Circle pink small>
+            <Circle pink="true" medium="true">
+                <Link to="/"><Icon arrow="true" src={arrow} alt="go back arrow"/></Link>
+            </Circle>
+            <Circle blue="true" large="true"></Circle>
+            <Circle green="true" xlarge="true">
+                <Header title="true">Hey there!</Header>
+                <Text para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
+                <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
+                <Text copywrite="true">&#169; 2021</Text>
+            </Circle>
+            <Circle pink="true" small="true">
                 <Header>Emily</Header>
                 <IconsContainer>
-                    <a href="https://github.com/emigraced/" target="blank"><Icon emily src={github} alt="Emily's github social icon"/></a>
-                    <a href="https://twitter.com/emigraced" target="blank"><Icon emily src={twitter} alt="Emily's twitter social icon"/></a> 
+                    <a href="https://github.com/emigraced/" target="blank"><Icon emily="true" src={github} alt="Emily's github social icon"/></a>
+                    <a href="https://twitter.com/emigraced" target="blank"><Icon emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
                 </IconsContainer>
             </Circle>
-            <Circle pink medium>
-                <Link to="/"><Icon arrow src={arrow} alt="go back arrow"/></Link>
-            </Circle>
-            <Circle blue medium>
+            <Circle blue="true" medium="true">
                 <Header>Michael</Header>
                 <IconsContainer>
-                    <a href="https://github.com/mdart86/" target="blank"><Icon michael src={github} alt="Michael's github social icon"/></a>
-                    <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael src={twitter} alt="Michael's twitter social icon"/></a>
+                    <a href="https://github.com/mdart86/" target="blank"><Icon michael="true" src={github} alt="Michael's github social icon"/></a>
+                    <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
                 </IconsContainer>
-            </Circle>
-            <Circle blue large></Circle>
-            <Circle green xlarge>
-                <Header title="true">Hey there!</Header>
-                <Text para1>We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
-                <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
-                <Text copywrite>&#169; 2021</Text>
             </Circle>
             <Logo>Pixello</Logo>
         </>
@@ -61,7 +61,6 @@ const Circle = styled.div`
     ${props => props.blue && props.medium ? "top: 330px; left: 105px; z-index: 1;" : null}
     ${props => props.pink && props.small ? "top: 300px; left: 190px; z-index: 2;" : null}
     ${props => props.pink && props.medium ? "top: -20px; left: -20px; z-index: 1;" : null}
-
 `
 
 const Header = styled.h2`
@@ -81,6 +80,16 @@ const Text = styled.p`
     ${props => props.copywrite ? "margin-bottom: 20px;" : null}
 `
 
+const IconsContainer = styled.div`
+    flex-direction: row;
+`
+
+const Icon = styled.img`
+    margin: 0 2px;
+    ${props => props.arrow ? "transform: rotate(180deg) scale(2);" : null}    
+    ${props => props.michael ? "height: 30px;" : null}
+`
+
 const Logo = styled.h1`
     text-align: center;
     color: var(--dark-pink);
@@ -91,14 +100,4 @@ const Logo = styled.h1`
     bottom: 5px;
     left: 50%;
     margin: 0 0 0 -75px; 
-`
-
-const IconsContainer = styled.div`
-    flex-direction: row;
-`
-
-const Icon = styled.img`
-    margin: 0 2px;
-    ${props => props.arrow ? "transform: rotate(180deg) scale(2);" : null}    
-    ${props => props.michael ? "height: 30px;" : null}
 `

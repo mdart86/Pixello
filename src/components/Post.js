@@ -20,20 +20,13 @@ export const Post = () => {
     )
 }
 
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
-
 const Photo = styled.img`
     max-width: 92%;
     margin: 8px 4% 0 4%;
     border-radius: 5px;
 `
 
-const Container = styled.section`
+const Container = styled.div`
     margin: 0 7%;
 `
 
@@ -48,18 +41,24 @@ const Avatar = styled.img`
     border: 2px solid var(--green);
 `
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    &:visited {
+        color: var(--charcoal);
+    }
+`
+
 const Username = styled.p`
     font-family: 'pacifico', cursive;
     margin: 0;
     font-size: 0.9rem;
 `
 
-const Caption = styled.p`
-    margin: 5px 0;
-    font-size: 0.8rem;
-`
-
 const Icon = styled.img`
     float: right;
 `
 
+const Caption = styled.p`
+    margin: 5px 0;
+    font-size: 0.8rem;
+`

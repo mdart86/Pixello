@@ -15,12 +15,6 @@ export const Home = () => {
     )
 }
 
-const Clearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-`
-
 const Logo = styled.h1`
     text-align: center;
     color: var(--dark-pink);
@@ -29,4 +23,8 @@ const Logo = styled.h1`
     margin: 5px 0 0 0;
 `
 
-
+const Clearance = styled.div`
+    width: 100%;
+    height: 110px;
+    background: var(--white);
+`
