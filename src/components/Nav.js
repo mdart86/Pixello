@@ -41,6 +41,7 @@ const Box = styled.nav`
     &:before {
         ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: -30px; left: 50%; margin-left: -30px;" : null}
     }
+    ${window.location.pathname === "/new" ? "background: var(--blue);" : null}
 `
 
 const PlusIcon = styled.img`
