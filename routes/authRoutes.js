@@ -11,9 +11,10 @@ const {signUp, signIn} = require('../controllers/authController')
 const cloudinary = require('../utils/cloudinary')
 const upload = require('../utils/multer') 
 
-router.post('/sign_up', signUp)
 
-router.post("/", upload.single("image"), async (req, res) => {
+
+// router.route("/")
+router.post("/", upload.single("image"), async (req, res, next) => {
         try {
         // Upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
@@ -30,7 +31,11 @@ router.post("/", upload.single("image"), async (req, res) => {
         // error received
         catch (err) {
         console.log(err, "Image upload unsuccessful");
-}}); 
+        }
+        next()
+}); 
+
+router.post('/sign_up', signUp)
 
 router.post('/sign_in', signIn)
 
