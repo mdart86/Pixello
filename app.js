@@ -9,8 +9,6 @@ const authRouter = require('./routes/authRoutes')
 const postRouter = require('./routes/postRoutes') 
 const userRouter = require('./routes/userRoutes') 
 
-
-
 // port object connecting to Mongo Atlas OR MongoDB
 const port = process.env.PORT || 4000
 
@@ -43,7 +41,6 @@ mongoose.connect(dbConn,
 
 
 app.use((req, res, next) => {
-
     if(req.headers && req.headers.authorization){
         jwt.verify(req.headers.authorization.split(' ')[1], process.env.SECRET_KEY,(err, decode)=>{
             if (err) {
@@ -58,25 +55,6 @@ app.use((req, res, next) => {
         next()
     }
 })
-
-// Async await for image upload 
-app.post('/upload', async (req, res) => {
-    try {
-            const newImage = new Image({
-                imageUrl: req.body.imageUrl
-    });
-    await newImage.save();
-        res.json(newImage.imageUrl);
-    } 
-    catch (err) {
-        console.error('Something went wrong', err);
-    }
-});
-  ​
-app.get('/getLatest', async (req, res) => {
-    const getImage = await Image.findOne().sort({ _id: -1 });
-    res.json(getImage.imageUrl);
-});
     
 // Middleware added to application
 app.use(cors())
@@ -92,8 +70,7 @@ app.get("/", (req, res) => {
 // routers used in application
 app.use("/auth", authRouter)
 app.use("/posts", postRouter)
-app.use("/user", userRouter)
-
+app.use("/users", userRouter)
 
 // Listening for connections on port 4000 and has a callback function that is printed to the console
 app.listen(4000, () => {console.log(`Pixello is running on port: ${[port]}`)})
