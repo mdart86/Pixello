@@ -3,19 +3,28 @@ import styled from 'styled-components'
 import edit from '../images/edit.svg'
 import deleteIcon from '../images/delete.svg'
 
-export const PermissionsBar = () => {
-    return (
-        <Box>
-            <Icon src={edit} alt="edit pencil icon"/>
-            <Icon src={deleteIcon} alt="delete bin icon"/>
-        </Box>
-    )
+export const PermissionsBar = ( { comment } ) => {
+    
+    if (comment) {
+        return (
+            <CommentBox>
+                <Icon src={edit} alt="edit pencil icon"/>
+                <Icon src={deleteIcon} alt="delete bin icon"/>
+            </CommentBox> 
+        )
+    } else {
+        return (
+            <Box>
+                <Icon src={edit} alt="edit pencil icon"/>
+                <Icon src={deleteIcon} alt="delete bin icon"/>
+            </Box> 
+        )
+    }
 }
 
 const Box = styled.div`
     position: absolute; 
-    top: -1px;
-    left: -1px;
+    ${props => !props.comment ? "top: -1px; left: -1px;" : null}
     height: 30px;
     width: 65px;
     background: var(--dark-pink);
@@ -24,6 +33,12 @@ const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+const CommentBox = styled(Box)`
+    right: 0;
+    background: var(--green);
+    box-shadow: 0 0 5px var(--green); 
 `
 
 const Icon = styled.img`

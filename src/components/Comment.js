@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { PermissionsBar } from './PermissionsBar'
 import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-pink.svg'
 
@@ -12,6 +13,7 @@ export const Comment = () => {
     return (
        
             <Box>
+                <PermissionsBar comment="true"/>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
@@ -25,6 +27,7 @@ const Box = styled.div`
     background: var(--blue);
     margin: 0;
     border-radius: 5px;
+    position: relative;
 `
 
 const Avatar = styled.img`
