@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const UserMessage = ({right}) => {
+export const ReceivedMessage = () => {
     
     return (
         <>
@@ -18,13 +18,12 @@ const Box = styled.div`
     width: 75%;
     background: var(--blue);
     border-radius: 5px;
-    margin: 10px 0;
-    position: relative;
+    margin: 0;
 `
 
 const Text = styled.p`
     font-size: 0.8rem;
-    padding: 10px 10px 0;
+    padding: 0 10px;
     margin-bottom: 0;
 `
 
