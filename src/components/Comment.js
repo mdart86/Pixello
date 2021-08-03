@@ -6,14 +6,14 @@ import like from '../images/like-pink.svg'
 
 export const Comment = () => {
     return (
-        <>
+       
             <Box>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Icon src={like} alt="like button"/>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
             </Box>
-        </>
+        
     )
 }
 

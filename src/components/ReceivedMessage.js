@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const ReceivedMessage = ( { notification } ) => {
     
     return (
-        <>
+       
             <Box>
                 {notification 
                 ?                 
@@ -14,7 +14,7 @@ export const ReceivedMessage = ( { notification } ) => {
                 }
                 <Timestamp>dd/mm/yy</Timestamp>
             </Box>
-        </>
+        
     )
 }
 
