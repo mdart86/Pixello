@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import profilePicture from '../images/pixello-logo.png'
-import { UserMessage } from './UserMessage'
+import { ReceivedMessage } from './ReceivedMessage'
 
 export const Notifications = () => {
 
@@ -16,10 +16,10 @@ export const Notifications = () => {
                 <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>
             <MessagesContainer>
-                <UserMessage/>
-                <UserMessage/>
-                <UserMessage/>
-                <UserMessage/>
+                <ReceivedMessage/>
+                <ReceivedMessage/>
+                <ReceivedMessage/>
+                <ReceivedMessage/>
                 <Clearance/>
             </MessagesContainer>
         </>

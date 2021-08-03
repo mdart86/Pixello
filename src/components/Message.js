@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
-import { UserMessage } from './UserMessage'
+import { ReceivedMessage } from './ReceivedMessage'
 import plus from '../images/plus-white.svg'
 
 export const Message = () => {
@@ -18,9 +18,12 @@ export const Message = () => {
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
             </DetailsContainer>
             <MessagesContainer>
-                <UserMessage/>
-                <UserMessage/>
-                <UserMessage/>
+                <ReceivedMessage/>
+                <SentMessage>
+                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                    <Timestamp>dd/mm/yy</Timestamp>
+                </SentMessage>
+                <ReceivedMessage/>
                 <NewMessage>
                     <Circle>
                         <Icon src={plus} alt="plus sign"/>
@@ -88,11 +91,32 @@ const Bio = styled.p`
 `
 
 const MessagesContainer = styled.section`
-    margin: 27px auto 5px;
+    margin: 20px auto 5px;
     width: 90%;
-    position: relative;
-    left: 0;
-    top: 25%;
+    display: flex;
+    flex-direction: column;
+`
+
+const SentMessage = styled.div`
+    height: auto;
+    width: 75%;
+    background: var(--blue);
+    border-radius: 5px;
+    margin: 10px 0;   
+    align-self: flex-end; 
+`
+
+const Text = styled.p`
+    font-size: 0.8rem;
+    padding: 0 10px;
+    margin-bottom: 0;
+`
+
+const Timestamp = styled.p`
+    font-size: 0.6rem;
+    color: var(--green);
+    padding-left: 10px;
+    margin-top: 5px;
 `
 
 const NewMessage = styled.div`
@@ -101,13 +125,12 @@ const NewMessage = styled.div`
     background: var(--white);
     border-radius: 5px;
     margin: 10px 0;
-    position: absolute;
-    right: 0;
     border: 4px dashed var(--blue);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    align-self: flex-end; 
 `
 
 const Circle = styled.div`
