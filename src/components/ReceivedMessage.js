@@ -30,6 +30,6 @@ const Text = styled.p`
 const Timestamp = styled.p`
     font-size: 0.6rem;
     color: var(--green);
-    padding-left: 10px;
+    padding: 0 10px;
     margin-top: 5px;
 `
