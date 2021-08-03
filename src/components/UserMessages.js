@@ -16,7 +16,7 @@ export const UserMessages = () => {
 
 const UserMessage = styled.div`
     display: flex;
-    margin 5px auto;
+    margin 2.5px auto;
 `
 
 const Avatar = styled.img`
