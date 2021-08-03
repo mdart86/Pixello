@@ -20,10 +20,11 @@ export const CreatePost = () => {
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form>
                     <Label htmlFor="photo-upload">
+                        <Text upload="true">Upload your photo</Text>
                         <PlusCircle>
                             <Icon src={plus} alt="plus sign"/>
                         </PlusCircle>
-                        <FileName>{fileName}</FileName>
+                        <Text>{fileName}</Text>
                     </Label>
                     <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <TextArea id="caption" placeholder="Give it a caption"/>
@@ -105,8 +106,7 @@ const PlusCircle = styled.div`
     width: 60px;
     border-radius: 50%;
     background: var(--green);
-    margin: 0;
-    margin-bottom: 5px;
+    margin: 5px;
 `
 
 const Icon = styled.img`
@@ -114,10 +114,12 @@ const Icon = styled.img`
     margin: 0;
 `
 
-const FileName = styled.p`
-    margin: 0;
+const Text = styled.p`
+    margin: 5px;
     font-size: 0.8rem;
-    color: var(--green);
+    color: var(--blue);
+    font-weight: bold;
+    ${props => props.upload ? "font-style: italic; color: var(--green);" : null}
 `
 
 const TextArea = styled.textarea`
@@ -126,7 +128,9 @@ const TextArea = styled.textarea`
     border: 3px solid var(--blue); 
     height: 50px;
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
     width: 70%;
     margin: 20px auto;
     background: var(--white);
@@ -145,6 +149,9 @@ const Select = styled.select`
     background: var(--white);
     border: 3px solid var(--blue);
     border-radius: 5px;
+    color: var(--green);
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
 `
 
 //for the share button, as the other input is hidden

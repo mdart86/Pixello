@@ -1,17 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const ReceivedMessage = () => {
+export const ReceivedMessage = ( { notification } ) => {
     
     return (
-        <>
+       
             <Box>
+                {notification 
+                ?                 
+                <Text><Span>john_wilson</Span> liked your comment.</Text>
+                : 
                 <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                }
                 <Timestamp>dd/mm/yy</Timestamp>
             </Box>
-        </>
+        
     )
 }
+
 
 const Box = styled.div`
     height: auto;
@@ -27,9 +33,13 @@ const Text = styled.p`
     margin-bottom: 0;
 `
 
+const Span = styled.span`
+    font-family: 'Pacifico', cursive;
+`
+
 const Timestamp = styled.p`
     font-size: 0.6rem;
     color: var(--green);
-    padding-left: 10px;
+    padding: 0 10px;
     margin-top: 5px;
 `

@@ -4,13 +4,13 @@ import plus from '../images/plus-white.svg'
 
 export const AddComment = () => {
     return (
-        <>
+       
             <Box>
                 <Circle>
                     <Icon src={plus} alt="plus sign"/>
                 </Circle>
             </Box>
-        </>
+       
     )
 }
 

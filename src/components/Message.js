@@ -104,6 +104,7 @@ const SentMessage = styled.div`
     border-radius: 5px;
     margin: 5px 0;   
     align-self: flex-end; 
+    text-align: right;
 `
 
 const Text = styled.p`
@@ -115,7 +116,7 @@ const Text = styled.p`
 const Timestamp = styled.p`
     font-size: 0.6rem;
     color: var(--green);
-    padding-left: 10px;
+    padding: 0 10px;
     margin-top: 5px;
 `
 

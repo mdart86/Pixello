@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { PermissionsBar } from './PermissionsBar'
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
+
+// add logic to show the permissions bar 
+//only when the user is an admin, or is the 
+//owner of the post/comment/profile
 
 export const Profile = () => {
 
@@ -11,6 +16,7 @@ export const Profile = () => {
             <PinkFeature>
                 <WhiteFeature/>
             </PinkFeature>
+            <PermissionsBar/>
             <ProfileContainer>
                 <Username>john_wilson</Username>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
