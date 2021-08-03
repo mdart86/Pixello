@@ -2,6 +2,7 @@ import React from 'react'
 import GlobalStyles from './GlobalStyles'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Nav from './components/Nav'
+import DesktopNav from './components/DesktopNav'
 import Logout from './components/Logout'
 import { AppStart } from './components/AppStart'
 import { About } from './components/About';
@@ -39,8 +40,8 @@ export const App = () => {
             <Route exact path="/notifications" component={Notifications}/>
             <Route component={NotFound}/>
         </Switch>
-        <Logout excludedUrls={excludedUrls}/>
-        <Nav excludedUrls={excludedUrls}/>   
+        {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}
+        {window.innerWidth < 450 ? <Nav excludedUrls={excludedUrls}/> : <DesktopNav excludedUrls={excludedUrls}/>}
     </Router>
   )
 }
