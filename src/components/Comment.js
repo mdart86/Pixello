@@ -13,11 +13,11 @@ export const Comment = () => {
     return (
        
             <Box>
-                <PermissionsBar comment="true"/>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
+                <PermissionsBar comment="true"/>
             </Box>
         
     )
@@ -55,7 +55,7 @@ const Icon = styled.img`
 `
 
 const Caption = styled.p`
-    margin: 5px;
+    margin: 5px 20px 5px 5px;
     font-size: 0.7rem;
 `
 
