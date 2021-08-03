@@ -102,7 +102,7 @@ const SentMessage = styled.div`
     width: 75%;
     background: var(--blue);
     border-radius: 5px;
-    margin: 10px 0;   
+    margin: 5px 0;   
     align-self: flex-end; 
 `
 

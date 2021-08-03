@@ -18,7 +18,7 @@ const Box = styled.div`
     width: 75%;
     background: var(--blue);
     border-radius: 5px;
-    margin: 0;
+    margin: 5px 0;  
 `
 
 const Text = styled.p`

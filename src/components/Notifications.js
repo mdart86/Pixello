@@ -75,11 +75,10 @@ const Bio = styled.p`
 `
 
 const MessagesContainer = styled.section`
-    margin: 0 auto;
+    margin: 20px auto 5px;
     width: 90%;
-    position: absolute;
-    left: 5%;
-    top: 25%;
+    display: flex;
+    flex-direction: column;
 `
 
 const Clearance = styled.div`
