@@ -4,6 +4,10 @@ import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
 
+// add logic to show the permissions bar 
+//only when the user is an admin, or is the 
+//owner of the post/comment/profile
+
 export const Profile = () => {
 
     return (

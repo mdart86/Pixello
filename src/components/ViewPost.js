@@ -3,12 +3,18 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Comment } from './Comment'
 import { AddComment } from './AddComment'
+import { PermissionsBar } from './PermissionsBar'
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 import film from '../images/film.svg'
 import water from '../images/water.svg'
 import candid from '../images/candid.svg'
+
+
+// add logic to show the permissions bar 
+//only when the user is an admin, or is the 
+//owner of the post/comment/profile
 
 export const ViewPost = () => {
 
@@ -17,6 +23,7 @@ export const ViewPost = () => {
             <PinkFeature>
                 <WhiteFeature/>
             </PinkFeature>
+            <PermissionsBar/>
             <PostContainer>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
