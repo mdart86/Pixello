@@ -16,10 +16,10 @@ export const Notifications = () => {
                 <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>
             <MessagesContainer>
-                <ReceivedMessage/>
-                <ReceivedMessage/>
-                <ReceivedMessage/>
-                <ReceivedMessage/>
+                <ReceivedMessage notification="true"/>
+                <ReceivedMessage notification="true"/>
+                <ReceivedMessage notification="true"/>
+                <ReceivedMessage notification="true"/>
                 <Clearance/>
             </MessagesContainer>
         </>
