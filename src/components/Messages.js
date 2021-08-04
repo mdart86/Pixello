@@ -6,7 +6,26 @@ export const Messages = () => {
     
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><Circle><Text new="true">new</Text><Text>message</Text></Circle><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            {window.innerWidth < 450 
+            ? 
+            <PinkFeature>
+                <Circle>
+                    <Text new="true">new</Text>
+                    <Text>message</Text>
+                </Circle>
+                <WhiteFeature/>
+            </PinkFeature> 
+            : 
+            <>
+            <TopClearance/>
+            <CenteringContainer>
+                <Circle>
+                    <Text new="true">new</Text>
+                    <Text>message</Text>
+                </Circle>
+            </CenteringContainer>
+            </>
+            }
             <MessagesContainer>
                 <UserMessages/>
                 <UserMessages/>
@@ -21,6 +40,11 @@ export const Messages = () => {
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
+`
+
+const CenteringContainer = styled.div`
+    display: flex;
+    justify-content: center; 
 `
 
 const PinkFeature = styled.div`
@@ -67,7 +91,7 @@ const Text = styled.p`
 const MessagesContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 210px;
+    ${window.innerWidth < 450 ? "margin-top: 210px;": "margin-top: 50px;"}
 `
 
 const BottomClearance = styled.div`
