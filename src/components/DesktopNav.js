@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Logout from './Logout'
 import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
 import home from '../images/home.svg'
@@ -10,8 +11,12 @@ import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 
 const DesktopNav = ( { excludedUrls } ) => {
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    } 
     return (
         <Box>
+            <Logout excludedUrls={excludedUrls} left="true"/>
             {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
             <IconsContainer>
                 {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
