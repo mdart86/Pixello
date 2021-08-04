@@ -73,6 +73,7 @@ const Header = styled.h1`
     font-family: 'Pacifico', cursive;
     margin: 20px 0 0 0;
     font-size: 1.5rem;
+    ${window.innerWidth < 450 ? null : "text-align: center"}
 `
 
 const SubHeader = styled.h2`
@@ -80,6 +81,7 @@ const SubHeader = styled.h2`
     font-size: 1rem;
     font-weight: 300;
     font-style: italic;
+    ${window.innerWidth < 450 ? null : "text-align: center"}
 `
 
 const Form = styled.form`
@@ -120,9 +122,8 @@ const Icon = styled.img`
 const Text = styled.p`
     margin: 5px;
     font-size: 0.8rem;
-    color: var(--blue);
-    font-weight: bold;
-    ${props => props.upload ? "font-style: italic; color: var(--green);" : null}
+    color: var(--green);
+    ${props => props.upload ? "font-style: italic; color: var(--charcoal);" : "font-weight: bold;"}
 `
 
 const TextArea = styled.textarea`
@@ -132,12 +133,11 @@ const TextArea = styled.textarea`
     height: 50px;
     font-style: italic;
     font-size: 0.9rem;
-    font-weight: bold;
     font-family: 'Roboto', sans-serif;
     width: 70%;
     margin: 20px auto;
     background: var(--white);
-    color: var(--green);
+    color: var(--charcoal);
     max-width: 90%;
     &:focus {
         outline: none;
@@ -152,7 +152,7 @@ const Select = styled.select`
     background: var(--white);
     border: 3px solid var(--blue);
     border-radius: 5px;
-    color: var(--green);
+    color: var(--charcoal);
     font-family: 'Roboto', sans-serif;
     font-style: italic;
 `
@@ -163,7 +163,7 @@ const Input = styled.input`
     font-style: italic;
     font-size: 1rem;
     margin: 10px auto;
-    color: var(--white); 
+    color: var(--charcoal); 
     background: var(--green); 
     width: 80px; 
     height: 35px; 
