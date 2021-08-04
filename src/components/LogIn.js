@@ -3,29 +3,6 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
 
-export const LogIn = () => {
-    
-    return (
-        <>
-            <PinkFeature>
-                <Header>Welcome back!</Header>
-                <WhiteFeature/>
-            </PinkFeature>
-            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
-            <BackgroundBox>
-                <Form>
-                    <Input username="true" type="text" placeholder="Username"/>
-                    <Input type="password" placeholder="Password"/>
-                    <Circle>
-                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
-                    </Circle>
-                </Form>
-            </BackgroundBox>
-            <Logo>Pixello</Logo>
-        </>
-    )
-}
-
 const PinkFeature = styled.div`
     position: absolute; 
     height: 100vh; 
@@ -109,3 +86,26 @@ const Logo = styled.h1`
     left: 50%;
     margin-left: -75px;
 `
+
+export const LogIn = () => {
+    
+    return (
+        <>
+            <PinkFeature>
+                <Header>Welcome back!</Header>
+                <WhiteFeature/>
+            </PinkFeature>
+            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
+            <BackgroundBox>
+                <Form>
+                    <Input username="true" type="text" placeholder="Username"/>
+                    <Input type="password" placeholder="Password"/>
+                    <Circle>
+                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
+                    </Circle>
+                </Form>
+            </BackgroundBox>
+            <Logo>Pixello</Logo>
+        </>
+    )
+}

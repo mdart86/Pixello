@@ -5,34 +5,6 @@ import profilePicture from '../images/profile-picture.jpeg'
 import { ReceivedMessage } from './ReceivedMessage'
 import plus from '../images/plus-white.svg'
 
-export const Message = () => {
-    
-    return (
-        <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <DetailsContainer>
-                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
-                <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
-            </DetailsContainer>
-            <MessagesContainer>
-                <ReceivedMessage/>
-                <SentMessage>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                    <Timestamp>dd/mm/yy</Timestamp>
-                </SentMessage>
-                <ReceivedMessage/>
-                <NewMessage>
-                    <Circle>
-                        <Icon src={plus} alt="plus sign"/>
-                    </Circle>
-                </NewMessage>
-                {window.innerWidth < 450 ? <BottomClearance/> : null}
-            </MessagesContainer>
-        </>
-    )
-}
-
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
@@ -156,3 +128,31 @@ const BottomClearance = styled.div`
     height: 110px;
     background: var(--white);
 `
+
+export const Message = () => {
+    
+    return (
+        <>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            <DetailsContainer>
+                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
+            </DetailsContainer>
+            <MessagesContainer>
+                <ReceivedMessage/>
+                <SentMessage>
+                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                    <Timestamp>dd/mm/yy</Timestamp>
+                </SentMessage>
+                <ReceivedMessage/>
+                <NewMessage>
+                    <Circle>
+                        <Icon src={plus} alt="plus sign"/>
+                    </Circle>
+                </NewMessage>
+                {window.innerWidth < 450 ? <BottomClearance/> : null}
+            </MessagesContainer>
+        </>
+    )
+}

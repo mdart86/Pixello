@@ -2,41 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { UserMessages } from './UserMessages'
 
-export const Messages = () => {
-    
-    return (
-        <>
-            {window.innerWidth < 450 
-            ? 
-            <PinkFeature>
-                <Circle>
-                    <Text new="true">new</Text>
-                    <Text>message</Text>
-                </Circle>
-                <WhiteFeature/>
-            </PinkFeature> 
-            : 
-            <>
-            <TopClearance/>
-            <CenteringContainer>
-                <Circle>
-                    <Text new="true">new</Text>
-                    <Text>message</Text>
-                </Circle>
-            </CenteringContainer>
-            </>
-            }
-            <MessagesContainer>
-                <UserMessages/>
-                <UserMessages/>
-                <UserMessages/>
-                <UserMessages/>
-            </MessagesContainer>
-            {window.innerWidth < 450 ? <BottomClearance/> : null}
-        </>
-    )
-}
-
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
@@ -99,3 +64,38 @@ const BottomClearance = styled.div`
     height: 110px;
     background: var(--white);
 `
+
+export const Messages = () => {
+    
+    return (
+        <>
+            {window.innerWidth < 450 
+            ? 
+            <PinkFeature>
+                <Circle>
+                    <Text new="true">new</Text>
+                    <Text>message</Text>
+                </Circle>
+                <WhiteFeature/>
+            </PinkFeature> 
+            : 
+            <>
+            <TopClearance/>
+            <CenteringContainer>
+                <Circle>
+                    <Text new="true">new</Text>
+                    <Text>message</Text>
+                </Circle>
+            </CenteringContainer>
+            </>
+            }
+            <MessagesContainer>
+                <UserMessages/>
+                <UserMessages/>
+                <UserMessages/>
+                <UserMessages/>
+            </MessagesContainer>
+            {window.innerWidth < 450 ? <BottomClearance/> : null}
+        </>
+    )
+}

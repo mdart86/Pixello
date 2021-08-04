@@ -5,31 +5,6 @@ import { Link } from 'react-router-dom'
 import logoutWhite from '../images/log-out-white.svg'
 import logoutCharcoal from '../images/log-out-charcoal.svg'
 
-const Logout = ({ excludedUrls, left }) => {
-
-    if (excludedUrls.includes(window.location.pathname)) {
-        return null
-    } else if (left) {
-        return (
-            <Container left="true">
-                <BackgroundCircle left="true">
-                    <Link to="/"><Icon left="true" src={logoutCharcoal} alt="logout icon"/></Link>
-                </BackgroundCircle>
-            </Container>
-        )
-    } else {
-        return (
-            <Container>
-                <BackgroundCircle>
-                    <Link to="/"><Icon src={logoutWhite} alt="logout icon"/></Link>
-                </BackgroundCircle>
-            </Container>
-        )
-    }
-}
-
-export default withRouter(Logout)
-
 const Container = styled.div`
     position: absolute;
     top: 0;
@@ -58,3 +33,28 @@ const Icon = styled.img`
     margin-top: ${props => props.left ? "50px;" : "15px;"}
     margin-right: ${props => props.left ? "0;" : "5px;"}
 `
+
+const Logout = ({ excludedUrls, left }) => {
+
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    } else if (left) {
+        return (
+            <Container left="true">
+                <BackgroundCircle left="true">
+                    <Link to="/"><Icon left="true" src={logoutCharcoal} alt="logout icon"/></Link>
+                </BackgroundCircle>
+            </Container>
+        )
+    } else {
+        return (
+            <Container>
+                <BackgroundCircle>
+                    <Link to="/"><Icon src={logoutWhite} alt="logout icon"/></Link>
+                </BackgroundCircle>
+            </Container>
+        )
+    }
+}
+
+export default withRouter(Logout)

@@ -11,44 +11,6 @@ import film from '../images/film.svg'
 import water from '../images/water.svg'
 import candid from '../images/candid.svg'
 
-
-// add logic to show the permissions bar 
-//only when the user is an admin, or is the 
-//owner of the post/comment/profile
-
-export const ViewPost = () => {
-
-    return (
-        <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
-            <PermissionsBar/>
-            <PostContainer>
-                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
-                <Photo src={placeholder} alt="A candid photo of people on the beach."/>
-                <Icon src={like} alt="like button"/>
-                <CategoryContainer>
-                    <Link to="/filter"><Icon src={film} alt="film category"/></Link>
-                    <Link to="/filter"><Icon water="true" src={water} alt="water category"/></Link>
-                    <Link to="/filter"><Icon src={candid} alt="candid category"/></Link>
-                </CategoryContainer>
-                <CommentsContainer>
-                    <AddComment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                </CommentsContainer>
-                {window.innerWidth < 450 ? <BottomClearance/> : null}
-            </PostContainer>
-        </>
-    )
-}
-
 const PinkFeature = styled.div`
     position: relative; 
     height: 100vh; 
@@ -132,3 +94,40 @@ const BottomClearance = styled.div`
     height: 110px;
     background: var(--white);
 `
+
+// add logic to show the permissions bar 
+//only when the user is an admin, or is the 
+//owner of the post/comment/profile
+
+export const ViewPost = () => {
+
+    return (
+        <>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
+            <PermissionsBar/>
+            <PostContainer>
+                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
+                <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                <Icon src={like} alt="like button"/>
+                <CategoryContainer>
+                    <Link to="/filter"><Icon src={film} alt="film category"/></Link>
+                    <Link to="/filter"><Icon water="true" src={water} alt="water category"/></Link>
+                    <Link to="/filter"><Icon src={candid} alt="candid category"/></Link>
+                </CategoryContainer>
+                <CommentsContainer>
+                    <AddComment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                    <Comment/>
+                </CommentsContainer>
+                {window.innerWidth < 450 ? <BottomClearance/> : null}
+            </PostContainer>
+        </>
+    )
+}
