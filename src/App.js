@@ -1,7 +1,7 @@
 import React from 'react'
 import GlobalStyles from './GlobalStyles'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Nav from './components/Nav'
+import MobileNav from './components/MobileNav'
 import DesktopNav from './components/DesktopNav'
 import Logout from './components/Logout'
 import { AppStart } from './components/AppStart'
@@ -41,7 +41,7 @@ export const App = () => {
             <Route component={NotFound}/>
         </Switch>
         {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}
-        {window.innerWidth < 450 ? <Nav excludedUrls={excludedUrls}/> : <DesktopNav excludedUrls={excludedUrls}/>}
+        {window.innerWidth < 450 ? <MobileNav excludedUrls={excludedUrls}/> : <DesktopNav excludedUrls={excludedUrls}/>}
     </Router>
   )
 }

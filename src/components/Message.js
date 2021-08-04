@@ -29,7 +29,7 @@ export const Message = () => {
                         <Icon src={plus} alt="plus sign"/>
                     </Circle>
                 </NewMessage>
-            <Clearance/>
+                {window.innerWidth < 450 ? <Clearance/> : null}
             </MessagesContainer>
         </>
     )

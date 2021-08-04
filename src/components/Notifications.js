@@ -20,7 +20,7 @@ export const Notifications = () => {
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
-                <Clearance/>
+                {window.innerWidth < 450 ? <Clearance/> : null}
             </MessagesContainer>
         </>
     )

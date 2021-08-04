@@ -45,7 +45,7 @@ export const ViewPost = () => {
                     <Comment/>
                     <Comment/>
                 </CommentsContainer>
-                <Clearance/>
+                {window.innerWidth < 450 ? <Clearance/> : null}
             </PostContainer>
         </>
     )

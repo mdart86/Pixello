@@ -19,7 +19,7 @@ export const Messages = () => {
                 <UserMessages/>
                 <UserMessages/>
             </MessagesContainer>
-            <Clearance/>
+            {window.innerWidth < 450 ? <Clearance/> : null}
         </>
     )
 }

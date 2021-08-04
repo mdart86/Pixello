@@ -59,6 +59,8 @@ const IconsContainer = styled.div`
     display: flex;
     justify-content: space-around;
     margin: 5px 100px 0 0;
+    ${window.location.pathname === "/new" ? "margin-right: 15px;" : null}
+
 `
 
 const Icon = styled.img`

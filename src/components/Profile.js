@@ -131,7 +131,7 @@ const PhotoGrid = styled.div`
     row-gap: 8px;
     column-gap: 8px;
     margin: 10px auto;
-    margin-bottom: 115px;
+    ${window.innerWidth < 450 ? "margin-bottom: 115px;": null}
     width: 90%;
     justify-content: center;
     &>*{
