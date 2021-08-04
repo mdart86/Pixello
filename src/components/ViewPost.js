@@ -20,9 +20,7 @@ export const ViewPost = () => {
 
     return (
         <>
-            <PinkFeature>
-                <WhiteFeature/>
-            </PinkFeature>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PermissionsBar/>
             <PostContainer>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
@@ -45,11 +43,16 @@ export const ViewPost = () => {
                     <Comment/>
                     <Comment/>
                 </CommentsContainer>
-                {window.innerWidth < 450 ? <Clearance/> : null}
+                {window.innerWidth < 450 ? <BottomClearance/> : null}
             </PostContainer>
         </>
     )
 }
+
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 
 const PinkFeature = styled.div`
     position: relative; 
@@ -74,6 +77,7 @@ const PostContainer = styled.section`
     margin: 0 4%;
     position: absolute;
     top: 25px;
+    ${window.innerWidth < 450 ? "top: 25px;" : "top: 65px;" }
 `
 
 const StyledLink = styled(Link)`
@@ -128,7 +132,7 @@ const CommentsContainer = styled.div`
     margin-top: 5px;
 `
 
-const Clearance = styled.div`
+const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);

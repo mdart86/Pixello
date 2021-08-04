@@ -13,9 +13,7 @@ export const Profile = () => {
 
     return (
         <>
-            <PinkFeature>
-                <WhiteFeature/>
-            </PinkFeature>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <PermissionsBar/>
             <ProfileContainer>
                 <Username>john_wilson</Username>
@@ -45,6 +43,10 @@ export const Profile = () => {
     )
 }
 
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 const PinkFeature = styled.div`
     position: absolute; 
     height: 100vh; 

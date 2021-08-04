@@ -6,23 +6,22 @@ export const Messages = () => {
     
     return (
         <>
-            <PinkFeature>
-                <Circle>
-                    <Text new="true">new</Text>
-                    <Text>message</Text>
-                </Circle>
-                <WhiteFeature/>
-            </PinkFeature>
+            {window.innerWidth < 450 ? <PinkFeature><Circle><Text new="true">new</Text><Text>message</Text></Circle><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <MessagesContainer>
                 <UserMessages/>
                 <UserMessages/>
                 <UserMessages/>
                 <UserMessages/>
             </MessagesContainer>
-            {window.innerWidth < 450 ? <Clearance/> : null}
+            {window.innerWidth < 450 ? <BottomClearance/> : null}
         </>
     )
 }
+
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 
 const PinkFeature = styled.div`
     position: absolute; 
@@ -71,7 +70,7 @@ const MessagesContainer = styled.div`
     margin-top: 210px;
 `
 
-const Clearance = styled.div`
+const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);
