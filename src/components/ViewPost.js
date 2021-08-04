@@ -49,11 +49,6 @@ export const ViewPost = () => {
     )
 }
 
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-
 const PinkFeature = styled.div`
     position: relative; 
     height: 100vh; 
