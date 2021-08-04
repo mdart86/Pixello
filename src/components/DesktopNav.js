@@ -50,8 +50,9 @@ const Box = styled.nav`
 const Logo = styled.h1`
     position: absolute; 
     left: 50%;
-    width: 100px;
-    margin-left: -50px;  
+    width: 150px;
+    text-align: center;
+    margin-left: -75px;  
     color: var(--white);
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
