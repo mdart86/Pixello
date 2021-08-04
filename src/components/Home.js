@@ -6,14 +6,19 @@ export const Home = () => {
 
     return (
         <>
-            <Logo>Pixello</Logo>
+            {window.innerWidth < 450 ? <Logo>Pixello</Logo> : <TopClearance/>}
             <Post/>
             <Post/>
             <Post/>
-            <Clearance/>
+            {window.innerWidth < 450 ? <BottomClearance/> : null}
         </>
     )
 }
+
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 
 const Logo = styled.h1`
     text-align: center;
@@ -23,7 +28,7 @@ const Logo = styled.h1`
     margin: 5px 0 0 0;
 `
 
-const Clearance = styled.div`
+const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);

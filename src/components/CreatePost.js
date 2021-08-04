@@ -11,10 +11,8 @@ export const CreatePost = () => {
     }
     
     return (
-        <>
-            <PinkFeature>
-                <WhiteFeature/>
-            </PinkFeature>
+        <>  
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <Container>
                 <Header>Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
@@ -40,6 +38,11 @@ export const CreatePost = () => {
         </>
     )
 }
+
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 
 const PinkFeature = styled.div`
     position: absolute; 

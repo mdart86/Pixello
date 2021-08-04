@@ -9,7 +9,7 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 
-const Nav = ({ excludedUrls }) => {
+const MobileNav = ({ excludedUrls }) => {
     if (excludedUrls.includes(window.location.pathname)) {
         return null
     }
@@ -26,7 +26,7 @@ const Nav = ({ excludedUrls }) => {
     )
 }
 
-export default withRouter(Nav)
+export default withRouter(MobileNav)
 
 const Box = styled.nav`
     background: var(--white);

@@ -9,9 +9,7 @@ export const Message = () => {
     
     return (
         <>
-            <PinkFeature>
-                <WhiteFeature/>
-            </PinkFeature>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
@@ -29,11 +27,16 @@ export const Message = () => {
                         <Icon src={plus} alt="plus sign"/>
                     </Circle>
                 </NewMessage>
-            <Clearance/>
+                {window.innerWidth < 450 ? <BottomClearance/> : null}
             </MessagesContainer>
         </>
     )
 }
+
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 
 const PinkFeature = styled.div`
     position: absolute; 
@@ -148,7 +151,7 @@ const Icon = styled.img`
     
 `
 
-const Clearance = styled.div`
+const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);

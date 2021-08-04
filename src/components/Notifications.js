@@ -7,9 +7,7 @@ export const Notifications = () => {
 
     return (
         <>
-            <PinkFeature>
-                <WhiteFeature/>
-            </PinkFeature>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
                 <Avatar src={profilePicture} alt="Pixello Logo"/>
                 <Username>Pixello</Username>
@@ -20,11 +18,16 @@ export const Notifications = () => {
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
-                <Clearance/>
+                {window.innerWidth < 450 ? <BottomClearance/> : null}
             </MessagesContainer>
         </>
     )
 }
+
+const TopClearance = styled.div`
+    width: 100%;
+    height: 65px;
+`
 
 const PinkFeature = styled.div`
     position: absolute; 
@@ -81,7 +84,7 @@ const MessagesContainer = styled.section`
     flex-direction: column;
 `
 
-const Clearance = styled.div`
+const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);
