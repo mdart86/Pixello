@@ -45,20 +45,19 @@ const StyledLink = styled(Link)`
 `
 
 const Avatar = styled.img`
-    width: 70px;
-    height: 70px;
     object-fit: cover;
     float: left;
     margin: 35px 10px 10px 0;
     border-radius: 50%;
     border: 4px solid var(--white);
     box-sizing: border-box;
+    ${window.innerWidth < 450 ? "width: 70px; height: 70px;" : "width: 80px; height: 80px; margin-top: 30px;" }
 `
 
 const Username = styled.p`
     font-family: 'pacifico', cursive;
     margin: 0;
-    margin-top: 25px;
+    margin-top: 30px;
     font-size: 1.2rem;
 `
 
