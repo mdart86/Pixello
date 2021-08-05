@@ -5,10 +5,6 @@ import { PermissionsBar } from './PermissionsBar'
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
 
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
 const PinkFeature = styled.div`
     position: absolute; 
     height: 100vh; 
@@ -36,12 +32,14 @@ const ProfileContainer = styled.section`
     display: flex;
     flex-direction: column;
     text-align: center;
+    ${window.innerWidth > 450 ? "position: absolute; top: 65px;" : null}
 `
 
 const Username = styled.p`
     font-family: 'pacifico', cursive;
     margin: 0 auto;
     margin-top: 30px;
+    ${window.innerWidth > 450 ? "margin-top: 0;" : null}
     font-size: 1.5rem;
     width: 70%;
 `
@@ -119,9 +117,9 @@ export const Profile = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <PermissionsBar/>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <ProfileContainer>
+                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
                 <Username>john_wilson</Username>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>

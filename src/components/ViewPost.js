@@ -31,10 +31,10 @@ const WhiteFeature = styled.div`
 `
 
 const PostContainer = styled.section`
-    margin: 0 4%;
+    margin: 0;
+    padding: 0 4%;
     position: absolute;
-    top: 25px;
-    ${window.innerWidth < 450 ? "top: 25px;" : "top: 65px;" }
+    ${window.innerWidth < 450 ? "top: 0px;" : "top: 65px;" }
 `
 
 const StyledLink = styled(Link)`
@@ -49,7 +49,7 @@ const Avatar = styled.img`
     height: 70px;
     object-fit: cover;
     float: left;
-    margin: 10px 10px 10px 0;
+    margin: 35px 10px 10px 0;
     border-radius: 50%;
     border: 4px solid var(--white);
     box-sizing: border-box;
@@ -58,6 +58,7 @@ const Avatar = styled.img`
 const Username = styled.p`
     font-family: 'pacifico', cursive;
     margin: 0;
+    margin-top: 25px;
     font-size: 1.2rem;
 `
 
@@ -104,8 +105,8 @@ export const ViewPost = () => {
     return (
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
-            <PermissionsBar/>
             <PostContainer>
+                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>

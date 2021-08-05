@@ -4,7 +4,8 @@ import edit from '../images/edit.svg'
 import deleteIcon from '../images/delete.svg'
 
 const Box = styled.div` 
-    ${props => props.comment ? "position: absolute; bottom: 1px; right: 1px;" : "position: absolute; top: -1px; left: -1px;"}
+    position: absolute;
+    ${props => props.comment ? "bottom: 1px; right: 1px;" : props.desktop ? "right: 0; top: -5px;" : "top: -1px; left: -1px;"}
     height: ${props => props.comment ? "40px" : "30px"};
     width: ${props => props.comment ? "20px" : "65px"};
     background: ${props => props.comment ? "var(--green)" : "var(--dark-pink)"};
@@ -21,7 +22,7 @@ const Icon = styled.img`
     margin: ${props => props.comment ? "0 2px" : "0 5px"}
 `
 
-export const PermissionsBar = ( { comment } ) => {
+export const PermissionsBar = ( { comment, desktop } ) => {
     
     if (comment) {
         return (
@@ -30,7 +31,14 @@ export const PermissionsBar = ( { comment } ) => {
                 <Icon comment="true" src={deleteIcon} alt="delete bin icon"/>
             </Box> 
         )
-    } else {
+    } if (desktop) {
+        return (
+            <Box desktop="true">
+                <Icon desktop="true" src={edit} alt="edit pencil icon"/>
+                <Icon desktop="true" src={deleteIcon} alt="delete bin icon"/>
+            </Box> 
+        )
+    }else {
         return (
             <Box>
                 <Icon src={edit} alt="edit pencil icon"/>
