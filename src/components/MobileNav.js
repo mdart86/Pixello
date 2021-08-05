@@ -9,25 +9,6 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 
-const MobileNav = ({ excludedUrls }) => {
-    if (excludedUrls.includes(window.location.pathname)) {
-        return null
-    }
-    return (
-        <Box>
-            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
-            <IconsContainer>
-                {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
-                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
-                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
-                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
-            </IconsContainer>
-        </Box>
-    )
-}
-
-export default withRouter(MobileNav)
-
 const Box = styled.nav`
     background: var(--white);
     width: 100%;
@@ -65,3 +46,22 @@ const IconsContainer = styled.div`
 const Icon = styled.img`
     height: 30px;
 `
+
+const MobileNav = ({ excludedUrls }) => {
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    }
+    return (
+        <Box>
+            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
+            <IconsContainer>
+                {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
+                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
+                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
+                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
+            </IconsContainer>
+        </Box>
+    )
+}
+
+export default withRouter(MobileNav)

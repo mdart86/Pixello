@@ -3,27 +3,6 @@ import styled from 'styled-components'
 import profilePicture from '../images/pixello-logo.png'
 import { ReceivedMessage } from './ReceivedMessage'
 
-export const Notifications = () => {
-
-    return (
-        <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <DetailsContainer>
-                <Avatar src={profilePicture} alt="Pixello Logo"/>
-                <Username>Pixello</Username>
-                <Bio>Here's where we'll notify you of activity related to your account.</Bio>
-            </DetailsContainer>
-            <MessagesContainer>
-                <ReceivedMessage notification="true"/>
-                <ReceivedMessage notification="true"/>
-                <ReceivedMessage notification="true"/>
-                <ReceivedMessage notification="true"/>
-                {window.innerWidth < 450 ? <BottomClearance/> : null}
-            </MessagesContainer>
-        </>
-    )
-}
-
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
@@ -89,3 +68,24 @@ const BottomClearance = styled.div`
     height: 110px;
     background: var(--white);
 `
+
+export const Notifications = () => {
+
+    return (
+        <>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            <DetailsContainer>
+                <Avatar src={profilePicture} alt="Pixello Logo"/>
+                <Username>Pixello</Username>
+                <Bio>Here's where we'll notify you of activity related to your account.</Bio>
+            </DetailsContainer>
+            <MessagesContainer>
+                <ReceivedMessage notification="true"/>
+                <ReceivedMessage notification="true"/>
+                <ReceivedMessage notification="true"/>
+                <ReceivedMessage notification="true"/>
+                {window.innerWidth < 450 ? <BottomClearance/> : null}
+            </MessagesContainer>
+        </>
+    )
+}

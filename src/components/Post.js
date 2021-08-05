@@ -5,21 +5,6 @@ import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 
-export const Post = () => {
-
-    return (
-        <>
-            <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-            <Container>
-                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <Icon src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
-            </Container>
-        </>
-    )
-}
-
 const Photo = styled.img`
     max-width: 92%;
     margin: 8px 4% 0 4%;
@@ -63,3 +48,18 @@ const Caption = styled.p`
     margin: 5px 0;
     font-size: 0.8rem;
 `
+
+export const Post = () => {
+
+    return (
+        <>
+            <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+            <Container>
+                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
+                <Icon src={like} alt="like button"/>
+                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
+            </Container>
+        </>
+    )
+}

@@ -2,43 +2,6 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import plus from '../images/plus-white.svg'
 
-export const CreatePost = () => {
-    
-    const [fileName, setFileName] = useState("No File Chosen")
-
-    function displayFileInfo(e) {
-        setFileName(e.target.files[0].name)
-    }
-    
-    return (
-        <>  
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <Container>
-                <Header>Hey there, john_wilson,</Header>
-                <SubHeader>We're excited to see what you'll share!</SubHeader>
-                <Form>
-                    <Label htmlFor="photo-upload">
-                        <Text upload="true">Upload your photo</Text>
-                        <PlusCircle>
-                            <Icon src={plus} alt="plus sign"/>
-                        </PlusCircle>
-                        <Text>{fileName}</Text>
-                    </Label>
-                    <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
-                    <TextArea id="caption" placeholder="Give it a caption"/>
-                    <Select name="category">
-                        <option value="default" hidden>Categories</option>
-                        <option value="film">Film</option>
-                        <option value="candid">Candid</option>
-                        <option value="water">Water</option>
-                    </Select>
-                    <Input share="true" type="submit" value="Share!"/>
-                </Form>
-            </Container>
-        </>
-    )
-}
-
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
@@ -174,3 +137,40 @@ const Input = styled.input`
         border: 3px solid var(--dark-pink);
     }
 `
+
+export const CreatePost = () => {
+    
+    const [fileName, setFileName] = useState("No File Chosen")
+
+    function displayFileInfo(e) {
+        setFileName(e.target.files[0].name)
+    }
+    
+    return (
+        <>  
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            <Container>
+                <Header>Hey there, john_wilson,</Header>
+                <SubHeader>We're excited to see what you'll share!</SubHeader>
+                <Form>
+                    <Label htmlFor="photo-upload">
+                        <Text upload="true">Upload your photo</Text>
+                        <PlusCircle>
+                            <Icon src={plus} alt="plus sign"/>
+                        </PlusCircle>
+                        <Text>{fileName}</Text>
+                    </Label>
+                    <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <TextArea id="caption" placeholder="Give it a caption"/>
+                    <Select name="category">
+                        <option value="default" hidden>Categories</option>
+                        <option value="film">Film</option>
+                        <option value="candid">Candid</option>
+                        <option value="water">Water</option>
+                    </Select>
+                    <Input share="true" type="submit" value="Share!"/>
+                </Form>
+            </Container>
+        </>
+    )
+}

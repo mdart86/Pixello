@@ -5,39 +5,6 @@ import arrow from '../images/arrow.svg'
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 
-export const About = () => {
-    
-    return (
-        <>
-            <Circle pink="true" medium="true">
-                <Link to="/"><Icon arrow="true" src={arrow} alt="go back arrow"/></Link>
-            </Circle>
-            <Circle blue="true" large="true"></Circle>
-            <Circle green="true" xlarge="true">
-                <Header title="true">Hey there!</Header>
-                <Text para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
-                <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
-                <Text copywrite="true">&#169; 2021</Text>
-            </Circle>
-            <Circle pink="true" small="true">
-                <Header>Emily</Header>
-                <IconsContainer>
-                    <a href="https://github.com/emigraced/" target="blank"><Icon emily="true" src={github} alt="Emily's github social icon"/></a>
-                    <a href="https://twitter.com/emigraced" target="blank"><Icon emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
-                </IconsContainer>
-            </Circle>
-            <Circle blue="true" medium="true">
-                <Header>Michael</Header>
-                <IconsContainer>
-                    <a href="https://github.com/mdart86/" target="blank"><Icon michael="true" src={github} alt="Michael's github social icon"/></a>
-                    <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
-                </IconsContainer>
-            </Circle>
-            <Logo>Pixello</Logo>
-        </>
-    )
-}
-
 const Circle = styled.div`
     border-radius: 50%;
     position: absolute;
@@ -101,3 +68,36 @@ const Logo = styled.h1`
     left: 50%;
     margin: 0 0 0 -75px; 
 `
+
+export const About = () => {
+    
+    return (
+        <>
+            <Circle pink="true" medium="true">
+                <Link to="/"><Icon arrow="true" src={arrow} alt="go back arrow"/></Link>
+            </Circle>
+            <Circle blue="true" large="true"></Circle>
+            <Circle green="true" xlarge="true">
+                <Header title="true">Hey there!</Header>
+                <Text para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
+                <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
+                <Text copywrite="true">&#169; 2021</Text>
+            </Circle>
+            <Circle pink="true" small="true">
+                <Header>Emily</Header>
+                <IconsContainer>
+                    <a href="https://github.com/emigraced/" target="blank"><Icon emily="true" src={github} alt="Emily's github social icon"/></a>
+                    <a href="https://twitter.com/emigraced" target="blank"><Icon emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
+                </IconsContainer>
+            </Circle>
+            <Circle blue="true" medium="true">
+                <Header>Michael</Header>
+                <IconsContainer>
+                    <a href="https://github.com/mdart86/" target="blank"><Icon michael="true" src={github} alt="Michael's github social icon"/></a>
+                    <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
+                </IconsContainer>
+            </Circle>
+            <Logo>Pixello</Logo>
+        </>
+    )
+}

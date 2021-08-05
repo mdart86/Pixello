@@ -10,27 +10,6 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 
-const DesktopNav = ( { excludedUrls } ) => {
-    if (excludedUrls.includes(window.location.pathname)) {
-        return null
-    } 
-    return (
-        <Box>
-            <Logout excludedUrls={excludedUrls} left="true"/>
-            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
-            <Logo>Pixello</Logo>
-            <IconsContainer>
-                {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
-                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
-                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
-                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
-            </IconsContainer>
-        </Box>
-    )
-}
-
-export default withRouter(DesktopNav)
-
 const Box = styled.nav`
     display: flex;
     align-items: center;
@@ -50,8 +29,9 @@ const Box = styled.nav`
 const Logo = styled.h1`
     position: absolute; 
     left: 50%;
-    width: 100px;
-    margin-left: -50px;  
+    width: 150px;
+    text-align: center;
+    margin-left: -75px;  
     color: var(--white);
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
@@ -77,3 +57,24 @@ const Icon = styled.img`
     height: 30px;
     margin: 0;
 `
+
+const DesktopNav = ( { excludedUrls } ) => {
+    if (excludedUrls.includes(window.location.pathname)) {
+        return null
+    } 
+    return (
+        <Box>
+            <Logout excludedUrls={excludedUrls} left="true"/>
+            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
+            <Logo>Pixello</Logo>
+            <IconsContainer>
+                {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
+                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
+                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
+                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
+            </IconsContainer>
+        </Box>
+    )
+}
+
+export default withRouter(DesktopNav)

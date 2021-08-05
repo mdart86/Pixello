@@ -2,30 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const AppStart = () => {
-
-    return (
-        <>
-            <Circle blue="true" large="true"></Circle>
-            <Circle pink="true" small="true"></Circle>
-            <Circle blue="true" small="true"></Circle>
-            <Circle green="true" xsmall="true"></Circle>
-            <Logo>Pixello</Logo>
-            <Tagline>where the magic happens</Tagline>
-            <Circle green="true" small="true"></Circle>
-            <Circle pink="true" xlarge="true">
-                <StyledLink to="/sign-up" signup="true">sign up</StyledLink>
-            </Circle>
-            <Circle green="true" xxlarge="true">
-                <StyledLink to="/about" about="true">About the creators</StyledLink>
-            </Circle>
-            <Circle blue="true" medium="true">
-                <StyledLink to="/log-in" login="true">log in</StyledLink>
-            </Circle>
-        </>
-    )
-}
-
 const Circle = styled.div`
     border-radius: 50%;
     position: absolute;
@@ -80,3 +56,27 @@ const StyledLink = styled(Link)`
     ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
     ${props => props.login ? "font-size: 1.3rem; margin-top: -110px;": null}
 `
+
+export const AppStart = () => {
+
+    return (
+        <>
+            <Circle blue="true" large="true"></Circle>
+            <Circle pink="true" small="true"></Circle>
+            <Circle blue="true" small="true"></Circle>
+            <Circle green="true" xsmall="true"></Circle>
+            <Logo>Pixello</Logo>
+            <Tagline>where the magic happens</Tagline>
+            <Circle green="true" small="true"></Circle>
+            <Circle pink="true" xlarge="true">
+                <StyledLink to="/sign-up" signup="true">sign up</StyledLink>
+            </Circle>
+            <Circle green="true" xxlarge="true">
+                <StyledLink to="/about" about="true">About the creators</StyledLink>
+            </Circle>
+            <Circle blue="true" medium="true">
+                <StyledLink to="/log-in" login="true">log in</StyledLink>
+            </Circle>
+        </>
+    )
+}

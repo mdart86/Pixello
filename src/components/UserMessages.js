@@ -3,17 +3,6 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import profilePicture from '../images/profile-picture.jpeg'
 
-export const UserMessages = () => {
-    return (
-        
-        <UserMessage>
-            <Link to="/message"><Avatar src={profilePicture} alt="profile picture"/></Link>
-            <StyledLink to="/message"><Text>john_wilson</Text></StyledLink>
-        </UserMessage>
-        
-    )
-}
-
 const UserMessage = styled.div`
     display: flex;
     margin 2.5px auto;
@@ -42,3 +31,14 @@ const StyledLink = styled(Link)`
         color: var(--charcoal);
     }
 `
+
+export const UserMessages = () => {
+    return (
+        
+        <UserMessage>
+            <Link to="/message"><Avatar src={profilePicture} alt="profile picture"/></Link>
+            <StyledLink to="/message"><Text>john_wilson</Text></StyledLink>
+        </UserMessage>
+        
+    )
+}

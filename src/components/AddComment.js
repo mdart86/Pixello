@@ -2,18 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import plus from '../images/plus-white.svg'
 
-export const AddComment = () => {
-    return (
-       
-            <Box>
-                <Circle>
-                    <Icon src={plus} alt="plus sign"/>
-                </Circle>
-            </Box>
-       
-    )
-}
-
 const Box = styled.div`
     background: var(--white);
     margin: 0;
@@ -37,3 +25,15 @@ const Circle = styled.div`
 const Icon = styled.img`
     height: 30px;
 `
+
+export const AddComment = () => {
+    return (
+       
+            <Box>
+                <Circle>
+                    <Icon src={plus} alt="plus sign"/>
+                </Circle>
+            </Box>
+       
+    )
+}

@@ -4,46 +4,6 @@ import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
 import plus from '../images/plus-white.svg'
 
-export const SignUp = () => {
-
-    const [fileName, setFileName] = useState("No File Chosen")
-
-    function displayFileInfo(e) {
-        setFileName(e.target.files[0].name)
-    }
-    
-    return (
-        <>
-            <PinkFeature>
-                <Header>Create your account</Header>
-                <WhiteFeature/>
-            </PinkFeature>
-            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
-            <BackgroundBox>
-                <Form>
-                    <Input username="true" type="text" id="username" placeholder="Username"/>
-                    <Input type="email" id="email" placeholder="Email"/>
-                    <Input type="password" id="password" placeholder="Password"/>
-                    <Input type="password" id="password-confirmation" placeholder="Confirm password"/>
-                    <TextArea id="bio" placeholder="Your bio"/>
-                    <p>Your avatar:</p>
-                    <FileName>{fileName}</FileName>
-                    <Label htmlFor="avatar-upload">
-                        <PlusCircle>
-                            <Icon upload="true" src={plus} alt="plus sign"/>
-                        </PlusCircle>
-                    </Label>
-                    <Input type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
-                    <Circle>
-                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
-                    </Circle>
-                </Form>
-            </BackgroundBox>
-            <Logo>Pixello</Logo>
-        </>
-    )
-}
-
 const PinkFeature = styled.div`
     position: absolute; 
     height: 100vh; 
@@ -178,3 +138,43 @@ const Logo = styled.h1`
     width: 150px;
     margin: 0 auto;
 `
+
+export const SignUp = () => {
+
+    const [fileName, setFileName] = useState("No File Chosen")
+
+    function displayFileInfo(e) {
+        setFileName(e.target.files[0].name)
+    }
+    
+    return (
+        <>
+            <PinkFeature>
+                <Header>Create your account</Header>
+                <WhiteFeature/>
+            </PinkFeature>
+            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
+            <BackgroundBox>
+                <Form>
+                    <Input username="true" type="text" id="username" placeholder="Username"/>
+                    <Input type="email" id="email" placeholder="Email"/>
+                    <Input type="password" id="password" placeholder="Password"/>
+                    <Input type="password" id="password-confirmation" placeholder="Confirm password"/>
+                    <TextArea id="bio" placeholder="Your bio"/>
+                    <p>Your avatar:</p>
+                    <FileName>{fileName}</FileName>
+                    <Label htmlFor="avatar-upload">
+                        <PlusCircle>
+                            <Icon upload="true" src={plus} alt="plus sign"/>
+                        </PlusCircle>
+                    </Label>
+                    <Input type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <Circle>
+                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
+                    </Circle>
+                </Form>
+            </BackgroundBox>
+            <Logo>Pixello</Logo>
+        </>
+    )
+}

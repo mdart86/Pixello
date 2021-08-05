@@ -2,19 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Post } from './Post' 
 
-export const Home = () => {
-
-    return (
-        <>
-            {window.innerWidth < 450 ? <Logo>Pixello</Logo> : <TopClearance/>}
-            <Post/>
-            <Post/>
-            <Post/>
-            {window.innerWidth < 450 ? <BottomClearance/> : null}
-        </>
-    )
-}
-
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
@@ -33,3 +20,16 @@ const BottomClearance = styled.div`
     height: 110px;
     background: var(--white);
 `
+
+export const Home = () => {
+
+    return (
+        <>
+            {window.innerWidth < 450 ? <Logo>Pixello</Logo> : <TopClearance/>}
+            <Post/>
+            <Post/>
+            <Post/>
+            {window.innerWidth < 450 ? <BottomClearance/> : null}
+        </>
+    )
+}
