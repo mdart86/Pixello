@@ -21,7 +21,7 @@ if (process.env.NODE_ENV !== 'production'){
 }
 
 // connection to MongoDB_URI using encryption
-const dbConn = process.env.MONGODB_URI
+const dbConn = process.env.MONGOATLAS_URI
 
 // connects to database and also handles errors
 mongoose.connect(dbConn,
@@ -71,6 +71,11 @@ app.get("/", (req, res) => {
 app.use("/auth", authRouter)
 app.use("/posts", postRouter)
 app.use("/users", userRouter)
+
+app.use(function (err, req, res, next) {
+    console.log('This is the invalid field ->', err.field)
+    next(err)
+})
 
 // Listening for connections on port 4000 and has a callback function that is printed to the console
 app.listen(4000, () => {console.log(`Pixello is running on port: ${[port]}`)})
