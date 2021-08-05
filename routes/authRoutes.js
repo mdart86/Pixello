@@ -3,6 +3,8 @@ const express = require('express')
 
 // Configured express router
 const router = express.Router()
+let multer = require('multer')
+let multParse = multer()
 
 // Requiring functions that sit within controllers
 const {signUp, signIn} = require('../controllers/authController')
@@ -11,10 +13,8 @@ const {signUp, signIn} = require('../controllers/authController')
 const cloudinary = require('../utils/cloudinary')
 const upload = require('../utils/multer') 
 
-
-
 // router.route("/")
-router.post("/", upload.single("image"), async (req, res, next) => {
+router.post('/', upload.single('image'), async (req, res, next) => {
         try {
         // Upload image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
@@ -35,7 +35,7 @@ router.post("/", upload.single("image"), async (req, res, next) => {
         next()
 }); 
 
-router.post('/sign_up', signUp)
+router.post('/sign_up', multParse.none(), signUp)
 
 router.post('/sign_in', signIn)
 
