@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "cypress": "^8.2.0",
+    "eslint-plugin-cypress": "^2.11.3",
     "nodemon": "^2.0.12"
   },
   "engines": {
