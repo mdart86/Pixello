@@ -32,14 +32,14 @@ const ProfileContainer = styled.section`
     display: flex;
     flex-direction: column;
     text-align: center;
-    ${window.innerWidth > 450 ? "position: absolute; top: 65px;" : null}
+    ${window.innerWidth >= 450 ? "position: absolute; top: 65px;" : null}
 `
 
 const Username = styled.p`
     font-family: 'pacifico', cursive;
     margin: 0 auto;
     margin-top: 30px;
-    ${window.innerWidth > 450 ? "margin-top: 0;" : null}
+    ${window.innerWidth >= 450 ? "margin-top: 0;" : null}
     font-size: 1.5rem;
     width: 70%;
 `
@@ -93,7 +93,7 @@ const PhotoGrid = styled.div`
     row-gap: 8px;
     column-gap: 8px;
     margin: 10px auto;
-    ${window.innerWidth < 450 ? "margin-bottom: 115px;": null}
+    ${window.innerWidth < 450 ? "margin-bottom: 115px;": "margin-bottom: 10px;"}
     width: 90%;
     justify-content: center;
     &>*{

@@ -94,6 +94,7 @@ const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);
+    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 // add logic to show the permissions bar 
@@ -127,7 +128,7 @@ export const ViewPost = () => {
                     <Comment/>
                     <Comment/>
                 </CommentsContainer>
-                {window.innerWidth < 450 ? <BottomClearance/> : null}
+                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </PostContainer>
         </>
     )

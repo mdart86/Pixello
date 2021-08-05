@@ -127,6 +127,7 @@ const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);
+    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Message = () => {
@@ -151,7 +152,7 @@ export const Message = () => {
                         <Icon src={plus} alt="plus sign"/>
                     </Circle>
                 </NewMessage>
-                {window.innerWidth < 450 ? <BottomClearance/> : null}
+                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
         </>
     )

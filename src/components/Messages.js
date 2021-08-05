@@ -63,6 +63,7 @@ const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);
+    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Messages = () => {
@@ -95,7 +96,7 @@ export const Messages = () => {
                 <UserMessages/>
                 <UserMessages/>
             </MessagesContainer>
-            {window.innerWidth < 450 ? <BottomClearance/> : null}
+            {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }

@@ -19,6 +19,7 @@ const BottomClearance = styled.div`
     width: 100%;
     height: 110px;
     background: var(--white);
+    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Home = () => {
@@ -29,7 +30,7 @@ export const Home = () => {
             <Post/>
             <Post/>
             <Post/>
-            {window.innerWidth < 450 ? <BottomClearance/> : null}
+            {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }
