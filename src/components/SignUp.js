@@ -14,17 +14,13 @@ import { Input } from './styled/Input.styled'
 import { IconSignUp } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/BackgroundBox.styled'
 import { Header } from './styled/Header.styled'
+import { FileName } from './styled/Filename.styled'
 
 const Form = styled.form`
     display: flex;
     flex-direction: column;
     text-align: center;
     color: var(--white);
-`
-
-const FileName = styled.p`
-    margin-top: -5px;
-    font-size: 0.8rem;
 `
 
 const Circle = styled.div`

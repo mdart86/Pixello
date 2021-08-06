@@ -14,6 +14,8 @@ import { PhotoGrid } from './styled/PhotoGrid.styled'
 import { PhotoPreview } from './styled/Photo.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { AvatarContainer } from './styled/AvatarContainer.styled'
+import { GridContainer } from './styled/GridContainer.styled'
+import { Span } from './styled/Span.styled'
 
 const Bio = styled.p`
     margin: 5px auto;
@@ -28,14 +30,6 @@ const Count = styled.p`
     display: inline;
 `
 
-const Cursive = styled.span`
-    font-family: 'Pacifico', cursive;
-`
-
-const GridContainer = styled.div`
-    width: 100%;
-    height: auto;
-`
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 
@@ -54,8 +48,8 @@ export const Profile = () => {
                     <Avatar profile="true" src={profilePicture} alt="profile picture"/>
                 </AvatarContainer>
                 <Summary>
-                    <Count><Cursive>Posts: </Cursive>9</Count>
-                    <Count><Cursive>Likes: </Cursive>2.5K</Count>
+                    <Count><Span>Posts: </Span>9</Count>
+                    <Count><Span>Likes: </Span>2.5K</Count>
                 </Summary>
                 <GridContainer>
                     <PhotoGrid>

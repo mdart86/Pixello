@@ -271,10 +271,7 @@ const Count = styled.p`
     font-size: 0.9rem;
     display: inline;
 `
-//profile
-const Cursive = styled.span`
-    font-family: 'Pacifico', cursive;
-`
+
 //message
 const DetailsContainer = styled.div`
     width: 90%;
@@ -284,11 +281,6 @@ const DetailsContainer = styled.div`
 const DetailsContainer = styled.div`
     width: 90%;
     margin: 30px auto 10px;
-`
-//sign up
-const FileName = styled.p`
-    margin-top: -5px;
-    font-size: 0.8rem;
 `
 //create post
 const Form = styled.form`
@@ -307,11 +299,6 @@ const Form = styled.form`
     flex-direction: column;
     text-align: center;
     color: var(--white);
-`
-//profile
-const GridContainer = styled.div`
-    width: 100%;
-    height: auto;
 `
 
 
