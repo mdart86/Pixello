@@ -6,22 +6,13 @@ import profilePicture from '../images/profile-picture.jpeg'
 import { StyledLink } from './styled/StyledLink.styled'
 import { UserMessage } from './styled/UserMessage.styled'
 import { TextUserMessages } from './styled/Text.styled'
-
-const Avatar = styled.img`
-    height: 65px;
-    width: 65px;
-    object-fit: cover; 
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 4px solid var(--blue);
-    margin-right: 10px;
-`
+import { Avatar } from './styled/Avatar.styled'
 
 export const UserMessages = () => {
     return (
         
         <UserMessage>
-            <Link to="/message"><Avatar src={profilePicture} alt="profile picture"/></Link>
+            <Link to="/message"><Avatar userMessages="true" src={profilePicture} alt="profile picture"/></Link>
             <StyledLink to="/message"><TextUserMessages>john_wilson</TextUserMessages></StyledLink>
         </UserMessage>
         

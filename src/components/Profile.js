@@ -12,6 +12,7 @@ import { Summary } from './styled/Summary.styled'
 import { ProfileContainer } from './styled/ProfileContainer.styled'
 import { PhotoGrid } from './styled/PhotoGrid.styled'
 import { PhotoPreview } from './styled/Photo.styled'
+import { Avatar } from './styled/Avatar.styled'
 
 const Bio = styled.p`
     margin: 5px auto;
@@ -24,15 +25,6 @@ const AvatarContainer = styled.div`
     width: 90px;
     height: 90px;
     margin: 10px auto;
-`
-
-const Avatar = styled.img`
-    width: 90px;
-    height: 90px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    box-sizing: border-box;
 `
 
 const Count = styled.p`
@@ -64,7 +56,7 @@ export const Profile = () => {
                 <Username fontSize="1.5rem" profile="true">john_wilson</Username>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>
-                    <Avatar src={profilePicture} alt="profile picture"/>
+                    <Avatar profile="true" src={profilePicture} alt="profile picture"/>
                 </AvatarContainer>
                 <Summary>
                     <Count><Cursive>Posts: </Cursive>9</Count>

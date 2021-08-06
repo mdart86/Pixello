@@ -19,16 +19,7 @@ import { Username } from './styled/Username.styled'
 import { PostContainer } from './styled/PostContainer.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconViewPost } from './styled/Icon.styled'
-
-const Avatar = styled.img`
-    object-fit: cover;
-    float: left;
-    margin: 35px 10px 10px 0;
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    box-sizing: border-box;
-    ${window.innerWidth < 450 ? "width: 70px; height: 70px;" : "width: 80px; height: 80px; margin-top: 30px;" }
-`
+import { Avatar } from './styled/Avatar.styled'
 
 const Caption = styled.p`
     margin: 0;
@@ -60,7 +51,7 @@ export const ViewPost = () => {
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
-                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to="/profile"><Avatar viewPost="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
                 <Photo viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>

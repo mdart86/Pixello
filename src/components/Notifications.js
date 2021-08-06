@@ -9,21 +9,11 @@ import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
+import { Avatar } from './styled/Avatar.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
     margin: 30px auto 10px;
-`
-
-const Avatar = styled.img`
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
-    float: left;
-    margin: 0px 15px 10px 0px;
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    box-sizing: border-box;
 `
 
 const Bio = styled.p`
@@ -37,7 +27,7 @@ export const Notifications = () => {
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
-                <Avatar src={profilePicture} alt="Pixello Logo"/>
+                <Avatar notifications="true" src={profilePicture} alt="Pixello Logo"/>
                 <Username fontSize="1.2rem">Pixello</Username>
                 <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>

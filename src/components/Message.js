@@ -16,22 +16,13 @@ import { TextMessage } from './styled/Text.styled'
 import { SentMessage } from './styled/SentMessage.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
 import { NewMessage } from './styled/NewMessage.styled'
+import { Avatar } from './styled/Avatar.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
     margin: 30px auto 10px;
 `
 
-const Avatar = styled.img`
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
-    float: left;
-    margin: 0 15px 10px 0px;
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    box-sizing: border-box;
-`
 
 const Bio = styled.p`
     margin: 0;
@@ -55,7 +46,7 @@ export const Message = () => {
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
-                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to="/profile"><Avatar message="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username fontSize="1.2rem">john_wilson</Username></StyledLink>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
             </DetailsContainer>
