@@ -8,6 +8,7 @@ import { TopClearance } from './styled/TopClearance.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { TextCreatePost } from './styled/Text.styled'
 import { SubHeader } from './styled/H2s.styled'
+import { Select } from './styled/Select.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -53,18 +54,6 @@ const PlusCircle = styled.div`
 const Icon = styled.img`
     height: 60px;
     margin: 0;
-`
-
-const Select = styled.select`
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    background: var(--white);
-    border: 3px solid var(--blue);
-    border-radius: 5px;
-    color: var(--charcoal);
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
 `
 
 //for the share button, as the other input is hidden

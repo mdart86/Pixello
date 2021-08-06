@@ -3,6 +3,7 @@ import styled from 'styled-components'
 //import styled components 
 import { Timestamp } from './styled/Timestamp.styled'
 import { TextReceivedMessage } from './styled/Text.styled'
+import { Span } from './styled/Span.styled'
 
 const Box = styled.div`
     height: auto;
@@ -12,9 +13,6 @@ const Box = styled.div`
     margin: 5px 0;  
 `
 
-const Span = styled.span`
-    font-family: 'Pacifico', cursive;
-`
 
 export const ReceivedMessage = ( { notification } ) => {
     

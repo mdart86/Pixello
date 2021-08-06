@@ -13,6 +13,8 @@ import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
 import { Timestamp } from './styled/Timestamp.styled'
 import { TextMessage } from './styled/Text.styled'
+import { SentMessage } from './styled/SentMessage.styled'
+
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -41,17 +43,6 @@ const MessagesContainer = styled.section`
     display: flex;
     flex-direction: column;
 `
-
-const SentMessage = styled.div`
-    height: auto;
-    width: 75%;
-    background: var(--blue);
-    border-radius: 5px;
-    margin: 5px 0;   
-    align-self: flex-end; 
-    text-align: right;
-`
-
 const NewMessage = styled.div`
     height: 50px;
     width: 75%;

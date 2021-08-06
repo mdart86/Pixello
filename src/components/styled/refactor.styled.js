@@ -781,32 +781,9 @@ const ProfileContainer = styled.section`
     text-align: center;
     ${window.innerWidth >= 450 ? "position: absolute; top: 65px;" : null}
 `
-//create post
-const Select = styled.select`
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    background: var(--white);
-    border: 3px solid var(--blue);
-    border-radius: 5px;
-    color: var(--charcoal);
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-`
-//message
-const SentMessage = styled.div`
-    height: auto;
-    width: 75%;
-    background: var(--blue);
-    border-radius: 5px;
-    margin: 5px 0;   
-    align-self: flex-end; 
-    text-align: right;
-`
-//received message
-const Span = styled.span`
-    font-family: 'Pacifico', cursive;
-`
+
+
+
 
 
 
