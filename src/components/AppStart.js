@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 //import styled components
 import { TextAppStart } from './styled/Text.styled'
-import { Tagline } from './styled/H2s.styled'
+import { Tagline } from './styled/Header.styled'
 import { Logo } from './styled/Logo.styled'
 
 const Circle = styled.div`

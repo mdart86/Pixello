@@ -313,32 +313,5 @@ const GridContainer = styled.div`
     width: 100%;
     height: auto;
 `
-//about 
-const Header = styled.h2`
-    font-family: 'Pacifico', cursive;
-    margin: 0;
-    ${props => props.title ? "font-size: 2rem;": "font-size: 1rem;"}
-`
-// login
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    margin: 0;
-    padding-top: 40px;
-`
-//create post
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    margin: 20px 0 0 0;
-    font-size: 1.5rem;
-    ${window.innerWidth < 450 ? null : "text-align: center"}
-`
-//sign up
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    margin: 0;
-    padding-top: 40px;
-`
 
 

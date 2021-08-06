@@ -9,13 +9,7 @@ import { Logo } from './styled/Logo.styled'
 import { Input } from './styled/Input.styled'
 import { IconLogin } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/BackgroundBox.styled'
-
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    margin: 0;
-    padding-top: 40px;
-`
+import { Header } from './styled/Header.styled'
 
 const Form = styled.form`
     display: flex;
@@ -41,7 +35,7 @@ export const LogIn = () => {
     return (
         <>
             <PinkFeature>
-                <Header>Welcome back!</Header>
+                <Header login="true">Welcome back!</Header>
                 <WhiteFeature/>
             </PinkFeature>
             <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>

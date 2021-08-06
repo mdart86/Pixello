@@ -7,7 +7,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { TextCreatePost } from './styled/Text.styled'
-import { SubHeader } from './styled/H2s.styled'
+import { SubHeader, Header } from './styled/Header.styled'
 import { Select } from './styled/Select.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
 import { Label } from './styled/Label.styled'
@@ -16,13 +16,6 @@ import { PlusIcon } from './styled/Icon.styled'
 
 const Container = styled.section`
     margin: 0 20px;
-`
-
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    margin: 20px 0 0 0;
-    font-size: 1.5rem;
-    ${window.innerWidth < 450 ? null : "text-align: center"}
 `
 
 const Form = styled.form`
@@ -43,7 +36,7 @@ export const CreatePost = () => {
         <>  
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <Container>
-                <Header>Hey there, john_wilson,</Header>
+                <Header createPost="true">Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form>
                     <Label createPost="true" htmlFor="photo-upload">

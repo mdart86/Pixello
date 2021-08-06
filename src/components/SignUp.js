@@ -13,13 +13,8 @@ import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
 import { IconSignUp } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/BackgroundBox.styled'
+import { Header } from './styled/Header.styled'
 
-const Header = styled.h1`
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    margin: 0;
-    padding-top: 40px;
-`
 const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -56,7 +51,7 @@ export const SignUp = () => {
     return (
         <>
             <PinkFeature>
-                <Header>Create your account</Header>
+                <Header signup="true">Create your account</Header>
                 <WhiteFeature/>
             </PinkFeature>
             <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
