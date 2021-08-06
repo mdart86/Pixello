@@ -14,10 +14,7 @@ import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
 import { PlusIcon } from './styled/Icon.styled'
 import { Form } from './styled/Form.styled'
-
-const Container = styled.section`
-    margin: 0 20px;
-`
+import { ContainerCreatePost } from './styled/Container.styled'
 
 
 export const CreatePost = () => {
@@ -31,7 +28,7 @@ export const CreatePost = () => {
     return (
         <>  
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <Container>
+            <ContainerCreatePost>
                 <Header createPost="true">Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form>
@@ -52,7 +49,7 @@ export const CreatePost = () => {
                     </Select>
                     <Input createPost="true" type="submit" value="Share!"/>
                 </Form>
-            </Container>
+            </ContainerCreatePost>
         </>
     )
 }

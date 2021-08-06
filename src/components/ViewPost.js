@@ -22,11 +22,7 @@ import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { CommentsContainer } from './styled/CommentsContainer.styled'
 import { CategoryContainer } from './styled/CategoryContainer.styled'
-
-const Caption = styled.p`
-    margin: 0;
-    font-size: 0.8rem;
-`
+import { Caption } from './styled/Caption.styled'
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 
@@ -41,7 +37,7 @@ export const ViewPost = () => {
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
                 <Link to="/profile"><Avatar viewPost="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
+                <Caption viewPost="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
                 <Photo viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
                 <CategoryContainer>

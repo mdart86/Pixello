@@ -10,27 +10,20 @@ import { Username } from './styled/Username.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
-
-const Container = styled.div`
-    margin: 0 7%;
-`
-
-const Caption = styled.p`
-    margin: 5px 0;
-    font-size: 0.8rem;
-`
+import { ContainerPost } from './styled/Container.styled'
+import { Caption } from './styled/Caption.styled'
 
 export const Post = () => {
 
     return (
         <>
             <Link to="/view-post"><Photo post="true" src={placeholder} alt="A candid photo of people on the beach."/></Link>
-            <Container>
+            <ContainerPost>
                 <Link to="/profile"><Avatar post="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <IconPost src={like} alt="like button"/>
                 <StyledLink to="/profile"><Username fontSize="0.9rem">john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
-            </Container>
+                <Caption post="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
+            </ContainerPost>
         </>
     )
 }

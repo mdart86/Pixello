@@ -7,15 +7,7 @@ import logoutCharcoal from '../images/log-out-charcoal.svg'
 //import styled components
 import { IconLogout } from './styled/Icon.styled'
 import { BackgroundCircle } from './styled/BackgroundCircle.styled'
-
-const Container = styled.div`
-    position: absolute;
-    top: 0;
-    ${props => props.left ? "left: 0;" : "right: 0;"}
-    height: ${props => props.left ? "100px;" : "50px;"}
-    width: ${props => props.left ? "100px;" : "50px;"}
-`
-
+import { ContainerLogout } from './styled/Container.styled'
 
 const Logout = ({ excludedUrls, left }) => {
 
@@ -23,19 +15,19 @@ const Logout = ({ excludedUrls, left }) => {
         return null
     } else if (left) {
         return (
-            <Container left="true">
+            <ContainerLogout left="true">
                 <BackgroundCircle left="true">
                     <Link to="/"><IconLogout left="true" src={logoutCharcoal} alt="logout icon"/></Link>
                 </BackgroundCircle>
-            </Container>
+            </ContainerLogout>
         )
     } else {
         return (
-            <Container>
+            <ContainerLogout>
                 <BackgroundCircle>
                     <Link to="/"><IconLogout src={logoutWhite} alt="logout icon"/></Link>
                 </BackgroundCircle>
-            </Container>
+            </ContainerLogout>
         )
     }
 }

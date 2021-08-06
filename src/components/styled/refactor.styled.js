@@ -88,21 +88,6 @@ const Box = styled.div`
     border-radius: 5px;
     margin: 5px 0;  
 `
-//comment
-const Caption = styled.p`
-    margin: 5px 20px 5px 5px;
-    font-size: 0.7rem;
-`
-//post
-const Caption = styled.p`
-    margin: 5px 0;
-    font-size: 0.8rem;
-`
-//view post
-const Caption = styled.p`
-    margin: 0;
-    font-size: 0.8rem;
-`
 //about 
 const Circle = styled.div`
     border-radius: 50%;
@@ -215,20 +200,3 @@ const Circle = styled.div`
     bottom: -22.5px;
     right: -22.5px;
 `
-//create post
-const Container = styled.section`
-    margin: 0 20px;
-`
-//log out
-const Container = styled.div`
-    position: absolute;
-    top: 0;
-    ${props => props.left ? "left: 0;" : "right: 0;"}
-    height: ${props => props.left ? "100px;" : "50px;"}
-    width: ${props => props.left ? "100px;" : "50px;"}
-`
-//post
-const Container = styled.div`
-    margin: 0 7%;
-`
-
