@@ -6,6 +6,7 @@ import plus from '../images/plus-white.svg'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { Textarea } from './styled/Textarea.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -46,22 +47,6 @@ const Input = styled.input`
         border: 3px solid var(--dark-pink);
     }
     ${props => props.username ? "margin-top: 50px" : null}
-`
-
-const TextArea = styled.textarea`
-    border: 1px solid var(--white); 
-    height: 80px;
-    font-style: italic;
-    font-size: 1.1rem;
-    width: 70%;
-    margin: 25px auto;
-    background: var(--green);
-    color: var(--white);
-    max-width: 100%;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
 `
 
 const FileName = styled.p`
@@ -145,7 +130,7 @@ export const SignUp = () => {
                     <Input type="email" id="email" placeholder="Email"/>
                     <Input type="password" id="password" placeholder="Password"/>
                     <Input type="password" id="password-confirmation" placeholder="Confirm password"/>
-                    <TextArea id="bio" placeholder="Your bio"/>
+                    <Textarea id="bio" placeholder="Your bio" signup="true"/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
                     <Label htmlFor="avatar-upload">

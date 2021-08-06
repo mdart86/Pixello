@@ -5,6 +5,7 @@ import plus from '../images/plus-white.svg'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { TopClearance } from './styled/TopClearance.styled'
+import { Textarea } from './styled/Textarea.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -67,25 +68,6 @@ const Text = styled.p`
     ${props => props.upload ? "font-style: italic; color: var(--charcoal);" : "font-weight: bold;"}
 `
 
-const TextArea = styled.textarea`
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 3px solid var(--blue); 
-    height: 50px;
-    font-style: italic;
-    font-size: 0.9rem;
-    font-family: 'Roboto', sans-serif;
-    width: 70%;
-    margin: 20px auto;
-    background: var(--white);
-    color: var(--charcoal);
-    max-width: 90%;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-`
-
 const Select = styled.select`
     width: 50%;
     margin: 0 auto;
@@ -139,7 +121,7 @@ export const CreatePost = () => {
                         <Text>{fileName}</Text>
                     </Label>
                     <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
-                    <TextArea id="caption" placeholder="Give it a caption"/>
+                    <Textarea id="caption" placeholder="Give it a caption"/>
                     <Select name="category">
                         <option value="default" hidden>Categories</option>
                         <option value="film">Film</option>

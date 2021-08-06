@@ -881,39 +881,5 @@ const Text = styled.p`
     margin: 10px;
     height: 20px;
 `
-//create post
-const TextArea = styled.textarea`
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: 3px solid var(--blue); 
-    height: 50px;
-    font-style: italic;
-    font-size: 0.9rem;
-    font-family: 'Roboto', sans-serif;
-    width: 70%;
-    margin: 20px auto;
-    background: var(--white);
-    color: var(--charcoal);
-    max-width: 90%;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-`
-//sign up
-const TextArea = styled.textarea`
-    border: 1px solid var(--white); 
-    height: 80px;
-    font-style: italic;
-    font-size: 1.1rem;
-    width: 70%;
-    margin: 25px auto;
-    background: var(--green);
-    color: var(--white);
-    max-width: 100%;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-`
+
 
