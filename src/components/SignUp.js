@@ -15,13 +15,7 @@ import { IconSignUp } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/BackgroundBox.styled'
 import { Header } from './styled/Header.styled'
 import { FileName } from './styled/Filename.styled'
-
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: var(--white);
-`
+import { Form } from './styled/Form.styled'
 
 const Circle = styled.div`
     height: 90px;
@@ -52,7 +46,7 @@ export const SignUp = () => {
             </PinkFeature>
             <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox signup="true">
-                <Form>
+                <Form signup="true">
                     <Input signup="true" username="true" type="text" id="username" placeholder="Username"/>
                     <Input signup="true" type="email" id="email" placeholder="Email"/>
                     <Input signup="true" type="password" id="password" placeholder="Password"/>

@@ -13,16 +13,12 @@ import { PlusCircle } from './styled/PlusCircle.styled'
 import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
 import { PlusIcon } from './styled/Icon.styled'
+import { Form } from './styled/Form.styled'
 
 const Container = styled.section`
     margin: 0 20px;
 `
 
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-`
 
 export const CreatePost = () => {
     

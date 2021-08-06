@@ -241,23 +241,5 @@ const DetailsContainer = styled.div`
     width: 90%;
     margin: 30px auto 10px;
 `
-//create post
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-`
-// login
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-`
-//sign up
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: var(--white);
-`
 
 

@@ -10,11 +10,7 @@ import { Input } from './styled/Input.styled'
 import { IconLogin } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/BackgroundBox.styled'
 import { Header } from './styled/Header.styled'
-
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-`
+import { Form } from './styled/Form.styled'
 
 
 const Circle = styled.div`
