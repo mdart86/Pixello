@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 // requires cloudinary package into file
 const cloudinary = require('cloudinary')
 
