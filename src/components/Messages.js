@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { UserMessages } from './UserMessages'
+//import styled components
+import { WhiteFeature } from './styled/WhiteFeature.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -21,16 +23,6 @@ const PinkFeature = styled.div`
     z-index: -1;  
     display: flex;
     justify-content: center; 
-`
-
-const WhiteFeature = styled.div`
-    position: absolute; 
-    height: 65vh; 
-    width: 150%; 
-    background: var(--white); 
-    bottom: 0; 
-    border-radius: 50% 50% 0 0;
-    left: -25%;
 `
 
 const Circle = styled.div`

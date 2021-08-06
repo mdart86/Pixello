@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
+//import styled components
+import { WhiteFeature } from './styled/WhiteFeature.styled'
 
 const PinkFeature = styled.div`
     position: absolute; 
@@ -17,16 +19,6 @@ const Header = styled.h1`
     text-align: center;
     margin: 0;
     padding-top: 40px;
-`
-
-const WhiteFeature = styled.div`
-    position: absolute; 
-    height: 65vh; 
-    width: 150%; 
-    background: var(--white); 
-    bottom: 0; 
-    border-radius: 50% 50% 0 0;
-    left: -25%;
 `
 
 const Icon = styled.img`

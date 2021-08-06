@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { PermissionsBar } from './PermissionsBar'
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
+//import styled components
+import { WhiteFeature } from './styled/WhiteFeature.styled'
 
 const PinkFeature = styled.div`
     position: absolute; 
@@ -14,16 +16,6 @@ const PinkFeature = styled.div`
     z-index: -1;  
     display: flex;
     justify-content: center; 
-`
-
-const WhiteFeature = styled.div`
-    position: absolute; 
-    height: 65vh; 
-    width: 150%; 
-    background: var(--white); 
-    bottom: 0; 
-    border-radius: 50% 50% 0 0;
-    left: -25%;
 `
 
 const ProfileContainer = styled.section`
