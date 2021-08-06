@@ -4,6 +4,7 @@ import { UserMessages } from './UserMessages'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { BottomClearance } from './styled/BottomClearance.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -39,13 +40,6 @@ const MessagesContainer = styled.div`
     display: flex;
     flex-direction: column;
     ${window.innerWidth < 450 ? "margin-top: 210px;": "margin-top: 50px;"}
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Messages = () => {

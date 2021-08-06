@@ -130,41 +130,6 @@ const Bio = styled.p`
     font-size: 0.8rem;
     width: 70%;
 `
-//home
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
-`
-//message
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
-`
-//messages
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
-`
-//notifications
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
-`
-//view post
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
-`
 //add comment
 const Box = styled.div`
     background: var(--white);

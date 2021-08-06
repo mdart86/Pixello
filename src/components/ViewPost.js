@@ -14,6 +14,7 @@ import candid from '../images/candid.svg'
 import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { BottomClearance } from './styled/BottomClearance.styled'
 
 const PostContainer = styled.section`
     margin: 0;
@@ -65,13 +66,6 @@ const CommentsContainer = styled.div`
     column-gap: 10px;
     row-gap: 10px;
     margin-top: 5px;
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 // add logic to show the permissions bar 

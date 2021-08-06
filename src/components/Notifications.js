@@ -5,6 +5,7 @@ import { ReceivedMessage } from './ReceivedMessage'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { BottomClearance } from './styled/BottomClearance.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -43,13 +44,6 @@ const MessagesContainer = styled.section`
     width: 90%;
     display: flex;
     flex-direction: column;
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Notifications = () => {

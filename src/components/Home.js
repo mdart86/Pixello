@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Post } from './Post' 
+//import styled components 
+import { BottomClearance } from './styled/BottomClearance.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -13,13 +15,6 @@ const Logo = styled.h1`
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     margin: 5px 0 0 0;
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Home = () => {

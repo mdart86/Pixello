@@ -8,6 +8,7 @@ import plus from '../images/plus-white.svg'
 import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { BottomClearance } from './styled/BottomClearance.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -97,13 +98,6 @@ const Circle = styled.div`
 
 const Icon = styled.img`
     
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-    ${props => props.desktop ? "height: 10px;" : null}
 `
 
 export const Message = () => {
