@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
+//import styled components
+import { StyledLink } from './styled/StyledLink.styled'
 
 const Photo = styled.img`
     max-width: 92%;
@@ -25,13 +27,6 @@ const Avatar = styled.img`
     border-radius: 50%;
     border: 2px solid var(--green);
     box-sizing: border-box;
-`
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
 `
 
 const Username = styled.p`

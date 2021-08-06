@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import profilePicture from '../images/profile-picture.jpeg'
 import { ReceivedMessage } from './ReceivedMessage'
 import plus from '../images/plus-white.svg'
+//import styled components
+import { StyledLink } from './styled/StyledLink.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -34,13 +36,6 @@ const WhiteFeature = styled.div`
 const DetailsContainer = styled.div`
     width: 90%;
     margin: 30px auto 10px;
-`
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
 `
 
 const Avatar = styled.img`

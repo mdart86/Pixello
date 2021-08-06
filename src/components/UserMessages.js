@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import profilePicture from '../images/profile-picture.jpeg'
+//import styled components
+import { StyledLink } from './styled/StyledLink.styled'
 
 const UserMessage = styled.div`
     display: flex;
@@ -23,13 +25,6 @@ const Text = styled.p`
     font-size: 1.2rem;
     margin: 10px;
     height: 20px;
-`
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
 `
 
 export const UserMessages = () => {

@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { PermissionsBar } from './PermissionsBar'
 import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-pink.svg'
+//import styled components
+import { StyledLink } from './styled/StyledLink.styled'
 
 const Box = styled.div`
     background: var(--blue);
@@ -41,12 +43,6 @@ const Caption = styled.p`
     font-size: 0.7rem;
 `
 
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 

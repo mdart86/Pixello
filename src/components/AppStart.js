@@ -51,10 +51,16 @@ const StyledLink = styled(Link)`
     &:visited {
         color: var(--white);
     }
-    ${props => !props.about ? "font-family: 'Pacifico', cursive; text-shadow: 1px 1px 4px grey;" : null}
-    ${props => props.about ? "font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
+    
+`
+
+const Text = styled.p`
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 4px grey;
+    ${props => props.about ? "font-family: 'Roboto', sans-serif; font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
     ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
-    ${props => props.login ? "font-size: 1.3rem; margin-top: -110px;": null}
+    ${props => props.login ? "font-size: 1.3rem; margin-top: -75px;": null}
 `
 
 export const AppStart = () => {
@@ -69,14 +75,15 @@ export const AppStart = () => {
             <Tagline>where the magic happens</Tagline>
             <Circle green="true" small="true"></Circle>
             <Circle pink="true" xlarge="true">
-                <StyledLink to="/sign-up" signup="true">sign up</StyledLink>
+                <StyledLink to="/sign-up" white="true"><Text signup="true">sign up</Text></StyledLink>
             </Circle>
             <Circle green="true" xxlarge="true">
-                <StyledLink to="/about" about="true">About the creators</StyledLink>
+                <StyledLink to="/about" white="true"><Text about="true">About the creators</Text></StyledLink>
             </Circle>
             <Circle blue="true" medium="true">
-                <StyledLink to="/log-in" login="true">log in</StyledLink>
+                <StyledLink to="/log-in" white="true"><Text login="true">log in</Text></StyledLink>
             </Circle>
         </>
     )
 }
+

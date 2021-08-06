@@ -924,52 +924,6 @@ const SentMessage = styled.div`
 const Span = styled.span`
     font-family: 'Pacifico', cursive;
 `
-//app start
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--white);
-    }
-    ${props => !props.about ? "font-family: 'Pacifico', cursive; text-shadow: 1px 1px 4px grey;" : null}
-    ${props => props.about ? "font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
-    ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
-    ${props => props.login ? "font-size: 1.3rem; margin-top: -110px;": null}
-`
-//comment
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
-//message
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
-//post
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
-//user messages
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
-//view post
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
 //create post
 const SubHeader = styled.h2`
     margin: 0 0 20px 0;
@@ -989,6 +943,15 @@ const Tagline = styled.h2`
     color: var(--green);
     font-size: 0.7rem;
     margin-top: -10px;
+`
+//app start
+const Text = styled.p`
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 1px 1px 4px grey;
+    ${props => props.about ? "font-family: 'Roboto', sans-serif; font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
+    ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
+    ${props => props.login ? "font-size: 1.3rem; margin-top: -75px;": null}
 `
 //about 
 const Text = styled.p`

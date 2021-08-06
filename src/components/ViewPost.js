@@ -10,6 +10,8 @@ import profilePicture from '../images/profile-picture.jpeg'
 import film from '../images/film.svg'
 import water from '../images/water.svg'
 import candid from '../images/candid.svg'
+//import styled components
+import { StyledLink } from './styled/StyledLink.styled'
 
 const PinkFeature = styled.div`
     position: relative; 
@@ -35,13 +37,6 @@ const PostContainer = styled.section`
     padding: 0 4%;
     position: absolute;
     ${window.innerWidth < 450 ? "top: 0px;" : "top: 65px;" }
-`
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
 `
 
 const Avatar = styled.img`
