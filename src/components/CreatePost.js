@@ -9,6 +9,7 @@ import { Textarea } from './styled/Textarea.styled'
 import { TextCreatePost } from './styled/Text.styled'
 import { SubHeader } from './styled/H2s.styled'
 import { Select } from './styled/Select.styled'
+import { PlusCircle } from './styled/PlusCircle.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -43,13 +44,6 @@ const Label = styled.label`
     }
 `
 
-const PlusCircle = styled.div`
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    background: var(--green);
-    margin: 5px;
-`
 
 const Icon = styled.img`
     height: 60px;
@@ -91,7 +85,7 @@ export const CreatePost = () => {
                 <Form>
                     <Label htmlFor="photo-upload">
                         <TextCreatePost upload="true">Upload your photo</TextCreatePost>
-                        <PlusCircle>
+                        <PlusCircle createPost="true">
                             <Icon src={plus} alt="plus sign"/>
                         </PlusCircle>
                         <TextCreatePost>{fileName}</TextCreatePost>

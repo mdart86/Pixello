@@ -7,6 +7,7 @@ import plus from '../images/plus-white.svg'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Textarea } from './styled/Textarea.styled'
+import { PlusCircle } from './styled/PlusCircle.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -70,15 +71,6 @@ const Label = styled.label`
     }
 `
 
-const PlusCircle = styled.div`
-    height: 35px;
-    width: 35px;
-    background: var(--blue);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
 
 const Icon = styled.img`
     z-index: 1;
@@ -134,7 +126,7 @@ export const SignUp = () => {
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
                     <Label htmlFor="avatar-upload">
-                        <PlusCircle>
+                        <PlusCircle signup="true">
                             <Icon upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>

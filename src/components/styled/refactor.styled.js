@@ -730,31 +730,3 @@ const PhotoGrid = styled.div`
         aspect-ratio: 1 / 1;
     }
 `
-//create post
-const PlusCircle = styled.div`
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    background: var(--green);
-    margin: 5px;
-`
-//sign up
-const PlusCircle = styled.div`
-    height: 35px;
-    width: 35px;
-    background: var(--blue);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
-
-
-
-
-
-
-
-
-
-
