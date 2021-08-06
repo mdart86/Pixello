@@ -6,6 +6,7 @@ import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
 //import styled components
 import { TextAbout } from './styled/Text.styled'
+import { Logo } from './styled/Logo.styled'
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -48,18 +49,6 @@ const Icon = styled.img`
     ${props => props.michael ? "height: 30px;" : null}
 `
 
-const Logo = styled.h1`
-    text-align: center;
-    color: var(--dark-pink);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    width: 150px;
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    margin: 0 0 0 -75px; 
-`
-
 export const About = () => {
     
     return (
@@ -88,7 +77,7 @@ export const About = () => {
                     <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
                 </IconsContainer>
             </Circle>
-            <Logo>Pixello</Logo>
+            <Logo about="true">Pixello</Logo>
         </>
     )
 }

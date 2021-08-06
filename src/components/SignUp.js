@@ -8,6 +8,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
+import { Logo } from './styled/Logo.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -92,15 +93,6 @@ const Circle = styled.div`
     right: -22.5px;
 `
 
-const Logo = styled.h1`
-    text-align: center;
-    color: var(--dark-pink);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    width: 150px;
-    margin: 0 auto;
-`
-
 export const SignUp = () => {
 
     const [fileName, setFileName] = useState("No File Chosen")
@@ -136,7 +128,7 @@ export const SignUp = () => {
                     </Circle>
                 </Form>
             </BackgroundBox>
-            <Logo>Pixello</Logo>
+            <Logo signup="true">Pixello</Logo>
         </>
     )
 }

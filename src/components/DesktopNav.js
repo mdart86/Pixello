@@ -11,6 +11,7 @@ import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 //import styled components
 import { PlusIcon } from './styled/PlusIcon.styled';
+import { Logo } from './styled/Logo.styled'
 
 const Box = styled.nav`
     display: flex;
@@ -26,17 +27,6 @@ const Box = styled.nav`
     &:before {
         ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: 30px; right: 30px;" : null}
     }
-`
-
-const Logo = styled.h1`
-    position: absolute; 
-    left: 50%;
-    width: 150px;
-    text-align: center;
-    margin-left: -75px;  
-    color: var(--white);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
 `
 
 const IconsContainer = styled.div`
@@ -60,7 +50,7 @@ const DesktopNav = ( { excludedUrls } ) => {
         <Box>
             <Logout excludedUrls={excludedUrls} left="true"/>
             {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon desktop="true"src={plus} alt="plus sign icon"/></Link> : null}
-            <Logo>Pixello</Logo>
+            <Logo desktop="true">Pixello</Logo>
             <IconsContainer>
                 {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
                 <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>

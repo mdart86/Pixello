@@ -5,6 +5,7 @@ import arrow from '../images/arrow.svg'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { Logo } from './styled/Logo.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -59,18 +60,6 @@ const Circle = styled.div`
     right: -22.5px;
 `
 
-const Logo = styled.h1`
-    text-align: center;
-    color: var(--dark-pink);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    width: 150px;
-    position: absolute;
-    bottom: -26px;
-    left: 50%;
-    margin-left: -75px;
-`
-
 export const LogIn = () => {
     
     return (
@@ -89,7 +78,7 @@ export const LogIn = () => {
                     </Circle>
                 </Form>
             </BackgroundBox>
-            <Logo>Pixello</Logo>
+            <Logo login="true">Pixello</Logo>
         </>
     )
 }

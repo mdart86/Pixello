@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 //import styled components
 import { TextAppStart } from './styled/Text.styled'
 import { Tagline } from './styled/H2s.styled'
+import { Logo } from './styled/Logo.styled'
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -34,13 +35,6 @@ const Circle = styled.div`
     ${props => props.xxlarge && props.green ? "bottom: -150px; left: -85px;" : null}
 `
 
-const Logo = styled.h1`
-    text-align: center;
-    color: var(--dark-pink);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin: 90px 0 0 0;
-`
 
 const StyledLink = styled(Link)`
     text-decoration: none;
@@ -58,7 +52,7 @@ export const AppStart = () => {
             <Circle pink="true" small="true"></Circle>
             <Circle blue="true" small="true"></Circle>
             <Circle green="true" xsmall="true"></Circle>
-            <Logo>Pixello</Logo>
+            <Logo appStart="true">Pixello</Logo>
             <Tagline>where the magic happens</Tagline>
             <Circle green="true" small="true"></Circle>
             <Circle pink="true" xlarge="true">
