@@ -43,7 +43,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
       // Find user by id
-      let user = await User.findById(req.params.id);
+      let user = User.findById(req.params.id);
       console.log(user)
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(req.user.cloudinary_id);
@@ -56,7 +56,7 @@ router.delete("/:id", async (req, res) => {
         cloudinary_id: public_id || user.cloudinary_id,
       };
       console.log(userDelete)
-      await User.findByIdAndRemove(userDelete);
+      await User.remove(userDelete);
       res.json(user);
       console.log(userDelete)
     } catch (err) {
