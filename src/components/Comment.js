@@ -1,52 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { PermissionsBar } from './PermissionsBar'
+//image imports: 
 import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-pink.svg'
-
-const Box = styled.div`
-    background: var(--blue);
-    margin: 0;
-    border-radius: 5px;
-    position: relative;
-`
-
-const Avatar = styled.img`
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
-    float: left;
-    margin: 5px 10px 0 5px;
-    border-radius: 50%;
-    border: 2px solid var(--green);
-    box-sizing: border-box;
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    margin-top: 3px;
-    font-size: 0.8rem;
-`
-
-const Icon = styled.img`
-    float: right;
-    height: 20px;
-    margin: 5px;
-`
-
-const Caption = styled.p`
-    margin: 5px 20px 5px 5px;
-    font-size: 0.7rem;
-`
-
-const StyledLink = styled(Link)`
-    text-decoration: none;
-    &:visited {
-        color: var(--charcoal);
-    }
-`
+//react component imports: 
+import { PermissionsBar } from './PermissionsBar'
+//styled component imports:
+import { StyledLink } from './styled/StyledLink.styled'
+import { Username } from './styled/Username.styled'
+import { IconComment } from './styled/Icon.styled'
+import { Avatar } from './styled/Avatar.styled'
+import { Caption } from './styled/Caption.styled'
+import { BoxComment } from './styled/Box.styled'
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 
@@ -55,13 +20,13 @@ const StyledLink = styled(Link)`
 export const Comment = () => {
     return (
        
-            <Box>
-                <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <Icon src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
-                <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
+            <BoxComment>
+                <Link to="/profile"><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <IconComment src={like} alt="like button"/>
+                <StyledLink to="/profile"><Username fontSize="0.8rem" comment="true">john_wilson</Username></StyledLink>
+                <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
                 <PermissionsBar comment="true"/>
-            </Box>
+            </BoxComment>
         
     )
 }

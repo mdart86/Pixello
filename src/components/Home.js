@@ -1,35 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
+//react component imports:
 import { Post } from './Post' 
-
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-
-const Logo = styled.h1`
-    text-align: center;
-    color: var(--dark-pink);
-    font-family: 'Pacifico', cursive;
-    font-size: 2.5rem;
-    margin: 5px 0 0 0;
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-`
+//styled component imports:
+import { BottomClearance } from './styled/BottomClearance.styled'
+import { TopClearance } from './styled/TopClearance.styled'
+import { Logo } from './styled/Logo.styled'
 
 export const Home = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <Logo>Pixello</Logo> : <TopClearance/>}
+            {window.innerWidth < 450 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
             <Post/>
             <Post/>
             <Post/>
-            {window.innerWidth < 450 ? <BottomClearance/> : null}
+            {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }

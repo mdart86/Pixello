@@ -1,73 +1,18 @@
 import React from 'react'
-import styled from 'styled-components'
+//image imports: 
 import profilePicture from '../images/pixello-logo.png'
+//react component imports: 
 import { ReceivedMessage } from './ReceivedMessage'
-
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-
-const PinkFeature = styled.div`
-    position: absolute; 
-    height: 100vh; 
-    width: 100%; 
-    background: var(--light-pink); 
-    top: 0;  
-    z-index: -1;  
-    display: flex;
-    justify-content: center; 
-`
-
-const WhiteFeature = styled.div`
-    position: absolute; 
-    height: 65vh; 
-    width: 150%; 
-    background: var(--white); 
-    bottom: 0; 
-    border-radius: 50% 50% 0 0;
-    left: -25%;
-`
-
-const DetailsContainer = styled.div`
-    width: 90%;
-    margin: 30px auto 10px;
-`
-
-const Avatar = styled.img`
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
-    float: left;
-    margin: 0px 15px 10px 0px;
-    border-radius: 50%;
-    border: 4px solid var(--white);
-    box-sizing: border-box;
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    font-size: 1.2rem;
-`
-
-const Bio = styled.p`
-    margin: 0;
-    font-size: 0.8rem;
-`
-
-const MessagesContainer = styled.section`
-    margin: 20px auto 5px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-`
-
-const BottomClearance = styled.div`
-    width: 100%;
-    height: 110px;
-    background: var(--white);
-`
+//styled component imports: 
+import { WhiteFeature } from './styled/WhiteFeature.styled'
+import { PinkFeature } from './styled/PinkFeature.styled'
+import { BottomClearance } from './styled/BottomClearance.styled'
+import { TopClearance } from './styled/TopClearance.styled'
+import { Username } from './styled/Username.styled'
+import { MessagesContainer } from './styled/MessagesContainer.styled'
+import { Avatar } from './styled/Avatar.styled'
+import { DetailsContainer } from './styled/DetailsContainer.styled'
+import { Bio } from './styled/Bio.styled'
 
 export const Notifications = () => {
 
@@ -75,8 +20,8 @@ export const Notifications = () => {
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
-                <Avatar src={profilePicture} alt="Pixello Logo"/>
-                <Username>Pixello</Username>
+                <Avatar notifications="true" src={profilePicture} alt="Pixello Logo"/>
+                <Username fontSize="1.2rem">Pixello</Username>
                 <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>
             <MessagesContainer>
@@ -84,7 +29,7 @@ export const Notifications = () => {
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
-                {window.innerWidth < 450 ? <BottomClearance/> : null}
+                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
         </>
     )
