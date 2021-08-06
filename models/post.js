@@ -11,6 +11,14 @@ const Post = new Schema({
         type: String, 
         required: true
     },
+    category: {
+        type: String,
+        required: true
+    },
+    avatar: {
+        type: String,
+        required: false
+    },
     imageUrl: {
         type: String,
         required: false
@@ -18,10 +26,6 @@ const Post = new Schema({
     likes: {
         type: Number,
         default: 0,
-        required: true
-    },
-    category: {
-        type: String,
         required: true
     },
     created_at: {

@@ -19,7 +19,7 @@ const cloudinary = require('../utils/cloudinary')
 const upload = require('../utils/multer') 
 
 // router function to sign in and post to cloudinary
-router.post('/sign_up', upload.single('image'), async (req, res, next) => {
+router.post('/sign_up', upload.single('image'), async (req, res) => {
     try {
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
@@ -35,10 +35,9 @@ router.post('/sign_up', upload.single('image'), async (req, res, next) => {
             res.status(400)
             return res.json({error: err.message})
         }
-        console.log('no errors')
+        console.log("Image upload successful")
         return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, imageUrl: user.imageUrl, bio: user.bio, _id: user._id},process.env.SECRET_KEY) })
     });
-    //res.json(newUser, "Image upload successful");
     } 
     // error received
     catch (err) {
