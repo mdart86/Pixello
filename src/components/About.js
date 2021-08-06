@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import arrow from '../images/arrow.svg'
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
+//import styled components
+import { TextAbout } from './styled/Text.styled'
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -34,17 +36,6 @@ const Header = styled.h2`
     font-family: 'Pacifico', cursive;
     margin: 0;
     ${props => props.title ? "font-size: 2rem;": "font-size: 1rem;"}
-`
-
-const Text = styled.p`
-    margin-left: 30px;
-    margin-bottom: 0;
-    width: 200px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    font-style: italic;
-    ${props => props.para1 ? "width: 210px; margin-left: 40px;" : null}
-    ${props => props.copywrite ? "margin-bottom: 20px;" : null}
 `
 
 const IconsContainer = styled.div`
@@ -79,9 +70,9 @@ export const About = () => {
             <Circle blue="true" large="true"></Circle>
             <Circle green="true" xlarge="true">
                 <Header title="true">Hey there!</Header>
-                <Text para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</Text>
-                <Text>To reach out to us and keep up with our other work, follow us on Github and Twitter.</Text>
-                <Text copywrite="true">&#169; 2021</Text>
+                <TextAbout para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</TextAbout>
+                <TextAbout>To reach out to us and keep up with our other work, follow us on Github and Twitter.</TextAbout>
+                <TextAbout copywrite="true">&#169; 2021</TextAbout>
             </Circle>
             <Circle pink="true" small="true">
                 <Header>Emily</Header>

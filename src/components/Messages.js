@@ -6,6 +6,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
+import { TextMessages } from './styled/Text.styled'
 
 const CenteringContainer = styled.div`
     display: flex;
@@ -24,14 +25,6 @@ const Circle = styled.div`
     flex-direction: column;
 `
 
-const Text = styled.p`
-    font-family: 'Pacifico', cursive;
-    font-size: 1.2rem;
-    margin: 0 auto;
-    height: 20px;
-    ${props => props.new ? "margin-top: 10px;" : null}
-`
-
 const MessagesContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -46,8 +39,8 @@ export const Messages = () => {
             ? 
             <PinkFeature>
                 <Circle>
-                    <Text new="true">new</Text>
-                    <Text>message</Text>
+                    <TextMessages new="true">new</TextMessages>
+                    <TextMessages>message</TextMessages>
                 </Circle>
                 <WhiteFeature/>
             </PinkFeature> 
@@ -56,8 +49,8 @@ export const Messages = () => {
             <TopClearance/>
             <CenteringContainer>
                 <Circle>
-                    <Text new="true">new</Text>
-                    <Text>message</Text>
+                    <TextMessages new="true">new</TextMessages>
+                    <TextMessages>message</TextMessages>
                 </Circle>
             </CenteringContainer>
             </>

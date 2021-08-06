@@ -12,6 +12,7 @@ import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
 import { Timestamp } from './styled/Timestamp.styled'
+import { TextMessage } from './styled/Text.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -49,12 +50,6 @@ const SentMessage = styled.div`
     margin: 5px 0;   
     align-self: flex-end; 
     text-align: right;
-`
-
-const Text = styled.p`
-    font-size: 0.8rem;
-    padding: 0 10px;
-    margin-bottom: 0;
 `
 
 const NewMessage = styled.div`
@@ -98,7 +93,7 @@ export const Message = () => {
             <MessagesContainer>
                 <ReceivedMessage/>
                 <SentMessage>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                    <TextMessage>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</TextMessage>
                     <Timestamp>dd/mm/yy</Timestamp>
                 </SentMessage>
                 <ReceivedMessage/>

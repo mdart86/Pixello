@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 //import styled components 
 import { Timestamp } from './styled/Timestamp.styled'
+import { TextReceivedMessage } from './styled/Text.styled'
 
 const Box = styled.div`
     height: auto;
@@ -9,12 +10,6 @@ const Box = styled.div`
     background: var(--blue);
     border-radius: 5px;
     margin: 5px 0;  
-`
-
-const Text = styled.p`
-    font-size: 0.8rem;
-    padding: 0 10px;
-    margin-bottom: 0;
 `
 
 const Span = styled.span`
@@ -28,9 +23,9 @@ export const ReceivedMessage = ( { notification } ) => {
             <Box>
                 {notification 
                 ?                 
-                <Text><Span>john_wilson</Span> liked your comment.</Text>
+                <TextReceivedMessage><Span>john_wilson</Span> liked your comment.</TextReceivedMessage>
                 : 
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+                <TextReceivedMessage>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</TextReceivedMessage>
                 }
                 <Timestamp>dd/mm/yy</Timestamp>
             </Box>

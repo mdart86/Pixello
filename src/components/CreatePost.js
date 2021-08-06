@@ -6,6 +6,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Textarea } from './styled/Textarea.styled'
+import { TextCreatePost } from './styled/Text.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -61,13 +62,6 @@ const Icon = styled.img`
     margin: 0;
 `
 
-const Text = styled.p`
-    margin: 5px;
-    font-size: 0.8rem;
-    color: var(--green);
-    ${props => props.upload ? "font-style: italic; color: var(--charcoal);" : "font-weight: bold;"}
-`
-
 const Select = styled.select`
     width: 50%;
     margin: 0 auto;
@@ -114,11 +108,11 @@ export const CreatePost = () => {
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form>
                     <Label htmlFor="photo-upload">
-                        <Text upload="true">Upload your photo</Text>
+                        <TextCreatePost upload="true">Upload your photo</TextCreatePost>
                         <PlusCircle>
                             <Icon src={plus} alt="plus sign"/>
                         </PlusCircle>
-                        <Text>{fileName}</Text>
+                        <TextCreatePost>{fileName}</TextCreatePost>
                     </Label>
                     <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Textarea id="caption" placeholder="Give it a caption"/>

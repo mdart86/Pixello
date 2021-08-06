@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { TextAppStart } from './styled/Text.styled'
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -54,15 +55,6 @@ const StyledLink = styled(Link)`
     
 `
 
-const Text = styled.p`
-    margin: 0;
-    font-family: 'Pacifico', cursive;
-    text-shadow: 1px 1px 4px grey;
-    ${props => props.about ? "font-family: 'Roboto', sans-serif; font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
-    ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
-    ${props => props.login ? "font-size: 1.3rem; margin-top: -75px;": null}
-`
-
 export const AppStart = () => {
 
     return (
@@ -75,13 +67,13 @@ export const AppStart = () => {
             <Tagline>where the magic happens</Tagline>
             <Circle green="true" small="true"></Circle>
             <Circle pink="true" xlarge="true">
-                <StyledLink to="/sign-up" white="true"><Text signup="true">sign up</Text></StyledLink>
+                <StyledLink to="/sign-up" white="true"><TextAppStart signup="true">sign up</TextAppStart></StyledLink>
             </Circle>
             <Circle green="true" xxlarge="true">
-                <StyledLink to="/about" white="true"><Text about="true">About the creators</Text></StyledLink>
+                <StyledLink to="/about" white="true"><TextAppStart about="true">About the creators</TextAppStart></StyledLink>
             </Circle>
             <Circle blue="true" medium="true">
-                <StyledLink to="/log-in" white="true"><Text login="true">log in</Text></StyledLink>
+                <StyledLink to="/log-in" white="true"><TextAppStart login="true">log in</TextAppStart></StyledLink>
             </Circle>
         </>
     )
