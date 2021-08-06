@@ -17,12 +17,7 @@ import { SentMessage } from './styled/SentMessage.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
 import { NewMessage } from './styled/NewMessage.styled'
 import { Avatar } from './styled/Avatar.styled'
-
-const DetailsContainer = styled.div`
-    width: 90%;
-    margin: 30px auto 10px;
-`
-
+import { DetailsContainer } from './styled/DetailsContainer.styled'
 
 const Bio = styled.p`
     margin: 0;

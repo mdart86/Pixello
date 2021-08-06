@@ -231,15 +231,4 @@ const Container = styled.div`
 const Container = styled.div`
     margin: 0 7%;
 `
-//message
-const DetailsContainer = styled.div`
-    width: 90%;
-    margin: 30px auto 10px;
-`
-//notifications
-const DetailsContainer = styled.div`
-    width: 90%;
-    margin: 30px auto 10px;
-`
-
 

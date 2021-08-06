@@ -10,11 +10,7 @@ import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
 import { Avatar } from './styled/Avatar.styled'
-
-const DetailsContainer = styled.div`
-    width: 90%;
-    margin: 30px auto 10px;
-`
+import { DetailsContainer } from './styled/DetailsContainer.styled'
 
 const Bio = styled.p`
     margin: 0;
