@@ -10,6 +10,8 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { Username } from './styled/Username.styled'
 import { Summary } from './styled/Summary.styled'
 import { ProfileContainer } from './styled/ProfileContainer.styled'
+import { PhotoGrid } from './styled/PhotoGrid.styled'
+import { PhotoPreview } from './styled/Photo.styled'
 
 const Bio = styled.p`
     margin: 5px auto;
@@ -48,29 +50,6 @@ const GridContainer = styled.div`
     height: auto;
 `
 
-const PhotoGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: auto;
-    row-gap: 8px;
-    column-gap: 8px;
-    margin: 10px auto;
-    ${window.innerWidth < 450 ? "margin-bottom: 115px;": "margin-bottom: 10px;"}
-    width: 90%;
-    justify-content: center;
-    &>*{
-        aspect-ratio: 1 / 1;
-    }
-`
-
-const Photo = styled.img`
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    margin: 0;
-`
-
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
@@ -93,15 +72,15 @@ export const Profile = () => {
                 </Summary>
                 <GridContainer>
                     <PhotoGrid>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
                     </PhotoGrid>
                 </GridContainer>
             </ProfileContainer>

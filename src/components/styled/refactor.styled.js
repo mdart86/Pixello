@@ -695,38 +695,5 @@ const NewMessage = styled.div`
     align-items: center;
     align-self: flex-end; 
 `
-//post
-const Photo = styled.img`
-    max-width: 92%;
-    margin: 8px 4% 0 4%;
-    border-radius: 5px;
-`
-//profile
-const Photo = styled.img`
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    margin: 0;
-`
-//view post
-const Photo = styled.img`
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
-`
-//profile
-const PhotoGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: auto;
-    row-gap: 8px;
-    column-gap: 8px;
-    margin: 10px auto;
-    ${window.innerWidth < 450 ? "margin-bottom: 115px;": "margin-bottom: 10px;"}
-    width: 90%;
-    justify-content: center;
-    &>*{
-        aspect-ratio: 1 / 1;
-    }
-`
+
+

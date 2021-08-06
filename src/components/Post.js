@@ -7,12 +7,7 @@ import profilePicture from '../images/profile-picture.jpeg'
 //import styled components
 import { StyledLink } from './styled/StyledLink.styled'
 import { Username } from './styled/Username.styled'
-
-const Photo = styled.img`
-    max-width: 92%;
-    margin: 8px 4% 0 4%;
-    border-radius: 5px;
-`
+import { Photo } from './styled/Photo.styled'
 
 const Container = styled.div`
     margin: 0 7%;
@@ -43,7 +38,7 @@ export const Post = () => {
 
     return (
         <>
-            <Link to="/view-post"><Photo src={placeholder} alt="A candid photo of people on the beach."/></Link>
+            <Link to="/view-post"><Photo post="true" src={placeholder} alt="A candid photo of people on the beach."/></Link>
             <Container>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>

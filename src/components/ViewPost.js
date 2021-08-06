@@ -17,6 +17,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
 import { PostContainer } from './styled/PostContainer.styled'
+import { Photo } from './styled/Photo.styled'
 
 const Avatar = styled.img`
     object-fit: cover;
@@ -31,12 +32,6 @@ const Avatar = styled.img`
 const Caption = styled.p`
     margin: 0;
     font-size: 0.8rem;
-`
-
-const Photo = styled.img`
-    max-width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
 `
 
 const Icon = styled.img`
@@ -70,7 +65,7 @@ export const ViewPost = () => {
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
-                <Photo src={placeholder} alt="A candid photo of people on the beach."/>
+                <Photo viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>
                 <Icon src={like} alt="like button"/>
                 <CategoryContainer>
                     <Link to="/filter"><Icon src={film} alt="film category"/></Link>
