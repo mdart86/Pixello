@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components"
 
 let hideOverflow = ["/", "/about", "/log-in"]
 
-const GlobalStyles = createGlobalStyle`
+export default createGlobalStyle`
     html, body {
         position: relative;
         margin: 0;
@@ -23,11 +23,7 @@ const GlobalStyles = createGlobalStyle`
             width: 450px;
             margin: 0 auto;
         }
-    }
-    
+    } 
 `
-
 // if the @media width is changed, the max-width
 // in the Nav component needs to be changed too
-
-export default GlobalStyles
