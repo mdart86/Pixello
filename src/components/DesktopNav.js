@@ -10,9 +10,10 @@ import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 //import styled components
-import { PlusIcon } from './styled/PlusIcon.styled';
+import { PlusIcon } from './styled/Icon.styled'
 import { Logo } from './styled/Logo.styled'
-import { IconsContainer } from './styled/IconsContainer.styled';
+import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconDesktopNav } from './styled/Icon.styled'
 
 const Box = styled.nav`
     display: flex;
@@ -30,10 +31,6 @@ const Box = styled.nav`
     }
 `
 
-const Icon = styled.img`
-    height: 30px;
-    margin: 0;
-`
 
 const DesktopNav = ( { excludedUrls } ) => {
     if (excludedUrls.includes(window.location.pathname)) {
@@ -45,10 +42,10 @@ const DesktopNav = ( { excludedUrls } ) => {
             {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon desktop="true"src={plus} alt="plus sign icon"/></Link> : null}
             <Logo desktop="true">Pixello</Logo>
             <IconsContainer desktop="true">
-                {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
-                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
-                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
-                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
+                {window.location.pathname === "/home" ? <Link to="/filter"><IconDesktopNav src={category} alt="search by category icon"/></Link> : <Link to="/home"><IconDesktopNav src={home} alt="home page icon"/></Link>}
+                <Link to="/messages"><IconDesktopNav src={messages} alt="private messages icon"/></Link>
+                <Link to="/notifications"><IconDesktopNav src={notifications} alt="notification bell icon"/></Link>
+                <Link to="/profile"><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
             </IconsContainer>
         </Box>
     )

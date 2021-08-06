@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import logoutWhite from '../images/log-out-white.svg'
 import logoutCharcoal from '../images/log-out-charcoal.svg'
+//import styled components
+import { IconLogout } from './styled/Icon.styled'
 
 const Container = styled.div`
     position: absolute;
@@ -28,11 +30,6 @@ const BackgroundCircle = styled.div`
     ${props => !props.left ? "clip-path: inset(0 10px 0 0);" : null}
 `
 
-const Icon = styled.img`
-    height: 23px;
-    margin-top: ${props => props.left ? "50px;" : "15px;"}
-    margin-right: ${props => props.left ? "0;" : "5px;"}
-`
 
 const Logout = ({ excludedUrls, left }) => {
 
@@ -42,7 +39,7 @@ const Logout = ({ excludedUrls, left }) => {
         return (
             <Container left="true">
                 <BackgroundCircle left="true">
-                    <Link to="/"><Icon left="true" src={logoutCharcoal} alt="logout icon"/></Link>
+                    <Link to="/"><IconLogout left="true" src={logoutCharcoal} alt="logout icon"/></Link>
                 </BackgroundCircle>
             </Container>
         )
@@ -50,7 +47,7 @@ const Logout = ({ excludedUrls, left }) => {
         return (
             <Container>
                 <BackgroundCircle>
-                    <Link to="/"><Icon src={logoutWhite} alt="logout icon"/></Link>
+                    <Link to="/"><IconLogout src={logoutWhite} alt="logout icon"/></Link>
                 </BackgroundCircle>
             </Container>
         )

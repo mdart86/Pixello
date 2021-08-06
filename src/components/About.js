@@ -7,7 +7,8 @@ import github from '../images/github.svg'
 //import styled components
 import { TextAbout } from './styled/Text.styled'
 import { Logo } from './styled/Logo.styled'
-import { IconsContainer } from './styled/IconsContainer.styled';
+import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconAbout } from './styled/Icon.styled'
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -40,18 +41,13 @@ const Header = styled.h2`
     ${props => props.title ? "font-size: 2rem;": "font-size: 1rem;"}
 `
 
-const Icon = styled.img`
-    margin: 0 2px;
-    ${props => props.arrow ? "transform: rotate(180deg) scale(2);" : null}    
-    ${props => props.michael ? "height: 30px;" : null}
-`
 
 export const About = () => {
     
     return (
         <>
             <Circle pink="true" medium="true">
-                <Link to="/"><Icon arrow="true" src={arrow} alt="go back arrow"/></Link>
+                <Link to="/"><IconAbout arrow="true" src={arrow} alt="go back arrow"/></Link>
             </Circle>
             <Circle blue="true" large="true"></Circle>
             <Circle green="true" xlarge="true">
@@ -63,15 +59,15 @@ export const About = () => {
             <Circle pink="true" small="true">
                 <Header>Emily</Header>
                 <IconsContainer about="true">
-                    <a href="https://github.com/emigraced/" target="blank"><Icon emily="true" src={github} alt="Emily's github social icon"/></a>
-                    <a href="https://twitter.com/emigraced" target="blank"><Icon emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
+                    <a href="https://github.com/emigraced/" target="blank"><IconAbout emily="true" src={github} alt="Emily's github social icon"/></a>
+                    <a href="https://twitter.com/emigraced" target="blank"><IconAbout emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
                 </IconsContainer>
             </Circle>
             <Circle blue="true" medium="true">
                 <Header>Michael</Header>
                 <IconsContainer about="true">
-                    <a href="https://github.com/mdart86/" target="blank"><Icon michael="true" src={github} alt="Michael's github social icon"/></a>
-                    <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
+                    <a href="https://github.com/mdart86/" target="blank"><IconAbout michael="true" src={github} alt="Michael's github social icon"/></a>
+                    <a href="https://twitter.com/MichaelDart12/" target="blank"><IconAbout michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
                 </IconsContainer>
             </Circle>
             <Logo about="true">Pixello</Logo>

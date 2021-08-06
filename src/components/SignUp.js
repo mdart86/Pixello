@@ -11,6 +11,7 @@ import { PlusCircle } from './styled/PlusCircle.styled'
 import { Logo } from './styled/Logo.styled'
 import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
+import { IconSignUp } from './styled/Icon.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -41,13 +42,6 @@ const FileName = styled.p`
     font-size: 0.8rem;
 `
 
-const Icon = styled.img`
-    z-index: 1;
-    ${props => props.upload ? "height: 40px;" : null}
-    ${props => props.forward ? "height: 70px;" : null}
-    ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
-`
-
 const Circle = styled.div`
     height: 90px;
     width: 90px;
@@ -75,7 +69,7 @@ export const SignUp = () => {
                 <Header>Create your account</Header>
                 <WhiteFeature/>
             </PinkFeature>
-            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
+            <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
                 <Form>
                     <Input signup="true" username="true" type="text" id="username" placeholder="Username"/>
@@ -87,12 +81,12 @@ export const SignUp = () => {
                     <FileName>{fileName}</FileName>
                     <Label signup="true" htmlFor="avatar-upload">
                         <PlusCircle signup="true">
-                            <Icon upload="true" src={plus} alt="plus sign"/>
+                            <IconSignUp upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>
                     <Input signup="true" type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Circle>
-                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
+                        <Link to="/home"><IconSignUp forward="true" src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
                 </Form>
             </BackgroundBox>

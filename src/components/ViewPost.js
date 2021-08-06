@@ -18,6 +18,7 @@ import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
 import { PostContainer } from './styled/PostContainer.styled'
 import { Photo } from './styled/Photo.styled'
+import { IconViewPost } from './styled/Icon.styled'
 
 const Avatar = styled.img`
     object-fit: cover;
@@ -34,9 +35,6 @@ const Caption = styled.p`
     font-size: 0.8rem;
 `
 
-const Icon = styled.img`
-    ${props => props.water ? "margin-left: 4px;" : null}
-`
 
 const CategoryContainer = styled.div`
     float: right;
@@ -66,11 +64,11 @@ export const ViewPost = () => {
                 <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
                 <Photo viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>
-                <Icon src={like} alt="like button"/>
+                <IconViewPost src={like} alt="like button"/>
                 <CategoryContainer>
-                    <Link to="/filter"><Icon src={film} alt="film category"/></Link>
-                    <Link to="/filter"><Icon water="true" src={water} alt="water category"/></Link>
-                    <Link to="/filter"><Icon src={candid} alt="candid category"/></Link>
+                    <Link to="/filter"><IconViewPost src={film} alt="film category"/></Link>
+                    <Link to="/filter"><IconViewPost water="true" src={water} alt="water category"/></Link>
+                    <Link to="/filter"><IconViewPost src={candid} alt="candid category"/></Link>
                 </CategoryContainer>
                 <CommentsContainer>
                     <AddComment/>

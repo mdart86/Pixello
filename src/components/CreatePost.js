@@ -12,6 +12,7 @@ import { Select } from './styled/Select.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
 import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
+import { PlusIcon } from './styled/Icon.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -28,11 +29,6 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     text-align: center;
-`
-
-const Icon = styled.img`
-    height: 60px;
-    margin: 0;
 `
 
 export const CreatePost = () => {
@@ -53,7 +49,7 @@ export const CreatePost = () => {
                     <Label createPost="true" htmlFor="photo-upload">
                         <TextCreatePost upload="true">Upload your photo</TextCreatePost>
                         <PlusCircle createPost="true">
-                            <Icon src={plus} alt="plus sign"/>
+                            <PlusIcon createPost="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                         <TextCreatePost>{fileName}</TextCreatePost>
                     </Label>

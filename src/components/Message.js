@@ -49,10 +49,6 @@ const Circle = styled.div`
     align-items: center;
 `
 
-const Icon = styled.img`
-    
-`
-
 export const Message = () => {
     
     return (
@@ -72,7 +68,7 @@ export const Message = () => {
                 <ReceivedMessage/>
                 <NewMessage>
                     <Circle>
-                        <Icon src={plus} alt="plus sign"/>
+                        <img src={plus} alt="plus sign"/>
                     </Circle>
                 </NewMessage>
                 {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}

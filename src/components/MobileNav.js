@@ -8,8 +8,10 @@ import plus from '../images/plus-green.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
-import { PlusIcon } from './styled/PlusIcon.styled';
-import { IconsContainer } from './styled/IconsContainer.styled';
+//import styled components 
+import { PlusIcon } from './styled/Icon.styled'
+import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconMobileNav } from './styled/Icon.styled'
 
 const Box = styled.nav`
     background: var(--white);
@@ -29,10 +31,6 @@ const Box = styled.nav`
     ${window.location.pathname === "/notifications" ? "background: var(--light-pink);" : null}
 `
 
-const Icon = styled.img`
-    height: 30px;
-`
-
 const MobileNav = ({ excludedUrls }) => {
     if (excludedUrls.includes(window.location.pathname)) {
         return null
@@ -41,10 +39,10 @@ const MobileNav = ({ excludedUrls }) => {
         <Box>
             {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon mobile="true"src={plus} alt="plus sign icon"/></Link> : null}
             <IconsContainer mobile="true">
-                {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
-                <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
-                <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>
-                <Link to="/profile"><Icon profile="true" src={profile} alt="user profile icon"/></Link>
+                {window.location.pathname === "/home" ? <Link to="/filter"><IconMobileNav src={category} alt="search by category icon"/></Link> : <Link to="/home"><IconMobileNav src={home} alt="home page icon"/></Link>}
+                <Link to="/messages"><IconMobileNav src={messages} alt="private messages icon"/></Link>
+                <Link to="/notifications"><IconMobileNav src={notifications} alt="notification bell icon"/></Link>
+                <Link to="/profile"><IconMobileNav profile="true" src={profile} alt="user profile icon"/></Link>
             </IconsContainer>
         </Box>
     )

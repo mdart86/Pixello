@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import edit from '../images/edit.svg'
 import deleteIcon from '../images/delete.svg'
+//import styled components
+import { IconPermissionsBar } from './styled/Icon.styled'
 
 const Box = styled.div` 
     position: absolute;
@@ -17,32 +19,28 @@ const Box = styled.div`
     align-items: center;
 `
 
-const Icon = styled.img`
-    height: ${props => props.comment ? "15px" : "20px"};
-    margin: ${props => props.comment ? "0 2px" : "0 5px"}
-`
 
 export const PermissionsBar = ( { comment, desktop } ) => {
     
     if (comment) {
         return (
             <Box comment="true">
-                <Icon comment="true" src={edit} alt="edit pencil icon"/>
-                <Icon comment="true" src={deleteIcon} alt="delete bin icon"/>
+                <IconPermissionsBar comment="true" src={edit} alt="edit pencil icon"/>
+                <IconPermissionsBar comment="true" src={deleteIcon} alt="delete bin icon"/>
             </Box> 
         )
     } if (desktop) {
         return (
             <Box desktop="true">
-                <Icon desktop="true" src={edit} alt="edit pencil icon"/>
-                <Icon desktop="true" src={deleteIcon} alt="delete bin icon"/>
+                <IconPermissionsBar desktop="true" src={edit} alt="edit pencil icon"/>
+                <IconPermissionsBar desktop="true" src={deleteIcon} alt="delete bin icon"/>
             </Box> 
         )
     }else {
         return (
             <Box>
-                <Icon src={edit} alt="edit pencil icon"/>
-                <Icon src={deleteIcon} alt="delete bin icon"/>
+                <IconPermissionsBar src={edit} alt="edit pencil icon"/>
+                <IconPermissionsBar src={deleteIcon} alt="delete bin icon"/>
             </Box> 
         )
     }

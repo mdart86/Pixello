@@ -7,18 +7,13 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Logo } from './styled/Logo.styled'
 import { Input } from './styled/Input.styled'
+import { IconLogin } from './styled/Icon.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
     text-align: center;
     margin: 0;
     padding-top: 40px;
-`
-
-const Icon = styled.img`
-    z-index: 1;
-    ${props => props.forward ? "height: 70px;" : null}
-    ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
 `
 
 const BackgroundBox = styled.div`
@@ -58,13 +53,13 @@ export const LogIn = () => {
                 <Header>Welcome back!</Header>
                 <WhiteFeature/>
             </PinkFeature>
-            <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
+            <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
                 <Form>
                     <Input login="true" username="true" type="text" placeholder="Username"/>
                     <Input login="true" type="password" placeholder="Password"/>
                     <Circle>
-                        <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
+                        <Link to="/home"><IconLogin forward="true" src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
                 </Form>
             </BackgroundBox>
