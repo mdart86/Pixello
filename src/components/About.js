@@ -10,61 +10,36 @@ import { Logo } from './styled/Logo.styled'
 import { IconsContainer } from './styled/IconsContainer.styled'
 import { IconAbout } from './styled/Icon.styled'
 import { Header } from './styled/Header.styled'
-
-const Circle = styled.div`
-    border-radius: 50%;
-    position: absolute;
-    z-index: -1;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
-    color: var(--white);
-    ${props => props.small ? "height: 80px; width: 80px;" : null}
-    ${props => props.medium ? "height: 100px; width: 100px;" : null}
-    ${props => props.large ? "height: 200px; width: 200px;" : null}
-    ${props => props.xlarge ? "height: 330px; width: 330px;" : null}
-
-    ${props => props.pink ? "background: var(--light-pink);" : null}
-    ${props => props.blue ? "background: var(--blue);" : null}
-    ${props => props.green ? "background: var(--green);" : null}
-
-    ${props => props.green && props.xlarge ? "top: 80px; left: -70px;" : null}
-    ${props => props.blue && props.large ? "top: -70px; right: -70px;" : null}
-    ${props => props.blue && props.medium ? "top: 330px; left: 105px; z-index: 1;" : null}
-    ${props => props.pink && props.small ? "top: 300px; left: 190px; z-index: 2;" : null}
-    ${props => props.pink && props.medium ? "top: -20px; left: -20px; z-index: 1;" : null}
-`
-
+import { CircleAbout } from './styled/Circle.styled'
 
 export const About = () => {
     
     return (
         <>
-            <Circle pink="true" medium="true">
+            <CircleAbout pink="true" medium="true">
                 <Link to="/"><IconAbout arrow="true" src={arrow} alt="go back arrow"/></Link>
-            </Circle>
-            <Circle blue="true" large="true"></Circle>
-            <Circle green="true" xlarge="true">
+            </CircleAbout>
+            <CircleAbout blue="true" large="true"></CircleAbout>
+            <CircleAbout green="true" xlarge="true">
                 <Header about="true" title="true">Hey there!</Header>
                 <TextAbout para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</TextAbout>
                 <TextAbout>To reach out to us and keep up with our other work, follow us on Github and Twitter.</TextAbout>
                 <TextAbout copywrite="true">&#169; 2021</TextAbout>
-            </Circle>
-            <Circle pink="true" small="true">
+            </CircleAbout>
+            <CircleAbout pink="true" small="true">
                 <Header name="true">Emily</Header>
                 <IconsContainer about="true">
                     <a href="https://github.com/emigraced/" target="blank"><IconAbout emily="true" src={github} alt="Emily's github social icon"/></a>
                     <a href="https://twitter.com/emigraced" target="blank"><IconAbout emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
                 </IconsContainer>
-            </Circle>
-            <Circle blue="true" medium="true">
+            </CircleAbout>
+            <CircleAbout blue="true" medium="true">
                 <Header name="true">Michael</Header>
                 <IconsContainer about="true">
                     <a href="https://github.com/mdart86/" target="blank"><IconAbout michael="true" src={github} alt="Michael's github social icon"/></a>
                     <a href="https://twitter.com/MichaelDart12/" target="blank"><IconAbout michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
                 </IconsContainer>
-            </Circle>
+            </CircleAbout>
             <Logo about="true">Pixello</Logo>
         </>
     )

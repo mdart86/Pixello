@@ -9,18 +9,7 @@ import { TopClearance } from './styled/TopClearance.styled'
 import { TextMessages } from './styled/Text.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
 import { CenteringContainer } from './styled/CenteringContainer.styled'
-
-const Circle = styled.div`
-    background: var(--white);
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 5px dashed var(--green);
-    margin-top: 45px;
-    display: flex;
-    flex-direction: column;
-`
+import { CircleMessages } from './styled/Circle.styled'
 
 export const Messages = () => {
     
@@ -29,20 +18,20 @@ export const Messages = () => {
             {window.innerWidth < 450 
             ? 
             <PinkFeature>
-                <Circle>
+                <CircleMessages>
                     <TextMessages new="true">new</TextMessages>
                     <TextMessages>message</TextMessages>
-                </Circle>
+                </CircleMessages>
                 <WhiteFeature/>
             </PinkFeature> 
             : 
             <>
             <TopClearance/>
             <CenteringContainer>
-                <Circle>
+                <CircleMessages>
                     <TextMessages new="true">new</TextMessages>
                     <TextMessages>message</TextMessages>
-                </Circle>
+                </CircleMessages>
             </CenteringContainer>
             </>
             }

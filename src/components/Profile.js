@@ -17,13 +17,7 @@ import { AvatarContainer } from './styled/AvatarContainer.styled'
 import { GridContainer } from './styled/GridContainer.styled'
 import { Span } from './styled/Span.styled'
 import { Count } from './styled/Count.styled'
-
-const Bio = styled.p`
-    margin: 5px auto;
-    margin-bottom: 10px;
-    font-size: 0.8rem;
-    width: 70%;
-`
+import { Bio } from './styled/Bio.styled'
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 
@@ -37,7 +31,7 @@ export const Profile = () => {
             <ProfileContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
                 <Username fontSize="1.5rem" profile="true">john_wilson</Username>
-                <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
+                <Bio profile="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>
                     <Avatar profile="true" src={profilePicture} alt="profile picture"/>
                 </AvatarContainer>

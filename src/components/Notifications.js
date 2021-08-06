@@ -11,11 +11,7 @@ import { Username } from './styled/Username.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { DetailsContainer } from './styled/DetailsContainer.styled'
-
-const Bio = styled.p`
-    margin: 0;
-    font-size: 0.8rem;
-`
+import { Bio } from './styled/Bio.styled'
 
 export const Notifications = () => {
 

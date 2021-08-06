@@ -11,20 +11,7 @@ import { IconLogin } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/BackgroundBox.styled'
 import { Header } from './styled/Header.styled'
 import { Form } from './styled/Form.styled'
-
-
-const Circle = styled.div`
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
-`
+import { CircleLogin } from './styled/Circle.styled'
 
 export const LogIn = () => {
     
@@ -39,9 +26,9 @@ export const LogIn = () => {
                 <Form>
                     <Input login="true" username="true" type="text" placeholder="Username"/>
                     <Input login="true" type="password" placeholder="Password"/>
-                    <Circle>
+                    <CircleLogin>
                         <Link to="/home"><IconLogin forward="true" src={arrow} alt="next steps arrow"/></Link>
-                    </Circle>
+                    </CircleLogin>
                 </Form>
             </BackgroundBox>
             <Logo login="true">Pixello</Logo>

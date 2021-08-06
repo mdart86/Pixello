@@ -7,7 +7,6 @@ import plus from '../images/plus-white.svg'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Textarea } from './styled/Textarea.styled'
-import { PlusCircle } from './styled/PlusCircle.styled'
 import { Logo } from './styled/Logo.styled'
 import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
@@ -16,19 +15,7 @@ import { BackgroundBox } from './styled/BackgroundBox.styled'
 import { Header } from './styled/Header.styled'
 import { FileName } from './styled/Filename.styled'
 import { Form } from './styled/Form.styled'
-
-const Circle = styled.div`
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
-`
+import { CircleSignup, PlusCircle } from './styled/Circle.styled'
 
 export const SignUp = () => {
 
@@ -60,9 +47,9 @@ export const SignUp = () => {
                         </PlusCircle>
                     </Label>
                     <Input signup="true" type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
-                    <Circle>
+                    <CircleSignup>
                         <Link to="/home"><IconSignUp forward="true" src={arrow} alt="next steps arrow"/></Link>
-                    </Circle>
+                    </CircleSignup>
                 </Form>
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>

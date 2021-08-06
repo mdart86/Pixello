@@ -18,22 +18,8 @@ import { MessagesContainer } from './styled/MessagesContainer.styled'
 import { NewMessage } from './styled/NewMessage.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { DetailsContainer } from './styled/DetailsContainer.styled'
-
-const Bio = styled.p`
-    margin: 0;
-    font-size: 0.8rem;
-`
-
-
-const Circle = styled.div`
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+import { Bio } from './styled/Bio.styled'
+import { CircleMessage } from './styled/Circle.styled'
 
 export const Message = () => {
     
@@ -53,9 +39,9 @@ export const Message = () => {
                 </SentMessage>
                 <ReceivedMessage/>
                 <NewMessage>
-                    <Circle>
+                    <CircleMessage>
                         <img src={plus} alt="plus sign"/>
-                    </Circle>
+                    </CircleMessage>
                 </NewMessage>
                 {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
