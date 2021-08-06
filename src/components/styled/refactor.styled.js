@@ -505,23 +505,4 @@ const Icon = styled.img`
 const Icon = styled.img`
     ${props => props.water ? "margin-left: 4px;" : null}
 `
-//mobile nav
-const IconsContainer = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-`
-//desktop nav
-const IconsContainer = styled.div`
-    width: 230px;
-    display: flex;
-    justify-content: space-around;
-    margin: 5px 100px 0 0;
-    ${window.location.pathname === "/new" ? "margin-right: 15px;" : null}
-`
-//about 
-const IconsContainer = styled.div`
-    flex-direction: row;
-`
 

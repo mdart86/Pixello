@@ -12,6 +12,7 @@ import profile from '../images/profile.svg'
 //import styled components
 import { PlusIcon } from './styled/PlusIcon.styled';
 import { Logo } from './styled/Logo.styled'
+import { IconsContainer } from './styled/IconsContainer.styled';
 
 const Box = styled.nav`
     display: flex;
@@ -29,14 +30,6 @@ const Box = styled.nav`
     }
 `
 
-const IconsContainer = styled.div`
-    width: 230px;
-    display: flex;
-    justify-content: space-around;
-    margin: 5px 100px 0 0;
-    ${window.location.pathname === "/new" ? "margin-right: 15px;" : null}
-`
-
 const Icon = styled.img`
     height: 30px;
     margin: 0;
@@ -51,7 +44,7 @@ const DesktopNav = ( { excludedUrls } ) => {
             <Logout excludedUrls={excludedUrls} left="true"/>
             {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon desktop="true"src={plus} alt="plus sign icon"/></Link> : null}
             <Logo desktop="true">Pixello</Logo>
-            <IconsContainer>
+            <IconsContainer desktop="true">
                 {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
                 <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>
                 <Link to="/notifications"><Icon src={notifications} alt="notification bell icon"/></Link>

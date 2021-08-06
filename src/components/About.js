@@ -7,6 +7,7 @@ import github from '../images/github.svg'
 //import styled components
 import { TextAbout } from './styled/Text.styled'
 import { Logo } from './styled/Logo.styled'
+import { IconsContainer } from './styled/IconsContainer.styled';
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -39,10 +40,6 @@ const Header = styled.h2`
     ${props => props.title ? "font-size: 2rem;": "font-size: 1rem;"}
 `
 
-const IconsContainer = styled.div`
-    flex-direction: row;
-`
-
 const Icon = styled.img`
     margin: 0 2px;
     ${props => props.arrow ? "transform: rotate(180deg) scale(2);" : null}    
@@ -65,14 +62,14 @@ export const About = () => {
             </Circle>
             <Circle pink="true" small="true">
                 <Header>Emily</Header>
-                <IconsContainer>
+                <IconsContainer about="true">
                     <a href="https://github.com/emigraced/" target="blank"><Icon emily="true" src={github} alt="Emily's github social icon"/></a>
                     <a href="https://twitter.com/emigraced" target="blank"><Icon emily="true" src={twitter} alt="Emily's twitter social icon"/></a> 
                 </IconsContainer>
             </Circle>
             <Circle blue="true" medium="true">
                 <Header>Michael</Header>
-                <IconsContainer>
+                <IconsContainer about="true">
                     <a href="https://github.com/mdart86/" target="blank"><Icon michael="true" src={github} alt="Michael's github social icon"/></a>
                     <a href="https://twitter.com/MichaelDart12/" target="blank"><Icon michael="true" src={twitter} alt="Michael's twitter social icon"/></a>
                 </IconsContainer>
