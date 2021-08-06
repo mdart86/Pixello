@@ -6,6 +6,7 @@ import arrow from '../images/arrow.svg'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Logo } from './styled/Logo.styled'
+import { Input } from './styled/Input.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -35,17 +36,6 @@ const Form = styled.form`
     flex-direction: column;
 `
 
-const Input = styled.input`
-    background: var(--green);
-    border: none;
-    border-bottom: 1px solid var(--white);
-    color: var(--white);
-    font-style: italic;
-    font-size: 1.1rem;
-    width: 70%;
-    margin: 25px auto;
-    ${props => props.username ? "margin-top: 35%" : null}
-`
 
 const Circle = styled.div`
     height: 90px;
@@ -71,8 +61,8 @@ export const LogIn = () => {
             <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
                 <Form>
-                    <Input username="true" type="text" placeholder="Username"/>
-                    <Input type="password" placeholder="Password"/>
+                    <Input login="true" username="true" type="text" placeholder="Username"/>
+                    <Input login="true" type="password" placeholder="Password"/>
                     <Circle>
                         <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
                     </Circle>

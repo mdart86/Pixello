@@ -11,6 +11,7 @@ import { SubHeader } from './styled/H2s.styled'
 import { Select } from './styled/Select.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
 import { Label } from './styled/Label.styled'
+import { Input } from './styled/Input.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -32,24 +33,6 @@ const Form = styled.form`
 const Icon = styled.img`
     height: 60px;
     margin: 0;
-`
-
-//for the share button, as the other input is hidden
-const Input = styled.input`
-    border: none;
-    font-style: italic;
-    font-size: 1rem;
-    margin: 10px auto;
-    color: var(--charcoal); 
-    background: var(--green); 
-    width: 80px; 
-    height: 35px; 
-    border-radius: 5px; 
-    font-family: 'Pacifico', cursive;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
 `
 
 export const CreatePost = () => {
@@ -74,7 +57,7 @@ export const CreatePost = () => {
                         </PlusCircle>
                         <TextCreatePost>{fileName}</TextCreatePost>
                     </Label>
-                    <Input type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <Input createPost="true" type="file" id="photo-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Textarea id="caption" placeholder="Give it a caption"/>
                     <Select name="category">
                         <option value="default" hidden>Categories</option>
@@ -82,7 +65,7 @@ export const CreatePost = () => {
                         <option value="candid">Candid</option>
                         <option value="water">Water</option>
                     </Select>
-                    <Input share="true" type="submit" value="Share!"/>
+                    <Input createPost="true" type="submit" value="Share!"/>
                 </Form>
             </Container>
         </>

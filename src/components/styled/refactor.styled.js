@@ -524,48 +524,4 @@ const IconsContainer = styled.div`
 const IconsContainer = styled.div`
     flex-direction: row;
 `
-//create post (for the share button, as the other input is hidden)
-const Input = styled.input`
-    border: none;
-    font-style: italic;
-    font-size: 1rem;
-    margin: 10px auto;
-    color: var(--charcoal); 
-    background: var(--green); 
-    width: 80px; 
-    height: 35px; 
-    border-radius: 5px; 
-    font-family: 'Pacifico', cursive;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-`
-// login
-const Input = styled.input`
-    background: var(--green);
-    border: none;
-    border-bottom: 1px solid var(--white);
-    color: var(--white);
-    font-style: italic;
-    font-size: 1.1rem;
-    width: 70%;
-    margin: 25px auto;
-    ${props => props.username ? "margin-top: 35%" : null}
-`
-//sign up
-const Input = styled.input`
-    background: var(--green);
-    border: none;
-    border-bottom: 1px solid var(--white);
-    color: var(--white);
-    font-style: italic;
-    font-size: 1.1rem;
-    width: 70%;
-    margin: 25px auto;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-    ${props => props.username ? "margin-top: 50px" : null}
-`
+

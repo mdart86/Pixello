@@ -10,6 +10,7 @@ import { Textarea } from './styled/Textarea.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
 import { Logo } from './styled/Logo.styled'
 import { Label } from './styled/Label.styled'
+import { Input } from './styled/Input.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -17,7 +18,6 @@ const Header = styled.h1`
     margin: 0;
     padding-top: 40px;
 `
-
 
 const BackgroundBox = styled.div`
     width: 65%;
@@ -34,22 +34,6 @@ const Form = styled.form`
     flex-direction: column;
     text-align: center;
     color: var(--white);
-`
-
-const Input = styled.input`
-    background: var(--green);
-    border: none;
-    border-bottom: 1px solid var(--white);
-    color: var(--white);
-    font-style: italic;
-    font-size: 1.1rem;
-    width: 70%;
-    margin: 25px auto;
-    &:focus {
-        outline: none;
-        border: 3px solid var(--dark-pink);
-    }
-    ${props => props.username ? "margin-top: 50px" : null}
 `
 
 const FileName = styled.p`
@@ -94,10 +78,10 @@ export const SignUp = () => {
             <Link to="/"><Icon back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox>
                 <Form>
-                    <Input username="true" type="text" id="username" placeholder="Username"/>
-                    <Input type="email" id="email" placeholder="Email"/>
-                    <Input type="password" id="password" placeholder="Password"/>
-                    <Input type="password" id="password-confirmation" placeholder="Confirm password"/>
+                    <Input signup="true" username="true" type="text" id="username" placeholder="Username"/>
+                    <Input signup="true" type="email" id="email" placeholder="Email"/>
+                    <Input signup="true" type="password" id="password" placeholder="Password"/>
+                    <Input signup="true" type="password" id="password-confirmation" placeholder="Confirm password"/>
                     <Textarea id="bio" placeholder="Your bio" signup="true"/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
@@ -106,7 +90,7 @@ export const SignUp = () => {
                             <Icon upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>
-                    <Input type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <Input signup="true" type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Circle>
                         <Link to="/home"><Icon forward="true" src={arrow} alt="next steps arrow"/></Link>
                     </Circle>
