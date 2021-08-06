@@ -748,23 +748,6 @@ const PlusCircle = styled.div`
     justify-content: center;
     align-items: center;
 `
-//mobile nav
-const PlusIcon = styled.img`
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    margin-left: -35px;
-    height: 70px;
-    width: 70px;  
-`
-//desktop nav
-const PlusIcon = styled.img`
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    height: 80px;
-    width: 80px;  
-`
 
 
 

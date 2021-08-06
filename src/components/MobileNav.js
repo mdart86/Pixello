@@ -8,6 +8,7 @@ import plus from '../images/plus-green.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
+import { PlusIcon } from './styled/PlusIcon.styled';
 
 const Box = styled.nav`
     background: var(--white);
@@ -27,15 +28,6 @@ const Box = styled.nav`
     ${window.location.pathname === "/notifications" ? "background: var(--light-pink);" : null}
 `
 
-const PlusIcon = styled.img`
-    position: absolute;
-    top: -35px;
-    left: 50%;
-    margin-left: -35px;
-    height: 70px;
-    width: 70px;  
-`
-
 const IconsContainer = styled.div`
     width: 100%;
     display: flex;
@@ -53,7 +45,7 @@ const MobileNav = ({ excludedUrls }) => {
     }
     return (
         <Box>
-            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
+            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon mobile="true"src={plus} alt="plus sign icon"/></Link> : null}
             <IconsContainer>
                 {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
                 <Link to="/messages"><Icon src={messages} alt="private messages icon"/></Link>

@@ -9,6 +9,8 @@ import plus from '../images/plus-green.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
+//import styled components
+import { PlusIcon } from './styled/PlusIcon.styled';
 
 const Box = styled.nav`
     display: flex;
@@ -37,14 +39,6 @@ const Logo = styled.h1`
     font-size: 2.5rem;
 `
 
-const PlusIcon = styled.img`
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    height: 80px;
-    width: 80px;  
-`
-
 const IconsContainer = styled.div`
     width: 230px;
     display: flex;
@@ -65,7 +59,7 @@ const DesktopNav = ( { excludedUrls } ) => {
     return (
         <Box>
             <Logout excludedUrls={excludedUrls} left="true"/>
-            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon src={plus} alt="plus sign icon"/></Link> : null}
+            {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon desktop="true"src={plus} alt="plus sign icon"/></Link> : null}
             <Logo>Pixello</Logo>
             <IconsContainer>
                 {window.location.pathname === "/home" ? <Link to="/filter"><Icon src={category} alt="search by category icon"/></Link> : <Link to="/home"><Icon src={home} alt="home page icon"/></Link>}
