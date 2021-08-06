@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom'
 import profilePicture from '../images/profile-picture.jpeg'
 //import styled components
 import { StyledLink } from './styled/StyledLink.styled'
-
-const UserMessage = styled.div`
-    display: flex;
-    margin 2.5px auto;
-`
+import { UserMessage } from './styled/UserMessage.styled'
 
 const Avatar = styled.img`
     height: 65px;

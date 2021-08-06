@@ -916,8 +916,4 @@ const TextArea = styled.textarea`
         border: 3px solid var(--dark-pink);
     }
 `
-//user messages
-const UserMessage = styled.div`
-    display: flex;
-    margin 2.5px auto;
-`
+
