@@ -8,22 +8,13 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { Logo } from './styled/Logo.styled'
 import { Input } from './styled/Input.styled'
 import { IconLogin } from './styled/Icon.styled'
+import { BackgroundBox } from './styled/BackgroundBox.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
     text-align: center;
     margin: 0;
     padding-top: 40px;
-`
-
-const BackgroundBox = styled.div`
-    width: 65%;
-    height: 55vh;
-    background: var(--green);
-    margin: 140px auto 40px;
-    border: 5px solid var(--blue);
-    box-sizing: border-box;
-    position: relative;
 `
 
 const Form = styled.form`
@@ -54,7 +45,7 @@ export const LogIn = () => {
                 <WhiteFeature/>
             </PinkFeature>
             <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>
-            <BackgroundBox>
+            <BackgroundBox login="true">
                 <Form>
                     <Input login="true" username="true" type="text" placeholder="Username"/>
                     <Input login="true" type="password" placeholder="Password"/>

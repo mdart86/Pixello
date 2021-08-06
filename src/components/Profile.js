@@ -13,18 +13,13 @@ import { ProfileContainer } from './styled/ProfileContainer.styled'
 import { PhotoGrid } from './styled/PhotoGrid.styled'
 import { PhotoPreview } from './styled/Photo.styled'
 import { Avatar } from './styled/Avatar.styled'
+import { AvatarContainer } from './styled/AvatarContainer.styled'
 
 const Bio = styled.p`
     margin: 5px auto;
     margin-bottom: 10px;
     font-size: 0.8rem;
     width: 70%;
-`
-
-const AvatarContainer = styled.div`
-    width: 90px;
-    height: 90px;
-    margin: 10px auto;
 `
 
 const Count = styled.p`

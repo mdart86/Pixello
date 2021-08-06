@@ -1,30 +1,4 @@
 
-//profile
-const AvatarContainer = styled.div`
-    width: 90px;
-    height: 90px;
-    margin: 10px auto;
-`
-// login
-const BackgroundBox = styled.div`
-    width: 65%;
-    height: 55vh;
-    background: var(--green);
-    margin: 140px auto 40px;
-    border: 5px solid var(--blue);
-    box-sizing: border-box;
-    position: relative;
-`
-//sign up
-const BackgroundBox = styled.div`
-    width: 65%;
-    height: 720px;
-    background: var(--green);
-    border: 5px solid var(--blue);
-    box-sizing: border-box;
-    margin: 140px auto 40px;
-    position: relative;
-`
 //log out
 const BackgroundCircle = styled.div`
     height: ${props => props.left ? "100px;" : "60px;"}

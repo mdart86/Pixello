@@ -12,6 +12,7 @@ import { Logo } from './styled/Logo.styled'
 import { Label } from './styled/Label.styled'
 import { Input } from './styled/Input.styled'
 import { IconSignUp } from './styled/Icon.styled'
+import { BackgroundBox } from './styled/BackgroundBox.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -19,17 +20,6 @@ const Header = styled.h1`
     margin: 0;
     padding-top: 40px;
 `
-
-const BackgroundBox = styled.div`
-    width: 65%;
-    height: 720px;
-    background: var(--green);
-    border: 5px solid var(--blue);
-    box-sizing: border-box;
-    margin: 140px auto 40px;
-    position: relative;
-`
-
 const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -70,7 +60,7 @@ export const SignUp = () => {
                 <WhiteFeature/>
             </PinkFeature>
             <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
-            <BackgroundBox>
+            <BackgroundBox signup="true">
                 <Form>
                     <Input signup="true" username="true" type="text" id="username" placeholder="Username"/>
                     <Input signup="true" type="email" id="email" placeholder="Email"/>
