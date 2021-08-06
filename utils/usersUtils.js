@@ -10,11 +10,11 @@ const deleteUser = function(id){
     return User.findByIdAndRemove(id)
 }
 
-// Helper function to update user profile by id
-const updateUser = function(req){
-    req.body.modified_at = Date.now()
-    //new: true will return the updated card
-    return User.findByIdAndUpdate(req.params.id, req.body, {new: true})
-}
+// // Helper function to update user profile by id
+// const updateUser = function(req){
+//     req.body.modified_at = Date.now()
+//     //new: true will return the updated card
+//     return User.findByIdAndUpdate(req.params.id, req.body, {new: true})
+// }
 
-module.exports = {getUserById, updateUser, deleteUser}
+module.exports = {getUserById, deleteUser}

@@ -26,7 +26,7 @@ const loginRequired = function(req, res, next){
     }
 }
 
-const signOut = function (req, res) {
+const signOut = function (res) {
     res.cookie(jwt, '', { maxAge: 1 })
     res.redirect('/')
 }

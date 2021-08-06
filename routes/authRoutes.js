@@ -43,8 +43,6 @@ router.post('/sign_up', upload.single('image'), async (req, res) => {
     catch (err) {
     console.log(err, "Image upload unsuccessful");
     }
-    // req.headers
-    // res.redirect('/posts/')
 }); 
 
 // router function to sign in linking to controller function
