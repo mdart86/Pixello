@@ -3,11 +3,7 @@ import styled from 'styled-components'
 import { Post } from './Post' 
 //import styled components 
 import { BottomClearance } from './styled/BottomClearance.styled'
-
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
+import { TopClearance } from './styled/TopClearance.styled'
 
 const Logo = styled.h1`
     text-align: center;

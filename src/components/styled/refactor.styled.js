@@ -930,31 +930,6 @@ const Timestamp = styled.p`
     padding: 0 10px;
     margin-top: 5px;
 `
-//create post
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-//home
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-//message
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-//messages
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
-//notifications
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
 //user messages
 const UserMessage = styled.div`
     display: flex;

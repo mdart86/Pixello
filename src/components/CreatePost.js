@@ -4,11 +4,7 @@ import plus from '../images/plus-white.svg'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
-
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
+import { TopClearance } from './styled/TopClearance.styled'
 
 const Container = styled.section`
     margin: 0 20px;

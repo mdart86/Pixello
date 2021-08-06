@@ -6,11 +6,7 @@ import { ReceivedMessage } from './ReceivedMessage'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
-
-const TopClearance = styled.div`
-    width: 100%;
-    height: 65px;
-`
+import { TopClearance } from './styled/TopClearance.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
