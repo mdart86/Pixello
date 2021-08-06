@@ -1,6 +1,7 @@
 import React from 'react'
 import GlobalStyles from './GlobalStyles'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+//react component imports: 
 import MobileNav from './components/MobileNav'
 import DesktopNav from './components/DesktopNav'
 import Logout from './components/Logout'
@@ -45,4 +46,3 @@ export const App = () => {
     </Router>
   )
 }
-

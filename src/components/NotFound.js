@@ -1,11 +1,21 @@
 import React from 'react'
+//styled component imports: 
+import { WhiteFeature } from './styled/WhiteFeature.styled'
+import { PinkFeature } from './styled/PinkFeature.styled'
+import { Header } from './styled/Header.styled'
+import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { StyledLink } from './styled/StyledLink.styled'
+import { TopClearance } from './styled/TopClearance.styled'
 
 export const NotFound = () => {
     
     return (
         <>
-            <h1>Page Not Found</h1>
-            <p>Return to the home page</p>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            <CenteringContainer notFound="true">
+                <Header>Page Not Found</Header>
+                <p>Oops, looks like this URL is invalid.<br/><StyledLink notFound="true" to="/home">Click here to go back to the home page.</StyledLink></p>
+            </CenteringContainer>
         </>
     )
 }

@@ -21,6 +21,7 @@ export const SubHeader = styled.h2`
 //create post
 //login
 //sign up
+//not found
 export const Header = styled.h1`
     font-family: 'Pacifico', cursive;
     margin: 0;

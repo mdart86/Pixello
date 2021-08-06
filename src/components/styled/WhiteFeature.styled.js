@@ -9,6 +9,7 @@ import styled from "styled-components"
 //  message
 //  login
 //  create post
+//  not found
 
 export const WhiteFeature = styled.div`
     position: absolute; 

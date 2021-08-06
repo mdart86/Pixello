@@ -8,10 +8,14 @@ import { Link } from 'react-router-dom'
 //  post
 //  message
 //  comment
+//  not found
 
 export const StyledLink = styled(Link)`
-    text-decoration: none;
+    ${props => props.notFound ? "text-decoration: underline;" : "text-decoration: none;"}
     &:visited {
         ${props => props.white ? "color: var(--white);" : "color: var(--charcoal);"}
+    }
+    &:hover {
+        ${props => props.notFound ? "opacity: 0.8;" : null}
     }
 `
