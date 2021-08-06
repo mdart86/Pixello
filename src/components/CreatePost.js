@@ -10,6 +10,7 @@ import { TextCreatePost } from './styled/Text.styled'
 import { SubHeader } from './styled/H2s.styled'
 import { Select } from './styled/Select.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
+import { Label } from './styled/Label.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -27,23 +28,6 @@ const Form = styled.form`
     flex-direction: column;
     text-align: center;
 `
-
-const Label = styled.label`
-    width: 90%;
-    margin: 0 auto;
-    height: 140px;
-    border: 4px dashed var(--blue);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--white);
-    &:hover {
-        cursor: pointer;
-    }
-`
-
 
 const Icon = styled.img`
     height: 60px;
@@ -83,7 +67,7 @@ export const CreatePost = () => {
                 <Header>Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form>
-                    <Label htmlFor="photo-upload">
+                    <Label createPost="true" htmlFor="photo-upload">
                         <TextCreatePost upload="true">Upload your photo</TextCreatePost>
                         <PlusCircle createPost="true">
                             <Icon src={plus} alt="plus sign"/>

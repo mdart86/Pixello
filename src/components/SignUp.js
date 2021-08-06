@@ -9,6 +9,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { PlusCircle } from './styled/PlusCircle.styled'
 import { Logo } from './styled/Logo.styled'
+import { Label } from './styled/Label.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;
@@ -56,23 +57,6 @@ const FileName = styled.p`
     font-size: 0.8rem;
 `
 
-const Label = styled.label`
-    background: var(--white);
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    border: 5px dashed var(--blue);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    &:hover {
-        cursor: pointer;
-    }
-`
-
-
 const Icon = styled.img`
     z-index: 1;
     ${props => props.upload ? "height: 40px;" : null}
@@ -117,7 +101,7 @@ export const SignUp = () => {
                     <Textarea id="bio" placeholder="Your bio" signup="true"/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
-                    <Label htmlFor="avatar-upload">
+                    <Label signup="true" htmlFor="avatar-upload">
                         <PlusCircle signup="true">
                             <Icon upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>

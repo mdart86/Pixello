@@ -569,35 +569,3 @@ const Input = styled.input`
     }
     ${props => props.username ? "margin-top: 50px" : null}
 `
-//create post
-const Label = styled.label`
-    width: 90%;
-    margin: 0 auto;
-    height: 140px;
-    border: 4px dashed var(--blue);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--white);
-    &:hover {
-        cursor: pointer;
-    }
-`
-//sign up
-const Label = styled.label`
-    background: var(--white);
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    border: 5px dashed var(--blue);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    &:hover {
-        cursor: pointer;
-    }
-`
