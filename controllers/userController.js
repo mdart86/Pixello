@@ -10,25 +10,14 @@ const getUser = function (req, res){
     })
 }
 
-const removeUser = function(req, res){
-    deleteUser(req.params.id).exec((err)=>{
-        if (err){
-            res.status(404)
-            return res.json({error: err.message})
-        }
-        res.sendStatus(204)
-    })
-}
-
-// const changeUser = function(req,res){
-//     updateUser(req).exec((err, user)=>{
+// const removeUser = function(req, res){
+//     deleteUser(req.params.id).exec((err)=>{
 //         if (err){
 //             res.status(404)
 //             return res.json({error: err.message})
 //         }
-//         res.status(200)
-//         res.send(user)
+//         res.sendStatus(204)
 //     })
 // }
 
-module.exports = {getUser, removeUser}
+module.exports = {getUser}
