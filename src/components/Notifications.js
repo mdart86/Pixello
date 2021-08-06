@@ -1,8 +1,9 @@
 import React from 'react'
-import styled from 'styled-components'
+//image imports: 
 import profilePicture from '../images/pixello-logo.png'
+//react component imports: 
 import { ReceivedMessage } from './ReceivedMessage'
-//import styled components
+//styled component imports: 
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'

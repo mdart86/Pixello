@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { PermissionsBar } from './PermissionsBar'
+//image imports: 
 import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-pink.svg'
-//import styled components
+//react component imports: 
+import { PermissionsBar } from './PermissionsBar'
+//styled component imports:
 import { StyledLink } from './styled/StyledLink.styled'
 import { Username } from './styled/Username.styled'
 import { IconComment } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
 import { BoxComment } from './styled/Box.styled'
-
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 

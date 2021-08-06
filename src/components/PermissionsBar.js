@@ -1,11 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+//image imports: 
 import edit from '../images/edit.svg'
 import deleteIcon from '../images/delete.svg'
-//import styled components
+//styled component imports: 
 import { IconPermissionsBar } from './styled/Icon.styled'
 import { BoxPermissionsBar } from './styled/Box.styled'
-
 
 export const PermissionsBar = ( { comment, desktop } ) => {
     
@@ -23,7 +22,7 @@ export const PermissionsBar = ( { comment, desktop } ) => {
                 <IconPermissionsBar desktop="true" src={deleteIcon} alt="delete bin icon"/>
             </BoxPermissionsBar> 
         )
-    }else {
+    } else {
         return (
             <BoxPermissionsBar>
                 <IconPermissionsBar src={edit} alt="edit pencil icon"/>

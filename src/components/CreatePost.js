@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import styled from 'styled-components'
+//image imports: 
 import plus from '../images/plus-white.svg'
-//import styled components
+//styled component imports: 
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { TopClearance } from './styled/TopClearance.styled'
@@ -15,7 +15,6 @@ import { Input } from './styled/Input.styled'
 import { PlusIcon } from './styled/Icon.styled'
 import { Form } from './styled/Form.styled'
 import { ContainerCreatePost } from './styled/Container.styled'
-
 
 export const CreatePost = () => {
     

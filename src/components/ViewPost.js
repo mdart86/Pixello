@@ -1,16 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Comment } from './Comment'
-import { AddComment } from './AddComment'
-import { PermissionsBar } from './PermissionsBar'
+//image imports:
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 import film from '../images/film.svg'
 import water from '../images/water.svg'
 import candid from '../images/candid.svg'
-//import styled components
+//react component imports: 
+import { Comment } from './Comment'
+import { AddComment } from './AddComment'
+import { PermissionsBar } from './PermissionsBar'
+//styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'

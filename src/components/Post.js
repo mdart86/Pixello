@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+//image imports: 
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
-//import styled components
+//styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { Username } from './styled/Username.styled'
 import { Photo } from './styled/Photo.styled'

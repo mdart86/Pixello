@@ -1,10 +1,10 @@
 import React from 'react'
 import { withRouter } from 'react-router'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+//image imports: 
 import logoutWhite from '../images/log-out-white.svg'
 import logoutCharcoal from '../images/log-out-charcoal.svg'
-//import styled components
+//styled component imports: 
 import { IconLogout } from './styled/Icon.styled'
 import { BackgroundCircle } from './styled/BackgroundCircle.styled'
 import { ContainerLogout } from './styled/Container.styled'

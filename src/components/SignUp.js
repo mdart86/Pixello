@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+//image imports: 
 import arrow from '../images/arrow.svg'
 import plus from '../images/plus-white.svg'
-//import styled components
+//styled component imports: 
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Textarea } from './styled/Textarea.styled'

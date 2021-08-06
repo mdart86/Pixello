@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+//image imports:
 import arrow from '../images/arrow.svg'
 import twitter from '../images/twitter.svg'
 import github from '../images/github.svg'
-//import styled components
+//styled component imports: 
 import { TextAbout } from './styled/Text.styled'
 import { Logo } from './styled/Logo.styled'
 import { IconsContainer } from './styled/IconsContainer.styled'

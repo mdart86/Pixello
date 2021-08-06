@@ -1,14 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
+//image imports: 
 import home from '../images/home.svg'
 import category from '../images/category-search.svg'
 import plus from '../images/plus-green.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
-//import styled components 
+//styled component imports:
 import { PlusIcon } from './styled/Icon.styled'
 import { IconsContainer } from './styled/IconsContainer.styled'
 import { IconMobileNav } from './styled/Icon.styled'

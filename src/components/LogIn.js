@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+//image imports: 
 import arrow from '../images/arrow.svg'
-//import styled components
+//styled component imports:
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Logo } from './styled/Logo.styled'

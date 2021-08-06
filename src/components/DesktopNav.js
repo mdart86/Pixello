@@ -1,15 +1,16 @@
 import React from 'react'
-import styled from 'styled-components'
-import Logout from './Logout'
 import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
+//image imports: 
 import home from '../images/home.svg'
 import category from '../images/category-search.svg'
 import plus from '../images/plus-green.svg'
 import messages from '../images/messages.svg'
 import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
-//import styled components
+//react component imports: 
+import Logout from './Logout'
+//styled component imports: 
 import { PlusIcon } from './styled/Icon.styled'
 import { Logo } from './styled/Logo.styled'
 import { IconsContainer } from './styled/IconsContainer.styled'

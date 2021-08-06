@@ -1,8 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+//image imports: 
 import profilePicture from '../images/profile-picture.jpeg'
-//import styled components
+//styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { UserMessage } from './styled/UserMessage.styled'
 import { TextUserMessages } from './styled/Text.styled'

@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+//react component imports:
 import { Post } from './Post' 
-//import styled components 
+//styled component imports:
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Logo } from './styled/Logo.styled'

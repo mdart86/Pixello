@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
-import { PermissionsBar } from './PermissionsBar'
+//image imports: 
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
-//import styled components
+//react component imports: 
+import { PermissionsBar } from './PermissionsBar'
+//styled component imports: 
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Username } from './styled/Username.styled'

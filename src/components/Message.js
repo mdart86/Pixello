@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+//image imports: 
 import profilePicture from '../images/profile-picture.jpeg'
-import { ReceivedMessage } from './ReceivedMessage'
 import plus from '../images/plus-white.svg'
-//import styled components
+//react component imports: 
+import { ReceivedMessage } from './ReceivedMessage'
+//styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'

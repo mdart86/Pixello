@@ -1,7 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-//import styled components
+//styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { TextAppStart } from './styled/Text.styled'
 import { Tagline } from './styled/Header.styled'
@@ -31,4 +30,3 @@ export const AppStart = () => {
         </>
     )
 }
-
