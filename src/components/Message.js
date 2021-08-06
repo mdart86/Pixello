@@ -15,6 +15,7 @@ import { Timestamp } from './styled/Timestamp.styled'
 import { TextMessage } from './styled/Text.styled'
 import { SentMessage } from './styled/SentMessage.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
+import { NewMessage } from './styled/NewMessage.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -37,20 +38,6 @@ const Bio = styled.p`
     font-size: 0.8rem;
 `
 
-
-const NewMessage = styled.div`
-    height: 50px;
-    width: 75%;
-    background: var(--white);
-    border-radius: 5px;
-    margin: 10px 0;
-    border: 4px dashed var(--blue);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end; 
-`
 
 const Circle = styled.div`
     height: 25px;
