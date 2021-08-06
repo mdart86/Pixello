@@ -916,20 +916,6 @@ const TextArea = styled.textarea`
         border: 3px solid var(--dark-pink);
     }
 `
-//message
-const Timestamp = styled.p`
-    font-size: 0.6rem;
-    color: var(--green);
-    padding: 0 10px;
-    margin-top: 5px;
-`
-//received message
-const Timestamp = styled.p`
-    font-size: 0.6rem;
-    color: var(--green);
-    padding: 0 10px;
-    margin-top: 5px;
-`
 //user messages
 const UserMessage = styled.div`
     display: flex;

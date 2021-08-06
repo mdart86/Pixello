@@ -11,6 +11,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
+import { Timestamp } from './styled/Timestamp.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -54,13 +55,6 @@ const Text = styled.p`
     font-size: 0.8rem;
     padding: 0 10px;
     margin-bottom: 0;
-`
-
-const Timestamp = styled.p`
-    font-size: 0.6rem;
-    color: var(--green);
-    padding: 0 10px;
-    margin-top: 5px;
 `
 
 const NewMessage = styled.div`

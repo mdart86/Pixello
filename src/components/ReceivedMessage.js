@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+//import styled components 
+import { Timestamp } from './styled/Timestamp.styled'
 
 const Box = styled.div`
     height: auto;
@@ -17,13 +19,6 @@ const Text = styled.p`
 
 const Span = styled.span`
     font-family: 'Pacifico', cursive;
-`
-
-const Timestamp = styled.p`
-    font-size: 0.6rem;
-    color: var(--green);
-    padding: 0 10px;
-    margin-top: 5px;
 `
 
 export const ReceivedMessage = ( { notification } ) => {
