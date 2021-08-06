@@ -4,21 +4,11 @@ import profilePicture from '../images/pixello-logo.png'
 import { ReceivedMessage } from './ReceivedMessage'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
+import { PinkFeature } from './styled/PinkFeature.styled'
 
 const TopClearance = styled.div`
     width: 100%;
     height: 65px;
-`
-
-const PinkFeature = styled.div`
-    position: absolute; 
-    height: 100vh; 
-    width: 100%; 
-    background: var(--light-pink); 
-    top: 0;  
-    z-index: -1;  
-    display: flex;
-    justify-content: center; 
 `
 
 const DetailsContainer = styled.div`

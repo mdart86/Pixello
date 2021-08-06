@@ -13,15 +13,7 @@ import candid from '../images/candid.svg'
 //import styled components
 import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
-
-const PinkFeature = styled.div`
-    position: relative; 
-    height: 100vh; 
-    width: 100%; 
-    background: var(--light-pink); 
-    top: 0;  
-    z-index: -1;   
-`
+import { PinkFeature } from './styled/PinkFeature.styled'
 
 const PostContainer = styled.section`
     margin: 0;

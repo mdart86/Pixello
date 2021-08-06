@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { UserMessages } from './UserMessages'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
+import { PinkFeature } from './styled/PinkFeature.styled'
 
 const TopClearance = styled.div`
     width: 100%;
@@ -10,17 +11,6 @@ const TopClearance = styled.div`
 `
 
 const CenteringContainer = styled.div`
-    display: flex;
-    justify-content: center; 
-`
-
-const PinkFeature = styled.div`
-    position: absolute; 
-    height: 100vh; 
-    width: 100%; 
-    background: var(--light-pink); 
-    top: 0;  
-    z-index: -1;  
     display: flex;
     justify-content: center; 
 `

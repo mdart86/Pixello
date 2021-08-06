@@ -5,15 +5,7 @@ import arrow from '../images/arrow.svg'
 import plus from '../images/plus-white.svg'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
-
-const PinkFeature = styled.div`
-    position: absolute; 
-    height: 100vh; 
-    width: 100%; 
-    background: var(--light-pink); 
-    top: 0;  
-    z-index: -1;   
-`
+import { PinkFeature } from './styled/PinkFeature.styled'
 
 const Header = styled.h1`
     font-family: 'Pacifico', cursive;

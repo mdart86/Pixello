@@ -6,17 +6,7 @@ import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
-
-const PinkFeature = styled.div`
-    position: absolute; 
-    height: 100vh; 
-    width: 100%; 
-    background: var(--light-pink); 
-    top: 0;  
-    z-index: -1;  
-    display: flex;
-    justify-content: center; 
-`
+import { PinkFeature } from './styled/PinkFeature.styled'
 
 const ProfileContainer = styled.section`
     width: 100%;
