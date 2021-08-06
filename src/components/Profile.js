@@ -8,6 +8,7 @@ import placeholder from '../images/placeholder.jpg'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Username } from './styled/Username.styled'
+import { Summary } from './styled/Summary.styled'
 
 const ProfileContainer = styled.section`
     width: 100%;
@@ -38,11 +39,6 @@ const Avatar = styled.img`
     border-radius: 50%;
     border: 4px solid var(--white);
     box-sizing: border-box;
-`
-
-const Summary = styled.div`
-    margin: 0 auto;
-    width: 100%;
 `
 
 const Count = styled.p`

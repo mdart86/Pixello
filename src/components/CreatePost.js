@@ -7,6 +7,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { TextCreatePost } from './styled/Text.styled'
+import { SubHeader } from './styled/H2s.styled'
 
 const Container = styled.section`
     margin: 0 20px;
@@ -16,14 +17,6 @@ const Header = styled.h1`
     font-family: 'Pacifico', cursive;
     margin: 20px 0 0 0;
     font-size: 1.5rem;
-    ${window.innerWidth < 450 ? null : "text-align: center"}
-`
-
-const SubHeader = styled.h2`
-    margin: 0 0 20px 0;
-    font-size: 1rem;
-    font-weight: 300;
-    font-style: italic;
     ${window.innerWidth < 450 ? null : "text-align: center"}
 `
 

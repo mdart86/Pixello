@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+//import styled components
 import { TextAppStart } from './styled/Text.styled'
+import { Tagline } from './styled/H2s.styled'
 
 const Circle = styled.div`
     border-radius: 50%;
@@ -38,13 +40,6 @@ const Logo = styled.h1`
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
     margin: 90px 0 0 0;
-`
-
-const Tagline = styled.h2`
-    text-align: center;
-    color: var(--green);
-    font-size: 0.7rem;
-    margin-top: -10px;
 `
 
 const StyledLink = styled(Link)`

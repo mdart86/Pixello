@@ -807,25 +807,8 @@ const SentMessage = styled.div`
 const Span = styled.span`
     font-family: 'Pacifico', cursive;
 `
-//create post
-const SubHeader = styled.h2`
-    margin: 0 0 20px 0;
-    font-size: 1rem;
-    font-weight: 300;
-    font-style: italic;
-    ${window.innerWidth < 450 ? null : "text-align: center"}
-`
-//profile
-const Summary = styled.div`
-    margin: 0 auto;
-    width: 100%;
-`
-//app start
-const Tagline = styled.h2`
-    text-align: center;
-    color: var(--green);
-    font-size: 0.7rem;
-    margin-top: -10px;
-`
+
+
+
 
 
