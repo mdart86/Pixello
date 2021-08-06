@@ -14,11 +14,13 @@ const upload = require('../utils/multer')
 
 router.use(loginRequired)
 
+router.post('/', newPost)
+
 router.get('/', getPosts)
 router.get('/:id', getPost)
 
 
-router.post('/', newPost)
+
 
 router.delete('/:id', removePost)
 

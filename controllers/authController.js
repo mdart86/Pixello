@@ -2,18 +2,6 @@ const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-const signUp = function(req, res){
-    const newUser = new User(req.body)
-    newUser.hash_password = bcrypt.hashSync(req.body.password, 10)
-    newUser.save((err, user)=>{
-        if(err){
-            res.status(400)
-            return res.json({error: err.message})
-        }
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, imageUrl: user.imageUrl, bio: user.bio, _id: user._id},process.env.SECRET_KEY) })
-    })
-}
-
 const signIn = function(req,res){
     User.findOne({username: req.body.username}, (err, user)=>{
         if(err){
@@ -36,4 +24,4 @@ const loginRequired = function(req, res, next){
     }
 }
 
-module.exports = {signUp, signIn, loginRequired}
+module.exports = {signIn, loginRequired}
