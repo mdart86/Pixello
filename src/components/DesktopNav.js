@@ -14,30 +14,14 @@ import { PlusIcon } from './styled/Icon.styled'
 import { Logo } from './styled/Logo.styled'
 import { IconsContainer } from './styled/IconsContainer.styled'
 import { IconDesktopNav } from './styled/Icon.styled'
-
-const Box = styled.nav`
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    background: var(--light-pink);
-    width: 100vw;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 5;
-    &:before {
-        ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: 30px; right: 30px;" : null}
-    }
-`
-
+import { BoxDesktopNav } from './styled/Box.styled';
 
 const DesktopNav = ( { excludedUrls } ) => {
     if (excludedUrls.includes(window.location.pathname)) {
         return null
     } 
     return (
-        <Box>
+        <BoxDesktopNav>
             <Logout excludedUrls={excludedUrls} left="true"/>
             {window.location.pathname !== "/new" ? <Link to="/new"><PlusIcon desktop="true"src={plus} alt="plus sign icon"/></Link> : null}
             <Logo desktop="true">Pixello</Logo>
@@ -47,7 +31,7 @@ const DesktopNav = ( { excludedUrls } ) => {
                 <Link to="/notifications"><IconDesktopNav src={notifications} alt="notification bell icon"/></Link>
                 <Link to="/profile"><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
             </IconsContainer>
-        </Box>
+        </BoxDesktopNav>
     )
 }
 

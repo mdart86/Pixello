@@ -10,13 +10,7 @@ import { Username } from './styled/Username.styled'
 import { IconComment } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
-
-const Box = styled.div`
-    background: var(--blue);
-    margin: 0;
-    border-radius: 5px;
-    position: relative;
-`
+import { BoxComment } from './styled/Box.styled'
 
 
 // add logic to show the permissions bar 
@@ -26,13 +20,13 @@ const Box = styled.div`
 export const Comment = () => {
     return (
        
-            <Box>
+            <BoxComment>
                 <Link to="/profile"><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <IconComment src={like} alt="like button"/>
                 <StyledLink to="/profile"><Username fontSize="0.8rem" comment="true">john_wilson</Username></StyledLink>
                 <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
                 <PermissionsBar comment="true"/>
-            </Box>
+            </BoxComment>
         
     )
 }

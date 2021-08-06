@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 //add comment
-const Box = styled.div`
+export const BoxAddComment = styled.div`
     background: var(--white);
     margin: 0;
     border-radius: 2px;
@@ -11,14 +11,14 @@ const Box = styled.div`
     align-items: center;
 `
 //comment
-const Box = styled.div`
+export const BoxComment = styled.div`
     background: var(--blue);
     margin: 0;
     border-radius: 5px;
     position: relative;
 `
 //desktop nav
-const Box = styled.nav`
+export const BoxDesktopNav = styled.nav`
     display: flex;
     align-items: center;
     justify-content: right;
@@ -34,7 +34,7 @@ const Box = styled.nav`
     }
 `
 //mobile nav
-const Box = styled.nav`
+export const BoxMobileNav = styled.nav`
     background: var(--white);
     width: 100%;
     max-width: 450px;
@@ -52,7 +52,7 @@ const Box = styled.nav`
     ${window.location.pathname === "/notifications" ? "background: var(--light-pink);" : null}
 `
 //permissions bar
-const Box = styled.div` 
+export const BoxPermissionsBar = styled.div` 
     position: absolute;
     ${props => props.comment ? "bottom: 1px; right: 1px;" : props.desktop ? "right: 0; top: -5px;" : "top: -1px; left: -1px;"}
     height: ${props => props.comment ? "40px" : "30px"};
@@ -66,7 +66,7 @@ const Box = styled.div`
     align-items: center;
 `
 //received message
-const Box = styled.div`
+export const BoxReceivedMessage = styled.div`
     height: auto;
     width: 75%;
     background: var(--blue);
