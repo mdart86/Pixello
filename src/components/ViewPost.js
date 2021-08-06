@@ -20,24 +20,12 @@ import { PostContainer } from './styled/PostContainer.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
+import { CommentsContainer } from './styled/CommentsContainer.styled'
+import { CategoryContainer } from './styled/CategoryContainer.styled'
 
 const Caption = styled.p`
     margin: 0;
     font-size: 0.8rem;
-`
-
-
-const CategoryContainer = styled.div`
-    float: right;
-`
-
-const CommentsContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(80px, auto);
-    column-gap: 10px;
-    row-gap: 10px;
-    margin-top: 5px;
 `
 
 // add logic to show the permissions bar 

@@ -1,19 +1,3 @@
-
-//log out
-const BackgroundCircle = styled.div`
-    height: ${props => props.left ? "100px;" : "60px;"}
-    width: ${props => props.left ? "100px;" : "60px;"}
-    ${props => props.left ? "top: -55px;" : null}
-    ${props => props.left ? "left: -20px;" : null}
-    border-radius: 50%;
-    background: var(--green);
-    position: ${props => props.left ? "relative;" : "fixed;"}
-    margin: ${props => props.left ? "0;" : "-15px -15px 0 0;"}
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    ${props => !props.left ? "clip-path: inset(0 10px 0 0);" : null}
-`
 //message
 const Bio = styled.p`
     margin: 0;
@@ -118,15 +102,6 @@ const Caption = styled.p`
 const Caption = styled.p`
     margin: 0;
     font-size: 0.8rem;
-`
-//view post
-const CategoryContainer = styled.div`
-    float: right;
-`
-//messages
-const CenteringContainer = styled.div`
-    display: flex;
-    justify-content: center; 
 `
 //about 
 const Circle = styled.div`
@@ -240,15 +215,6 @@ const Circle = styled.div`
     bottom: -22.5px;
     right: -22.5px;
 `
-//view post
-const CommentsContainer = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: minmax(80px, auto);
-    column-gap: 10px;
-    row-gap: 10px;
-    margin-top: 5px;
-`
 //create post
 const Container = styled.section`
     margin: 0 20px;
@@ -265,13 +231,6 @@ const Container = styled.div`
 const Container = styled.div`
     margin: 0 7%;
 `
-//profile
-const Count = styled.p`
-    margin: 0 20px;
-    font-size: 0.9rem;
-    display: inline;
-`
-
 //message
 const DetailsContainer = styled.div`
     width: 90%;

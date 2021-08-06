@@ -16,6 +16,7 @@ import { Avatar } from './styled/Avatar.styled'
 import { AvatarContainer } from './styled/AvatarContainer.styled'
 import { GridContainer } from './styled/GridContainer.styled'
 import { Span } from './styled/Span.styled'
+import { Count } from './styled/Count.styled'
 
 const Bio = styled.p`
     margin: 5px auto;
@@ -23,13 +24,6 @@ const Bio = styled.p`
     font-size: 0.8rem;
     width: 70%;
 `
-
-const Count = styled.p`
-    margin: 0 20px;
-    font-size: 0.9rem;
-    display: inline;
-`
-
 
 // add logic to show the permissions bar 
 //only when the user is an admin, or is the 

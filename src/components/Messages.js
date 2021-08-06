@@ -8,11 +8,7 @@ import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { TextMessages } from './styled/Text.styled'
 import { MessagesContainer } from './styled/MessagesContainer.styled'
-
-const CenteringContainer = styled.div`
-    display: flex;
-    justify-content: center; 
-`
+import { CenteringContainer } from './styled/CenteringContainer.styled'
 
 const Circle = styled.div`
     background: var(--white);
