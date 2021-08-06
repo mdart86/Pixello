@@ -12,7 +12,7 @@ const bcrypt = require('bcrypt')
 const router = express.Router()
 
 // Requiring functions that sit within controllers
-const {signIn} = require('../controllers/authController')
+const {signIn, signOut} = require('../controllers/authController')
 
 // requiring files within utils file
 const cloudinary = require('../utils/cloudinary')
@@ -48,5 +48,7 @@ router.post('/sign_up', upload.single('image'), async (req, res, next) => {
 
 // router function to sign in linking to controller function
 router.post('/sign_in', signIn)
+
+router.get('/sign_out', signOut)
 
 module.exports = router

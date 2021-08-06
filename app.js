@@ -65,7 +65,7 @@ app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 app.get("/", (req, res) => {
     res.send("Pixello testing... 1, 2, 3")
-    })
+})
 
 // routers used in application
 app.use("/auth", authRouter)

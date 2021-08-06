@@ -1,5 +1,7 @@
+// requiring User model into file
 const User = require('../models/user')
-const bcrypt = require('bcrypt')
+
+// requiring jwt package into file
 const jwt = require('jsonwebtoken')
 
 const signIn = function(req,res){
@@ -24,4 +26,10 @@ const loginRequired = function(req, res, next){
     }
 }
 
-module.exports = {signIn, loginRequired}
+const signOut = function (req, res) {
+    res.cookie(jwt, '', { maxAge: 1 })
+    res.redirect('/')
+}
+
+
+module.exports = {signIn, signOut, loginRequired}
