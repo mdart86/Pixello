@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 //react component imports:
 import { Post } from './Post' 
 //styled component imports:

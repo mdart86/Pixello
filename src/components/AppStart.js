@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 //styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { TextAppStart } from './styled/Text.styled'
