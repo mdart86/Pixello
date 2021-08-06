@@ -765,22 +765,8 @@ const PlusIcon = styled.img`
     height: 80px;
     width: 80px;  
 `
-//view post
-const PostContainer = styled.section`
-    margin: 0;
-    padding: 0 4%;
-    position: absolute;
-    ${window.innerWidth < 450 ? "top: 0px;" : "top: 65px;" }
-`
-//profile
-const ProfileContainer = styled.section`
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    ${window.innerWidth >= 450 ? "position: absolute; top: 65px;" : null}
-`
+
+
 
 
 

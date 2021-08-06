@@ -16,13 +16,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
-
-const PostContainer = styled.section`
-    margin: 0;
-    padding: 0 4%;
-    position: absolute;
-    ${window.innerWidth < 450 ? "top: 0px;" : "top: 65px;" }
-`
+import { PostContainer } from './styled/PostContainer.styled'
 
 const Avatar = styled.img`
     object-fit: cover;

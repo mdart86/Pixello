@@ -9,15 +9,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Username } from './styled/Username.styled'
 import { Summary } from './styled/Summary.styled'
-
-const ProfileContainer = styled.section`
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    ${window.innerWidth >= 450 ? "position: absolute; top: 65px;" : null}
-`
+import { ProfileContainer } from './styled/ProfileContainer.styled'
 
 const Bio = styled.p`
     margin: 5px auto;
