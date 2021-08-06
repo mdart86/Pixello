@@ -6,6 +6,7 @@ import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-pink.svg'
 //import styled components
 import { StyledLink } from './styled/StyledLink.styled'
+import { Username } from './styled/Username.styled'
 
 const Box = styled.div`
     background: var(--blue);
@@ -23,13 +24,6 @@ const Avatar = styled.img`
     border-radius: 50%;
     border: 2px solid var(--green);
     box-sizing: border-box;
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    margin-top: 3px;
-    font-size: 0.8rem;
 `
 
 const Icon = styled.img`
@@ -54,7 +48,7 @@ export const Comment = () => {
             <Box>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <StyledLink to="/profile"><Username fontSize="0.8rem" comment="true">john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
                 <PermissionsBar comment="true"/>
             </Box>

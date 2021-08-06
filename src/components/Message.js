@@ -10,6 +10,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
+import { Username } from './styled/Username.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -25,12 +26,6 @@ const Avatar = styled.img`
     border-radius: 50%;
     border: 4px solid var(--white);
     box-sizing: border-box;
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    font-size: 1.2rem;
 `
 
 const Bio = styled.p`
@@ -103,7 +98,7 @@ export const Message = () => {
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <StyledLink to="/profile"><Username fontSize="1.2rem">john_wilson</Username></StyledLink>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
             </DetailsContainer>
             <MessagesContainer>

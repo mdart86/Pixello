@@ -6,6 +6,7 @@ import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 //import styled components
 import { StyledLink } from './styled/StyledLink.styled'
+import { Username } from './styled/Username.styled'
 
 const Photo = styled.img`
     max-width: 92%;
@@ -29,12 +30,6 @@ const Avatar = styled.img`
     box-sizing: border-box;
 `
 
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    font-size: 0.9rem;
-`
-
 const Icon = styled.img`
     float: right;
 `
@@ -52,7 +47,7 @@ export const Post = () => {
             <Container>
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
                 <Icon src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <StyledLink to="/profile"><Username fontSize="0.9rem">john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
             </Container>
         </>

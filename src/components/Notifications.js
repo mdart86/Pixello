@@ -7,6 +7,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
+import { Username } from './styled/Username.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -22,12 +23,6 @@ const Avatar = styled.img`
     border-radius: 50%;
     border: 4px solid var(--white);
     box-sizing: border-box;
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    font-size: 1.2rem;
 `
 
 const Bio = styled.p`
@@ -49,7 +44,7 @@ export const Notifications = () => {
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
                 <Avatar src={profilePicture} alt="Pixello Logo"/>
-                <Username>Pixello</Username>
+                <Username fontSize="1.2rem">Pixello</Username>
                 <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>
             <MessagesContainer>

@@ -7,6 +7,7 @@ import placeholder from '../images/placeholder.jpg'
 //import styled components
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
+import { Username } from './styled/Username.styled'
 
 const ProfileContainer = styled.section`
     width: 100%;
@@ -15,15 +16,6 @@ const ProfileContainer = styled.section`
     flex-direction: column;
     text-align: center;
     ${window.innerWidth >= 450 ? "position: absolute; top: 65px;" : null}
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0 auto;
-    margin-top: 30px;
-    ${window.innerWidth >= 450 ? "margin-top: 0;" : null}
-    font-size: 1.5rem;
-    width: 70%;
 `
 
 const Bio = styled.p`
@@ -102,7 +94,7 @@ export const Profile = () => {
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <ProfileContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
-                <Username>john_wilson</Username>
+                <Username fontSize="1.5rem" profile="true">john_wilson</Username>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>
                     <Avatar src={profilePicture} alt="profile picture"/>

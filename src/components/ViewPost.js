@@ -15,6 +15,7 @@ import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
+import { Username } from './styled/Username.styled'
 
 const PostContainer = styled.section`
     margin: 0;
@@ -31,13 +32,6 @@ const Avatar = styled.img`
     border: 4px solid var(--white);
     box-sizing: border-box;
     ${window.innerWidth < 450 ? "width: 70px; height: 70px;" : "width: 80px; height: 80px; margin-top: 30px;" }
-`
-
-const Username = styled.p`
-    font-family: 'pacifico', cursive;
-    margin: 0;
-    margin-top: 30px;
-    font-size: 1.2rem;
 `
 
 const Caption = styled.p`
@@ -80,7 +74,7 @@ export const ViewPost = () => {
             <PostContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
                 <Link to="/profile"><Avatar src={profilePicture} alt="A man's profile picture."/></Link>
-                <StyledLink to="/profile"><Username>john_wilson</Username></StyledLink>
+                <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
                 <Caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
                 <Photo src={placeholder} alt="A candid photo of people on the beach."/>
                 <Icon src={like} alt="like button"/>
