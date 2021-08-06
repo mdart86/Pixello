@@ -8,7 +8,7 @@ const router = express.Router()
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getPosts, getPost, removePost, changePost} = require('../controllers/postController')
+const {getAllDatabasePosts, getPosts, getPost, removePost, changePost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -33,7 +33,6 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
             return res.json({error: err.message})
         }
         console.log("Image upload successful")
-        // res.send(post)
         return res.json({username: post.username, caption: post.caption, category: post.category, _id: post._id}) 
         });
     } 
@@ -44,8 +43,8 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
 }); 
 
 
-
-router.get('/', getPosts)
+router.get('/', getAllDatabasePosts)
+router.get('/user_posts', getPosts)
 router.get('/:id', getPost)
 
 router.delete('/:id', removePost)
