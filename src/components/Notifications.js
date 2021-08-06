@@ -8,6 +8,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
+import { MessagesContainer } from './styled/MessagesContainer.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -28,13 +29,6 @@ const Avatar = styled.img`
 const Bio = styled.p`
     margin: 0;
     font-size: 0.8rem;
-`
-
-const MessagesContainer = styled.section`
-    margin: 20px auto 5px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
 `
 
 export const Notifications = () => {

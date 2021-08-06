@@ -14,7 +14,7 @@ import { Username } from './styled/Username.styled'
 import { Timestamp } from './styled/Timestamp.styled'
 import { TextMessage } from './styled/Text.styled'
 import { SentMessage } from './styled/SentMessage.styled'
-
+import { MessagesContainer } from './styled/MessagesContainer.styled'
 
 const DetailsContainer = styled.div`
     width: 90%;
@@ -37,12 +37,7 @@ const Bio = styled.p`
     font-size: 0.8rem;
 `
 
-const MessagesContainer = styled.section`
-    margin: 20px auto 5px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-`
+
 const NewMessage = styled.div`
     height: 50px;
     width: 75%;

@@ -662,26 +662,6 @@ const Logo = styled.h1`
     margin: 0 auto;
 `
 //message
-const MessagesContainer = styled.section`
-    margin: 20px auto 5px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-`
-//messages
-const MessagesContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    ${window.innerWidth < 450 ? "margin-top: 210px;": "margin-top: 50px;"}
-`
-//notifications
-const MessagesContainer = styled.section`
-    margin: 20px auto 5px;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-`
-//message
 const NewMessage = styled.div`
     height: 50px;
     width: 75%;
