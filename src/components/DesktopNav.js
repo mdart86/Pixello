@@ -15,12 +15,25 @@ import { PlusIcon } from './styled/Icon.styled'
 import { Logo } from './styled/Logo.styled'
 import { IconsContainer } from './styled/IconsContainer.styled'
 import { IconDesktopNav } from './styled/Icon.styled'
-import { BoxDesktopNav } from './styled/Box.styled';
+import { BoxDesktopNav, BoxDesktopNavNoPlus } from './styled/Box.styled';
 
 const DesktopNav = ( { excludedUrls } ) => {
     if (excludedUrls.includes(window.location.pathname)) {
         return null
-    } 
+    } else if (window.location.pathname === "/new") {
+        return (
+            <BoxDesktopNavNoPlus>
+                <Logout excludedUrls={excludedUrls} left="true"/>
+                <Logo desktop="true">Pixello</Logo>
+                <IconsContainer desktop="true">
+                    {window.location.pathname === "/home" ? <Link to="/filter"><IconDesktopNav src={category} alt="search by category icon"/></Link> : <Link to="/home"><IconDesktopNav src={home} alt="home page icon"/></Link>}
+                    <Link to="/messages"><IconDesktopNav src={messages} alt="private messages icon"/></Link>
+                    <Link to="/notifications"><IconDesktopNav src={notifications} alt="notification bell icon"/></Link>
+                    <Link to="/profile"><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
+                </IconsContainer>
+            </BoxDesktopNavNoPlus>
+        )
+    }
     return (
         <BoxDesktopNav>
             <Logout excludedUrls={excludedUrls} left="true"/>
