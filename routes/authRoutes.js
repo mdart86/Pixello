@@ -26,8 +26,8 @@ router.post('/sign_up', upload.single('image'), async (req, res) => {
     // Create new user
     const newUser = new User(req.body)
     newUser.hash_password = bcrypt.hashSync(req.body.password, 10)
-    newUser.avatar = result.secure_url
-    newUser.imageUrl = result.public_id
+    newUser.avatarUrl = result.secure_url
+    newUser.imageId = result.public_id
     console.log(newUser)
     // Save user
     await newUser.save((err, user)=>{
@@ -36,7 +36,7 @@ router.post('/sign_up', upload.single('image'), async (req, res) => {
             return res.json({error: err.message})
         }
         console.log("Image upload successful")
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, imageUrl: user.imageUrl, bio: user.bio, _id: user._id},process.env.SECRET_KEY) })
+        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, imageId: user.imageId, bio: user.bio, _id: user._id},process.env.SECRET_KEY) })
     });
     } 
     // error received

@@ -1,17 +1,13 @@
 const Post = require ('../models/post')
 
+// Helper function to get all posts of all users
+const getAllUserPosts = function () {
+    return Post.find()
+}
+
 // Helper function to get all posts from Model associated to user
 const getAllPosts = function (req){
     return Post.find({username: req.user.username})
-}
-
-// Helper function to add a post to Model associated to user
-const addPost = function(req){
-    let date = Date.now()
-    req.body.username = req.user.username
-    req.body.created_at = date
-    req.body.modified_at = date
-    return Post(req.body)
 }
 
 // Helper function to get post by id from Model associated to user
@@ -31,4 +27,4 @@ const updatePost = function(req){
     return Post.findByIdAndUpdate(req.params.id, req.body, {new: true})
 }
 
-module.exports = {getAllPosts, addPost, getPostById, deletePost, updatePost}
+module.exports = {getAllUserPosts, getAllPosts, getPostById, deletePost, updatePost}
