@@ -1,4 +1,4 @@
-const {getAllUserPosts, getAllPostsOfUser, getUserPostById} = require('../utils/postsUtils')
+const {getAllUserPosts, getAllPostsOfUser, getUserPostById } = require('../utils/postsUtils')
 
 // controller function to return all posts for all users
 const getAllDatabasePosts = function (req, res){
@@ -32,5 +32,15 @@ const getIndividualUserPost = function (req, res){
         res.send(post)
     })
 }
+
+// const showPostByCategory = function (req, res){
+//     getPostByCategory(req).exec((err, posts)=>{
+//         if (err){
+//             res.status(500)
+//             return res.json({error: err.message})
+//         } 
+//         res.send(posts)
+//     })
+// }
 
 module.exports = {getAllDatabasePosts, getPostsforUser, getIndividualUserPost}

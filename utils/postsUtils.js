@@ -15,4 +15,8 @@ const getUserPostById = function (id){
     return Post.findById(id)
 }
 
+// const getPostByCategory = function (req){
+//     return Post.find({post: req.post.category})
+// }
+
 module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById}
