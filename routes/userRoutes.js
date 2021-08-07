@@ -29,15 +29,18 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         username: req.body.username || user.username,
         email: req.body.email || user.email,
         bio: req.body.bio || user.bio,
-        avatarUrl: result.secure_url || user.avatar,
-        imageId: result.public_id || user.cloudinary_id,
+        avatarUrl: result.secure_url || user.avatarUrl,
+        imageId: result.public_id || user.imageId,
       };
       user = await User.findByIdAndUpdate(req.params.id, data, {
     new: true
     });
       res.json(user);
-    } catch (err) {
-}});
+    } 
+    catch (err) {
+    console.log(err)  
+    }
+});
 
 
 router.delete("/:id", async (req, res) => {
@@ -48,18 +51,17 @@ router.delete("/:id", async (req, res) => {
     // Delete image from cloudinary
     console.log(user)
     await cloudinary.uploader.destroy(user.imageUrl);
-    // Delete user from db
+    // Delete user from DB
     User.findByIdAndRemove(req.params.id).exec((err)=>{
       if (err){
           res.status(404)
           return res.json({error: err.message})
       }
       res.sendStatus(204)
-  })
-    // res.json(User);
-  } catch (err) {
-    console.log(err);
-}
+  })} 
+  catch (err) {
+  console.log(err);
+  } 
 });
 
 module.exports = router
