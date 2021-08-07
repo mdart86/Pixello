@@ -21,7 +21,7 @@ export const BoxComment = styled.div`
 export const BoxDesktopNav = styled.nav`
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
     background: var(--light-pink);
     width: 100vw;
     height: 60px;
@@ -44,7 +44,7 @@ export const BoxDesktopNav = styled.nav`
 export const BoxDesktopNavNoPlus = styled.nav`
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
     background: var(--light-pink);
     width: 100vw;
     height: 60px;
