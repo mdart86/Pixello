@@ -8,7 +8,7 @@ const router = express.Router()
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, showPostByCategory} = require('../controllers/postController')
+const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, updateLikesOnPost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -45,7 +45,8 @@ router.post('/new_post', upload.single("image"), async (req, res) => {
 router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
-// router.get('/category', showPostByCategory)
+
+router.put('/:id/update_likes', updateLikesOnPost)
 
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
