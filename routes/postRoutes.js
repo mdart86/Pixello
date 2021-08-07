@@ -8,7 +8,7 @@ const router = express.Router()
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getAllDatabasePosts, getPosts, getPost, removePost, changePost} = require('../controllers/postController')
+const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -42,17 +42,52 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
     }
 }); 
 
-const getAllPosts = function (req){
-    return Post.find({username: req.user.username})
-}
-
-
 router.get('/', getAllDatabasePosts)
-router.get('/user_posts', getPosts)
-router.get('/:id', getPost)
+router.get('/user_posts', getPostsforUser)
+router.get('/:id', getIndividualUserPost)
 
-router.delete('/:id', removePost)
+router.put("/:id", upload.single("image"), async (req, res) => {
+    try {
+      let post = await Post.findById(req.params.id);
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.file.path);
+      const data = {
+        username: req.body.username || post.username,
+        caption: req.body.caption || post.caption,
+        category: req.body.category || post.category,
+        likes: req.body.likes || post.likes,
+        avatarUrl: result.secure_url || post.avatarUrl,
+        imageId: result.public_id || post.imageId,
+      };
+      user = await Post.findByIdAndUpdate(req.params.id, data, {
+    new: true
+    });
+      res.json(post);
+    } 
+    catch (err) {
+        console.log(err)
+    }
+});
 
-router.put('/:id', changePost)
+router.delete("/:id", async (req, res) => {
+    try {
+      // Find user by id
+      console.log(req.params.id)
+      let post = await Post.findById(req.params.id);
+      // Delete image from cloudinary
+      console.log(post)
+      await cloudinary.uploader.destroy(post.imageId);
+      // Delete user from DB
+      Post.findByIdAndRemove(req.params.id).exec((err)=>{
+        if (err){
+            res.status(404)
+            return res.json({error: err.message})
+        }
+        res.sendStatus(204)
+    })} 
+    catch (err) {
+    console.log(err);
+    } 
+  });
 
 module.exports = router
