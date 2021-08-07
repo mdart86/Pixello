@@ -5,9 +5,9 @@ export const TextAppStart = styled.p`
     margin: 0;
     font-family: 'Pacifico', cursive;
     text-shadow: 1px 1px 4px grey;
-    ${props => props.about ? "font-family: 'Roboto', sans-serif; font-size: 0.9rem; margin-top: -20px; font-style: italic; font-weight: bold;" : null}
+    ${props => props.about ? "font-family: 'Roboto', sans-serif; font-size: 0.9rem; margin-top: -15px; font-style: italic; font-weight: bold;" : null}
     ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
-    ${props => props.login ? "font-size: 1.3rem; margin-top: -75px;": null}
+    ${props => props.login ? "font-size: 1.8rem; margin-top: -20px;": null}
 `
 //about 
 export const TextAbout = styled.p`

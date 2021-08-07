@@ -23,7 +23,7 @@ export const AppStart = () => {
             </CircleAppStart>
             <ClippingContainer>
                 <CircleAppStart clipAbout="true" green="true" xxlarge="true">
-                    <StyledLink to="/about" white="true"><TextAppStart about="true">About the creators</TextAppStart></StyledLink>
+                    <StyledLink to="/about" white="true"><TextAppStart about="true">About <br/>the creators</TextAppStart></StyledLink>
                 </CircleAppStart>
                 <CircleAppStart clipLogin="true" blue="true" medium="true">
                     <StyledLink to="/log-in" white="true"><TextAppStart login="true">log in</TextAppStart></StyledLink>

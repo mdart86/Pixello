@@ -74,7 +74,7 @@ export const CircleAppStart = styled(Circle)`
     ${props => props.small ? "height: 100px; width: 100px;" : null}
     ${props => props.medium ? "height: 150px; width: 150px;" : null}
     ${props => props.large ? "height: 200px; width: 200px;" : null}
-    ${props => props.xlarge ? "height: 250px; width: 250px;" : null}
+    ${props => props.xlarge ? "height: 270px; width: 270px;" : null}
     ${props => props.xxlarge ? "height: 300px; width: 300px;" : null}
 
     ${props => props.pink ? "background: var(--light-pink);" : null}
@@ -82,13 +82,13 @@ export const CircleAppStart = styled(Circle)`
     ${props => props.blue ? "background: var(--blue);" : null}
 
     ${props => props.small && props.blue ? "top: -55px; right: -55px; height: 100px; width: 100px;" : null}
-    ${props => props.medium && props.blue ? "bottom: -110px; right: 15px;" : null}
+    ${props => props.medium && props.blue ? "bottom: 30px; right: -20px; z-index: 2;" : null}
     ${props => props.large && props.blue ? "top: -80px; left: -40px;" : null}
     ${props => props.small && props.pink ? "top: -55px; left: 120px; z-index: 2;" : null}
-    ${props => props.xlarge && props.pink ? "top: 190px; left: 25px; z-index: 2;" : null}
+    ${props => props.xlarge && props.pink ? "top: 210px; left: 50%; margin-left: -135px; z-index: 2;" : null}
     ${props => props.xsmall && props.green ? "top: 65px; left: -20px; z-index: 2;" : null}
     ${props => props.small && props.green ? "top: 150px; right: -30px;" : null}
-    ${props => props.xxlarge && props.green ? "bottom: -150px; left: -85px;" : null}
+    ${props => props.xxlarge && props.green ? "bottom: -100px; left: -85px;" : null}
 `
 
 // login
