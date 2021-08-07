@@ -1,13 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
-let hideOverflow = ["/", "/about", "/log-in"]
-
 export default createGlobalStyle`
     html, body {
         position: relative;
         margin: 0;
         overflow-x: hidden;
-        min-height: 100vh;
+        height: 100vh;
         font-family: 'Roboto', sans-serif;
         color: var(--charcoal);
         --green: #85DEC3;
@@ -16,7 +14,6 @@ export default createGlobalStyle`
         --blue: #CAEFE8;
         --charcoal: #362D2D;
         --white: #FFFFFF;    
-        ${hideOverflow.includes(window.location.pathname) ? document.body.style.overflow = "hidden" : null}
     }
     @media only screen and (min-width: 450px) {
         html, body {
@@ -27,3 +24,6 @@ export default createGlobalStyle`
 `
 // if the @media width is changed, the max-width
 // in the Nav component needs to be changed too
+
+// let hideOverflow = ["/", "/about", "/log-in"]
+// ${hideOverflow.includes(window.location.pathname) ? document.body.style.overflow = "hidden" : null}
