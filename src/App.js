@@ -1,5 +1,5 @@
 import React from 'react'
-import GlobalStyles from './GlobalStyles'
+import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 //react component imports: 
 import MobileNav from './components/MobileNav'

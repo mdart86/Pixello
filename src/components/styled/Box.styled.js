@@ -17,7 +17,7 @@ export const BoxComment = styled.div`
     border-radius: 5px;
     position: relative;
 `
-//desktop nav
+//desktop nav with create button
 export const BoxDesktopNav = styled.nav`
     display: flex;
     align-items: center;
@@ -30,10 +30,30 @@ export const BoxDesktopNav = styled.nav`
     right: 0;
     z-index: 5;
     &:before {
-        ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: 30px; right: 30px;" : null}
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: 30px; 
+        right: 30px;
     }
 `
-//mobile nav
+//desktop nav without create button
+export const BoxDesktopNavNoPlus = styled.nav`
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    background: var(--light-pink);
+    width: 100vw;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+`
+//mobile nav with create button
 export const BoxMobileNav = styled.nav`
     background: var(--white);
     width: 100%;
@@ -45,11 +65,75 @@ export const BoxMobileNav = styled.nav`
     box-shadow: 0 0 3px grey; 
     z-index: 5;
     &:before {
-        ${window.location.pathname !== "/new" ? "content: ''; width: 60px; height: 60px; border-radius: 50%; background: var(--charcoal); position: absolute; top: -30px; left: 50%; margin-left: -30px;" : null}
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: -30px; 
+        left: 50%; 
+        margin-left: -30px;
     }
-    ${window.location.pathname === "/new" ? "background: var(--blue);" : null}
-    ${window.location.pathname === "/messages" ? "background: var(--green);" : null}
-    ${window.location.pathname === "/notifications" ? "background: var(--light-pink);" : null}
+`
+//mobile nav green background (messages page)
+export const BoxMobileNavGreen = styled.nav`
+    background: var(--green);
+    width: 100%;
+    max-width: 450px;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 3px grey; 
+    z-index: 5;
+    &:before {
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: -30px; 
+        left: 50%; 
+        margin-left: -30px;
+    }
+`
+
+//mobile nav pink background (notifications page)
+export const BoxMobileNavPink = styled.nav`
+    background: var(--light-pink);
+    width: 100%;
+    max-width: 450px;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 3px grey; 
+    z-index: 5;
+    &:before {
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: -30px; 
+        left: 50%; 
+        margin-left: -30px;
+    }
+`
+//mobile nav without create button
+export const BoxMobileNavNoPlus = styled.nav`
+    background: var(--blue);
+    width: 100%;
+    max-width: 450px;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 3px grey; 
+    z-index: 5;
 `
 //permissions bar
 export const BoxPermissionsBar = styled.div` 
