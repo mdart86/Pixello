@@ -29,8 +29,8 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         username: req.body.username || user.username,
         email: req.body.email || user.email,
         bio: req.body.bio || user.bio,
-        avatar: result.secure_url || user.avatar,
-        cloudinary_id: result.public_id || user.cloudinary_id,
+        avatarUrl: result.secure_url || user.avatar,
+        imageId: result.public_id || user.cloudinary_id,
       };
       user = await User.findByIdAndUpdate(req.params.id, data, {
     new: true
@@ -43,23 +43,15 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
       // Find user by id
-      let user = User.findById(req.params.id);
-      console.log(user)
+      let user = await User.findById(req.params.id);
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(req.user.cloudinary_id);
+      await cloudinary.uploader.destroy(user.imageUrl);
       // Delete user from db
-      const userDelete = {
-        username: req.body.username || user.username,
-        email: req.body.email || user.email,
-        bio: req.body.bio || user.bio,
-        avatar: secure_url || user.avatar,
-        cloudinary_id: public_id || user.cloudinary_id,
-      };
-      console.log(userDelete)
-      await User.remove(userDelete);
-      res.json(user);
-      console.log(userDelete)
+      User.findByIdAndRemove(req.params.id)
+      // res.json(User);
     } catch (err) {
-    }});
+      console.log(err);
+  }
+});
 
 module.exports = router

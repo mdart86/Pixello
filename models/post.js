@@ -15,11 +15,11 @@ const Post = new Schema({
         type: String,
         required: true
     },
-    avatar: {
+    avatarUrl: {
         type: String,
         required: false
     },
-    imageUrl: {
+    imageId: {
         type: String,
         required: false
     },

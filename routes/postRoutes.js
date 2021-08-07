@@ -23,8 +23,8 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
     const result = await cloudinary.uploader.upload(req.file.path);
     // Create new post
     const newPost = new Post(req.body)
-    newPost.avatar = result.secure_url
-    newPost.imageUrl = result.public_id
+    newPost.avatarUrl = result.secure_url
+    newPost.imageId = result.public_id
     console.log(newPost)
     // Save post
     await newPost.save((err, post)=>{
@@ -41,6 +41,10 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
     console.log(err, "Image upload unsuccessful");
     }
 }); 
+
+const getAllPosts = function (req){
+    return Post.find({username: req.user.username})
+}
 
 
 router.get('/', getAllDatabasePosts)
