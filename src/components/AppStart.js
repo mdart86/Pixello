@@ -5,11 +5,12 @@ import { TextAppStart } from './styled/Text.styled'
 import { Tagline } from './styled/Header.styled'
 import { Logo } from './styled/Logo.styled'
 import { CircleAppStart } from './styled/Circle.styled'
+import { ContainerAppStart, ClippingContainer } from './styled/Container.styled'
 
 export const AppStart = () => {
 
     return (
-        <>
+        <ContainerAppStart>
             <CircleAppStart blue="true" large="true"></CircleAppStart>
             <CircleAppStart pink="true" small="true"></CircleAppStart>
             <CircleAppStart blue="true" small="true"></CircleAppStart>
@@ -20,12 +21,14 @@ export const AppStart = () => {
             <CircleAppStart pink="true" xlarge="true">
                 <StyledLink to="/sign-up" white="true"><TextAppStart signup="true">sign up</TextAppStart></StyledLink>
             </CircleAppStart>
-            <CircleAppStart green="true" xxlarge="true">
-                <StyledLink to="/about" white="true"><TextAppStart about="true">About the creators</TextAppStart></StyledLink>
-            </CircleAppStart>
-            <CircleAppStart blue="true" medium="true">
-                <StyledLink to="/log-in" white="true"><TextAppStart login="true">log in</TextAppStart></StyledLink>
-            </CircleAppStart>
-        </>
+            <ClippingContainer>
+                <CircleAppStart clipAbout="true" green="true" xxlarge="true">
+                    <StyledLink to="/about" white="true"><TextAppStart about="true">About the creators</TextAppStart></StyledLink>
+                </CircleAppStart>
+                <CircleAppStart clipLogin="true" blue="true" medium="true">
+                    <StyledLink to="/log-in" white="true"><TextAppStart login="true">log in</TextAppStart></StyledLink>
+                </CircleAppStart>
+            </ClippingContainer>
+        </ContainerAppStart>
     )
 }
