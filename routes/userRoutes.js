@@ -24,6 +24,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
     try {
       let user = await User.findById(req.params.id);
       // Upload image to cloudinary
+      await cloudinary.uploader.destroy(user.imageId);
       const result = await cloudinary.uploader.upload(req.file.path);
       const data = {
         username: req.body.username || user.username,

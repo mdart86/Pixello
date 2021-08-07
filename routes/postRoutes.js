@@ -8,7 +8,7 @@ const router = express.Router()
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost} = require('../controllers/postController')
+const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, showPostByCategory} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -17,7 +17,7 @@ const upload = require('../utils/multer')
 
 router.use(loginRequired)
 
-router.post('/new_post', upload.single('image'), async (req, res) => {
+router.post('/new_post', upload.single("image"), async (req, res) => {
     try {
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
@@ -33,7 +33,7 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
             return res.json({error: err.message})
         }
         console.log("Image upload successful")
-        return res.json({username: post.username, caption: post.caption, category: post.category, _id: post._id}) 
+        return res.json({username: post.username, caption: post.caption, category: post.category, imageId: post.imageId, _id: post._id}) 
         });
     } 
     // error received
@@ -45,12 +45,16 @@ router.post('/new_post', upload.single('image'), async (req, res) => {
 router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
+// router.get('/category', showPostByCategory)
 
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
-      let post = await Post.findById(req.params.id);
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+        // Retreive Post
+            let post = await Post.findById(req.params.id);
+        // Delete image from Cloudinary
+            await cloudinary.uploader.destroy(post.imageId);
+        // Upload image to cloudinary
+            const result = await cloudinary.uploader.upload(req.file.path);
       const data = {
         username: req.body.username || post.username,
         caption: req.body.caption || post.caption,
