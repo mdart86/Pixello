@@ -78,4 +78,4 @@ app.use(function (err, req, res, next) {
 })
 
 // Listening for connections on port 4000 and has a callback function that is printed to the console
-app.listen(5000 || 4000, () => {console.log(`Pixello is running on port: ${[port]}`)})
+app.listen(process.env.PORT || 4000, () => {console.log(`Pixello is running on port: ${[port]}`)})
