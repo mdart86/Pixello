@@ -26,10 +26,16 @@ const loginRequired = function(req, res, next){
     }
 }
 
-const signOut = function (res) {
-    res.cookie(jwt, '', { maxAge: 1 })
-    res.redirect('/')
+const signOut = function (req, res, err) {
+    if(err){
+        res.status(400)
+        return res.json({error: err.message})
+    }
+    else {
+        req.session.destroy (() => {
+            res.redirect('auth/sign_out');
+        })
+    }
 }
-
 
 module.exports = {signIn, signOut, loginRequired}
