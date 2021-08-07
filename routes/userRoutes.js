@@ -50,7 +50,7 @@ router.delete("/:id", async (req, res) => {
     let user = await User.findById(req.params.id);
     // Delete image from cloudinary
     console.log(user)
-    await cloudinary.uploader.destroy(user.imageUrl);
+    await cloudinary.uploader.destroy(user.imageId);
     // Delete user from DB
     User.findByIdAndRemove(req.params.id).exec((err)=>{
       if (err){

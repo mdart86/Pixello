@@ -1,4 +1,4 @@
-const {getAllUserPosts, getAllPostsOfUser, getUserPostById, deletePost} = require('../utils/postsUtils')
+const {getAllUserPosts, getAllPostsOfUser, getUserPostById} = require('../utils/postsUtils')
 
 // controller function to return all posts for all users
 const getAllDatabasePosts = function (req, res){
@@ -33,15 +33,4 @@ const getIndividualUserPost = function (req, res){
     })
 }
 
-// controller function to delete post of user
-const removePost = function(req, res){
-    deletePost(req.params.id).exec((err)=>{
-        if (err){
-            res.status(404)
-            return res.json({error: err.message})
-        }
-        res.sendStatus(204)
-    })
-}
-
-module.exports = {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, removePost}
+module.exports = {getAllDatabasePosts, getPostsforUser, getIndividualUserPost}

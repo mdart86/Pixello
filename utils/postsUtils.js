@@ -15,9 +15,4 @@ const getUserPostById = function (id){
     return Post.findById(id)
 }
 
-// Helper function to delete a post to Model associated to user
-const deletePost = function(id){
-    return Post.findByIdAndRemove(id)
-}
-
-module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById, deletePost}
+module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById}

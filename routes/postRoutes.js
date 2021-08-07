@@ -8,7 +8,7 @@ const router = express.Router()
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, removePost} = require('../controllers/postController')
+const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -46,11 +46,9 @@ router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
-router.delete('/:id', removePost)
-
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
-      let user = await Post.findById(req.params.id);
+      let post = await Post.findById(req.params.id);
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
       const data = {
@@ -70,5 +68,26 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         console.log(err)
     }
 });
+
+router.delete("/:id", async (req, res) => {
+    try {
+      // Find user by id
+      console.log(req.params.id)
+      let post = await Post.findById(req.params.id);
+      // Delete image from cloudinary
+      console.log(post)
+      await cloudinary.uploader.destroy(post.imageId);
+      // Delete user from DB
+      Post.findByIdAndRemove(req.params.id).exec((err)=>{
+        if (err){
+            res.status(404)
+            return res.json({error: err.message})
+        }
+        res.sendStatus(204)
+    })} 
+    catch (err) {
+    console.log(err);
+    } 
+  });
 
 module.exports = router
