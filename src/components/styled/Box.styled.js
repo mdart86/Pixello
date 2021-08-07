@@ -75,10 +75,54 @@ export const BoxMobileNav = styled.nav`
         left: 50%; 
         margin-left: -30px;
     }
-    ${window.location.pathname === "/messages" ? "background: var(--green);" : null}
-    ${window.location.pathname === "/notifications" ? "background: var(--light-pink);" : null}
+`
+//mobile nav green background (messages page)
+export const BoxMobileNavGreen = styled.nav`
+    background: var(--green);
+    width: 100%;
+    max-width: 450px;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 3px grey; 
+    z-index: 5;
+    &:before {
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: -30px; 
+        left: 50%; 
+        margin-left: -30px;
+    }
 `
 
+//mobile nav pink background (notifications page)
+export const BoxMobileNavPink = styled.nav`
+    background: var(--light-pink);
+    width: 100%;
+    max-width: 450px;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0 3px grey; 
+    z-index: 5;
+    &:before {
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: -30px; 
+        left: 50%; 
+        margin-left: -30px;
+    }
+`
 //mobile nav without create button
 export const BoxMobileNavNoPlus = styled.nav`
     background: var(--blue);
