@@ -1,6 +1,7 @@
 import React from 'react'
 import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { Store } from './utils/context'
 //react component imports: 
 import MobileNav from './components/MobileNav'
 import DesktopNav from './components/DesktopNav'
@@ -25,6 +26,7 @@ export const App = () => {
 
   return (
     <Router>
+      <Store>
         <GlobalStyles/>
         <Switch>
             <Route exact path="/" component={AppStart}/>
@@ -43,6 +45,7 @@ export const App = () => {
         </Switch>
         {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}
         {window.innerWidth < 450 ? <MobileNav excludedUrls={excludedUrls}/> : <DesktopNav excludedUrls={excludedUrls}/>}
+      </Store>
     </Router>
   )
 }

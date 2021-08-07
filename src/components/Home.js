@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../utils/context'
 //react component imports:
 import { Post } from './Post' 
 //styled component imports:
@@ -7,6 +8,8 @@ import { TopClearance } from './styled/TopClearance.styled'
 import { Logo } from './styled/Logo.styled'
 
 export const Home = () => {
+
+    const [state, dispatch ] = useContext(Context)
 
     return (
         <>
