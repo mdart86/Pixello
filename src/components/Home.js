@@ -12,7 +12,11 @@ export const Home = () => {
     const { store } = useGlobalState()
     const { loggedInUser } = store
 
-    console.log(loggedInUser)
+    if (loggedInUser) {
+        console.log("Current signed in user is: " + loggedInUser + ".")
+    } else {
+        console.log("There is no signed in user.")
+    }
 
     return (
         <>

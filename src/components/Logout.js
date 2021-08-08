@@ -1,6 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
+import { useGlobalState } from '../utils/context'
 //image imports: 
 import logoutWhite from '../images/log-out-white.svg'
 import logoutCharcoal from '../images/log-out-charcoal.svg'
@@ -9,7 +9,17 @@ import { IconLogout } from './styled/Icon.styled'
 import { BackgroundCircle } from './styled/BackgroundCircle.styled'
 import { ContainerLogout } from './styled/Container.styled'
 
-const Logout = ({ excludedUrls, left }) => {
+const Logout = ({ excludedUrls, left, history }) => {
+
+    const { dispatch } = useGlobalState()
+
+    function handleLogout(e) {
+        dispatch({
+            type: "logOutUser",
+            data: ""
+        })
+        history.push("/")
+    }
 
     if (excludedUrls.includes(window.location.pathname)) {
         return null
@@ -17,7 +27,7 @@ const Logout = ({ excludedUrls, left }) => {
         return (
             <ContainerLogout left="true">
                 <BackgroundCircle left="true">
-                    <Link to="/"><IconLogout left="true" src={logoutCharcoal} alt="logout icon"/></Link>
+                    <IconLogout onClick={handleLogout} left="true" src={logoutCharcoal} alt="logout icon"/>
                 </BackgroundCircle>
             </ContainerLogout>
         )
@@ -25,7 +35,7 @@ const Logout = ({ excludedUrls, left }) => {
         return (
             <ContainerLogout>
                 <BackgroundCircle>
-                    <Link to="/"><IconLogout src={logoutWhite} alt="logout icon"/></Link>
+                    <IconLogout onClick={handleLogout} src={logoutWhite} alt="logout icon"/>
                 </BackgroundCircle>
             </ContainerLogout>
         )

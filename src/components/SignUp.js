@@ -21,8 +21,7 @@ import { CircleSignup, PlusCircle } from './styled/Circle.styled'
 export const SignUp = ({history}) => {
 
     //global state
-    const { store, dispatch } = useGlobalState()
-    const { loggedInUser } = store
+    const { dispatch } = useGlobalState()
 
     //state and function for showing the filename to the user 
     const [fileName, setFileName] = useState("No File Chosen")
@@ -45,8 +44,6 @@ export const SignUp = ({history}) => {
     }
 
     const [formData, setFormData] = useState(initialFormData)
-
-    console.log(formData)
     
     function handleFormData(e) {
         setFormData({
@@ -57,18 +54,14 @@ export const SignUp = ({history}) => {
 
     function submitFormData(e) {
         e.preventDefault()
-        console.log("form submitted")
         // need post request to api to create user
         dispatch({
             type: "setLoggedInUser",
             data: formData.username
         })
-        console.log(loggedInUser)
         setFormData(initialFormData)
-        console.log(formData)
         history.push('/home')
     }
-    
 
     return (
         <>
@@ -95,7 +88,7 @@ export const SignUp = ({history}) => {
                     <CircleSignup htmlFor="submitButton">
                         <IconSignUp forward="true" src={arrow} alt="next steps arrow"/>
                     </CircleSignup>
-                    <input required type="submit" id="submitButton" hidden/>
+                    <input type="submit" id="submitButton" hidden/>
                 </Form>
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>

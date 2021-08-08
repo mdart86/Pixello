@@ -1,5 +1,5 @@
 export const initialState = {
-    loggedInUser: "no user",
+    loggedInUser: "",
     isAdmin: false
 }
 
@@ -27,7 +27,7 @@ export const reducer = (state, action) => {
         case "logOutUser":
             return {
                 ...state, 
-                loggedInUser: ""
+                loggedInUser: action.data
             }
         default: 
             return state
