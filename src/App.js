@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useReducer } from 'react'
+import { initialState, reducer } from './utils/reducer'
+import { Context } from './utils/context'
 import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import { Store } from './utils/context'
+// import axios from 'axios'
 //react component imports: 
 import MobileNav from './components/MobileNav'
 import DesktopNav from './components/DesktopNav'
@@ -22,11 +24,22 @@ import { NotFound } from './components/NotFound';
 
 export const App = () => {
 
+  const [store, dispatch] = useReducer(reducer, initialState)
+
+  // api call with axios. can save to state here
+  useEffect(() => {
+      // axios.get("https://pixello.herokuapp.com")
+      //   .then(response => response.json)
+      //   .then(data => console.log(data))
+      //   .catch(err => console.log(err))
+  }, [])
+
+
   let excludedUrls = ["/", "/about", "/sign-up", "/log-in"]
 
   return (
-    <Router>
-      <Store>
+    <Context.Provider value={{store, dispatch}}>
+      <Router>
         <GlobalStyles/>
         <Switch>
             <Route exact path="/" component={AppStart}/>
@@ -45,7 +58,7 @@ export const App = () => {
         </Switch>
         {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}
         {window.innerWidth < 450 ? <MobileNav excludedUrls={excludedUrls}/> : <DesktopNav excludedUrls={excludedUrls}/>}
-      </Store>
-    </Router>
+      </Router>
+    </Context.Provider>
   )
 }

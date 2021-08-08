@@ -109,7 +109,11 @@ export const CircleMessage = styled(Circle)`
 `
 
 //signup
-export const CircleSignup = styled(Circle)`
+export const CircleSignup = styled.label`
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     height: 90px;
     width: 90px;
     background: var(--blue);

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Context } from '../utils/context'
+import React from 'react'
+import { useGlobalState } from '../utils/context'
 //react component imports:
 import { Post } from './Post' 
 //styled component imports:
@@ -9,7 +9,10 @@ import { Logo } from './styled/Logo.styled'
 
 export const Home = () => {
 
-    const [state, dispatch ] = useContext(Context)
+    const { store } = useGlobalState()
+    const { loggedInUser } = store
+
+    console.log(loggedInUser)
 
     return (
         <>
