@@ -1,4 +1,5 @@
 import React from 'react'
+import { useGlobalState } from '../utils/context'
 //styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { TextAppStart } from './styled/Text.styled'
@@ -9,6 +10,15 @@ import { ContainerAppStart, ClippingContainer } from './styled/Container.styled'
 
 export const AppStart = () => {
 
+    const { store } = useGlobalState()
+    const { loggedInUser } = store
+    
+    if (loggedInUser) {
+        console.log("Current signed in user is: " + loggedInUser + ".")
+    } else {
+        console.log("There is no signed in user.")
+    }
+    
     return (
         <ContainerAppStart>
             <CircleAppStart blue="true" large="true"></CircleAppStart>

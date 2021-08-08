@@ -92,7 +92,11 @@ export const CircleAppStart = styled(Circle)`
 `
 
 // login
-export const CircleLogin = styled(Circle)`
+export const CircleLogin = styled.label`
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     height: 90px;
     width: 90px;
     background: var(--blue);
@@ -109,7 +113,11 @@ export const CircleMessage = styled(Circle)`
 `
 
 //signup
-export const CircleSignup = styled(Circle)`
+export const CircleSignup = styled.label`
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     height: 90px;
     width: 90px;
     background: var(--blue);

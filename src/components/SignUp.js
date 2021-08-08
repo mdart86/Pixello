@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useGlobalState } from '../utils/context'
 import { Link } from 'react-router-dom'
 //image imports: 
 import arrow from '../images/arrow.svg'
@@ -17,14 +18,51 @@ import { FileName } from './styled/Filename.styled'
 import { Form } from './styled/Form.styled'
 import { CircleSignup, PlusCircle } from './styled/Circle.styled'
 
-export const SignUp = () => {
+export const SignUp = ({history}) => {
 
+    //global state
+    const { dispatch } = useGlobalState()
+
+    //state and function for showing the filename to the user 
     const [fileName, setFileName] = useState("No File Chosen")
 
-    function displayFileInfo(e) {
+    function displayFileName(e) {
         setFileName(e.target.files[0].name)
+        setFormData({
+            ...formData,
+            avatar: e.target.files[0]
+        })
     }
+
+    const initialFormData = { 
+        username: "",
+        email: "", 
+        password: "",
+        passwordConfirmation: "",
+        bio: "", 
+        avatar: ""
+    }
+
+    const [formData, setFormData] = useState(initialFormData)
     
+    function handleFormData(e) {
+        setFormData({
+            ...formData, 
+            [e.target.id]: e.target.value
+        })
+    }
+
+    function submitFormData(e) {
+        e.preventDefault()
+        // need post request to api to create user
+        dispatch({
+            type: "setLoggedInUser",
+            data: formData.username
+        })
+        setFormData(initialFormData)
+        history.push('/home')
+    }
+
     return (
         <>
             <PinkFeature>
@@ -33,23 +71,24 @@ export const SignUp = () => {
             </PinkFeature>
             <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox signup="true">
-                <Form signup="true">
-                    <Input signup="true" username="true" type="text" id="username" placeholder="Username"/>
-                    <Input signup="true" type="email" id="email" placeholder="Email"/>
-                    <Input signup="true" type="password" id="password" placeholder="Password"/>
-                    <Input signup="true" type="password" id="password-confirmation" placeholder="Confirm password"/>
-                    <Textarea id="bio" placeholder="Your bio" signup="true"/>
+                <Form signup="true" onSubmit={submitFormData}>
+                    <Input required signup="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
+                    <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
+                    <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
+                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" value={formData.passwordConfirmation} onChange={handleFormData}/>
+                    <Textarea required signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
-                    <Label signup="true" htmlFor="avatar-upload">
+                    <Label signup="true" htmlFor="avatar">
                         <PlusCircle signup="true">
                             <IconSignUp upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>
-                    <Input signup="true" type="file" id="avatar-upload" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
-                    <CircleSignup>
-                        <Link to="/home"><IconSignUp forward="true" src={arrow} alt="next steps arrow"/></Link>
+                    <input required signup="true" type="file" id="avatar" accept=".png, .jpg, .jpeg" hidden onChange={displayFileName}/>
+                    <CircleSignup htmlFor="submitButton">
+                        <IconSignUp forward="true" src={arrow} alt="next steps arrow"/>
                     </CircleSignup>
+                    <input type="submit" id="submitButton" hidden/>
                 </Form>
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { useGlobalState } from '../utils/context'
 //react component imports:
 import { Post } from './Post' 
 //styled component imports:
@@ -7,6 +8,15 @@ import { TopClearance } from './styled/TopClearance.styled'
 import { Logo } from './styled/Logo.styled'
 
 export const Home = () => {
+
+    const { store } = useGlobalState()
+    const { loggedInUser } = store
+
+    if (loggedInUser) {
+        console.log("Current signed in user is: " + loggedInUser + ".")
+    } else {
+        console.log("There is no signed in user.")
+    }
 
     return (
         <>
