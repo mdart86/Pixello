@@ -15,9 +15,4 @@ const getUserPostById = function (id){
     return Post.findById(id)
 }
 
-const getPostByIdForLikes = function (req) {
-    return Post.findOneAndUpdate(req({likes: req.post.likes, _id: post._id}))
-    console.log(req.post.likes)
-}
-
-module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById, getPostByIdForLikes}
+module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById}
