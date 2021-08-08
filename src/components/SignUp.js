@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useGlobalState } from '../utils/context'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 //image imports: 
 import arrow from '../images/arrow.svg'
 import plus from '../images/plus-white.svg'
@@ -20,19 +21,7 @@ import { CircleSignup, PlusCircle } from './styled/Circle.styled'
 
 export const SignUp = ({history}) => {
 
-    //global state
     const { dispatch } = useGlobalState()
-
-    //state and function for showing the filename to the user 
-    const [fileName, setFileName] = useState("No File Chosen")
-
-    function displayFileName(e) {
-        setFileName(e.target.files[0].name)
-        setFormData({
-            ...formData,
-            avatar: e.target.files[0]
-        })
-    }
 
     const initialFormData = { 
         username: "",
@@ -44,6 +33,17 @@ export const SignUp = ({history}) => {
     }
 
     const [formData, setFormData] = useState(initialFormData)
+
+    //saving the image file name to show to the user 
+    const [fileName, setFileName] = useState("No File Chosen")
+
+    function handleImageFile(e) {
+        setFileName(e.target.files[0].name)
+        setFormData({
+            ...formData,
+            avatar: e.target.value
+        })
+    }
     
     function handleFormData(e) {
         setFormData({
@@ -52,13 +52,17 @@ export const SignUp = ({history}) => {
         })
     }
 
-    function submitFormData(e) {
+    async function submitFormData(e) {
         e.preventDefault()
-        // need post request to api to create user
         dispatch({
             type: "setLoggedInUser",
             data: formData.username
         })
+        const data = new FormData()
+        data.append("image", formData.avatar)
+        await axios.post("https://pixello.herokuapp.com/auth/sign_up", data)
+            .then(res => console.log("Response: " + res.data))
+            .catch(err => console.log(err))
         setFormData(initialFormData)
         history.push('/home')
     }
@@ -84,7 +88,7 @@ export const SignUp = ({history}) => {
                             <IconSignUp upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>
-                    <input required signup="true" type="file" id="avatar" accept=".png, .jpg, .jpeg" hidden onChange={displayFileName}/>
+                    <input required signup="true" type="file" id="avatar" name="avatar" accept=".png, .jpg, .jpeg" hidden onChange={handleImageFile}/>
                     <CircleSignup htmlFor="submitButton">
                         <IconSignUp forward="true" src={arrow} alt="next steps arrow"/>
                     </CircleSignup>
