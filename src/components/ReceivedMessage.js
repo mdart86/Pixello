@@ -4,7 +4,7 @@ import { Timestamp } from './styled/Timestamp.styled'
 import { TextReceivedMessage } from './styled/Text.styled'
 import { Span } from './styled/Span.styled'
 import { BoxReceivedMessage } from './styled/Box.styled'
-
+import { StyledLink } from './styled/StyledLink.styled'
 export const ReceivedMessage = ( { notification } ) => {
     
     return (
@@ -12,7 +12,7 @@ export const ReceivedMessage = ( { notification } ) => {
             <BoxReceivedMessage>
                 {notification 
                 ?                 
-                <TextReceivedMessage><Span>john_wilson</Span> liked your comment.</TextReceivedMessage>
+                <TextReceivedMessage><StyledLink to="/profile"><Span>john_wilson</Span></StyledLink> liked your comment.</TextReceivedMessage>
                 : 
                 <TextReceivedMessage>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</TextReceivedMessage>
                 }

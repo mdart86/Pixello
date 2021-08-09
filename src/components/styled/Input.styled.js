@@ -19,4 +19,7 @@ export const Input = styled.input`
         outline: none;
         border: 3px solid var(--dark-pink);
     }
+    &:hover {
+        ${props => props.createPost ? "opacity: 0.7;" : null}
+    }
 `

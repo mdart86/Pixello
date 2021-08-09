@@ -20,7 +20,7 @@ export const Notifications = () => {
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
-                <Avatar notifications="true" src={profilePicture} alt="Pixello Logo"/>
+                <Avatar unClickable="true" notifications="true" src={profilePicture} alt="Pixello Logo"/>
                 <Username fontSize="1.2rem">Pixello</Username>
                 <Bio>Here's where we'll notify you of activity related to your account.</Bio>
             </DetailsContainer>

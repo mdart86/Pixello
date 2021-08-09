@@ -24,5 +24,8 @@ export const Avatar = styled.img`
     ${props => props.viewPost ? "margin: 35px 10px 10px 0;" : null}
     ${props => props.viewPost && window.innerWidth < 450 ? "width: 70px; height: 70px;" : null}
     ${props => props.viewPost && window.innerWidth >= 450 ? "width: 80px; height: 80px; margin-top: 30px;" : null}
+    &:hover {
+        ${props => !props.unClickable? "opacity: 0.7;" : null}
+    }
 `
 

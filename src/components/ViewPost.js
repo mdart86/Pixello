@@ -39,7 +39,7 @@ export const ViewPost = () => {
                 <Link to="/profile"><Avatar viewPost="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
                 <Caption viewPost="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
-                <Photo viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>
+                <Photo unClickable="true" viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
                 <CategoryContainer>
                     <Link to="/filter"><IconViewPost src={film} alt="film category"/></Link>

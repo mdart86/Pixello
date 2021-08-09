@@ -16,6 +16,6 @@ export const StyledLink = styled(Link)`
         ${props => props.white ? "color: var(--white);" : "color: var(--charcoal);"}
     }
     &:hover {
-        ${props => props.notfound || props.pleasesignin ? "opacity: 0.8;" : null}
+        opacity: 0.7;
     }
 `

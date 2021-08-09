@@ -23,7 +23,7 @@ export const Comment = () => {
             <BoxComment>
                 <Link to="/profile"><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <IconComment src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username fontSize="0.8rem" comment="true">john_wilson</Username></StyledLink>
+                <StyledLink to="/profile"><Username comment="true" fontSize="0.8rem">john_wilson</Username></StyledLink>
                 <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
                 <PermissionsBar comment="true"/>
             </BoxComment>
