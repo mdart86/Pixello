@@ -46,7 +46,30 @@ router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
-router.put('/update_likes/:id')
+router.put('/update_likes/:id', async (req,res) => {
+    try {
+        // Retreive Post by Id
+        let post = await Post.findById(req.params.id);
+        // updates likes on post
+        const result = await Post.updateOne({likes: res.post.likes})
+
+        const data = {
+            username: req.body.username || post.username,
+            caption: req.body.caption || post.caption,
+            category: req.body.category || post.category,
+            likes: result.body.likes || post.likes,
+            avatarUrl: req.secure_url || post.avatarUrl,
+            imageId: req.public_id || post.imageId,
+        };
+        post = await Post.findByIdAndUpdate(req.params.id, data, {
+        new: true
+        });
+            res.json(post);
+        } 
+        catch (err) {
+            console.log(err)
+        }
+});
 
 // let post = await Post.findById(req.params.id);
 // // Update the document using `updateOne()`
@@ -61,11 +84,11 @@ router.put('/update_likes/:id')
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
         // Retreive Post
-            let post = await Post.findById(req.params.id);
+        let post = await Post.findById(req.params.id);
         // Delete image from Cloudinary
-            await cloudinary.uploader.destroy(post.imageId);
+        await cloudinary.uploader.destroy(post.imageId);
         // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path);
+        const result = await cloudinary.uploader.upload(req.file.path);
       const data = {
         username: req.body.username || post.username,
         caption: req.body.caption || post.caption,
@@ -74,7 +97,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         avatarUrl: result.secure_url || post.avatarUrl,
         imageId: result.public_id || post.imageId,
       };
-      user = await Post.findByIdAndUpdate(req.params.id, data, {
+      post = await Post.findByIdAndUpdate(req.params.id, data, {
     new: true
     });
       res.json(post);
