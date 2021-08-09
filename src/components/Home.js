@@ -19,7 +19,7 @@ export const Home = () => {
             headers: { Authorization: `Bearer ${token}` }
         };
         axios.get("https://pixello.herokuapp.com/posts/", authorisation)
-            .then(res => console.log("Response: " + res.json()))
+            .then(res => console.log("Response: " + res))
             .catch(err => console.log(err))
     }, [])
 

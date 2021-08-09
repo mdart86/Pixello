@@ -11,4 +11,8 @@ export const Select = styled.select`
     color: var(--charcoal);
     font-family: 'Roboto', sans-serif;
     font-style: italic;
+    &:focus {
+        outline: none;
+        border: 3px solid var(--dark-pink);
+    }
 `
