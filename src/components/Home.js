@@ -11,15 +11,6 @@ import { CenteringContainer } from './styled/CenteringContainer.styled'
 
 export const Home = () => {
 
-    //post data retrieved:
-    // likes: 0,
-    // username: "",
-    // caption: "",
-    // avatarUrl: "",
-    // category: "",
-    // id: "", 
-    // imageId: ""
-
     const { store } = useGlobalState()
     const { loggedInUser } = store
 
@@ -55,9 +46,7 @@ export const Home = () => {
         <>
             {window.innerWidth < 450 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
             {postData ? 
-                postData.map((obj) => {
-                    <Post post={obj}/>
-                }) :
+                postData.map(obj => <Post post={obj}/>) :
                 <CenteringContainer nopostsyet="true">
                     <p>There are no posts yet, <br/>please check back later.</p>
                 </CenteringContainer>

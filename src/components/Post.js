@@ -13,16 +13,17 @@ import { Avatar } from './styled/Avatar.styled'
 import { ContainerPost } from './styled/Container.styled'
 import { Caption } from './styled/Caption.styled'
 
-export const Post = () => {
+export const Post = ({ post }) => {
+    const {likes, username, caption, avatarUrl, category, id, imageId} = post 
 
     return (
         <>
-            <Link to="/view-post"><Photo post="true" src={placeholder} alt="A candid photo of people on the beach."/></Link>
+            <Link to="/view-post"><Photo post="true" src={avatarUrl} alt={caption}/></Link>
             <ContainerPost>
-                <Link to="/profile"><Avatar post="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to="/profile"><Avatar post="true" src={profilePicture} alt="profile picture"/></Link>
                 <IconPost src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username post="true" fontSize="0.9rem">john_wilson</Username></StyledLink>
-                <Caption post="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
+                <StyledLink to="/profile"><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
+                <Caption post="true">{caption}</Caption>
             </ContainerPost>
         </>
     )
