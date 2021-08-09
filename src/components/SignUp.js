@@ -60,7 +60,7 @@ export const SignUp = ({history}) => {
         })
         const data = new FormData()
         data.append("image", formData.avatar)
-        await axios.post("https://pixello.herokuapp.com/auth/sign_up", data)
+        await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData)
             .then(res => console.log("Response: " + res.data))
             .catch(err => console.log(err))
         setFormData(initialFormData)

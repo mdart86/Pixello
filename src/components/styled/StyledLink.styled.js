@@ -11,11 +11,11 @@ import { Link } from 'react-router-dom'
 //  not found
 
 export const StyledLink = styled(Link)`
-    ${props => props.notFound || props.pleasesignin ? "text-decoration: underline;" : "text-decoration: none;"}
+    ${props => props.notfound || props.pleasesignin ? "text-decoration: underline;" : "text-decoration: none;"}
     &:visited {
         ${props => props.white ? "color: var(--white);" : "color: var(--charcoal);"}
     }
     &:hover {
-        ${props => props.notFound || props.pleasesignin ? "opacity: 0.8;" : null}
+        ${props => props.notfound || props.pleasesignin ? "opacity: 0.8;" : null}
     }
 `

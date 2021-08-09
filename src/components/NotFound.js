@@ -12,9 +12,9 @@ export const NotFound = () => {
     return (
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <CenteringContainer notFound="true">
+            <CenteringContainer notfound="true">
                 <Header>Page Not Found</Header>
-                <p>Oops, looks like this URL is invalid.<br/><StyledLink notFound="true" to="/home">Click here to go back to the home page.</StyledLink></p>
+                <p>Oops, looks like this URL is invalid.<br/><StyledLink notfound="true" to="/home">Click here to go back to the home page.</StyledLink></p>
             </CenteringContainer>
         </>
     )
