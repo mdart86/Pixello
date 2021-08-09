@@ -21,10 +21,12 @@ import { Messages } from './components/Messages';
 import { Message } from './components/Message';
 import { Notifications } from './components/Notifications';
 import { NotFound } from './components/NotFound';
+import { PleaseSignIn } from './components/PleaseSignIn'
 
 export const App = () => {
 
   const [store, dispatch] = useReducer(reducer, initialState)
+  const { loggedInUser } = store
 
   // api call with axios. can save to state here
   useEffect(() => {
@@ -46,14 +48,14 @@ export const App = () => {
             <Route exact path="/about" component={About}/>
             <Route exact path="/log-in" component={LogIn}/>
             <Route exact path="/sign-up" component={SignUp}/>
-            <Route exact path="/home" component={Home}/>
-            <Route exact path="/filter" component={Filter}/>
-            <Route exact path="/view-post" component={ViewPost}/>
-            <Route exact path="/profile" component={Profile}/>
-            <Route exact path="/new" component={CreatePost}/>
-            <Route exact path="/messages" component={Messages}/>
-            <Route exact path="/message" component={Message}/>
-            <Route exact path="/notifications" component={Notifications}/>
+            <Route exact path="/home" component={ loggedInUser ? Home : PleaseSignIn }/>
+            <Route exact path="/filter" component={ loggedInUser ? Filter : PleaseSignIn }/>
+            <Route exact path="/view-post" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
+            <Route exact path="/profile" component={ loggedInUser ? Profile : PleaseSignIn }/>
+            <Route exact path="/new" component={ loggedInUser ? CreatePost : PleaseSignIn }/>
+            <Route exact path="/messages" component={ loggedInUser ? Messages : PleaseSignIn }/>
+            <Route exact path="/message" component={ loggedInUser ? Message : PleaseSignIn }/>
+            <Route exact path="/notifications" component={ loggedInUser ? Notifications : PleaseSignIn }/>
             <Route component={NotFound}/>
         </Switch>
         {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}
