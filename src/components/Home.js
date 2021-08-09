@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useGlobalState } from '../utils/context'
+import axios from 'axios'
 //react component imports:
 import { Post } from './Post' 
 //styled component imports:
@@ -11,6 +12,16 @@ export const Home = () => {
 
     const { store } = useGlobalState()
     const { loggedInUser } = store
+
+    useEffect(() => {
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtaWdyYWNlZCIsImVtYWlsIjoiaGVsbG9lbWlseW1pbGxzQGdtYWlsLmNvbSIsImltYWdlSWQiOiJhaWF0NmZnMHpjYWk4aHUzZXVjaSIsImJpbyI6IkhleSwgSSdtIEVtaWx5ISIsIl9pZCI6IjYxMTBkMGQyZjk2ZDg4MDAwNDFkMTU2ZCIsImlhdCI6MTYyODQ5MTk4Nn0.C0rveSGiiSs4pIqw2VPxlNnk4nPLwhN4GcOXxVaHZ1I"
+        const authorisation = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+        axios.get("https://pixello.herokuapp.com/posts/", authorisation)
+            .then(res => console.log("Response: " + res.json()))
+            .catch(err => console.log(err))
+    }, [])
 
     if (loggedInUser) {
         console.log("Current signed in user is: " + loggedInUser)
