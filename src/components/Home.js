@@ -13,7 +13,7 @@ export const Home = () => {
     const { loggedInUser } = store
 
     if (loggedInUser) {
-        console.log("Current signed in user is: " + loggedInUser + ".")
+        console.log("Current signed in user is: " + loggedInUser)
     } else {
         console.log("There is no signed in user.")
     }

@@ -7,14 +7,13 @@ import { CenteringContainer } from './styled/CenteringContainer.styled'
 import { StyledLink } from './styled/StyledLink.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 
-export const NotFound = () => {
-    
+export const PleaseSignIn = () => {
     return (
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
-            <CenteringContainer notfound="true">
-                <Header>Page Not Found</Header>
-                <p>Oops, looks like this URL is invalid.<br/><StyledLink notfound="true" to="/home">Click here to go back to the home page.</StyledLink></p>
+            <CenteringContainer pleasesignin="true">
+                <Header>Access Denied</Header>
+                <p>Please <StyledLink to='/sign-up' pleasesignin="true">sign up</StyledLink> or <StyledLink to='/log-in' pleasesignin="true">log in</StyledLink> to access this page.</p>
             </CenteringContainer>
         </>
     )
