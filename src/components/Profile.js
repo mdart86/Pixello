@@ -34,7 +34,7 @@ export const Profile = () => {
                 <Username fontSize="1.5rem" profile="true">john_wilson</Username>
                 <Bio profile="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>
-                    <Avatar profile="true" src={profilePicture} alt="profile picture"/>
+                    <Avatar unClickable="true" profile="true" src={profilePicture} alt="profile picture"/>
                 </AvatarContainer>
                 <Summary>
                     <Count><Span>Posts: </Span>9</Count>

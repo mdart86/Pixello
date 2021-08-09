@@ -21,7 +21,7 @@ export const Post = () => {
             <ContainerPost>
                 <Link to="/profile"><Avatar post="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <IconPost src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username fontSize="0.9rem">john_wilson</Username></StyledLink>
+                <StyledLink to="/profile"><Username post="true" fontSize="0.9rem">john_wilson</Username></StyledLink>
                 <Caption post="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh. </Caption>
             </ContainerPost>
         </>

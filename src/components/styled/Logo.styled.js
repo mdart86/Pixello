@@ -8,6 +8,7 @@ import styled from "styled-components";
 //  login
 //  sign up
 export const Logo = styled.h1`
+    ${props => props.link ? "margin-top: -35px;" : null}
     text-align: center;
     color: ${props => props.desktop ? "var(--white);" : "var(--dark-pink);"}
     font-family: 'Pacifico', cursive;

@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
+const Image = styled.img`
+    &:hover {
+        opacity: 0.7;
+    }
+`
+
 //used in: 
 //  mobile nav
 //  desktop nav
 //  add comment
 //  create post
 //  message
-export const PlusIcon = styled.img`
+export const PlusIcon = styled(Image)`
     ${props => !props.comment && !props.createPost? "position: absolute;" : null}
     top: ${props => props.mobile ? "-35px;" : "20px;"}
     ${props => props.mobile ? "left: 50%; margin-left: -35px;" : null}
@@ -18,62 +24,65 @@ export const PlusIcon = styled.img`
 `
 
 //about 
-export const IconAbout = styled.img`
+export const IconAbout = styled(Image)`
     margin: 0 2px;
     ${props => props.arrow ? "transform: rotate(180deg) scale(2);" : null}    
     ${props => props.michael ? "height: 30px;" : null}
+    &:hover {
+        opacity: 0.5;
+    }
 `
 
 //comment (like)
-export const IconComment = styled.img`
+export const IconComment = styled(Image)`
     float: right;
     height: 20px;
     margin: 5px;
 `
 
 //desktop nav
-export const IconDesktopNav = styled.img`
+export const IconDesktopNav = styled(Image)`
     height: 30px;
     margin: 0;
 `
 
 // login
-export const IconLogin = styled.img`
+export const IconLogin = styled(Image)`
     z-index: 1;
     ${props => props.forward ? "height: 70px;" : null}
     ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
 `
 
 //log out
-export const IconLogout = styled.img`
+export const IconLogout = styled(Image)`
     height: 23px;
     margin-top: ${props => props.left ? "50px;" : "15px;"}
     margin-right: ${props => props.left ? "0;" : "5px;"}
 `
 
 //mobile nav
-export const IconMobileNav = styled.img`
+export const IconMobileNav = styled(Image)`
     height: 30px;
 `
 
 //permissions bar
-export const IconPermissionsBar = styled.img`
+export const IconPermissionsBar = styled(Image)`
     height: ${props => props.comment ? "15px" : "20px"};
     margin: ${props => props.comment ? "0 2px" : "0 5px"}
 `
 
 //post
-export const IconPost = styled.img`
+export const IconPost = styled(Image)`
     float: right;
 `
 
 //view post
-export const IconViewPost = styled.img`
+export const IconViewPost = styled(Image)`
     ${props => props.water ? "margin-left: 4px;" : null}
 `
 
 //sign up
-export const IconSignUp = styled.img`
+export const IconSignUp = styled(Image)`
     z-index: 1;
     ${props => props.upload ? "height: 40px;" : null}
     ${props => props.forward ? "height: 70px;" : null}
