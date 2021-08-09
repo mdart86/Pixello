@@ -100,7 +100,7 @@ JSON Format:
 
 ```json
 {
-    "username": "mickey2",
+    "username": "mickey1",
     "password": "abc12345"
 }
 ```
