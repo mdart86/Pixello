@@ -62,8 +62,12 @@ app.use(cors())
 app.use(express.urlencoded({extended: true}));
 app.use(express.json()) // To parse the incoming requests with JSON payloads
 
+const corsOptions = {
+    origin: 'https://pixello.herokuapp.com',
+    optionsSuccessStatus: 200
+}
 
-app.get("/", (req, res) => {
+app.get("/", cors(corsOptions),(req, res) => {
     res.send("Pixello testing... 1, 2, 3, if you're seeing this then all is working as it should")
 })
 
