@@ -52,7 +52,7 @@ export const CreatePost = ({ history }) => {
         e.preventDefault()
         //send info to API
         setFormData(initialFormData)
-        history.push('/view-post')
+        history.push(`/post/${id}`)
     }
     
     return (

@@ -14,15 +14,15 @@ import { Caption } from './styled/Caption.styled'
 
 export const Post = ({ post }) => {
     // const {likes, username, caption, avatarUrl, category, id, imageId} = post 
-    const {username, caption, avatarUrl} = post 
+    const {username, caption, avatarUrl, id} = post 
 
     return (
         <>
-            <Link to="/view-post"><Photo post="true" src={avatarUrl} alt={caption}/></Link>
+            <Link to={`/post/${id}`}><Photo post="true" src={avatarUrl} alt={caption}/></Link>
             <ContainerPost>
-                <Link to="/profile"><Avatar post="true" src={profilePicture} alt="profile picture"/></Link>
+                <Link to={`/profile/${id}`}><Avatar post="true" src={profilePicture} alt="profile picture"/></Link>
                 <IconPost src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
+                <StyledLink to={`/profile/${id}`}><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
                 <Caption post="true">{caption}</Caption>
             </ContainerPost>
         </>

@@ -12,8 +12,8 @@ export const UserMessages = () => {
     return (
         
         <UserMessage>
-            <Link to="/message"><Avatar userMessages="true" src={profilePicture} alt="profile picture"/></Link>
-            <StyledLink to="/message"><TextUserMessages>john_wilson</TextUserMessages></StyledLink>
+            <Link to={`/message/${id}`}><Avatar userMessages="true" src={profilePicture} alt="profile picture"/></Link>
+            <StyledLink to={`/message/${id}`}><TextUserMessages>john_wilson</TextUserMessages></StyledLink>
         </UserMessage>
         
     )

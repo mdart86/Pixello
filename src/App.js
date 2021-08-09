@@ -46,15 +46,15 @@ export const App = () => {
         <Switch>
             <Route exact path="/" component={AppStart}/>
             <Route exact path="/about" component={About}/>
-            <Route exact path="/log-in" component={LogIn}/>
-            <Route exact path="/sign-up" component={SignUp}/>
+            <Route exact path="/login" component={LogIn}/>
+            <Route exact path="/signup" component={SignUp}/>
             <Route exact path="/home" component={ loggedInUser ? Home : PleaseSignIn }/>
-            <Route exact path="/filter" component={ loggedInUser ? Filter : PleaseSignIn }/>
-            <Route exact path="/view-post" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
-            <Route exact path="/profile" component={ loggedInUser ? Profile : PleaseSignIn }/>
+            <Route exact path="/posts/:category" component={ loggedInUser ? Filter : PleaseSignIn }/>
+            <Route exact path="/post/:id" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
+            <Route exact path="/profile/:id" component={ loggedInUser ? Profile : PleaseSignIn }/>
             <Route exact path="/new" component={ loggedInUser ? CreatePost : PleaseSignIn }/>
             <Route exact path="/messages" component={ loggedInUser ? Messages : PleaseSignIn }/>
-            <Route exact path="/message" component={ loggedInUser ? Message : PleaseSignIn }/>
+            <Route exact path="/message/:id" component={ loggedInUser ? Message : PleaseSignIn }/>
             <Route exact path="/notifications" component={ loggedInUser ? Notifications : PleaseSignIn }/>
             <Route component={NotFound}/>
         </Switch>

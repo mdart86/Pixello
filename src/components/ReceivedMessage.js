@@ -12,7 +12,7 @@ export const ReceivedMessage = ( { notification } ) => {
             <BoxReceivedMessage>
                 {notification 
                 ?                 
-                <TextReceivedMessage><StyledLink to="/profile"><Span>john_wilson</Span></StyledLink> liked your comment.</TextReceivedMessage>
+                <TextReceivedMessage><StyledLink to={`/profile/${id}`}><Span>john_wilson</Span></StyledLink> liked your comment.</TextReceivedMessage>
                 : 
                 <TextReceivedMessage>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</TextReceivedMessage>
                 }

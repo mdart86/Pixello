@@ -26,9 +26,7 @@ export const Home = () => {
             await axios.get("https://pixello.herokuapp.com/posts/", authorisation)
                 .then(res => {
                     const postData = res.data
-                    setPostData(postData)
-                    console.log(postData)
-                    
+                    setPostData(postData)                    
                 })
                 .catch(err => console.log(err))
         }
