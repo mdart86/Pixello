@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 //image imports: 
-import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
 //styled component imports: 
@@ -14,7 +13,8 @@ import { ContainerPost } from './styled/Container.styled'
 import { Caption } from './styled/Caption.styled'
 
 export const Post = ({ post }) => {
-    const {likes, username, caption, avatarUrl, category, id, imageId} = post 
+    // const {likes, username, caption, avatarUrl, category, id, imageId} = post 
+    const {username, caption, avatarUrl} = post 
 
     return (
         <>
