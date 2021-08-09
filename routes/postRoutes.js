@@ -46,30 +46,52 @@ router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
-router.put('/update_likes/:id', async (req,res) => {
-    try {
-        // Retreive Post by Id
-        let post = await Post.findById(req.params.id);
-        // updates likes on post
-        const result = await Post.updateOne({likes: res.post.likes})
+// router.put('/update_likes/:id', async (req, res) => {
+//     try {
+//         // Retreive Post by Id
+//         let post = await Post.findById(req.params.id);
+//         // updates likes on post
+//         console.log("hello", post)
+//         const result = Post.updateOne({likes: res.post.likes})
+//         console.log(result, "Hello")
+//         const data = {
+//             username: req.body.username || post.username,
+//             caption: req.body.caption || post.caption,
+//             category: req.body.category || post.category,
+//             likes: result.body.likes || post.likes,
+//             avatarUrl: req.secure_url || post.avatarUrl,
+//             imageId: req.public_id || post.imageId,
+//         };
+//         post = await Post.findByIdAndUpdate(req.params.id, data, {
+//         new: true
+//         });
+//             res.json(post);
+//         } 
+//         catch (err) {
+//             console.log(err)
+//         }
+// });
 
-        const data = {
-            username: req.body.username || post.username,
-            caption: req.body.caption || post.caption,
-            category: req.body.category || post.category,
-            likes: result.body.likes || post.likes,
-            avatarUrl: req.secure_url || post.avatarUrl,
-            imageId: req.public_id || post.imageId,
-        };
-        post = await Post.findByIdAndUpdate(req.params.id, data, {
-        new: true
-        });
-            res.json(post);
-        } 
-        catch (err) {
-            console.log(err)
-        }
-});
+// router.put('/update_likes/:id', async (req, res) => {
+//     try {
+//         // Retreive Post by Id
+//         let post = await Post.findById(req.params.id);
+//         // updates likes on post
+//         console.log("hello", post)
+//         const result = Post.updateOne({likes: res.post.likes})
+//         console.log(result, "Hello")
+//         const data = {
+//             likes: result.body.likes || post.likes
+//         };
+//         updatedPost = await Post.findByIdAndUpdate(req.params.id, data, {
+//         new: true
+//         });
+//             res.json(updatedPost);
+//         } 
+//         catch (err) {
+//             console.log(err)
+//         }
+// });
 
 // let post = await Post.findById(req.params.id);
 // // Update the document using `updateOne()`
