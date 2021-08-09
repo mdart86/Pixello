@@ -35,7 +35,7 @@ mongoose.connect(dbConn,
         if (err){
             console.log("Sorry, a connection to the database has not been established", err)
         } else {
-            console.log("You are connected to the Pixello database")        
+            console.log("You are connected to the Pixello database brought to you by Mongo Atlas")        
         }
 })
 
@@ -64,7 +64,7 @@ app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 
 app.get("/", (req, res) => {
-    res.send("Pixello testing... 1, 2, 3")
+    res.send("Pixello testing... 1, 2, 3, if you're seeing this then all is working as it should")
 })
 
 // routers used in application
@@ -78,4 +78,4 @@ app.use(function (err, req, res, next) {
 })
 
 // Listening for connections on port 4000 and has a callback function that is printed to the console
-app.listen(process.env.PORT || 4000, () => {console.log(`Pixello is running on port: ${[port]}`)})
+app.listen(port, ()=>{console.log(`The Pixello server is running on port: ${[port]}`)})

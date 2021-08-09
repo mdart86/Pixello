@@ -46,7 +46,17 @@ router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
-router.put('/:id/update_likes', updateLikesOnPost)
+router.put('/update_likes/:id')
+
+// let post = await Post.findById(req.params.id);
+// // Update the document using `updateOne()`
+// await CharacterModel.updateOne({ name: 'Jon Snow' }, {
+//   title: 'King in the North'
+// });
+
+// Load the document to see the updated value
+// const doc = await CharacterModel.findOne();
+// doc.title; // "King in the North"
 
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
