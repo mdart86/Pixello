@@ -63,7 +63,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 const corsOptions = {
-    origin: 'https://pixello.herokuapp.com',
+    origin: 'https://www.pixellophotos.com',
     optionsSuccessStatus: 200
 }
 
