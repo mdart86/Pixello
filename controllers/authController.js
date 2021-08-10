@@ -33,7 +33,7 @@ const signOut = function (req, res, err) {
     }
     else {
         req.session.destroy (() => {
-            res.redirect('auth/sign_out');
+            res.redirect('/');
         })
     }
 }
