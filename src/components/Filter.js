@@ -1,4 +1,4 @@
-import React, { useParams } from 'react'
+import React  from 'react'
 
 // this will pretty much be a copy/paste of 
 //the home page, just filtering the API call
@@ -6,7 +6,7 @@ import React, { useParams } from 'react'
 
 export const Filter = () => {
 
-    const { category } = useParams()
+    // const { category } = useParams()
 
     return (
         <>
