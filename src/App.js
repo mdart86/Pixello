@@ -37,7 +37,7 @@ export const App = () => {
   }, [])
 
 
-  let excludedUrls = ["/", "/about", "/sign-up", "/log-in"]
+  let excludedUrls = ["/", "/about", "/signup", "/login"]
 
   return (
     <Context.Provider value={{store, dispatch}}>

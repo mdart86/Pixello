@@ -6,7 +6,7 @@ import React, { useParams } from 'react'
 
 export const Filter = () => {
 
-    const { id } = useParams()
+    const { category } = useParams()
 
     return (
         <>

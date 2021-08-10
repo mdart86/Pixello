@@ -16,13 +16,13 @@ import { BoxMobileNav, BoxMobileNavNoPlus, BoxMobileNavGreen, BoxMobileNavPink }
 
 const MobileNav = ({ excludedUrls }) => {
 
-    //placeholder to remove errors
-    const id = 12345
+      //placeholder to remove errors
+      const id = 12345
 
-    
     if (excludedUrls.includes(window.location.pathname)) {
         return null
     } else if (window.location.pathname === "/new") {
+        
         return (
             <BoxMobileNavNoPlus>
                 <IconsContainer mobile="true">
@@ -58,6 +58,7 @@ const MobileNav = ({ excludedUrls }) => {
             </BoxMobileNavPink>
         )
     }
+
     return (
         <BoxMobileNav>
             <Link to="/new"><PlusIcon mobile="true"src={plus} alt="plus sign icon"/></Link>
