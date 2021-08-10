@@ -1,16 +1,45 @@
-import React  from 'react'
+import React, { useState }  from 'react'
+//styled component imports: 
+import { PinkFeature } from './styled/PinkFeature.styled'
+import { WhiteFeature } from './styled/WhiteFeature.styled'
+import { Header } from './styled/Header.styled'
+import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { TopClearance } from './styled/TopClearance.styled'
+import { Form } from './styled/Form.styled'
+import { Select } from './styled/Select.styled'
+import { Input } from './styled/Input.styled'
 
-// this will pretty much be a copy/paste of 
-//the home page, just filtering the API call
-//by post category
+export const Filter = ({ history }) => {
 
-export const Filter = () => {
+    const [formData, setFormData] = useState({category: ""})
 
-    // const { category } = useParams()
+    function handleFormData(e) {
+        setFormData({category: e.target.value
+        })
+    }
+
+    function submitFormData(e) {
+        e.preventDefault()
+        //send info to API
+        history.push(`/posts/${formData.category}`)
+    }
 
     return (
         <>
-            <h1>Filter Posts by Category</h1>
+            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            <CenteringContainer filter="true">
+                <Header>Filter by category</Header>
+                <p>Choose from the options below, and we'll show you the photos in that category.</p>
+            </CenteringContainer>
+            <Form onSubmit={submitFormData}>
+                <Select required value={formData.category} id="category" onChange={handleFormData}>
+                    <option value="" hidden disabled>Categories</option>
+                    <option value="film">Film</option>
+                    <option value="candid">Candid</option>
+                    <option value="water">Water</option>
+                </Select>
+                <Input filter="true" type="submit" value="See the photos!"/>
+            </Form>
         </>
     )
 }

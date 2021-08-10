@@ -49,7 +49,7 @@ export const App = () => {
             <Route exact path="/login" component={LogIn}/>
             <Route exact path="/signup" component={SignUp}/>
             <Route exact path="/home" component={ loggedInUser ? Home : PleaseSignIn }/>
-            <Route exact path="/posts/:category" component={ loggedInUser ? Filter : PleaseSignIn }/>
+            <Route exact path="/filter" component={ loggedInUser ? Filter : PleaseSignIn }/>
             <Route exact path="/post/:id" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
             <Route exact path="/profile/:id" component={ loggedInUser ? Profile : PleaseSignIn }/>
             <Route exact path="/new" component={ loggedInUser ? CreatePost : PleaseSignIn }/>
