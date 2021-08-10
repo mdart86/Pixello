@@ -58,7 +58,7 @@ export const Home = () => {
             {postData ? 
                 postData.map(obj => <Post post={obj} key={obj.id}/>) :
                 <CenteringContainer nopostsyet="true">
-                    <p>There are no posts yet, <br/>please check back later.</p>
+                    <p><em>Loading photos...</em></p>
                 </CenteringContainer>
             }
             {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
