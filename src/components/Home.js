@@ -25,7 +25,8 @@ export const Home = () => {
         async function fetchData() {
             await axios.get("https://pixello.herokuapp.com/posts/", authorisation)
                 .then(res => {
-                    const postData = res.data
+                    //sort reverses the order so that newer images appear first on the home page
+                    const postData = res.data.sort((a,b) => b - a)
                     setPostData(postData)                    
                 })
                 .catch(err => console.log(err))
