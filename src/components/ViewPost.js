@@ -1,5 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 //image imports:
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
@@ -30,21 +31,49 @@ import { Caption } from './styled/Caption.styled'
 //owner of the post/comment/profile
 
 export const ViewPost = () => {
+    
+    const { id } = useParams()
+
+    //placeholder to remove errors
+    const category = "film"
+
+    //make a get request for the post with that ID
+
+    const [postData, setPostData ] = useState("")
+    console.log(postData)
+
+    useEffect((id) => {
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtaWdyYWNlZCIsImVtYWlsIjoiaGVsbG9lbWlseW1pbGxzQGdtYWlsLmNvbSIsImltYWdlSWQiOiJhaWF0NmZnMHpjYWk4aHUzZXVjaSIsImJpbyI6IkhleSwgSSdtIEVtaWx5ISIsIl9pZCI6IjYxMTBkMGQyZjk2ZDg4MDAwNDFkMTU2ZCIsImlhdCI6MTYyODQ5MTk4Nn0.C0rveSGiiSs4pIqw2VPxlNnk4nPLwhN4GcOXxVaHZ1I"
+        const authorisation = {
+            headers: { Authorization: `Bearer ${token}` }
+        };
+        async function fetchData() {
+            await axios.get(`https://pixello.herokuapp.com/posts/${id}`, authorisation)
+                .then(res => {
+                    const postData = res.data
+                    setPostData(postData)
+                    console.log(postData)
+                    
+                })
+                .catch(err => console.log(err))
+        }
+        fetchData()
+    }, [])
 
     return (
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
-                <Link to="/profile"><Avatar viewPost="true" src={profilePicture} alt="A man's profile picture."/></Link>
-                <StyledLink to="/profile"><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
+                <Link to={`/profile/${id}`}><Avatar viewPost="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">john_wilson</Username></StyledLink>
                 <Caption viewPost="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Caption>
                 <Photo unClickable="true" viewPost="true" src={placeholder} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
                 <CategoryContainer>
-                    <Link to="/filter"><IconViewPost src={film} alt="film category"/></Link>
-                    <Link to="/filter"><IconViewPost water="true" src={water} alt="water category"/></Link>
-                    <Link to="/filter"><IconViewPost src={candid} alt="candid category"/></Link>
+                    <Link to={`/posts/${category}`}><IconViewPost src={film} alt="film category"/></Link>
+                    <Link to={`/posts/${category}`}><IconViewPost water="true" src={water} alt="water category"/></Link>
+                    <Link to={`/posts/${category}`}><IconViewPost src={candid} alt="candid category"/></Link>
                 </CategoryContainer>
                 <CommentsContainer>
                     <AddComment/>

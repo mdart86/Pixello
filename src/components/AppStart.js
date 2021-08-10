@@ -29,14 +29,14 @@ export const AppStart = () => {
             <Tagline>where the magic happens</Tagline>
             <CircleAppStart green="true" small="true"></CircleAppStart>
             <CircleAppStart pink="true" xlarge="true">
-                <StyledLink to="/sign-up" white="true"><TextAppStart signup="true">sign up</TextAppStart></StyledLink>
+                <StyledLink to="/signup" white="true"><TextAppStart signup="true">sign up</TextAppStart></StyledLink>
             </CircleAppStart>
             <ClippingContainer>
                 <CircleAppStart clipAbout="true" green="true" xxlarge="true">
                     <StyledLink to="/about" white="true"><TextAppStart about="true">About <br/>the creators</TextAppStart></StyledLink>
                 </CircleAppStart>
                 <CircleAppStart clipLogin="true" blue="true" medium="true">
-                    <StyledLink to="/log-in" white="true"><TextAppStart login="true">log in</TextAppStart></StyledLink>
+                    <StyledLink to="/login" white="true"><TextAppStart login="true">log in</TextAppStart></StyledLink>
                 </CircleAppStart>
             </ClippingContainer>
         </ContainerAppStart>

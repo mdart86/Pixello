@@ -1,4 +1,4 @@
-import React from 'react'
+import React  from 'react'
 
 // this will pretty much be a copy/paste of 
 //the home page, just filtering the API call
@@ -6,9 +6,11 @@ import React from 'react'
 
 export const Filter = () => {
 
+    // const { category } = useParams()
+
     return (
         <>
-            <h1>Category Filter Page</h1>
+            <h1>Filter Posts by Category</h1>
         </>
     )
 }

@@ -19,6 +19,9 @@ import { ContainerCreatePost } from './styled/Container.styled'
 
 export const CreatePost = ({ history }) => {
 
+    //placeholder to remove errors
+    const id = 12345
+    
     const { store } = useGlobalState()
     const { loggedInUser } = store 
 
@@ -52,7 +55,7 @@ export const CreatePost = ({ history }) => {
         e.preventDefault()
         //send info to API
         setFormData(initialFormData)
-        history.push('/view-post')
+        history.push(`/post/${id}`)
     }
     
     return (

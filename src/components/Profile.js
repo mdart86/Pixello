@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 //image imports: 
 import profilePicture from '../images/profile-picture.jpeg'
 import placeholder from '../images/placeholder.jpg'
@@ -25,6 +25,8 @@ import { Bio } from './styled/Bio.styled'
 //owner of the post/comment/profile
 
 export const Profile = () => {
+   
+    const { id } = useParams()
 
     return (
         <>
@@ -42,15 +44,15 @@ export const Profile = () => {
                 </Summary>
                 <GridContainer>
                     <PhotoGrid>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to="/view-post"><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
                     </PhotoGrid>
                 </GridContainer>
             </ProfileContainer>

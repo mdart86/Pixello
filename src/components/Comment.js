@@ -18,12 +18,16 @@ import { BoxComment } from './styled/Box.styled'
 //owner of the post/comment/profile
 
 export const Comment = () => {
+
+    //placeholder to remove errors
+    const id = 12345
+
     return (
        
             <BoxComment>
-                <Link to="/profile"><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to={`/profile/${id}`}><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <IconComment src={like} alt="like button"/>
-                <StyledLink to="/profile"><Username comment="true" fontSize="0.8rem">john_wilson</Username></StyledLink>
+                <StyledLink to={`/profile/${id}`}><Username comment="true" fontSize="0.8rem">john_wilson</Username></StyledLink>
                 <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
                 <PermissionsBar comment="true"/>
             </BoxComment>

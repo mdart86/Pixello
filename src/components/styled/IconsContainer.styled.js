@@ -10,6 +10,7 @@ export const IconsContainer = styled.div`
     ${props => props.mobile ? "width: 100%; margin-top: 30px;" : null }
     ${props => props.desktop ? "width: 230px; margin: 5px 100px 0 0;" : null }
     ${props => props.desktop && window.location.pathname === "/new" ? "margin-right: 15px;" : null }
+    ${props => props.refresh ? "margin-bottom: 5px;" : null}
 `
 
 
