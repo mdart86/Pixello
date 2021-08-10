@@ -9,7 +9,7 @@ import { Form } from './styled/Form.styled'
 import { Select } from './styled/Select.styled'
 import { Input } from './styled/Input.styled'
 
-export const Filter = ({ history }) => {
+export const FilterForm = ({ history }) => {
 
     const [formData, setFormData] = useState({category: ""})
 
@@ -37,6 +37,7 @@ export const Filter = ({ history }) => {
                     <option value="film">Film</option>
                     <option value="candid">Candid</option>
                     <option value="water">Water</option>
+                    <option value="landscape">Landscape</option>
                 </Select>
                 <Input filter="true" type="submit" value="See the photos!"/>
             </Form>

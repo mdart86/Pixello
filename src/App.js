@@ -13,7 +13,8 @@ import { About } from './components/About';
 import { LogIn } from './components/LogIn';
 import { SignUp } from './components/SignUp';
 import { Home } from './components/Home';
-import { Filter } from './components/Filter';
+import { FilterForm } from './components/FilterForm';
+import { CategoryFilter } from './components/CategoryFilter'
 import { ViewPost } from './components/ViewPost';
 import { Profile } from './components/Profile';
 import { CreatePost } from './components/CreatePost';
@@ -49,8 +50,9 @@ export const App = () => {
             <Route exact path="/login" component={LogIn}/>
             <Route exact path="/signup" component={SignUp}/>
             <Route exact path="/home" component={ loggedInUser ? Home : PleaseSignIn }/>
-            <Route exact path="/filter" component={ loggedInUser ? Filter : PleaseSignIn }/>
             <Route exact path="/post/:id" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
+            <Route exact path="/filter" component={ loggedInUser ? FilterForm : PleaseSignIn }/>
+            <Route exact path="/posts/:category" component={ loggedInUser ? CategoryFilter : PleaseSignIn }/>
             <Route exact path="/profile/:id" component={ loggedInUser ? Profile : PleaseSignIn }/>
             <Route exact path="/new" component={ loggedInUser ? CreatePost : PleaseSignIn }/>
             <Route exact path="/messages" component={ loggedInUser ? Messages : PleaseSignIn }/>
