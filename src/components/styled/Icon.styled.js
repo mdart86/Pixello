@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Image = styled.img`
     &:hover {
         opacity: 0.7;
+        cursor: pointer;
     }
 `
 
@@ -87,4 +88,9 @@ export const IconSignUp = styled(Image)`
     ${props => props.upload ? "height: 40px;" : null}
     ${props => props.forward ? "height: 70px;" : null}
     ${props => props.back ? "position: absolute; transform: rotate(180deg); height: 40px; top: 50vh; margin-top: -20px; left: 3.5%;" : null}
+`
+
+//home
+export const IconHome = styled(Image)`
+    height: 20px;
 `
