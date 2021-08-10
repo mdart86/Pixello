@@ -18,6 +18,10 @@ import { BoxComment } from './styled/Box.styled'
 //owner of the post/comment/profile
 
 export const Comment = () => {
+
+    //placeholder to remove errors
+    const id = 12345
+
     return (
        
             <BoxComment>

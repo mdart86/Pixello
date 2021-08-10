@@ -19,6 +19,9 @@ import { ContainerCreatePost } from './styled/Container.styled'
 
 export const CreatePost = ({ history }) => {
 
+    //placeholder to remove errors
+    const id = 12345
+    
     const { store } = useGlobalState()
     const { loggedInUser } = store 
 

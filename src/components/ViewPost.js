@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 //image imports:
 import placeholder from '../images/placeholder.jpg'
 import like from '../images/like-green.svg'
@@ -32,6 +33,9 @@ import { Caption } from './styled/Caption.styled'
 export const ViewPost = () => {
     
     const { id } = useParams()
+
+    //placeholder to remove errors
+    const category = "film"
 
     //make a get request for the post with that ID
 

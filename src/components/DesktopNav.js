@@ -19,6 +19,11 @@ import { BoxDesktopNav, BoxDesktopNavNoPlus } from './styled/Box.styled';
 import { StyledLink } from './styled/StyledLink.styled';
 
 const DesktopNav = ( { excludedUrls } ) => {
+
+    //placeholder to remove errors
+    const id = 12345
+
+    
     if (excludedUrls.includes(window.location.pathname)) {
         return null
     } else if (window.location.pathname === "/new") {

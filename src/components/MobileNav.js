@@ -15,6 +15,11 @@ import { IconMobileNav } from './styled/Icon.styled'
 import { BoxMobileNav, BoxMobileNavNoPlus, BoxMobileNavGreen, BoxMobileNavPink } from './styled/Box.styled';
 
 const MobileNav = ({ excludedUrls }) => {
+
+    //placeholder to remove errors
+    const id = 12345
+
+    
     if (excludedUrls.includes(window.location.pathname)) {
         return null
     } else if (window.location.pathname === "/new") {
