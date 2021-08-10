@@ -18,6 +18,7 @@ export const CategoryFilter = () => {
     const { category } = useParams()
 
     const [postData, setPostData ] = useState("")
+    const [finished, setFinished] = useState(false)
     
     //used to trigger useEffect when refresh icon is clicked
     const [trigger, setTrigger] = useState(0)
@@ -42,6 +43,7 @@ export const CategoryFilter = () => {
                     if (requestedPosts.length > 0) {
                         setPostData(requestedPosts)
                     }
+                    setFinished(true)
                 })
                 .catch(err => console.log(err))
         }
@@ -57,18 +59,19 @@ export const CategoryFilter = () => {
         <>
             {window.innerWidth < 450 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
             <IconsContainer refresh="true"><IconHome onClick={handleClick} src={refresh} alt="refresh icon"/></IconsContainer>
-            {postData ? 
+            {postData && finished? 
                 postData.map(obj => <Post post={obj} key={obj.id}/>) 
-                :
-                <CenteringContainer nopostsyet="true">
-                    <p><em>Loading {category} photos...</em></p>
-                </CenteringContainer>
+                : !postData && finished ?
+                    <CenteringContainer nopostsyet="true">
+                        <p><em>There are no photos in the {category} category yet...</em></p>
+                    </CenteringContainer> 
+                    :
+                    <CenteringContainer nopostsyet="true">
+                        <p><em>Loading {category} photos...</em></p>
+                    </CenteringContainer>
             }
             {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }
 
-{/* <CenteringContainer nopostsyet="true">
-    <p><em>There are no photos in the {category} category yet...</em></p>
-</CenteringContainer> */}
