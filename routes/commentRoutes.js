@@ -1,16 +1,15 @@
-const express = require('express');
-const commentRouter = express.Router();
+// const express = require('express');
+// const commentRouter = express.Router();
 
-const { loginRequired } = require('../controllers/authController');
+// const { createComment, retrieveComments, deleteComment } = require('../controllers/commentController');
+// const { loginRequired } = require('../controllers/authController');
 
-router.use(loginRequired)
+// router.use(loginRequired)
 
-const { createComment, retrieveComments, deleteComment } = require('../controllers/commentController');
+// router.post('/:postId', createComment);
 
-router.post('/:postId', createComment);
+// router.get('/:postId', retrieveComments);
 
-router.get('/:postId', retrieveComments);
+// router.delete('/:commentId', deleteComment);
 
-router.delete('/:commentId', deleteComment);
-
-module.exports = router
+// module.exports = router

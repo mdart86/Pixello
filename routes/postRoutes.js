@@ -8,7 +8,7 @@ const router = express.Router()
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, updateLikesOnPost} = require('../controllers/postController')
+const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file

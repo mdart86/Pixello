@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const authRouter = require('./routes/authRoutes') 
 const postRouter = require('./routes/postRoutes') 
 const userRouter = require('./routes/userRoutes') 
+// const commentRouter = require('./routes/commentRoutes') 
 
 // port object connecting to Mongo Atlas OR MongoDB
 const port = process.env.PORT || 4000
@@ -75,7 +76,7 @@ app.get("/", cors(corsOptions),(req, res) => {
 app.use("/auth", authRouter)
 app.use("/users", userRouter)
 app.use("/posts", postRouter)
-app.use("/comments", commentRouter)
+// app.use("/comments", commentRouter)
 
 
 app.use(function (err, req, res, next) {
