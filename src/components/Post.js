@@ -24,6 +24,8 @@ export const Post = ({ post }) => {
 
     //stores data retreived by the axios request
     const [userData, setUserData ] = useState("")
+
+    console.log(userData)
     
     useEffect(() => {
         const authorisation = {

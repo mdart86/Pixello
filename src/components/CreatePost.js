@@ -37,7 +37,7 @@ export const CreatePost = ({ history }) => {
     const [fileName, setFileName] = useState("No File Chosen")
 
     //used to notify user if post creation failed
-    const [postFailed, setPostFailed] = useState("")
+    const [setPostFailed] = useState("")
 
     //save image data to state, and isolate file name to display to user
     function displayFileInfo(e) {
