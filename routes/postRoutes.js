@@ -47,62 +47,22 @@ router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
 router.put('/update_likes/:id', async (req, res) => {
-    try {
-        // Retreive Post by Id
-        let post = await Post.findById(req.params.id({likes: req.post.likes}));
-        // (req.params.id);
-        // updates likes on post
-        const result = (res.post.likes)
-        //  ({likes: res.post.likes}));
-        console.log(result, "Hello")
-        const data = {
-            username: req.body.username || post.username,
-            caption: req.body.caption || post.caption,
-            category: req.body.category || post.category,
-            likes: result.likes || post.likes,
-            avatarUrl: req.secure_url || post.avatarUrl,
-            imageId: req.public_id || post.imageId,
-        };
-        post = await Post.findByIdAndUpdate(req.params.id, data, {
-        new: true
-        });
-            res.json(post);
-        } 
-        catch (err) {
-            console.log(err)
-        }
+    //get the post by id
+    let post = await Post.findById(req.params.id);
+    console.log("likes", post.likes)
+    //increase post's likes +1
+    post.likes++
+    console.log("likes + 1", post.likes)
+    //update it in the database
+    Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, post)=>{
+      if (err){
+          res.status(404)
+          return res.json({error: err.message})
+      }
+      res.status(200)
+      res.send(post)
+    })
 });
-
-// router.put('/update_likes/:id', async (req, res) => {
-//     try {
-//         // Retreive Post by Id
-//         let post = await Post.findById(req.params.id);
-//         // updates likes on post
-//         console.log("hello", post)
-//         const result = Post.updateOne({likes: res.post.likes})
-//         console.log(result, "Hello")
-//         const data = {
-//             likes: result.body.likes || post.likes
-//         };
-//         updatedPost = await Post.findByIdAndUpdate(req.params.id, data, {
-//         new: true
-//         });
-//             res.json(updatedPost);
-//         } 
-//         catch (err) {
-//             console.log(err)
-//         }
-// });
-
-// let post = await Post.findById(req.params.id);
-// // Update the document using `updateOne()`
-// await CharacterModel.updateOne({ name: 'Jon Snow' }, {
-//   title: 'King in the North'
-// });
-
-// Load the document to see the updated value
-// const doc = await CharacterModel.findOne();
-// doc.title; // "King in the North"
 
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
