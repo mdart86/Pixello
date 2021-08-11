@@ -1,8 +1,3 @@
-export const initialState = {
-    loggedInUser: "",
-    isAdmin: false
-}
-
 //what do we need user state for?
 // isLoggedIn?
 // isAdmin?
@@ -28,6 +23,11 @@ export const reducer = (state, action) => {
             return {
                 ...state, 
                 loggedInUser: action.data
+            }
+        case "setCategoryList":
+            return {
+                ...state, 
+                categoryList: action.data
             }
         default: 
             return state

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import { initialState, reducer } from './utils/reducer'
+import { reducer } from './utils/reducer'
 import { Context } from './utils/context'
 import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
@@ -13,7 +13,8 @@ import { About } from './components/About';
 import { LogIn } from './components/LogIn';
 import { SignUp } from './components/SignUp';
 import { Home } from './components/Home';
-import { Filter } from './components/Filter';
+import { FilterForm } from './components/FilterForm';
+import { CategoryFilter } from './components/CategoryFilter'
 import { ViewPost } from './components/ViewPost';
 import { Profile } from './components/Profile';
 import { CreatePost } from './components/CreatePost';
@@ -25,11 +26,27 @@ import { PleaseSignIn } from './components/PleaseSignIn'
 
 export const App = () => {
 
+  const initialState = {
+    loggedInUser: "",
+    categoryList: []
+  }
+
   const [store, dispatch] = useReducer(reducer, initialState)
   const { loggedInUser } = store
+  
+  function setCategoryList(list) {
+    let alphabetised = list.sort((a, b) => a.localeCompare(b))
+    let capitalised = alphabetised.map(category => category[0].toUpperCase() + category.substring(1))
+    dispatch({
+      type: "setCategoryList",
+      data: capitalised
+    })
+  }
 
   // api call with axios. can save to state here
   useEffect(() => {
+    let categories = ["food", "outdoor", "indoor", "vehicular", "architecture", "art", "light", "shadow", "film", "candid"]
+    setCategoryList(categories)
       // axios.get("https://pixello.herokuapp.com")
       //   .then(response => response.json)
       //   .then(data => console.log(data))
@@ -49,8 +66,9 @@ export const App = () => {
             <Route exact path="/login" component={LogIn}/>
             <Route exact path="/signup" component={SignUp}/>
             <Route exact path="/home" component={ loggedInUser ? Home : PleaseSignIn }/>
-            <Route exact path="/posts/:category" component={ loggedInUser ? Filter : PleaseSignIn }/>
             <Route exact path="/post/:id" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
+            <Route exact path="/filter" component={ loggedInUser ? FilterForm : PleaseSignIn }/>
+            <Route exact path="/posts/:category" component={ loggedInUser ? CategoryFilter : PleaseSignIn }/>
             <Route exact path="/profile/:id" component={ loggedInUser ? Profile : PleaseSignIn }/>
             <Route exact path="/new" component={ loggedInUser ? CreatePost : PleaseSignIn }/>
             <Route exact path="/messages" component={ loggedInUser ? Messages : PleaseSignIn }/>
