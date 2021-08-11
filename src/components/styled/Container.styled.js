@@ -30,7 +30,7 @@ export const ClippingContainer = styled.div`
     position: absolute;
     bottom: 0;
     overflow: hidden;
-    height: 250px;
+    height: 100%;
     width: 100%;   
 `
 

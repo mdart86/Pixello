@@ -84,25 +84,25 @@ export const CircleAppStart = styled(Circle)`
     position: absolute;
     color: var(--white);
 
-    ${props => props.xsmall ? "height: 50px; width: 50px;" : null}
-    ${props => props.small ? "height: 100px; width: 100px;" : null}
-    ${props => props.medium ? "height: 150px; width: 150px;" : null}
-    ${props => props.large ? "height: 200px; width: 200px;" : null}
-    ${props => props.xlarge ? "height: 270px; width: 270px;" : null}
-    ${props => props.xxlarge ? "height: 300px; width: 300px;" : null}
+    ${props => props.xsmall ? "height: 10vh; width: 10vh;" : null}
+    ${props => props.small ? "height: 20vh; width: 20vh;" : null}
+    ${props => props.medium ? "height: 30vh; width: 30vh;" : null}
+    ${props => props.large ? "height: 40vh; width: 40vh;" : null}
+    ${props => props.xlarge ? "height: 50vh; width: 50vh;" : null}
+    ${props => props.xxlarge ? "height: 60vh; width: 60vh;" : null}
 
     ${props => props.pink ? "background: var(--light-pink);" : null}
     ${props => props.green ? "background: var(--green);" : null}
     ${props => props.blue ? "background: var(--blue);" : null}
 
-    ${props => props.small && props.blue ? "top: -55px; right: -55px; height: 100px; width: 100px;" : null}
-    ${props => props.medium && props.blue ? "bottom: 30px; right: -20px; z-index: 2;" : null}
-    ${props => props.large && props.blue ? "top: -80px; left: -40px;" : null}
-    ${props => props.small && props.pink ? "top: -55px; left: 120px; z-index: 2;" : null}
-    ${props => props.xlarge && props.pink ? "top: 210px; left: 50%; margin-left: -135px; z-index: 2;" : null}
-    ${props => props.xsmall && props.green ? "top: 65px; left: -20px; z-index: 2;" : null}
-    ${props => props.small && props.green ? "top: 150px; right: -30px;" : null}
-    ${props => props.xxlarge && props.green ? "bottom: -100px; left: -85px;" : null}
+    ${props => props.small && props.blue ? "top: -7vh; right: -10vh;" : null}
+    ${props => props.medium && props.blue ? "bottom: -4vh; right: -4vh; z-index: 2;" : null}
+    ${props => props.large && props.blue ? "top: -18vh; left: -15vh; z-index: -1;" : null}
+    ${props => props.small && props.pink ? "top: -12vh; left: 20vh; z-index: 2;" : null}
+    ${props => props.xlarge && props.pink ? "top: 40vh; left: 5vh; z-index: 2;" : null}
+    ${props => props.xsmall && props.green ? "top: 15vh; left: -4vh; z-index: 2;" : null}
+    ${props => props.small && props.green ? "top: 30vh; right: -5vh;" : null}
+    ${props => props.xxlarge && props.green ? "bottom: -25vh; left: -20vh;" : null}
 `
 
 //message
