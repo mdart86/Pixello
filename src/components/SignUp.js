@@ -62,12 +62,12 @@ export const SignUp = ({history}) => {
     function submitFormData(e) {
         e.preventDefault()
         async function fetchData() {
-            const config = {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            };
-            await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
+            // const config = {
+            //     headers: {
+            //         'Content-Type': 'multipart/form-data'
+            //     }
+            // };
+            await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData)
                 .then(res => {
                     //if a jwt is returned, save to global state for authorisation purposes
                     if (res.data.jwt) {
