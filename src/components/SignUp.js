@@ -18,6 +18,7 @@ import { Header } from './styled/Header.styled'
 import { FileName } from './styled/Filename.styled'
 import { Form } from './styled/Form.styled'
 import { CircleSignup, PlusCircle } from './styled/Circle.styled'
+import { TextLoginSignup } from './styled/Text.styled'
 
 export const SignUp = ({history}) => {
 
@@ -30,6 +31,8 @@ export const SignUp = ({history}) => {
         bio: "", 
         image: ""
     }
+
+    const [signupFailed, setSignupFailed] = useState("")
 
     const [formData, setFormData] = useState(initialFormData)
 
@@ -50,27 +53,56 @@ export const SignUp = ({history}) => {
             [e.target.id]: e.target.value
         })
     }
-console.log(formData)
 
-    async function submitFormData(e) {
+    console.log(formData)
+    
+    function submitFormData(e) {
         e.preventDefault()
-        dispatch({
-            type: "setLoggedInUser",
-            data: formData.username
-        })
-        // // const data = new FormData(formData)
-        
-        // const config = {
-        //     headers: {
-        //         'content-type': 'multipart/form-data'
-        //       }
-        // };
-        // await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
-        //     .then(res => console.log("Response: " + res.data))
-        //     .catch(err => console.log(err))
-        // // setFormData(initialFormData)
-        history.push('/home')
+        async function fetchData() {
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            };
+            await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
+                .then(res => {
+                    if (res.data.jwt) {
+                        dispatch({
+                            type: "setJWT",
+                            data: res.data.jwt
+                        })
+                        setSignupFailed(false)
+                        history.push('/home')
+                    } 
+                })
+                .catch(err => {
+                    setSignupFailed(true)
+                    console.log(err)
+                })
+        }
+        fetchData()
     }
+
+    // async function submitFormData(e) {
+    //     e.preventDefault()
+    //     dispatch({
+    //         type: "setLoggedInUser",
+    //         data: formData.username
+    //     })
+    //     // // const data = new FormData(formData)
+        
+    //     // const config = {
+    //     //     headers: {
+    //     //         'content-type': 'multipart/form-data',
+                        // 'origin': 'https://www.pixellophotos.com/'
+    //     //       }
+    //     // };
+    //     // await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
+    //     //     .then(res => console.log("Response: " + res.data))
+    //     //     .catch(err => console.log(err))
+    //     // // setFormData(initialFormData)
+    //     history.push('/home')
+    // }
 
     return (
         <>
@@ -99,6 +131,7 @@ console.log(formData)
                     </CircleSignup>
                     <input type="submit" id="submitButton" hidden/>
                 </Form>
+                {signupFailed ? <TextLoginSignup>Usernames must be unique, please try again.</TextLoginSignup> : null}
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>
         </>

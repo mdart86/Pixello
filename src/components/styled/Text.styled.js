@@ -56,7 +56,7 @@ export const TextUserMessages = styled.p`
 `
 
 //login
-export const TextLogin = styled.p`
+export const TextLoginSignup = styled.p`
     width: 80%;
     position: absolute;
     left: 10%;

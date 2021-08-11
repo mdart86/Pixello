@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
+import { useGlobalState } from '../utils/context'
 //image imports: 
 import refresh from '../images/refresh.svg'
 import filter from '../images/category-search.svg'
@@ -18,6 +19,9 @@ export const CategoryFilter = () => {
     
     const { category } = useParams()
 
+    const { store} = useGlobalState()
+    const { loggedInJWT } = store
+
     const [postData, setPostData ] = useState("")
     const [matchingPosts, setMatchingPosts] = useState(true)
     
@@ -25,9 +29,8 @@ export const CategoryFilter = () => {
     const [trigger, setTrigger] = useState(0)
 
     useEffect(() => {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtaWdyYWNlZCIsImVtYWlsIjoiaGVsbG9lbWlseW1pbGxzQGdtYWlsLmNvbSIsImltYWdlSWQiOiJhaWF0NmZnMHpjYWk4aHUzZXVjaSIsImJpbyI6IkhleSwgSSdtIEVtaWx5ISIsIl9pZCI6IjYxMTBkMGQyZjk2ZDg4MDAwNDFkMTU2ZCIsImlhdCI6MTYyODQ5MTk4Nn0.C0rveSGiiSs4pIqw2VPxlNnk4nPLwhN4GcOXxVaHZ1I"
         const authorisation = {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
         async function fetchData() {
             await axios.get(`https://pixello.herokuapp.com/posts`, authorisation)
@@ -54,7 +57,7 @@ export const CategoryFilter = () => {
         return () => {
             setPostData("")
         }
-    }, [trigger, category])
+    }, [trigger, category, loggedInJWT])
     
     function handleClick() {
         let num = trigger + 1

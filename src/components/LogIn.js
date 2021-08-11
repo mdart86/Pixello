@@ -14,7 +14,7 @@ import { BackgroundBox } from './styled/BackgroundBox.styled'
 import { Header } from './styled/Header.styled'
 import { Form } from './styled/Form.styled'
 import { CircleLogin } from './styled/Circle.styled'
-import { TextLogin } from './styled/Text.styled'
+import { TextLoginSignup } from './styled/Text.styled'
 import { StyledLink } from './styled/StyledLink.styled'
 
 export const LogIn = ({ history }) => {
@@ -66,7 +66,7 @@ export const LogIn = ({ history }) => {
             </PinkFeature>
             <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox login="true">
-                {loginFailed ? <TextLogin>Invalid login, please try again or <StyledLink to="/signup">sign up</StyledLink>.</TextLogin> : null}
+                {loginFailed ? <TextLoginSignup>Invalid login, please try again or <StyledLink to="/signup">sign up</StyledLink>.</TextLoginSignup> : null}
                 <Form onSubmit={submitFormData}>
                     <Input required login="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required login="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
