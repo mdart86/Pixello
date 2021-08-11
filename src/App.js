@@ -33,7 +33,7 @@ export const App = () => {
   }
 
   const [store, dispatch] = useReducer(reducer, initialState)
-  const { loggedInUsername } = store
+  const { loggedInJWT } = store
   
   function setCategoryList(list) {
     let alphabetised = list.sort((a, b) => a.localeCompare(b))
@@ -66,15 +66,15 @@ export const App = () => {
             <Route exact path="/about" component={About}/>
             <Route exact path="/login" component={LogIn}/>
             <Route exact path="/signup" component={SignUp}/>
-            <Route exact path="/home" component={Home}/>
-            <Route exact path="/post/:id" component={ loggedInUsername ? ViewPost : PleaseSignIn }/>
-            <Route exact path="/filter" component={ loggedInUsername ? FilterForm : PleaseSignIn }/>
-            <Route exact path="/posts/:category" component={ loggedInUsername ? CategoryFilter : PleaseSignIn }/>
-            <Route exact path="/profile/:id" component={ loggedInUsername ? Profile : PleaseSignIn }/>
-            <Route exact path="/new" component={ loggedInUsername ? CreatePost : PleaseSignIn }/>
-            <Route exact path="/messages" component={ loggedInUsername ? Messages : PleaseSignIn }/>
-            <Route exact path="/message/:id" component={ loggedInUsername ? Message : PleaseSignIn }/>
-            <Route exact path="/notifications" component={ loggedInUsername ? Notifications : PleaseSignIn }/>
+            <Route exact path="/home" component={ loggedInJWT ? Home : PleaseSignIn }/>
+            <Route exact path="/post/:id" component={ loggedInJWT ? ViewPost : PleaseSignIn }/>
+            <Route exact path="/filter" component={ loggedInJWT ? FilterForm : PleaseSignIn }/>
+            <Route exact path="/posts/:category" component={ loggedInJWT ? CategoryFilter : PleaseSignIn }/>
+            <Route exact path="/profile/:id" component={ loggedInJWT ? Profile : PleaseSignIn }/>
+            <Route exact path="/new" component={ loggedInJWT ? CreatePost : PleaseSignIn }/>
+            <Route exact path="/messages" component={ loggedInJWT ? Messages : PleaseSignIn }/>
+            <Route exact path="/message/:id" component={ loggedInJWT ? Message : PleaseSignIn }/>
+            <Route exact path="/notifications" component={ loggedInJWT ? Notifications : PleaseSignIn }/>
             <Route component={NotFound}/>
         </Switch>
         {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}
