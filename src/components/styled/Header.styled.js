@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const Tagline = styled.h2`
     text-align: center;
     color: var(--green);
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-top: -10px;
 `
 
@@ -27,8 +27,8 @@ export const Header = styled.h1`
     font-family: 'Pacifico', cursive;
     margin: 0;
     ${props => props.login || props.signup ? "text-align: center; padding-top: 40px;" : null}
-    ${props => props.title ? "font-size: 2rem;": null}
-    ${props => props.name ? "font-size: 1rem;" : null}
+    ${props => props.hey ? "font-size: 2.5rem;": null}
+    ${props => props.name ? "font-size: 1.4rem;" : null}
     ${props => props.createPost ? "margin-top: 20px; font-size: 1.5rem;" : null}
     ${props => props.createPost && window.innerWidth >= 450 ?"text-align: center;" : null}
 `

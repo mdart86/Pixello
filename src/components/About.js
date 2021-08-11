@@ -21,8 +21,8 @@ export const About = () => {
             </CircleAbout>
             <CircleAbout blue="true" large="true"></CircleAbout>
             <CircleAbout green="true" xlarge="true">
-                <Header about="true" title="true">Hey there!</Header>
-                <TextAbout para1="true">We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</TextAbout>
+                <Header about="true" hey="true">Hey there!</Header>
+                <TextAbout>We're Emily Mills and Michael Dart, and we built Pixello together. Thanks for checking it out!</TextAbout>
                 <TextAbout>To reach out to us and keep up with our other work, follow us on Github and Twitter.</TextAbout>
                 <TextAbout copywrite="true">&#169; 2021</TextAbout>
             </CircleAbout>
