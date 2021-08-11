@@ -17,6 +17,7 @@ export const Home = () => {
     const { store } = useGlobalState()
     const { loggedInJWT } = store
 
+    //stores data retreived by the axios request
     const [postData, setPostData ] = useState("")
     
     //used to trigger useEffect when refresh icon is clicked
@@ -41,6 +42,7 @@ export const Home = () => {
         }
     }, [trigger, loggedInJWT])
 
+    //increment the value to trigger useEffect for refresh purposes
     function handleClick() {
         let num = trigger + 1
         setTrigger(num)

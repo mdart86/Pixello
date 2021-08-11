@@ -24,7 +24,7 @@ import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
 
-// add logic to show the permissions bar 
+// NOTE TO SELF: add logic to show the permissions bar 
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
 
@@ -38,6 +38,7 @@ export const ViewPost = () => {
     //placeholder to remove errors
     const category = "film"
 
+    //stores data retreived by the axios request
     const [postData, setPostData ] = useState("")
     
     useEffect(() => {

@@ -13,12 +13,6 @@ export const AppStart = () => {
     const { store } = useGlobalState()
     const { loggedInUser } = store
     
-    if (loggedInUser) {
-        console.log("Current signed in user is: " + loggedInUser)
-    } else {
-        console.log("There is no signed in user.")
-    }
-    
     return (
         <ContainerAppStart>
             <CircleAppStart blue="true" large="true"></CircleAppStart>

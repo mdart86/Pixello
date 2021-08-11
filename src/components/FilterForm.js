@@ -24,7 +24,7 @@ export const FilterForm = ({ history }) => {
 
     function submitFormData(e) {
         e.preventDefault()
-        //send info to API
+        //redirect to category filter page, sending selected category in the params
         history.push(`/posts/${formData.category}`)
     }
 
@@ -38,8 +38,7 @@ export const FilterForm = ({ history }) => {
             <Form onSubmit={submitFormData}>
                 <Select required value={formData.category} id="category" onChange={handleFormData}>
                     <option value="" hidden disabled>Categories</option>
-                    {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)}
-                    
+                    {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)} 
                 </Select>
                 <Input filter="true" type="submit" value="See the photos!"/>
             </Form>

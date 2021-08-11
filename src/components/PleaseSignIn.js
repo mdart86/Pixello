@@ -7,6 +7,8 @@ import { CenteringContainer } from './styled/Container.styled'
 import { StyledLink } from './styled/StyledLink.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 
+//this component prompts auth on protected pages
+
 export const PleaseSignIn = () => {
     return (
         <>

@@ -20,16 +20,12 @@ import { ContainerCreatePost } from './styled/Container.styled'
 
 export const CreatePost = ({ history }) => {
     
-    // //placeholder to remove errors
-    // const id = 12345
-    
     const { store } = useGlobalState()
     const { loggedInJWT } = store 
     const { categoryList } = store
 
-    //remove placeholder username once I can access the username
     const initialFormData = { 
-        username: "emigraced",
+        username: "",
         image: "",
         caption: "", 
         category: ""
@@ -37,10 +33,13 @@ export const CreatePost = ({ history }) => {
 
     const [formData, setFormData] = useState(initialFormData)
     
+    //used to display file name to user when they upload an image
     const [fileName, setFileName] = useState("No File Chosen")
 
+    //used to notify user if post creation failed
     const [postFailed, setPostFailed] = useState("")
 
+    //save image data to state, and isolate file name to display to user
     function displayFileInfo(e) {
         setFileName(e.target.files[0].name)
         setFormData({
@@ -69,6 +68,7 @@ export const CreatePost = ({ history }) => {
                 .then(res => {
                     if (res.data) {
                         setPostFailed(false)
+                        //redirect user to the post they just created
                         history.push(`/post/${res.data.id}`)
                     } 
                 })

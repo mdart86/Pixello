@@ -27,6 +27,8 @@ export const LogIn = ({ history }) => {
     }
 
     const [formData, setFormData] = useState(initialFormData)
+
+    //used to notify the user if their login attempt failed
     const [loginFailed, setLoginFailed] = useState("")
     
     function handleFormData(e) {
@@ -41,12 +43,14 @@ export const LogIn = ({ history }) => {
         async function fetchData() {
             await axios.post("https://pixello.herokuapp.com/auth/sign_in", formData)
                 .then(res => {
+                    //if a jwt is returned, save to global state for authorisation purposes
                     if (res.data.jwt) {
                         dispatch({
                             type: "setJWT",
                             data: res.data.jwt
                         })
                         setLoginFailed(false)
+                        //redirect to the home page
                         history.push('/home')
                     } 
                 })

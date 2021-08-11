@@ -14,16 +14,20 @@ const Logout = ({ excludedUrls, left, history }) => {
     const { dispatch } = useGlobalState()
 
     function handleLogout(e) {
+        //remove jwt from global state
         dispatch({
             type: "logOutUser",
             data: ""
         })
+        //redirect to the app start page
         history.push("/")
     }
 
     if (excludedUrls.includes(window.location.pathname)) {
+        //don't render this component on pages that don't need to be logged out from
         return null
     } else if (left) {
+        //render desktop styles
         return (
             <ContainerLogout left="true">
                 <BackgroundCircle left="true">
@@ -32,6 +36,7 @@ const Logout = ({ excludedUrls, left, history }) => {
             </ContainerLogout>
         )
     } else {
+        //render mobile styles
         return (
             <ContainerLogout>
                 <BackgroundCircle>

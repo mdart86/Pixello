@@ -16,13 +16,14 @@ import { BoxMobileNav, BoxMobileNavNoPlus, BoxMobileNavGreen, BoxMobileNavPink }
 
 const MobileNav = ({ excludedUrls }) => {
 
-      //placeholder to remove errors
-      const id = 12345
+    //placeholder to remove errors
+    const id = 12345
 
     if (excludedUrls.includes(window.location.pathname)) {
+        //return null on pages where the nav bar should not be rendered
         return null
     } else if (window.location.pathname === "/new") {
-        
+        //return a version of the nav bar without the create-post button
         return (
             <BoxMobileNavNoPlus>
                 <IconsContainer mobile="true">
@@ -34,6 +35,7 @@ const MobileNav = ({ excludedUrls }) => {
             </BoxMobileNavNoPlus>
         )
     } else if (window.location.pathname === "/messages") {
+        //return a version of the nav bar styled green
         return (
             <BoxMobileNavGreen>
                 <Link to="/new"><PlusIcon mobile="true"src={plus} alt="plus sign icon"/></Link>
@@ -46,6 +48,7 @@ const MobileNav = ({ excludedUrls }) => {
             </BoxMobileNavGreen>
         )
     } else if (window.location.pathname === "/notifications") {
+        //return a version of the nav bar styled pink
         return (
             <BoxMobileNavPink>
                 <Link to="/new"><PlusIcon mobile="true"src={plus} alt="plus sign icon"/></Link>
@@ -59,6 +62,7 @@ const MobileNav = ({ excludedUrls }) => {
         )
     }
 
+    //standard nav bar styling
     return (
         <BoxMobileNav>
             <Link to="/new"><PlusIcon mobile="true"src={plus} alt="plus sign icon"/></Link>
@@ -72,4 +76,5 @@ const MobileNav = ({ excludedUrls }) => {
     )
 }
 
+//exported with router for the purpose of conditional statements in app.js that depend on the route
 export default withRouter(MobileNav)

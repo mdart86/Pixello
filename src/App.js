@@ -3,7 +3,6 @@ import { reducer } from './utils/reducer'
 import { Context } from './utils/context'
 import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-// import axios from 'axios'
 //react component imports: 
 import MobileNav from './components/MobileNav'
 import DesktopNav from './components/DesktopNav'
@@ -35,6 +34,7 @@ export const App = () => {
   const [store, dispatch] = useReducer(reducer, initialState)
   const { loggedInJWT } = store
   
+  //alphabetise and capitalise the categories list and save to global state
   function setCategoryList(list) {
     let alphabetised = list.sort((a, b) => a.localeCompare(b))
     let capitalised = alphabetised.map(category => category[0].toUpperCase() + category.substring(1))
@@ -44,17 +44,12 @@ export const App = () => {
     })
   }
 
-  // api call with axios. can save to state here
   useEffect(() => {
     let categories = ["food", "outdoor", "indoor", "vehicular", "architecture", "art", "light", "shadow", "film", "candid"]
     setCategoryList(categories)
-      // axios.get("https://pixello.herokuapp.com")
-      //   .then(response => response.json)
-      //   .then(data => console.log(data))
-      //   .catch(err => console.log(err))
   }, [])
 
-
+  //urls that don't render nav or logout
   let excludedUrls = ["/", "/about", "/signup", "/login"]
 
   return (

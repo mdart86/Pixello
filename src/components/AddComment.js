@@ -8,12 +8,10 @@ import { BoxAddComment } from './styled/Box.styled'
 
 export const AddComment = () => {
     return (
-       
             <BoxAddComment>
                 <CircleAddComment>
                     <PlusIcon comment="true" src={plus} alt="plus sign"/>
                 </CircleAddComment>
             </BoxAddComment>
-       
     )
 }

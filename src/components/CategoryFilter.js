@@ -21,7 +21,10 @@ export const CategoryFilter = () => {
     const { store} = useGlobalState()
     const { loggedInJWT } = store
 
+    //stores data retreived by the axios request
     const [postData, setPostData ] = useState("")
+
+    //used to notify the user if there are no posts in the selected category
     const [matchingPosts, setMatchingPosts] = useState(true)
     
     //used to trigger useEffect when refresh icon is clicked
@@ -34,8 +37,9 @@ export const CategoryFilter = () => {
         async function fetchData() {
             await axios.get(`https://pixello.herokuapp.com/posts`, authorisation)
                 .then(res => {
-                    //sort reverses the order so that newer images appear first on the home page
+                    //sort reverses order of data so that newer images appear first on home page
                     const retrievedData = res.data.sort((a,b) => b - a)
+
                     //isolate posts that match requested category
                     let requestedPosts = []
                     for (let post of retrievedData) {
@@ -43,6 +47,8 @@ export const CategoryFilter = () => {
                             requestedPosts.push(post)
                         }
                     }
+
+                    //save post data and save whether or not there are matching posts
                     if (requestedPosts.length > 0) {
                         setMatchingPosts(true)
                         setPostData(requestedPosts)
@@ -58,6 +64,7 @@ export const CategoryFilter = () => {
         }
     }, [trigger, category, loggedInJWT])
     
+    //increment the value to trigger useEffect for refresh purposes
     function handleClick() {
         let num = trigger + 1
         setTrigger(num)
@@ -85,4 +92,3 @@ export const CategoryFilter = () => {
         </>
     )
 }
-

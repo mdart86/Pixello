@@ -32,13 +32,15 @@ export const SignUp = ({history}) => {
         image: ""
     }
 
+    //used to notify the user if their login attempt failed
     const [signupFailed, setSignupFailed] = useState("")
 
     const [formData, setFormData] = useState(initialFormData)
 
-    //saving the image file name to show to the user 
+    //used to display file name to user when they upload an image
     const [fileName, setFileName] = useState("No File Chosen")
 
+    //save image data to state, and isolate file name to display to user
     function handleImageFile(e) {
         setFileName(e.target.files[0].name)
         setFormData({
@@ -66,12 +68,14 @@ export const SignUp = ({history}) => {
             };
             await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
                 .then(res => {
+                    //if a jwt is returned, save to global state for authorisation purposes
                     if (res.data.jwt) {
                         dispatch({
                             type: "setJWT",
                             data: res.data.jwt
                         })
                         setSignupFailed(false)
+                        //redirect to home page
                         history.push('/home')
                     } 
                 })

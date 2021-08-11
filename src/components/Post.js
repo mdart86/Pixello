@@ -16,15 +16,15 @@ import { Caption } from './styled/Caption.styled'
 
 export const Post = ({ post }) => {
 
-    // all post attributes: likes, username, caption, avatarUrl, category, id, imageId
+    //deconstruct post data for use in render
     const {username, caption, avatarUrl, id} = post 
 
     const { store } = useGlobalState()
     const { loggedInJWT } = store
 
+    //stores data retreived by the axios request
     const [userData, setUserData ] = useState("")
     
-
     useEffect(() => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }

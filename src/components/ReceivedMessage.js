@@ -13,6 +13,7 @@ export const ReceivedMessage = ( { notification } ) => {
     
     return (
        
+            //content differs if the message is from another user, or a notification of activity
             <BoxReceivedMessage>
                 {notification 
                 ?                 
