@@ -73,8 +73,10 @@ app.get("/", cors(corsOptions),(req, res) => {
 
 // routers used in application
 app.use("/auth", authRouter)
-app.use("/posts", postRouter)
 app.use("/users", userRouter)
+app.use("/posts", postRouter)
+app.use("/comments", commentRouter)
+
 
 app.use(function (err, req, res, next) {
     console.log('This is the invalid field ->', err.field)
