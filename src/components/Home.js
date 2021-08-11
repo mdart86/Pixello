@@ -16,7 +16,7 @@ import { IconsContainer } from './styled/IconsContainer.styled'
 export const Home = () => {
 
     const { store } = useGlobalState()
-    const { loggedInUser } = store
+    const { loggedInJWT } = store
 
     const [postData, setPostData ] = useState("")
     
@@ -24,9 +24,8 @@ export const Home = () => {
     const [trigger, setTrigger] = useState(0)
 
     useEffect(() => {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtaWdyYWNlZCIsImVtYWlsIjoiaGVsbG9lbWlseW1pbGxzQGdtYWlsLmNvbSIsImltYWdlSWQiOiJhaWF0NmZnMHpjYWk4aHUzZXVjaSIsImJpbyI6IkhleSwgSSdtIEVtaWx5ISIsIl9pZCI6IjYxMTBkMGQyZjk2ZDg4MDAwNDFkMTU2ZCIsImlhdCI6MTYyODQ5MTk4Nn0.C0rveSGiiSs4pIqw2VPxlNnk4nPLwhN4GcOXxVaHZ1I"
         const authorisation = {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
         async function fetchData() {
             await axios.get("https://pixello.herokuapp.com/posts/", authorisation)
@@ -41,13 +40,7 @@ export const Home = () => {
         return () => {
             setPostData("")
         }
-    }, [trigger])
-
-    if (loggedInUser) {
-        console.log("Current signed in user is: " + loggedInUser)
-    } else {
-        console.log("There is no signed in user.")
-    }
+    }, [trigger, loggedInJWT])
 
     function handleClick() {
         let num = trigger + 1

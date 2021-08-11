@@ -54,3 +54,11 @@ export const TextUserMessages = styled.p`
     margin: 10px;
     height: 20px;
 `
+
+//login
+export const TextLogin = styled.p`
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    font-style: italic;
+`

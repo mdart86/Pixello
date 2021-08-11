@@ -27,9 +27,8 @@ export const SignUp = ({history}) => {
         username: "",
         email: "", 
         password: "",
-        passwordConfirmation: "",
         bio: "", 
-        avatar: ""
+        image: ""
     }
 
     const [formData, setFormData] = useState(initialFormData)
@@ -41,7 +40,7 @@ export const SignUp = ({history}) => {
         setFileName(e.target.files[0].name)
         setFormData({
             ...formData,
-            avatar: e.target.value
+            image: e.target.value
         })
     }
     
@@ -51,6 +50,7 @@ export const SignUp = ({history}) => {
             [e.target.id]: e.target.value
         })
     }
+console.log(formData)
 
     async function submitFormData(e) {
         e.preventDefault()
@@ -58,12 +58,17 @@ export const SignUp = ({history}) => {
             type: "setLoggedInUser",
             data: formData.username
         })
-        const data = new FormData()
-        data.append("image", formData.avatar)
-        await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData)
-            .then(res => console.log("Response: " + res.data))
-            .catch(err => console.log(err))
-        setFormData(initialFormData)
+        // // const data = new FormData(formData)
+        
+        // const config = {
+        //     headers: {
+        //         'content-type': 'multipart/form-data'
+        //       }
+        // };
+        // await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
+        //     .then(res => console.log("Response: " + res.data))
+        //     .catch(err => console.log(err))
+        // // setFormData(initialFormData)
         history.push('/home')
     }
 
@@ -79,16 +84,16 @@ export const SignUp = ({history}) => {
                     <Input required signup="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
-                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" value={formData.passwordConfirmation} onChange={handleFormData}/>
+                    {/* <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" value={formData.passwordConfirmation} onChange={handleFormData}/> */}
                     <Textarea required signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
-                    <Label signup="true" htmlFor="avatar">
+                    <Label signup="true" htmlFor="image">
                         <PlusCircle signup="true">
                             <IconSignUp upload="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                     </Label>
-                    <input required signup="true" type="file" id="avatar" name="avatar" accept=".png, .jpg, .jpeg" hidden onChange={handleImageFile}/>
+                    <input required signup="true" type="file" id="image" name="avatar" accept=".png, .jpg, .jpeg" hidden onChange={handleImageFile}/>
                     <CircleSignup htmlFor="submitButton">
                         <IconSignUp forward="true" src={arrow} alt="next steps arrow"/>
                     </CircleSignup>

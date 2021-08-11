@@ -2,27 +2,27 @@
 // isLoggedIn?
 // isAdmin?
 // isContentOwner? (post/profile/comment)
-
-//for sign up and log in and create post,
-//we need to collect the form data and 
-//send it in an api request
-
 //for posts we need: 
 //  likes tally
 //  posts tally (num of posts a user has)
-//  do we need state for filtering by category?
 
 export const reducer = (state, action) => {
     switch (action.type) {
-        case "setLoggedInUser":
+        case "setLoggedInUsername":
             return {
                 ...state, 
-                loggedInUser: action.data
+                loggedInUsername: action.data
             }
         case "logOutUser":
             return {
                 ...state, 
-                loggedInUser: action.data
+                loggedInUsername: "", 
+                loggedInJWT: ""
+            }
+        case "setJWT": 
+            return {
+                ...state, 
+                loggedInJWT: action.data
             }
         case "setCategoryList":
             return {
