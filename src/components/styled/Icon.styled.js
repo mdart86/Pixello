@@ -93,4 +93,6 @@ export const IconSignUp = styled(Image)`
 //home
 export const IconHome = styled(Image)`
     height: 20px;
+    ${props => props.filter ? "height: 25px;" : null}
+    ${props => props.filter || props.refresh ? "margin: 0 10px;" : null}
 `

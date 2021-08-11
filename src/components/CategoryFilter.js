@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 //image imports: 
 import refresh from '../images/refresh.svg'
+import filter from '../images/category-search.svg'
 //react component imports:
 import { Post } from './Post' 
 //styled component imports:
@@ -18,7 +19,7 @@ export const CategoryFilter = () => {
     const { category } = useParams()
 
     const [postData, setPostData ] = useState("")
-    const [finished, setFinished] = useState(false)
+    const [matchingPosts, setMatchingPosts] = useState(true)
     
     //used to trigger useEffect when refresh icon is clicked
     const [trigger, setTrigger] = useState(0)
@@ -41,13 +42,18 @@ export const CategoryFilter = () => {
                         }
                     }
                     if (requestedPosts.length > 0) {
+                        setMatchingPosts(true)
                         setPostData(requestedPosts)
+                    } else {
+                        setMatchingPosts(false)
                     }
-                    setFinished(true)
                 })
                 .catch(err => console.log(err))
         }
         fetchData()
+        return () => {
+            setPostData("")
+        }
     }, [trigger, category])
     
     function handleClick() {
@@ -58,17 +64,20 @@ export const CategoryFilter = () => {
     return (
         <>
             {window.innerWidth < 450 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
-            <IconsContainer refresh="true"><IconHome onClick={handleClick} src={refresh} alt="refresh icon"/></IconsContainer>
-            {postData && finished? 
+            <IconsContainer refresh="true">
+                <IconHome refresh="true" onClick={handleClick} src={refresh} alt="refresh icon"/>
+                <Link to="/filter"><IconHome filter="true" src={filter} alt="filter icon"/></Link>
+                </IconsContainer>
+            { postData ? 
                 postData.map(obj => <Post post={obj} key={obj.id}/>) 
-                : !postData && finished ?
+                    : !matchingPosts ?
                     <CenteringContainer nopostsyet="true">
                         <p><em>There are no photos in the {category} category yet...</em></p>
-                    </CenteringContainer> 
-                    :
-                    <CenteringContainer nopostsyet="true">
-                        <p><em>Loading {category} photos...</em></p>
-                    </CenteringContainer>
+                    </CenteringContainer>  
+                        :
+                        <CenteringContainer nopostsyet="true">
+                            <p><em>Loading {category} photos...</em></p>
+                        </CenteringContainer>        
             }
             {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>

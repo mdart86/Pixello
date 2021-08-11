@@ -38,6 +38,9 @@ export const Home = () => {
                 .catch(err => console.log(err))
         }
         fetchData()
+        return () => {
+            setPostData("")
+        }
     }, [trigger])
 
     if (loggedInUser) {
