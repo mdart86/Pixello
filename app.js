@@ -54,6 +54,7 @@ app.use((req, res, next) => {
         req.user = undefined
         next()
     }
+    res.status(401)
 })
     
 // Middleware added to application
