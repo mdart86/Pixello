@@ -37,7 +37,7 @@ export const CategoryFilter = () => {
                     //isolate posts that match requested category
                     let requestedPosts = []
                     for (let post of retrievedData) {
-                        if (post.category.toLowerCase() === category) {
+                        if (post.category.toLowerCase() === category.toLowerCase()) {
                             requestedPosts.push(post)
                         }
                     }

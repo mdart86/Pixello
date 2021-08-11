@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from 'react'
-import { initialState, reducer } from './utils/reducer'
+import { reducer } from './utils/reducer'
 import { Context } from './utils/context'
 import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
@@ -26,11 +26,27 @@ import { PleaseSignIn } from './components/PleaseSignIn'
 
 export const App = () => {
 
+  const initialState = {
+    loggedInUser: "",
+    categoryList: []
+  }
+
   const [store, dispatch] = useReducer(reducer, initialState)
   const { loggedInUser } = store
+  
+  function setCategoryList(list) {
+    let alphabetised = list.sort((a, b) => a.localeCompare(b))
+    let capitalised = alphabetised.map(category => category[0].toUpperCase() + category.substring(1))
+    dispatch({
+      type: "setCategoryList",
+      data: capitalised
+    })
+  }
 
   // api call with axios. can save to state here
   useEffect(() => {
+    let categories = ["food", "outdoor", "indoor", "vehicular", "architecture", "art", "light", "shadow", "film", "candid"]
+    setCategoryList(categories)
       // axios.get("https://pixello.herokuapp.com")
       //   .then(response => response.json)
       //   .then(data => console.log(data))

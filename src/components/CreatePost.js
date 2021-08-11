@@ -18,12 +18,14 @@ import { Form } from './styled/Form.styled'
 import { ContainerCreatePost } from './styled/Container.styled'
 
 export const CreatePost = ({ history }) => {
+    
 
     //placeholder to remove errors
     const id = 12345
     
     const { store } = useGlobalState()
     const { loggedInUser } = store 
+    const { categoryList } = store
 
     const initialFormData = { 
         username: loggedInUser,
@@ -76,9 +78,7 @@ export const CreatePost = ({ history }) => {
                     <Textarea required placeholder="Give it a caption" id="caption" value={formData.caption} onChange={handleFormData}/>
                     <Select required value={formData.category} id="category" onChange={handleFormData}>
                         <option value="" hidden disabled>Categories</option>
-                        <option value="film">Film</option>
-                        <option value="candid">Candid</option>
-                        <option value="water">Water</option>
+                        {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)}
                     </Select>
                     <Input createPost="true" type="submit" value="Share!"/>
                 </Form>

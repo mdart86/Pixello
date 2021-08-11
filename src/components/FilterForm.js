@@ -1,4 +1,5 @@
 import React, { useState }  from 'react'
+import { useGlobalState } from '../utils/context'
 //styled component imports: 
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
@@ -10,6 +11,9 @@ import { Select } from './styled/Select.styled'
 import { Input } from './styled/Input.styled'
 
 export const FilterForm = ({ history }) => {
+
+    const { store } = useGlobalState()
+    const { categoryList } = store
 
     const [formData, setFormData] = useState({category: ""})
 
@@ -34,10 +38,8 @@ export const FilterForm = ({ history }) => {
             <Form onSubmit={submitFormData}>
                 <Select required value={formData.category} id="category" onChange={handleFormData}>
                     <option value="" hidden disabled>Categories</option>
-                    <option value="film">Film</option>
-                    <option value="candid">Candid</option>
-                    <option value="water">Water</option>
-                    <option value="landscape">Landscape</option>
+                    {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)}
+                    
                 </Select>
                 <Input filter="true" type="submit" value="See the photos!"/>
             </Form>
