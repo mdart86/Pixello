@@ -20,3 +20,18 @@ export const Label = styled.label`
         cursor: pointer;
     }
 `
+
+//login
+//signup
+export const CircleLabel = styled.label`
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    width: 90px;
+    background: var(--blue);
+    position: absolute;
+    bottom: -22.5px;
+    right: -22.5px;
+`

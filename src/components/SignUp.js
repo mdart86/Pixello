@@ -17,7 +17,8 @@ import { BackgroundBox } from './styled/Box.styled'
 import { Header } from './styled/Header.styled'
 import { FileName } from './styled/Filename.styled'
 import { Form } from './styled/Form.styled'
-import { CircleSignup, PlusCircle } from './styled/Circle.styled'
+import { PlusCircle } from './styled/Circle.styled'
+import { CircleLabel } from './styled/Label.styled'
 import { TextLoginSignup } from './styled/Text.styled'
 
 export const SignUp = ({history}) => {
@@ -130,9 +131,9 @@ export const SignUp = ({history}) => {
                         </PlusCircle>
                     </Label>
                     <input required signup="true" type="file" id="image" name="avatar" accept=".png, .jpg, .jpeg" hidden onChange={handleImageFile}/>
-                    <CircleSignup htmlFor="submitButton">
+                    <CircleLabel htmlFor="submitButton">
                         <IconSignUp forward="true" src={arrow} alt="next steps arrow"/>
-                    </CircleSignup>
+                    </CircleLabel>
                     <input type="submit" id="submitButton" hidden/>
                 </Form>
                 {signupFailed ? <TextLoginSignup>Usernames must be unique, please try again.</TextLoginSignup> : null}

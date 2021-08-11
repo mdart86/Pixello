@@ -88,37 +88,9 @@ export const CircleAppStart = styled(Circle)`
     ${props => props.xxlarge && props.green ? "bottom: -100px; left: -85px;" : null}
 `
 
-//login
-export const CircleLogin = styled.label`
-    border-radius: 50%;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 90px;
-    background: var(--blue);
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
-`
-
 //message
 export const CircleMessage = styled(Circle)`
     height: 25px;
     width: 25px;
     background: var(--blue);
-`
-
-//signup
-export const CircleSignup = styled.label`
-    border-radius: 50%;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 90px;
-    background: var(--blue);
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
 `

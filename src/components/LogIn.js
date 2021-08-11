@@ -13,7 +13,7 @@ import { IconLogin } from './styled/Icon.styled'
 import { BackgroundBox } from './styled/Box.styled'
 import { Header } from './styled/Header.styled'
 import { Form } from './styled/Form.styled'
-import { CircleLogin } from './styled/Circle.styled'
+import { CircleLabel } from './styled/Label.styled'
 import { TextLoginSignup } from './styled/Text.styled'
 import { StyledLink } from './styled/StyledLink.styled'
 
@@ -74,9 +74,9 @@ export const LogIn = ({ history }) => {
                 <Form onSubmit={submitFormData}>
                     <Input required login="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required login="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
-                    <CircleLogin htmlFor="submitButton">
+                    <CircleLabel htmlFor="submitButton">
                         <IconLogin forward="true" src={arrow} alt="next steps arrow"/>
-                    </CircleLogin>
+                    </CircleLabel>
                     <input type="submit" id="submitButton" hidden/>
                 </Form>
             </BackgroundBox>
