@@ -9,24 +9,23 @@ import { Post } from './Post'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Logo } from './styled/Logo.styled'
-import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { CenteringContainer, IconsContainer } from './styled/Container.styled'
 import { IconHome } from './styled/Icon.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
 
 export const Home = () => {
 
     const { store } = useGlobalState()
-    const { loggedInUser } = store
+    const { loggedInJWT } = store
 
+    //stores data retreived by the axios request
     const [postData, setPostData ] = useState("")
     
     //used to trigger useEffect when refresh icon is clicked
     const [trigger, setTrigger] = useState(0)
 
     useEffect(() => {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtaWdyYWNlZCIsImVtYWlsIjoiaGVsbG9lbWlseW1pbGxzQGdtYWlsLmNvbSIsImltYWdlSWQiOiJhaWF0NmZnMHpjYWk4aHUzZXVjaSIsImJpbyI6IkhleSwgSSdtIEVtaWx5ISIsIl9pZCI6IjYxMTBkMGQyZjk2ZDg4MDAwNDFkMTU2ZCIsImlhdCI6MTYyODQ5MTk4Nn0.C0rveSGiiSs4pIqw2VPxlNnk4nPLwhN4GcOXxVaHZ1I"
         const authorisation = {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
         async function fetchData() {
             await axios.get("https://pixello.herokuapp.com/posts/", authorisation)
@@ -41,14 +40,9 @@ export const Home = () => {
         return () => {
             setPostData("")
         }
-    }, [trigger])
+    }, [trigger, loggedInJWT])
 
-    if (loggedInUser) {
-        console.log("Current signed in user is: " + loggedInUser)
-    } else {
-        console.log("There is no signed in user.")
-    }
-
+    //increment the value to trigger useEffect for refresh purposes
     function handleClick() {
         let num = trigger + 1
         setTrigger(num)

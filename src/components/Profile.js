@@ -10,17 +10,15 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Username } from './styled/Username.styled'
 import { Summary } from './styled/Summary.styled'
-import { ProfileContainer } from './styled/ProfileContainer.styled'
+import { ProfileContainer, AvatarContainer, GridContainer } from './styled/Container.styled'
 import { PhotoGrid } from './styled/PhotoGrid.styled'
 import { PhotoPreview } from './styled/Photo.styled'
 import { Avatar } from './styled/Avatar.styled'
-import { AvatarContainer } from './styled/AvatarContainer.styled'
-import { GridContainer } from './styled/GridContainer.styled'
 import { Span } from './styled/Span.styled'
 import { Count } from './styled/Count.styled'
 import { Bio } from './styled/Bio.styled'
 
-// add logic to show the permissions bar 
+// NOTE TO SELF: add logic to show the permissions bar 
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
 

@@ -13,7 +13,7 @@ import Logout from './Logout'
 //styled component imports: 
 import { PlusIcon } from './styled/Icon.styled'
 import { Logo } from './styled/Logo.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconsContainer } from './styled/Container.styled'
 import { IconDesktopNav } from './styled/Icon.styled'
 import { BoxDesktopNav, BoxDesktopNavNoPlus } from './styled/Box.styled';
 import { StyledLink } from './styled/StyledLink.styled';
@@ -23,10 +23,11 @@ const DesktopNav = ( { excludedUrls } ) => {
     //placeholder to remove errors
     const id = 12345
 
-    
     if (excludedUrls.includes(window.location.pathname)) {
+        //return null on pages where the nav bar should not be rendered
         return null
     } else if (window.location.pathname === "/new") {
+        //return a version of the nav bar without the create-post button
         return (
             <BoxDesktopNavNoPlus>
                 <Logout excludedUrls={excludedUrls} left="true"/>
@@ -55,4 +56,5 @@ const DesktopNav = ( { excludedUrls } ) => {
     )
 }
 
+//exported with router for the purpose of conditional statements in app.js that depend on the route
 export default withRouter(DesktopNav)

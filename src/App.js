@@ -3,7 +3,6 @@ import { reducer } from './utils/reducer'
 import { Context } from './utils/context'
 import GlobalStyles from './components/styled/Global.styled'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-// import axios from 'axios'
 //react component imports: 
 import MobileNav from './components/MobileNav'
 import DesktopNav from './components/DesktopNav'
@@ -27,13 +26,15 @@ import { PleaseSignIn } from './components/PleaseSignIn'
 export const App = () => {
 
   const initialState = {
-    loggedInUser: "",
+    loggedInUsername: "",
+    loggedInJWT: "",
     categoryList: []
   }
 
   const [store, dispatch] = useReducer(reducer, initialState)
-  const { loggedInUser } = store
+  const { loggedInJWT } = store
   
+  //alphabetise and capitalise the categories list and save to global state
   function setCategoryList(list) {
     let alphabetised = list.sort((a, b) => a.localeCompare(b))
     let capitalised = alphabetised.map(category => category[0].toUpperCase() + category.substring(1))
@@ -43,17 +44,12 @@ export const App = () => {
     })
   }
 
-  // api call with axios. can save to state here
   useEffect(() => {
     let categories = ["food", "outdoor", "indoor", "vehicular", "architecture", "art", "light", "shadow", "film", "candid"]
     setCategoryList(categories)
-      // axios.get("https://pixello.herokuapp.com")
-      //   .then(response => response.json)
-      //   .then(data => console.log(data))
-      //   .catch(err => console.log(err))
   }, [])
 
-
+  //urls that don't render nav or logout
   let excludedUrls = ["/", "/about", "/signup", "/login"]
 
   return (
@@ -65,15 +61,15 @@ export const App = () => {
             <Route exact path="/about" component={About}/>
             <Route exact path="/login" component={LogIn}/>
             <Route exact path="/signup" component={SignUp}/>
-            <Route exact path="/home" component={ loggedInUser ? Home : PleaseSignIn }/>
-            <Route exact path="/post/:id" component={ loggedInUser ? ViewPost : PleaseSignIn }/>
-            <Route exact path="/filter" component={ loggedInUser ? FilterForm : PleaseSignIn }/>
-            <Route exact path="/posts/:category" component={ loggedInUser ? CategoryFilter : PleaseSignIn }/>
-            <Route exact path="/profile/:id" component={ loggedInUser ? Profile : PleaseSignIn }/>
-            <Route exact path="/new" component={ loggedInUser ? CreatePost : PleaseSignIn }/>
-            <Route exact path="/messages" component={ loggedInUser ? Messages : PleaseSignIn }/>
-            <Route exact path="/message/:id" component={ loggedInUser ? Message : PleaseSignIn }/>
-            <Route exact path="/notifications" component={ loggedInUser ? Notifications : PleaseSignIn }/>
+            <Route exact path="/home" component={ loggedInJWT ? Home : PleaseSignIn }/>
+            <Route exact path="/post/:id" component={ loggedInJWT ? ViewPost : PleaseSignIn }/>
+            <Route exact path="/filter" component={ loggedInJWT ? FilterForm : PleaseSignIn }/>
+            <Route exact path="/posts/:category" component={ loggedInJWT ? CategoryFilter : PleaseSignIn }/>
+            <Route exact path="/profile/:id" component={ loggedInJWT ? Profile : PleaseSignIn }/>
+            <Route exact path="/new" component={ loggedInJWT ? CreatePost : PleaseSignIn }/>
+            <Route exact path="/messages" component={ loggedInJWT ? Messages : PleaseSignIn }/>
+            <Route exact path="/message/:id" component={ loggedInJWT ? Message : PleaseSignIn }/>
+            <Route exact path="/notifications" component={ loggedInJWT ? Notifications : PleaseSignIn }/>
             <Route component={NotFound}/>
         </Switch>
         {window.innerWidth < 450 ? <Logout excludedUrls={excludedUrls}/> : null}

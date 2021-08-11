@@ -13,7 +13,7 @@ import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
 import { BoxComment } from './styled/Box.styled'
 
-// add logic to show the permissions bar 
+// NOTE TO SELF: add logic to show the permissions bar 
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
 
@@ -23,7 +23,6 @@ export const Comment = () => {
     const id = 12345
 
     return (
-       
             <BoxComment>
                 <Link to={`/profile/${id}`}><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
                 <IconComment src={like} alt="like button"/>
@@ -31,6 +30,5 @@ export const Comment = () => {
                 <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
                 <PermissionsBar comment="true"/>
             </BoxComment>
-        
     )
 }

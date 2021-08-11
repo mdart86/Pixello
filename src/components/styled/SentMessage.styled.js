@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-//message
+//used in:
+//  message
+
 export const SentMessage = styled.div`
     height: auto;
     width: 75%;

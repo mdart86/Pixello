@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-//app start
+//used in: 
+//  app start
 export const Tagline = styled.h2`
     text-align: center;
     color: var(--green);
@@ -31,6 +32,3 @@ export const Header = styled.h1`
     ${props => props.createPost ? "margin-top: 20px; font-size: 1.5rem;" : null}
     ${props => props.createPost && window.innerWidth >= 450 ?"text-align: center;" : null}
 `
-
-
-

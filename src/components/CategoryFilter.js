@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
+import { useGlobalState } from '../utils/context'
 //image imports: 
 import refresh from '../images/refresh.svg'
 import filter from '../images/category-search.svg'
@@ -10,30 +11,35 @@ import { Post } from './Post'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Logo } from './styled/Logo.styled'
-import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { CenteringContainer, IconsContainer } from './styled/Container.styled'
 import { IconHome } from './styled/Icon.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
 
 export const CategoryFilter = () => {
     
     const { category } = useParams()
 
+    const { store} = useGlobalState()
+    const { loggedInJWT } = store
+
+    //stores data retreived by the axios request
     const [postData, setPostData ] = useState("")
+
+    //used to notify the user if there are no posts in the selected category
     const [matchingPosts, setMatchingPosts] = useState(true)
     
     //used to trigger useEffect when refresh icon is clicked
     const [trigger, setTrigger] = useState(0)
 
     useEffect(() => {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImVtaWdyYWNlZCIsImVtYWlsIjoiaGVsbG9lbWlseW1pbGxzQGdtYWlsLmNvbSIsImltYWdlSWQiOiJhaWF0NmZnMHpjYWk4aHUzZXVjaSIsImJpbyI6IkhleSwgSSdtIEVtaWx5ISIsIl9pZCI6IjYxMTBkMGQyZjk2ZDg4MDAwNDFkMTU2ZCIsImlhdCI6MTYyODQ5MTk4Nn0.C0rveSGiiSs4pIqw2VPxlNnk4nPLwhN4GcOXxVaHZ1I"
         const authorisation = {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
         async function fetchData() {
             await axios.get(`https://pixello.herokuapp.com/posts`, authorisation)
                 .then(res => {
-                    //sort reverses the order so that newer images appear first on the home page
+                    //sort reverses order of data so that newer images appear first on home page
                     const retrievedData = res.data.sort((a,b) => b - a)
+
                     //isolate posts that match requested category
                     let requestedPosts = []
                     for (let post of retrievedData) {
@@ -41,6 +47,8 @@ export const CategoryFilter = () => {
                             requestedPosts.push(post)
                         }
                     }
+
+                    //save post data and save whether or not there are matching posts
                     if (requestedPosts.length > 0) {
                         setMatchingPosts(true)
                         setPostData(requestedPosts)
@@ -54,8 +62,9 @@ export const CategoryFilter = () => {
         return () => {
             setPostData("")
         }
-    }, [trigger, category])
+    }, [trigger, category, loggedInJWT])
     
+    //increment the value to trigger useEffect for refresh purposes
     function handleClick() {
         let num = trigger + 1
         setTrigger(num)
@@ -83,4 +92,3 @@ export const CategoryFilter = () => {
         </>
     )
 }
-

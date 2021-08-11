@@ -14,11 +14,9 @@ export const UserMessages = () => {
     const id = 12345
     
     return (
-        
         <UserMessage>
             <Link to={`/message/${id}`}><Avatar userMessages="true" src={profilePicture} alt="profile picture"/></Link>
             <StyledLink to={`/message/${id}`}><TextUserMessages>john_wilson</TextUserMessages></StyledLink>
         </UserMessage>
-        
     )
 }

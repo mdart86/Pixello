@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
+//used in: 
+//  log out
 
-//log out
 export const BackgroundCircle = styled.div`
     height: ${props => props.left ? "100px;" : "60px;"}
     width: ${props => props.left ? "100px;" : "60px;"}

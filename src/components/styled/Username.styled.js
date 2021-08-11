@@ -18,6 +18,3 @@ export const Username = styled.p`
     ${props => props.viewPost ? "margin-top: 30px;" : null}
     ${props => props.comment ? "margin-top: 3px;" : null}
 `
-
-
-

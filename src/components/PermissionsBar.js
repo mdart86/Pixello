@@ -9,6 +9,7 @@ import { BoxPermissionsBar } from './styled/Box.styled'
 export const PermissionsBar = ( { comment, desktop } ) => {
     
     if (comment) {
+        //styled for comment permissions
         return (
             <BoxPermissionsBar comment="true">
                 <IconPermissionsBar comment="true" src={edit} alt="edit pencil icon"/>
@@ -16,6 +17,7 @@ export const PermissionsBar = ( { comment, desktop } ) => {
             </BoxPermissionsBar> 
         )
     } if (desktop) {
+        //styled for desktop view
         return (
             <BoxPermissionsBar desktop="true">
                 <IconPermissionsBar desktop="true" src={edit} alt="edit pencil icon"/>
@@ -23,6 +25,7 @@ export const PermissionsBar = ( { comment, desktop } ) => {
             </BoxPermissionsBar> 
         )
     } else {
+        //default styling (mobile-first)
         return (
             <BoxPermissionsBar>
                 <IconPermissionsBar src={edit} alt="edit pencil icon"/>

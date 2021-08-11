@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//template to be inherited by styles below
 const Image = styled.img`
     &:hover {
         opacity: 0.7;
@@ -34,7 +35,7 @@ export const IconAbout = styled(Image)`
     }
 `
 
-//comment (like)
+//comment
 export const IconComment = styled(Image)`
     float: right;
     height: 20px;
@@ -47,7 +48,7 @@ export const IconDesktopNav = styled(Image)`
     margin: 0;
 `
 
-// login
+//login
 export const IconLogin = styled(Image)`
     z-index: 1;
     ${props => props.forward ? "height: 70px;" : null}

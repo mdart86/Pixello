@@ -7,8 +7,7 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { TextMessages } from './styled/Text.styled'
-import { MessagesContainer } from './styled/MessagesContainer.styled'
-import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { MessagesContainer, CenteringContainer } from './styled/Container.styled'
 import { CircleMessages } from './styled/Circle.styled'
 
 export const Messages = () => {

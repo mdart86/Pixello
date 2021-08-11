@@ -3,9 +3,11 @@ import React from 'react'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { Header } from './styled/Header.styled'
-import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { CenteringContainer } from './styled/Container.styled'
 import { StyledLink } from './styled/StyledLink.styled'
 import { TopClearance } from './styled/TopClearance.styled'
+
+//this component prompts auth on protected pages
 
 export const PleaseSignIn = () => {
     return (

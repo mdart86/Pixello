@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-//app start
+//used in:
+//  app start
 export const TextAppStart = styled.p`
     margin: 0;
     font-family: 'Pacifico', cursive;
@@ -9,6 +10,7 @@ export const TextAppStart = styled.p`
     ${props => props.signup ? "font-size: 2.2rem; margin-top: -15px;": null}
     ${props => props.login ? "font-size: 1.8rem; margin-top: -20px;": null}
 `
+
 //about 
 export const TextAbout = styled.p`
     margin-left: 30px;
@@ -20,6 +22,7 @@ export const TextAbout = styled.p`
     ${props => props.para1 ? "width: 210px; margin-left: 40px;" : null}
     ${props => props.copywrite ? "margin-bottom: 20px;" : null}
 `
+
 //create post
 export const TextCreatePost = styled.p`
     margin: 5px;
@@ -27,12 +30,14 @@ export const TextCreatePost = styled.p`
     color: var(--green);
     ${props => props.upload ? "font-style: italic; color: var(--charcoal);" : "font-weight: bold;"}
 `
+
 //message
 export const TextMessage = styled.p`
     font-size: 0.8rem;
     padding: 0 10px;
     margin-bottom: 0;
 `
+
 //messages
 export const TextMessages = styled.p`
     font-family: 'Pacifico', cursive;
@@ -41,16 +46,26 @@ export const TextMessages = styled.p`
     height: 20px;
     ${props => props.new ? "margin-top: 10px;" : null}
 `
+
 //received message
 export const TextReceivedMessage = styled.p`
     font-size: 0.8rem;
     padding: 0 10px;
     margin-bottom: 0;
 `
+
 //user messages
 export const TextUserMessages = styled.p`
     font-family: 'Pacifico', cursive;
     font-size: 1.2rem;
     margin: 10px;
     height: 20px;
+`
+
+//login
+export const TextLoginSignup = styled.p`
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    font-style: italic;
 `
