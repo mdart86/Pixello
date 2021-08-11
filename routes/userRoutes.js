@@ -18,7 +18,7 @@ const upload = require('../utils/multer')
 router.use(loginRequired)
 
 router.get('/:id', getUser)
-router.get('/:id', getUserLabel)
+router.get('/user_label/:id', getUserLabel)
 
 // router function to update user profile including image in cloudinary
 router.put("/:id", upload.single("image"), async (req, res) => {
