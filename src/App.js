@@ -21,7 +21,7 @@ import { Messages } from './components/Messages';
 import { Message } from './components/Message';
 import { Notifications } from './components/Notifications';
 import { NotFound } from './components/NotFound';
-import { PleaseSignIn } from './components/PleaseSignIn'
+// import { PleaseSignIn } from './components/PleaseSignIn'
 
 export const App = () => {
 
@@ -32,7 +32,7 @@ export const App = () => {
   }
 
   const [store, dispatch] = useReducer(reducer, initialState)
-  const { loggedInJWT } = store
+  // const { loggedInJWT } = store
   
   //alphabetise and capitalise the categories list and save to global state
   function setCategoryList(list) {
