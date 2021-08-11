@@ -36,7 +36,7 @@ router.post('/sign_up', upload.single('image'), async (req, res) => {
             return res.json({error: err.message})
         }
         console.log("Image upload successful")
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, imageId: user.imageId, bio: user.bio, _id: user._id},process.env.SECRET_KEY) })
+        return res.json({username: user.username, jwt: jwt.sign({username: user.username, email: user.email, imageId: user.imageId, bio: user.bio, _id: user._id},process.env.SECRET_KEY, { expiresIn: 300 }) })
     });
     } 
     // error received
