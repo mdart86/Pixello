@@ -41,7 +41,7 @@ export const ViewPost = () => {
     const category = "film"
 
     const [postData, setPostData ] = useState("")
-    console.log(postData)
+    
     useEffect(() => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }

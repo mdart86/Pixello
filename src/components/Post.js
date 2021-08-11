@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useGlobalState } from '../utils/context'
+import axios from 'axios'
 //image imports: 
 import like from '../images/like-green.svg'
 import profilePicture from '../images/profile-picture.jpeg'
@@ -13,8 +15,32 @@ import { ContainerPost } from './styled/Container.styled'
 import { Caption } from './styled/Caption.styled'
 
 export const Post = ({ post }) => {
-    // const {likes, username, caption, avatarUrl, category, id, imageId} = post 
+
+    // all post attributes: likes, username, caption, avatarUrl, category, id, imageId
     const {username, caption, avatarUrl, id} = post 
+
+    const { store } = useGlobalState()
+    const { loggedInJWT } = store
+
+    const [userData, setUserData ] = useState("")
+    
+
+    useEffect(() => {
+        const authorisation = {
+            headers: { Authorization: `Bearer ${loggedInJWT}` }
+        };
+        async function fetchData() {
+            await axios.get(`https://pixello.herokuapp.com/posts/${id}`, authorisation)
+                .then(res => {
+                    setUserData(res.data)
+                })
+                .catch(err => console.log(err))
+        }
+        fetchData()
+        return () => {
+            setUserData("")
+        }
+    }, [id, loggedInJWT])
 
     return (
         <>

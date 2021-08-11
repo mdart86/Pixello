@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useGlobalState } from '../utils/context'
+import axios from 'axios'
 //image imports: 
 import plus from '../images/plus-white.svg'
 //styled component imports: 
@@ -19,17 +20,17 @@ import { ContainerCreatePost } from './styled/Container.styled'
 
 export const CreatePost = ({ history }) => {
     
-
-    //placeholder to remove errors
-    const id = 12345
+    // //placeholder to remove errors
+    // const id = 12345
     
     const { store } = useGlobalState()
-    const { loggedInUser } = store 
+    const { loggedInJWT } = store 
     const { categoryList } = store
 
+    //remove placeholder username once I can access the username
     const initialFormData = { 
-        username: loggedInUser,
-        photo: "",
+        username: "emigraced",
+        image: "",
         caption: "", 
         category: ""
     }
@@ -38,11 +39,13 @@ export const CreatePost = ({ history }) => {
     
     const [fileName, setFileName] = useState("No File Chosen")
 
+    const [postFailed, setPostFailed] = useState("")
+
     function displayFileInfo(e) {
         setFileName(e.target.files[0].name)
         setFormData({
             ...formData,
-            photo: e.target.value
+            image: e.target.value
         })
     }
 
@@ -55,9 +58,26 @@ export const CreatePost = ({ history }) => {
 
     function submitFormData(e) {
         e.preventDefault()
-        //send info to API
-        setFormData(initialFormData)
-        history.push(`/post/${id}`)
+        async function fetchData() {
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': `Bearer ${loggedInJWT}`
+                }
+            };
+            await axios.post("https://pixello.herokuapp.com/posts/new_post", formData, config)
+                .then(res => {
+                    if (res.data) {
+                        setPostFailed(false)
+                        history.push(`/post/${res.data.id}`)
+                    } 
+                })
+                .catch(err => {
+                    setPostFailed(true)
+                    console.log(err)
+                })
+        }
+        fetchData()
     }
     
     return (
@@ -67,14 +87,14 @@ export const CreatePost = ({ history }) => {
                 <Header createPost="true">Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form onSubmit={submitFormData}>
-                    <Label createPost="true" htmlFor="photo">
+                    <Label createPost="true" htmlFor="image">
                         <TextCreatePost upload="true">Upload your photo</TextCreatePost>
                         <PlusCircle createPost="true">
                             <PlusIcon createPost="true" src={plus} alt="plus sign"/>
                         </PlusCircle>
                         <TextCreatePost>{fileName}</TextCreatePost>
                     </Label>
-                    <input required type="file" id="photo" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
+                    <input required type="file" id="image" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
                     <Textarea required placeholder="Give it a caption" id="caption" value={formData.caption} onChange={handleFormData}/>
                     <Select required value={formData.category} id="category" onChange={handleFormData}>
                         <option value="" hidden disabled>Categories</option>
