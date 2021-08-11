@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-//message
+//used in:
+//  message
 export const NewMessage = styled.div`
     height: 50px;
     width: 75%;

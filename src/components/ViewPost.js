@@ -18,12 +18,10 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
-import { PostContainer } from './styled/PostContainer.styled'
+import { PostContainer, CommentsContainer, CategoryContainer} from './styled/Container.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
-import { CommentsContainer } from './styled/CommentsContainer.styled'
-import { CategoryContainer } from './styled/CategoryContainer.styled'
 import { Caption } from './styled/Caption.styled'
 
 // add logic to show the permissions bar 

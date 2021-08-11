@@ -10,7 +10,7 @@ import notifications from '../images/notifications.svg'
 import profile from '../images/profile.svg'
 //styled component imports:
 import { PlusIcon } from './styled/Icon.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconsContainer } from './styled/Container.styled'
 import { IconMobileNav } from './styled/Icon.styled'
 import { BoxMobileNav, BoxMobileNavNoPlus, BoxMobileNavGreen, BoxMobileNavPink } from './styled/Box.styled';
 

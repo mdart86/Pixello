@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-
+//template inherited by styles below
 const Image = styled.img`
     ${props => !props.unClickable ? "&:hover {opacity: 0.7;}" : null}
 ` 
 
-//post
-//view post
+//used in:
+//  post
+//  view post
 export const Photo = styled(Image)`
     border-radius: 5px;
     max-width: ${props => props.post ? "92%;" : "100%;"}

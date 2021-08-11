@@ -7,6 +7,7 @@ import styled from "styled-components";
 //  home
 //  login
 //  sign up
+
 export const Logo = styled.h1`
     ${props => props.link ? "margin-top: -35px;" : null}
     text-align: center;

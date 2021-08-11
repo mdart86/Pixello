@@ -22,8 +22,5 @@ export default createGlobalStyle`
         }
     } 
 `
-// if the @media width is changed, the max-width
+// NOTE: if the @media width is changed, the max-width
 // in the Nav component needs to be changed too
-
-// let hideOverflow = ["/", "/about", "/log-in"]
-// ${hideOverflow.includes(window.location.pathname) ? document.body.style.overflow = "hidden" : null}

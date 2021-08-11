@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-//message
-//notifications
-//profile
+//used in: 
+//  message
+//  notifications
+//  profile
+
 export const Bio = styled.p`
     margin: 0;
     font-size: 0.8rem;

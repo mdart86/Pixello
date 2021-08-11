@@ -28,4 +28,3 @@ export const Avatar = styled.img`
         ${props => !props.unClickable? "opacity: 0.7;" : null}
     }
 `
-

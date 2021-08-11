@@ -4,6 +4,7 @@ import styled from "styled-components";
 //  create post 
 //  login
 //  signup
+
 export const Input = styled.input`
     border: none;
     font-style: italic;

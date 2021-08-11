@@ -9,9 +9,8 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Username } from './styled/Username.styled'
-import { MessagesContainer } from './styled/MessagesContainer.styled'
+import { MessagesContainer, DetailsContainer } from './styled/Container.styled'
 import { Avatar } from './styled/Avatar.styled'
-import { DetailsContainer } from './styled/DetailsContainer.styled'
 import { Bio } from './styled/Bio.styled'
 
 export const Notifications = () => {

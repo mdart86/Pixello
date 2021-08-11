@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-//create post
-//sign up
+//used in:
+//  create post
+//  sign up
+
 export const Label = styled.label`
     box-sizing: border-box;
     display: flex;

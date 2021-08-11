@@ -13,7 +13,7 @@ import Logout from './Logout'
 //styled component imports: 
 import { PlusIcon } from './styled/Icon.styled'
 import { Logo } from './styled/Logo.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconsContainer } from './styled/Container.styled'
 import { IconDesktopNav } from './styled/Icon.styled'
 import { BoxDesktopNav, BoxDesktopNavNoPlus } from './styled/Box.styled';
 import { StyledLink } from './styled/StyledLink.styled';

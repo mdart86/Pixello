@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-//comment
-//post
-//viewPost
+//used in: 
+//  comment
+//  post
+//  viewPost
+
 export const Caption = styled.p`
     margin: ${props => props.comment ? "5px 20px 5px 5px;" : "margin: 5px 0;"}
     ${props => props.viewPost ? "margin: 0;" : null}

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-//create post
+//used in:
+//  create post
+
 export const Select = styled.select`
     width: 50%;
     margin: 0 auto;

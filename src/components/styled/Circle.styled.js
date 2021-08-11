@@ -62,9 +62,6 @@ export const CircleAddComment = styled(Circle)`
     background: var(--blue);
 `
 
-// ${props => props.clipAbout ? "clip-path: inset(0 0 150px 0);" : null}
-// ${props => props.clipLogin ? "clip-path: inset(0 0 110px 0);" : null}
-
 //app start
 export const CircleAppStart = styled(Circle)`
     position: absolute;
@@ -91,7 +88,7 @@ export const CircleAppStart = styled(Circle)`
     ${props => props.xxlarge && props.green ? "bottom: -100px; left: -85px;" : null}
 `
 
-// login
+//login
 export const CircleLogin = styled.label`
     border-radius: 50%;
     display: flex; 

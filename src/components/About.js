@@ -7,7 +7,7 @@ import github from '../images/github.svg'
 //styled component imports: 
 import { TextAbout } from './styled/Text.styled'
 import { Logo } from './styled/Logo.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
+import { IconsContainer } from './styled/Container.styled'
 import { IconAbout } from './styled/Icon.styled'
 import { Header } from './styled/Header.styled'
 import { CircleAbout } from './styled/Circle.styled'

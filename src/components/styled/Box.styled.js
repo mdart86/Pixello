@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+//used in: 
+//  login
+//  sign up
+export const BackgroundBox = styled.div`
+    width: 65%;
+    background: var(--green);
+    border: 5px solid var(--blue);
+    box-sizing: border-box;
+    position: relative;
+    margin: 140px auto 40px;
+    height: ${props => props.login ? "55vh;" : "720px"}
+`
+
 //add comment
 export const BoxAddComment = styled.div`
     background: var(--white);
@@ -10,6 +23,7 @@ export const BoxAddComment = styled.div`
     justify-content: center;
     align-items: center;
 `
+
 //comment
 export const BoxComment = styled.div`
     background: var(--blue);
@@ -17,29 +31,7 @@ export const BoxComment = styled.div`
     border-radius: 5px;
     position: relative;
 `
-//desktop nav with create button
-export const BoxDesktopNav = styled.nav`
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background: var(--light-pink);
-    width: 100vw;
-    height: 60px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 5;
-    &:before {
-        content: ''; 
-        width: 60px; 
-        height: 60px; 
-        border-radius: 50%; 
-        background: var(--charcoal); 
-        position: absolute; 
-        top: 30px; 
-        right: 30px;
-    }
-`
+
 //desktop nav without create button
 export const BoxDesktopNavNoPlus = styled.nav`
     display: flex;
@@ -53,9 +45,24 @@ export const BoxDesktopNavNoPlus = styled.nav`
     right: 0;
     z-index: 5;
 `
-//mobile nav with create button
-export const BoxMobileNav = styled.nav`
-    background: var(--white);
+
+//desktop nav with create button
+export const BoxDesktopNav = styled(BoxDesktopNavNoPlus)`
+    &:before {
+        content: ''; 
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        background: var(--charcoal); 
+        position: absolute; 
+        top: 30px; 
+        right: 30px;
+    }
+`
+
+//mobile nav without create button
+export const BoxMobileNavNoPlus = styled.nav`
+    background: var(--blue);
     width: 100%;
     max-width: 450px;
     height: 80px;
@@ -64,6 +71,11 @@ export const BoxMobileNav = styled.nav`
     border-radius: 50% 50% 0 0;
     box-shadow: 0 0 3px grey; 
     z-index: 5;
+`
+
+//mobile nav with create button
+export const BoxMobileNav = styled(BoxMobileNavNoPlus)`
+    background: var(--white);
     &:before {
         content: ''; 
         width: 60px; 
@@ -76,17 +88,10 @@ export const BoxMobileNav = styled.nav`
         margin-left: -30px;
     }
 `
+
 //mobile nav green background (messages page)
-export const BoxMobileNavGreen = styled.nav`
+export const BoxMobileNavGreen = styled(BoxMobileNavNoPlus)`
     background: var(--green);
-    width: 100%;
-    max-width: 450px;
-    height: 80px;
-    position: fixed;
-    bottom: 0;
-    border-radius: 50% 50% 0 0;
-    box-shadow: 0 0 3px grey; 
-    z-index: 5;
     &:before {
         content: ''; 
         width: 60px; 
@@ -101,16 +106,8 @@ export const BoxMobileNavGreen = styled.nav`
 `
 
 //mobile nav pink background (notifications page)
-export const BoxMobileNavPink = styled.nav`
+export const BoxMobileNavPink = styled(BoxMobileNavNoPlus)`
     background: var(--light-pink);
-    width: 100%;
-    max-width: 450px;
-    height: 80px;
-    position: fixed;
-    bottom: 0;
-    border-radius: 50% 50% 0 0;
-    box-shadow: 0 0 3px grey; 
-    z-index: 5;
     &:before {
         content: ''; 
         width: 60px; 
@@ -123,18 +120,7 @@ export const BoxMobileNavPink = styled.nav`
         margin-left: -30px;
     }
 `
-//mobile nav without create button
-export const BoxMobileNavNoPlus = styled.nav`
-    background: var(--blue);
-    width: 100%;
-    max-width: 450px;
-    height: 80px;
-    position: fixed;
-    bottom: 0;
-    border-radius: 50% 50% 0 0;
-    box-shadow: 0 0 3px grey; 
-    z-index: 5;
-`
+
 //permissions bar
 export const BoxPermissionsBar = styled.div` 
     position: absolute;
@@ -149,6 +135,7 @@ export const BoxPermissionsBar = styled.div`
     justify-content: center;
     align-items: center;
 `
+
 //received message
 export const BoxReceivedMessage = styled.div`
     height: auto;

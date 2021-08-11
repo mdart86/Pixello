@@ -11,9 +11,8 @@ import { Post } from './Post'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Logo } from './styled/Logo.styled'
-import { CenteringContainer } from './styled/CenteringContainer.styled'
+import { CenteringContainer, IconsContainer } from './styled/Container.styled'
 import { IconHome } from './styled/Icon.styled'
-import { IconsContainer } from './styled/IconsContainer.styled'
 
 export const CategoryFilter = () => {
     
