@@ -55,17 +55,17 @@ export const Profile = () => {
                 })
                 .catch(err => console.log(err))
         }
-        async function fetchPostData() {
-            await axios.get(`https://pixello.herokuapp.com/...`, authorisation)
-                .then(res => {
-                    if (res.data) {
-                        setUserPosts(res.data)
-                    }
-                })
-                .catch(err => console.log(err))
-        }
+        // async function fetchPostData() {
+        //     await axios.get(`https://pixello.herokuapp.com/...`, authorisation)
+        //         .then(res => {
+        //             if (res.data) {
+        //                 setUserPosts(res.data)
+        //             }
+        //         })
+        //         .catch(err => console.log(err))
+        // }
         fetchUserData()
-        fetchPostData()
+        // fetchPostData()
         return () => {
             setUserData("")
             setUserPosts("")

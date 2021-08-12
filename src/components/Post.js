@@ -17,7 +17,7 @@ import { Caption } from './styled/Caption.styled'
 export const Post = ({ post }) => {
 
     //deconstruct post data for use in render
-    const {username, caption, avatarUrl, postId, userId} = post 
+    const {username, caption, photoUrl, id, userId} = post 
 
     const { store } = useGlobalState()
     const { loggedInJWT } = store
@@ -30,7 +30,7 @@ export const Post = ({ post }) => {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
         async function fetchData() {
-            await axios.get(`https://pixello.herokuapp.com/users/user_label/${userId}`, authorisation)
+            await axios.get(`https://pixello.herokuapp.com/users/${userId}`, authorisation)
                 .then(res => {
                     setUserData(res.data)
                 })
@@ -44,7 +44,7 @@ export const Post = ({ post }) => {
 
     return (
         <>
-            <Link to={`/post/${postId}`}><Photo post="true" src={avatarUrl} alt={caption}/></Link>
+            <Link to={`/post/${id}`}><Photo post="true" src={photoUrl || placeholderImage} alt={caption}/></Link>
             <ContainerPost>
                 <Link to={`/profile/${userId}`}><Avatar post="true" src={userData.avatarUrl || placeholderImage} alt="profile picture"/></Link>
                 <IconPost src={like} alt="like button"/>
