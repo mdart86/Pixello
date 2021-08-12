@@ -29,16 +29,18 @@ export const ViewPost = () => {
     const { loggedInJWT, loggedInUserId } = store
 
     //stores post data retreived by the axios request
-    const [postData, setPostData ] = useState("")
+    const [ postData, setPostData ] = useState("")
     const {username, caption, photoUrl, userId} = postData
 
     //stores user data retreived by the axios request
-    const [userData, setUserData ] = useState("")
+    const [ userData, setUserData ] = useState("")
     //deconstruct user data for use in render
     const {avatarUrl} = userData
 
     //stores comment data retreived by the axios request
-    const [commentData, setCommentData ] = useState("")
+    const [ commentData, setCommentData ] = useState("")
+
+    const [ noComments, setNoComments ] = useState(false)
 
     useEffect(() => {
         const authorisation = {
@@ -74,12 +76,19 @@ export const ViewPost = () => {
                         for (let comment of retrievedData) {
                             if (comment.postId === id) {
                                 requestedComments.push(comment)
-                            }
-                        }
-                        setCommentData(requestedComments)
+                            } 
+                        } 
+                        if (requestedComments.length > 0) {
+                            setCommentData(requestedComments)
+                        } else {
+                            setNoComments(true)
+                        }                        
                     } 
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    console.log(err)
+                    setNoComments(true)
+                })
         }
         fetchPostData()
         fetchUserData()
@@ -101,11 +110,11 @@ export const ViewPost = () => {
                 <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
                 <CommentsContainer>
-                    <AddComment/>
+                    {noComments ? <AddComment noComments="true"/> : <AddComment/> }
                     {commentData ? 
                         commentData.map(obj => {
                             return <Comment commentData={obj} userData={userData} key={obj.id}/>
-                            }) : <p>This post doesn't have any comments yet.</p>}
+                            }) : null}
                 </CommentsContainer>
                 {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </PostContainer>

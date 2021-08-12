@@ -75,3 +75,13 @@ export const TextFormFeedback = styled.p`
     ${props => props.createpost ? "top: 390px;" : null}
     ${props => props.passconf ? "top: 290px; font-size: 0.7rem; color: var(--charcoal);" : null}
 `
+
+//view post
+export const TextNoComments = styled.p`
+    font-size: 0.8rem;
+    width: 300px;
+    position: absolute;
+    margin-top: -30px;
+    left: 50%;
+    margin-left: -112.5px;
+`
