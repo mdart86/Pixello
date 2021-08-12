@@ -22,10 +22,11 @@ import { TextFormFeedback } from './styled/Text.styled'
 export const CreatePost = ({ history }) => {
     
     const { store } = useGlobalState()
-    const { loggedInJWT, loggedInUsername, categoryList } = store 
+    const { loggedInJWT, loggedInUsername, loggedInUserId, categoryList } = store 
 
     const initialFormData = { 
         username: loggedInUsername,
+        userId: loggedInUserId,
         caption: "", 
         category: ""
     }
