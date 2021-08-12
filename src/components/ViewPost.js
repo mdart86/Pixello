@@ -104,8 +104,8 @@ export const ViewPost = () => {
                 : userId && (userId === loggedInUserId) && window.innerWidth >= 600 ?
                 <PermissionsBar desktop="true"/>
                 : null }
-                <Link to={`/profile/${id}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
-                <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
+                <Link to={`/profile/${userId}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
+                <StyledLink to={`/profile/${userId}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
                 <Caption viewPost="true">{caption}</Caption>
                 <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
