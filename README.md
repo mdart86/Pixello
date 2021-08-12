@@ -30,6 +30,7 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Sign Out](#sign-out)
     - [USERS](#users)
         - [Read User Profile](#read-user-profile)
+        - [  Read User Profile - Certain Items](#read-user-profile---certain-items)      
         - [Update User Profile](#update-user-profile)
         - [Delete User Profile](#delete-user-profile)
     - [POSTS](#posts)
@@ -176,6 +177,21 @@ URL: localhost:4000/users/610deeb7af330020b19d6219
 Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved from the database and the image is retrieved from Cloudinary, the cloud storage solution. 
 
 ![Users - Get Profile](/docs/images/users_get_profile.jpg)
+
+<br>
+<br>
+
+#### **Read User Profile - Certain Items**
+
+HTTP Request: **GET**
+
+URL: localhost:4000/users/user_label/610e018e4cd8c527ae5a4b3b
+
+*the ID used in the URL is the ID of the document within the database*
+
+Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved (based on certain criteria) from the database and the image is retrieved from Cloudinary, the cloud storage solution. 
+
+![Users - Get Profile](/docs/images/users_getprofile_sendcertainitems.jpg)
 
 <br>
 <br>
