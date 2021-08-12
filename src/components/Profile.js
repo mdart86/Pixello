@@ -55,17 +55,26 @@ export const Profile = () => {
                 })
                 .catch(err => console.log(err))
         }
-        // async function fetchPostData() {
-        //     await axios.get(`https://pixello.herokuapp.com/...`, authorisation)
-        //         .then(res => {
-        //             if (res.data) {
-        //                 setUserPosts(res.data)
-        //             }
-        //         })
-        //         .catch(err => console.log(err))
-        // }
+        async function fetchPostData() {
+            await axios.get(`https://pixello.herokuapp.com/posts`, authorisation)
+                .then(res => {
+                    //sort reverses order of data so that newer posts appear first on profile
+                    const retrievedData = res.data.sort((a,b) => b - a)
+
+                    //isolate posts that belong to this user
+                    let requestedPosts = []
+                    for (let post of retrievedData) {
+                        console.log("profile post test: ", post)
+                        if (post.userId === id) {
+                            requestedPosts.push(post)
+                        }
+                    }
+                    setUserPosts(requestedPosts)
+                })
+                .catch(err => console.log(err))
+        }
         fetchUserData()
-        // fetchPostData()
+        fetchPostData()
         return () => {
             setUserData("")
             setUserPosts("")

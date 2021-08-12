@@ -95,7 +95,7 @@ export const ViewPost = () => {
         fetchPostData()
         fetchUserData()
         fetchCommentData()
-    }, [id, loggedInJWT])
+    }, [id, loggedInJWT, userId])
 
     return (
         <>
