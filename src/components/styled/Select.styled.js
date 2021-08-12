@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 //used in:
 //  create post
-
+//  filterForm
 export const Select = styled.select`
     width: 50%;
     margin: 0 auto;

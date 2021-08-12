@@ -17,35 +17,38 @@ import { Input } from './styled/Input.styled'
 import { PlusIcon } from './styled/Icon.styled'
 import { Form } from './styled/Form.styled'
 import { ContainerCreatePost } from './styled/Container.styled'
+import { TextFormFeedback } from './styled/Text.styled'
 
 export const CreatePost = ({ history }) => {
     
     const { store } = useGlobalState()
-    const { loggedInJWT } = store 
-    const { categoryList } = store
+    const { loggedInJWT, loggedInUsername, categoryList } = store 
 
     const initialFormData = { 
-        username: "",
-        image: "",
+        username: loggedInUsername,
         caption: "", 
         category: ""
     }
 
+    //used to notify user if post creation failed
+    const [creationFailed, setCreationFailed] = useState("")
+
+    //used to notify the user that their form submission was received
+    const [isLoading, setIsLoading] = useState(false)
+
+    //stores form data (except the photo)
     const [formData, setFormData] = useState(initialFormData)
     
+    //stores the photo
+    const [uploadedPhoto, setUploadedPhoto] = useState("")
+
     //used to display file name to user when they upload an image
     const [fileName, setFileName] = useState("No File Chosen")
-
-    //used to notify user if post creation failed
-    const [setPostFailed] = useState("")
 
     //save image data to state, and isolate file name to display to user
     function displayFileInfo(e) {
         setFileName(e.target.files[0].name)
-        setFormData({
-            ...formData,
-            image: e.target.value
-        })
+        setUploadedPhoto(e.target.files[0])
     }
 
     function handleFormData(e) {
@@ -57,23 +60,29 @@ export const CreatePost = ({ history }) => {
 
     function submitFormData(e) {
         e.preventDefault()
+        setIsLoading(true)
+        setCreationFailed(false)
         async function fetchData() {
+            const fd = new FormData()
+            Object.keys(formData).forEach(key => fd.append(key, formData[key]))
+            fd.append('image', uploadedPhoto, fileName)
             const config = {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${loggedInJWT}`
                 }
             };
-            await axios.post("https://pixello.herokuapp.com/posts/new_post", formData, config)
+            await axios.post("https://pixello.herokuapp.com/posts/new_post", fd, config)
                 .then(res => {
                     if (res.data) {
-                        setPostFailed(false)
+                        setIsLoading(false)
                         //redirect user to the post they just created
-                        history.push(`/post/${res.data.id}`)
+                        history.push(`/post/${res.data._id}`)
                     } 
                 })
                 .catch(err => {
-                    setPostFailed(true)
+                    setIsLoading(false)
+                    setCreationFailed(true)
                     console.log(err)
                 })
         }
@@ -101,6 +110,8 @@ export const CreatePost = ({ history }) => {
                         {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)}
                     </Select>
                     <Input createPost="true" type="submit" value="Share!"/>
+                    {isLoading ? <TextFormFeedback createpost="true">We're uploading your post...</TextFormFeedback> : null}
+                    {creationFailed ? <TextFormFeedback createpost="true">Something went wrong, please try again.</TextFormFeedback> : null}
                 </Form>
             </ContainerCreatePost>
         </>

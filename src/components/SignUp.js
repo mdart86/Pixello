@@ -19,7 +19,7 @@ import { FileName } from './styled/Filename.styled'
 import { Form } from './styled/Form.styled'
 import { PlusCircle } from './styled/Circle.styled'
 import { CircleLabel } from './styled/Label.styled'
-import { TextLoginSignup } from './styled/Text.styled'
+import { TextFormFeedback } from './styled/Text.styled'
 
 export const SignUp = ({history}) => {
 
@@ -29,8 +29,7 @@ export const SignUp = ({history}) => {
         username: "",
         email: "", 
         password: "",
-        bio: "", 
-        image: ""
+        bio: ""
     }
 
     //used to notify the user if their signup attempt failed
@@ -60,8 +59,6 @@ export const SignUp = ({history}) => {
             [e.target.id]: e.target.value
         })
     }
-
-    console.log(formData)
     
     function submitFormData(e) {
         e.preventDefault()
@@ -83,6 +80,10 @@ export const SignUp = ({history}) => {
                         dispatch({
                             type: "setJWT",
                             data: res.data.jwt
+                        })
+                        dispatch({
+                            type: "setLoggedInUsername",
+                            data: res.data.username
                         })
                         setIsLoading(false)
                         //redirect to home page
@@ -107,7 +108,7 @@ export const SignUp = ({history}) => {
             <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox signup="true">
                 <Form signup="true" onSubmit={submitFormData}>
-                    <Input required signup="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
+                    <Input required title="username must be at least 3 characters" signup="true" username="true" type="text" id="username" placeholder="Username" pattern=".{3,}" value={formData.username} onChange={handleFormData}/>
                     <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password"/>
@@ -125,8 +126,8 @@ export const SignUp = ({history}) => {
                     </CircleLabel>
                     <input type="submit" id="submitButton" hidden/>
                 </Form>
-                {isLoading ? <TextLoginSignup signup="true">We're creating <br/>your account...</TextLoginSignup> : null}
-                {signupFailed ? <TextLoginSignup signup="true">Your username must be <br/>unique, please try again.</TextLoginSignup> : null}
+                {isLoading ? <TextFormFeedback signup="true">We're creating <br/>your account...</TextFormFeedback> : null}
+                {signupFailed ? <TextFormFeedback signup="true">Your username and <br/>email must be unique, <br/>please try again.</TextFormFeedback> : null}
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>
         </>
