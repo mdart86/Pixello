@@ -337,7 +337,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is deleted from the
 
 #### **Create Comment**
 
-HTTP Request: **GET**
+HTTP Request: **POST**
 
 URL: localhost:4000/comments/new_comment/61150b9df8b32a2c8dd59232
 
