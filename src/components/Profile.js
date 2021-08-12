@@ -32,7 +32,7 @@ export const Profile = () => {
     const { id } = useParams()
 
     const { store } = useGlobalState()
-    const { loggedInJWT } = store
+    const { loggedInJWT, loggedInUserId } = store
 
     //stores user data retreived by the axios request
     const [userData, setUserData ] = useState("")
@@ -92,7 +92,11 @@ export const Profile = () => {
         <>
             {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <ProfileContainer>    
-                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }           
+                {(id === loggedInUserId) && window.innerWidth < 600 ? 
+                <PermissionsBar/> 
+                : (id === loggedInUserId) && window.innerWidth >= 600 ?
+                <PermissionsBar desktop="true"/>
+                : null }
                 <Username fontSize="1.5rem" profile="true">{username}</Username>
                 <Bio profile="true">{bio}</Bio>
                 <AvatarContainer>

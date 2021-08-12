@@ -28,9 +28,6 @@ export const ViewPost = () => {
     const { store } = useGlobalState()
     const { loggedInJWT, loggedInUserId } = store
 
-    //placeholder to remove errors
-    const category = "film"
-
     //stores post data retreived by the axios request
     const [postData, setPostData ] = useState("")
     const {username, caption, photoUrl, userId} = postData
