@@ -65,8 +65,8 @@ app.use(express.json()) // To parse the incoming requests with JSON payloads
 
 const corsOptions = {
     origin: 'https://www.pixellophotos.com',
-    optionsSuccessStatus: 200,
-    credentials: true
+    optionsSuccessStatus: 200
+    // credentials: true
 }
 
 app.get("/", cors(corsOptions),(req, res) => {
