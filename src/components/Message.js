@@ -1,7 +1,7 @@
 import React, { useParams } from 'react'
 import { Link } from 'react-router-dom'
 //image imports: 
-import profilePicture from '../images/profile-picture.jpeg'
+import placeholderImage from '../images/image-loading.png'
 import plus from '../images/plus-white.svg'
 //react component imports: 
 import { ReceivedMessage } from './ReceivedMessage'
@@ -23,13 +23,15 @@ import { CircleMessage } from './styled/Circle.styled'
 
 export const Message = () => {
     
-    const { id } = useParams()
+    // const { id } = useParams()
+    //placeholder to remove routing error
+    const id = 12345
 
     return (
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
-                <Link to={`/profile/${id}`}><Avatar message="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to={`/profile/${id}`}><Avatar message="true" src={placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem">john_wilson</Username></StyledLink>
                 <Bio>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
             </DetailsContainer>
