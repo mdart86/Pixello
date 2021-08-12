@@ -7,7 +7,7 @@ const getCommentId = function (req, res){
             res.status(404)
             return res.json({error: err.message})
         } 
-        res.send(comment)
+        res.send(comment) // successful message returned
     })
 }
 

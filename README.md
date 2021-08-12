@@ -333,7 +333,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is deleted from the
 
 ![Post - Create Post](/docs/images/posts_delete_postbyid.jpg)
 
-### **POSTS**
+### **COMMENTS**
 
 #### **Create Post**
 
@@ -358,7 +358,7 @@ URL: localhost:4000/comments/get_comments
 
 Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution.
 
-![Comment - Create Comment](/docs/images/comments_get_comments.jpg)
+![Comment - Get Comments](/docs/images/comments_get_comments.jpg)
 
 <br>
 <br>
@@ -374,4 +374,4 @@ URL: localhost:4000/comments/61150d0d80d1f72d167021c1
 
 Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution. The empty response in Postman reflects the successful deletion.
 
-![Comment - Create Comment](/docs/images/comments_delete_comment.jpg)
+![Comment - Delete Comment](/docs/images/comments_delete_comment.jpg)
