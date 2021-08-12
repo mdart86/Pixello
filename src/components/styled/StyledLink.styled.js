@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom'
 //  not found
 
 export const StyledLink = styled(Link)`
+    color: var(--charcoal);
     ${props => props.notfound || props.pleasesignin ? "text-decoration: underline;" : "text-decoration: none;"}
     &:visited {
         ${props => props.white ? "color: var(--white);" : "color: var(--charcoal);"}
