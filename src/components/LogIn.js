@@ -30,6 +30,8 @@ export const LogIn = ({ history }) => {
 
     //used to notify the user if their login attempt failed
     const [loginFailed, setLoginFailed] = useState("")
+
+    //used to notify the user that their form submission was received
     const [isLoading, setIsLoading] = useState(false)
     
     function handleFormData(e) {

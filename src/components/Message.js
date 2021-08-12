@@ -1,4 +1,4 @@
-import React, { useParams } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 //image imports: 
 import placeholderImage from '../images/image-loading.png'
