@@ -109,7 +109,7 @@ export const Profile = () => {
                 <GridContainer>
                     <PhotoGrid>
                     {userPosts ? userPosts.map((obj) => {
-                        return <Link key={obj.id} to={`/post/${obj.id}`}><PhotoPreview src={obj.avatarUrl || placeholderImage} alt={obj.caption}/></Link>
+                        return <Link key={obj.id} to={`/post/${obj.id}`}><PhotoPreview src={obj.photoUrl || placeholderImage} alt={obj.caption}/></Link>
                         }) : null }
                     </PhotoGrid>
                 </GridContainer>
