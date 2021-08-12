@@ -6,7 +6,7 @@ import logoutWhite from '../images/log-out-white.svg'
 import logoutCharcoal from '../images/log-out-charcoal.svg'
 //styled component imports: 
 import { IconLogout } from './styled/Icon.styled'
-import { BackgroundCircle } from './styled/BackgroundCircle.styled'
+import { BackgroundCircle } from './styled/Circle.styled'
 import { ContainerLogout } from './styled/Container.styled'
 
 const Logout = ({ excludedUrls, left, history }) => {

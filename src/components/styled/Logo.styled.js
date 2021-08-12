@@ -14,7 +14,7 @@ export const Logo = styled.h1`
     color: ${props => props.desktop ? "var(--white);" : "var(--dark-pink);"}
     font-family: 'Pacifico', cursive;
     font-size: 2.5rem;
-    ${props => props.appStart ? "margin: 90px 0 0 0;" : null}
+    ${props => props.appStart ? "margin: 100px 0 0 0; font-size: 3.5rem;" : null}
     ${props => !props.signup && !props.home && !props.appStart ? "position: absolute; width: 150px;" : null}
     ${props => props.about ? "bottom: 5px; left: 50%; margin: 0 0 0 -75px;" : null}
     ${props => props.desktop ? "left: 50%; margin-left: -75px;" : null}

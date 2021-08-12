@@ -4,6 +4,7 @@ import { useGlobalState } from '../utils/context'
 import axios from 'axios'
 //image imports: 
 import like from '../images/like-green.svg'
+import placeholderImage from '../images/pink-placeholder-image.png'
 import profilePicture from '../images/profile-picture.jpeg'
 //styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
@@ -25,7 +26,7 @@ export const Post = ({ post }) => {
     //stores data retreived by the axios request
     const [userData, setUserData ] = useState("")
 
-    console.log(userData)
+    console.log("user data state: ", userData)
     
     useEffect(() => {
         const authorisation = {
@@ -46,7 +47,7 @@ export const Post = ({ post }) => {
 
     return (
         <>
-            <Link to={`/post/${id}`}><Photo post="true" src={avatarUrl} alt={caption}/></Link>
+            <Link to={`/post/${id}`}><Photo post="true" src={avatarUrl || placeholderImage} alt={caption}/></Link>
             <ContainerPost>
                 <Link to={`/profile/${id}`}><Avatar post="true" src={profilePicture} alt="profile picture"/></Link>
                 <IconPost src={like} alt="like button"/>

@@ -1,6 +1,23 @@
 import styled from "styled-components"
 
 //used in: 
+//  log out
+
+export const BackgroundCircle = styled.div`
+    height: ${props => props.left ? "100px;" : "60px;"}
+    width: ${props => props.left ? "100px;" : "60px;"}
+    ${props => props.left ? "top: -55px;" : null}
+    ${props => props.left ? "left: -20px;" : null}
+    border-radius: 50%;
+    background: var(--green);
+    position: ${props => props.left ? "relative;" : "fixed;"}
+    margin: ${props => props.left ? "0;" : "-15px -15px 0 0;"}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ${props => !props.left ? "clip-path: inset(0 10px 0 0);" : null}
+`
+
 //  create post
 //  sign up
 export const PlusCircle = styled.div`
@@ -39,20 +56,20 @@ export const CircleAbout = styled(Circle)`
     flex-direction: column; 
     z-index: -1;
     color: var(--white);
-    ${props => props.small ? "height: 80px; width: 80px;" : null}
-    ${props => props.medium ? "height: 100px; width: 100px;" : null}
-    ${props => props.large ? "height: 200px; width: 200px;" : null}
-    ${props => props.xlarge ? "height: 330px; width: 330px;" : null}
+    ${props => props.small ? "height: 19vh; width: 19vh;" : null}
+    ${props => props.medium ? "height: 22vh; width: 22vh;" : null}
+    ${props => props.large ? "height: 35vh; width: 35vh;" : null}
+    ${props => props.xlarge ? "height: 65vh; width: 65vh;" : null}
 
     ${props => props.pink ? "background: var(--light-pink);" : null}
     ${props => props.blue ? "background: var(--blue);" : null}
     ${props => props.green ? "background: var(--green);" : null}
 
-    ${props => props.green && props.xlarge ? "top: 80px; left: -70px;" : null}
-    ${props => props.blue && props.large ? "top: -70px; right: -70px;" : null}
-    ${props => props.blue && props.medium ? "top: 330px; left: 105px; z-index: 1;" : null}
-    ${props => props.pink && props.small ? "top: 300px; left: 190px; z-index: 2;" : null}
-    ${props => props.pink && props.medium ? "top: -20px; left: -20px; z-index: 1;" : null}
+    ${props => props.green && props.xlarge ? "top: 17vh; left: -12vh;" : null}
+    ${props => props.blue && props.large ? "top: -10vh; right: -15vh;" : null}
+    ${props => props.blue && props.medium ? "top: 65vh; left: 20vh; z-index: 1;" : null}
+    ${props => props.pink && props.small ? "top: 58vh; left: 38vh; z-index: 2;" : null}
+    ${props => props.pink && props.medium ? "top: -5vh; left: -5vh; z-index: 1;" : null}
 `
 
 //add comment
@@ -67,39 +84,25 @@ export const CircleAppStart = styled(Circle)`
     position: absolute;
     color: var(--white);
 
-    ${props => props.xsmall ? "height: 50px; width: 50px;" : null}
-    ${props => props.small ? "height: 100px; width: 100px;" : null}
-    ${props => props.medium ? "height: 150px; width: 150px;" : null}
-    ${props => props.large ? "height: 200px; width: 200px;" : null}
-    ${props => props.xlarge ? "height: 270px; width: 270px;" : null}
-    ${props => props.xxlarge ? "height: 300px; width: 300px;" : null}
+    ${props => props.xsmall ? "height: 10vh; width: 10vh;" : null}
+    ${props => props.small ? "height: 20vh; width: 20vh;" : null}
+    ${props => props.medium ? "height: 30vh; width: 30vh;" : null}
+    ${props => props.large ? "height: 40vh; width: 40vh;" : null}
+    ${props => props.xlarge ? "height: 50vh; width: 50vh;" : null}
+    ${props => props.xxlarge ? "height: 60vh; width: 60vh;" : null}
 
     ${props => props.pink ? "background: var(--light-pink);" : null}
     ${props => props.green ? "background: var(--green);" : null}
     ${props => props.blue ? "background: var(--blue);" : null}
 
-    ${props => props.small && props.blue ? "top: -55px; right: -55px; height: 100px; width: 100px;" : null}
-    ${props => props.medium && props.blue ? "bottom: 30px; right: -20px; z-index: 2;" : null}
-    ${props => props.large && props.blue ? "top: -80px; left: -40px;" : null}
-    ${props => props.small && props.pink ? "top: -55px; left: 120px; z-index: 2;" : null}
-    ${props => props.xlarge && props.pink ? "top: 210px; left: 50%; margin-left: -135px; z-index: 2;" : null}
-    ${props => props.xsmall && props.green ? "top: 65px; left: -20px; z-index: 2;" : null}
-    ${props => props.small && props.green ? "top: 150px; right: -30px;" : null}
-    ${props => props.xxlarge && props.green ? "bottom: -100px; left: -85px;" : null}
-`
-
-//login
-export const CircleLogin = styled.label`
-    border-radius: 50%;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 90px;
-    background: var(--blue);
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
+    ${props => props.small && props.blue ? "top: -7vh; right: -10vh;" : null}
+    ${props => props.medium && props.blue ? "bottom: -4vh; right: -4vh; z-index: 2;" : null}
+    ${props => props.large && props.blue ? "top: -18vh; left: -15vh; z-index: -1;" : null}
+    ${props => props.small && props.pink ? "top: -12vh; left: 20vh; z-index: 2;" : null}
+    ${props => props.xlarge && props.pink ? "top: 40vh; left: 5vh; z-index: 2;" : null}
+    ${props => props.xsmall && props.green ? "top: 15vh; left: -4vh; z-index: 2;" : null}
+    ${props => props.small && props.green ? "top: 30vh; right: -5vh;" : null}
+    ${props => props.xxlarge && props.green ? "bottom: -25vh; left: -20vh;" : null}
 `
 
 //message
@@ -107,18 +110,4 @@ export const CircleMessage = styled(Circle)`
     height: 25px;
     width: 25px;
     background: var(--blue);
-`
-
-//signup
-export const CircleSignup = styled.label`
-    border-radius: 50%;
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    height: 90px;
-    width: 90px;
-    background: var(--blue);
-    position: absolute;
-    bottom: -22.5px;
-    right: -22.5px;
 `
