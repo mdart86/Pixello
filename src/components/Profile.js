@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 //image imports: 
-import profilePicture from '../images/profile-picture.jpeg'
-import placeholder from '../images/placeholder.jpg'
+import placeholderImage from '../images/image-loading.png'
 //react component imports: 
 import { PermissionsBar } from './PermissionsBar'
 //styled component imports: 
@@ -34,7 +33,7 @@ export const Profile = () => {
                 <Username fontSize="1.5rem" profile="true">john_wilson</Username>
                 <Bio profile="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel placerat nibh.</Bio>
                 <AvatarContainer>
-                    <Avatar unClickable="true" profile="true" src={profilePicture} alt="profile picture"/>
+                    <Avatar unClickable="true" profile="true" src={placeholderImage} alt="profile picture"/>
                 </AvatarContainer>
                 <Summary>
                     <Count><Span>Posts: </Span>9</Count>
@@ -42,15 +41,15 @@ export const Profile = () => {
                 </Summary>
                 <GridContainer>
                     <PhotoGrid>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
-                        <Link to={`/post/${id}`}><PhotoPreview src={placeholder} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
+                        <Link to={`/post/${id}`}><PhotoPreview src={placeholderImage} alt="A candid photo of people on the beach."/></Link>
                     </PhotoGrid>
                 </GridContainer>
             </ProfileContainer>

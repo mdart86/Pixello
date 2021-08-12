@@ -36,6 +36,9 @@ export const SignUp = ({history}) => {
     //used to notify the user if their login attempt failed
     const [signupFailed, setSignupFailed] = useState("")
 
+    //used to notify the user that their form submission was received
+    const [isLoading, setIsLoading] = useState(false)
+
     const [formData, setFormData] = useState(initialFormData)
 
     //used to display file name to user when they upload an image
@@ -61,13 +64,16 @@ export const SignUp = ({history}) => {
     
     function submitFormData(e) {
         e.preventDefault()
+        setIsLoading(true)
+        setSignupFailed(false)
         async function fetchData() {
-            // const config = {
-            //     headers: {
-            //         'Content-Type': 'multipart/form-data'
-            //     }
-            // };
-            await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData)
+            const config = {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    'Credentials': 'same origin'
+                }
+            };
+            await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
                 .then(res => {
                     //if a jwt is returned, save to global state for authorisation purposes
                     if (res.data.jwt) {
@@ -75,12 +81,13 @@ export const SignUp = ({history}) => {
                             type: "setJWT",
                             data: res.data.jwt
                         })
-                        setSignupFailed(false)
+                        setIsLoading(false)
                         //redirect to home page
                         history.push('/home')
                     } 
                 })
                 .catch(err => {
+                    setIsLoading(false)
                     setSignupFailed(true)
                     console.log(err)
                 })
@@ -136,6 +143,7 @@ export const SignUp = ({history}) => {
                     </CircleLabel>
                     <input type="submit" id="submitButton" hidden/>
                 </Form>
+                {isLoading ? <TextLoginSignup>We're creating your account...</TextLoginSignup> : null}
                 {signupFailed ? <TextLoginSignup>Usernames must be unique, please try again.</TextLoginSignup> : null}
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>

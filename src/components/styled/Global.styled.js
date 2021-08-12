@@ -15,9 +15,9 @@ export default createGlobalStyle`
         --charcoal: #362D2D;
         --white: #FFFFFF;    
     }
-    @media only screen and (min-width: 450px) {
+    @media only screen and (min-width: 600px) {
         html, body {
-            width: 450px;
+            width: 600px;
             margin: 0 auto;
         }
     } 

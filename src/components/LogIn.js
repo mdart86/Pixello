@@ -30,6 +30,9 @@ export const LogIn = ({ history }) => {
 
     //used to notify the user if their login attempt failed
     const [loginFailed, setLoginFailed] = useState("")
+
+    //used to notify the user that their form submission was received
+    const [isLoading, setIsLoading] = useState(false)
     
     function handleFormData(e) {
         setFormData({
@@ -41,6 +44,8 @@ export const LogIn = ({ history }) => {
     function submitFormData(e) {
         e.preventDefault()
         async function fetchData() {
+            setIsLoading(true)
+            setLoginFailed(false)
             await axios.post("https://pixello.herokuapp.com/auth/sign_in", formData)
                 .then(res => {
                     //if a jwt is returned, save to global state for authorisation purposes
@@ -49,12 +54,13 @@ export const LogIn = ({ history }) => {
                             type: "setJWT",
                             data: res.data.jwt
                         })
-                        setLoginFailed(false)
+                        setIsLoading(false)
                         //redirect to the home page
                         history.push('/home')
                     } 
                 })
                 .catch(err => {
+                    setIsLoading(false)
                     setLoginFailed(true)
                     console.log(err)
                 })
@@ -70,6 +76,7 @@ export const LogIn = ({ history }) => {
             </PinkFeature>
             <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox login="true">
+                {isLoading ? <TextLoginSignup>We're checking your credentials...</TextLoginSignup> : null}
                 {loginFailed ? <TextLoginSignup>Invalid login, please try again or <StyledLink to="/signup">sign up</StyledLink>.</TextLoginSignup> : null}
                 <Form onSubmit={submitFormData}>
                     <Input required login="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 //image imports: 
-import profilePicture from '../images/profile-picture.jpeg'
 import like from '../images/like-pink.svg'
+import placeholderImage from '../images/image-loading.png'
 //react component imports: 
 import { PermissionsBar } from './PermissionsBar'
 //styled component imports:
@@ -24,7 +24,7 @@ export const Comment = () => {
 
     return (
             <BoxComment>
-                <Link to={`/profile/${id}`}><Avatar comment="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to={`/profile/${id}`}><Avatar comment="true" src={placeholderImage} alt="A man's profile picture."/></Link>
                 <IconComment src={like} alt="like button"/>
                 <StyledLink to={`/profile/${id}`}><Username comment="true" fontSize="0.8rem">john_wilson</Username></StyledLink>
                 <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>

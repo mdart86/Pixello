@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useGlobalState } from '../utils/context'
 //image imports:
+import placeholderImage from '../images/image-loading.png'
 import like from '../images/like-green.svg'
-import profilePicture from '../images/profile-picture.jpeg'
 import film from '../images/film.svg'
 import water from '../images/water.svg'
 import candid from '../images/candid.svg'
@@ -60,10 +60,10 @@ export const ViewPost = () => {
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
-                <Link to={`/profile/${id}`}><Avatar viewPost="true" src={profilePicture} alt="A man's profile picture."/></Link>
+                <Link to={`/profile/${id}`}><Avatar viewPost="true" src={placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">{postData.username}</Username></StyledLink>
                 <Caption viewPost="true">{postData.caption}</Caption>
-                <Photo unClickable="true" viewPost="true" src={postData.avatarUrl} alt="A candid photo of people on the beach."/>
+                <Photo unClickable="true" viewPost="true" src={postData.avatarUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
                 <CategoryContainer>
                     <Link to={`/posts/${category}`}><IconViewPost src={film} alt="film category"/></Link>

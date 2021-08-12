@@ -4,8 +4,7 @@ import { useGlobalState } from '../utils/context'
 import axios from 'axios'
 //image imports: 
 import like from '../images/like-green.svg'
-import placeholderImage from '../images/pink-placeholder-image.png'
-import profilePicture from '../images/profile-picture.jpeg'
+import placeholderImage from '../images/image-loading.png'
 //styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { Username } from './styled/Username.styled'
@@ -47,9 +46,9 @@ export const Post = ({ post }) => {
 
     return (
         <>
-            <Link to={`/post/${id}`}><Photo post="true" src={avatarUrl || placeholderImage} alt={caption}/></Link>
+            <Link to={`/post/${id}`}><Photo post="true" src={avatarUrl} alt={caption}/></Link>
             <ContainerPost>
-                <Link to={`/profile/${id}`}><Avatar post="true" src={profilePicture} alt="profile picture"/></Link>
+                <Link to={`/profile/${id}`}><Avatar post="true" src={placeholderImage} alt="profile picture"/></Link>
                 <IconPost src={like} alt="like button"/>
                 <StyledLink to={`/profile/${id}`}><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
                 <Caption post="true">{caption}</Caption>
