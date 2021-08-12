@@ -13,7 +13,7 @@ const Comment = require('../models/comment')
 
 router.use(loginRequired)
 
-router.post('/create_comment/:id', async (req, res) => {
+router.post('/new_comment/:id', async (req, res) => {
     //get the post by id
     let postId = await Post.findById(req.params.id);
     
@@ -37,6 +37,8 @@ router.post('/create_comment/:id', async (req, res) => {
             console.log("Comment NOT saved")
     }
 })
+
+router.get('/get_comments', getCommentId);
 
 router.delete('/:id', removeComment);
 

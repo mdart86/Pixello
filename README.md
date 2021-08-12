@@ -41,7 +41,11 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Update Post](#update-post)
         - [Update Post - Likes only](#update-post---likes-only)
         - [Delete Post](#delete-post)      
-    
+    - [COMMENTS](#comments)
+        - [Create Comment](#create-comment)
+        - [Get Comments](#get-comments)
+        - [Delete Comment](#delete-comment)
+
 <br>
 
 ## **INTRODUCTION**
@@ -235,9 +239,11 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is deleted from 
 
 HTTP Request: **POST**
 
-URL: localhost:4000/posts/new_post
+URL: localhost:4000/posts/new_post/610e07f14cd8c527ae5a4b50
 
-Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution. 
+*the ID used in the URL is the ID of the User that exists in the User database*
+
+Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution.
 
 ![Post - Create Post](/docs/images/posts_create_posts.jpg)
 
@@ -327,9 +333,45 @@ Notes: With a Json Web Token (JWT) as authentication, a post is deleted from the
 
 ![Post - Create Post](/docs/images/posts_delete_postbyid.jpg)
 
+### **POSTS**
+
+#### **Create Post**
+
+HTTP Request: **GET**
+
+URL: localhost:4000/comments/new_comment/61150b9df8b32a2c8dd59232
+
+*the ID used in the URL is the ID of the Post that exists in the Post database*
+
+Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution.
+
+![Comment - Create Comment](/docs/images/comments_create_comment.jpg)
+
+<br>
+<br>
+
+#### **Get Comments**
+
+HTTP Request: **GET**
+
+URL: localhost:4000/comments/get_comments
+
+Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution.
+
+![Comment - Create Comment](/docs/images/comments_get_comments.jpg)
+
+<br>
+<br>
 
 
+#### **Delete Comment**
 
+HTTP Request: **DELETE**
 
+URL: localhost:4000/comments/61150d0d80d1f72d167021c1
 
+*the ID used in the URL is the ID of the document within the database*
 
+Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution. The empty response in Postman reflects the successful deletion.
+
+![Comment - Create Comment](/docs/images/comments_delete_comment.jpg)
