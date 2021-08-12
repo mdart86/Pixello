@@ -123,7 +123,7 @@ HTTP Request: **POST**
 
 URL: localhost:4000/auth/sign_up
 
-Notes: With a Json Web Token (JWT) as authentication, a profile is created in the database and the image is stored in Cloudinary, the cloud storage solution. 
+Notes: With a Json Web Token (JWT) as authentication, a profile is created in the database and the image is stored in Cloudinary, the cloud storage solution. As confirmation for a successful sign-up, a JWT is returned along with the Username and User ID.
 
 ![Auth - Sign Up](/docs/images/auth_sign_up.jpg)
 
@@ -136,13 +136,13 @@ HTTP Request: **POST**
 
 URL: localhost:4000/auth/sign_up
 
-Notes: Upon signing in a Json Web Token (JWT) is returned
+Notes: Upon signing in a Json Web Token (JWT) is returned along with the Username and User ID.
 
 JSON Format:
 
 ```json
 {
-    "username": "mickey1",
+    "username": "mickey0",
     "password": "abc12345"
 }
 ```
@@ -154,11 +154,13 @@ JSON Format:
 
 #### **Sign Out**
 
-HTTP Request: **POST**
+HTTP Request: **GET**
 
 URL: localhost:4000/auth/sign_out
 
-Notes: Upon signing out an empty array is returned to reflect the succesful sign out.
+Notes: Upon signing out an empty array is returned to reflect a destroyed user session for the succesful sign out.
+
+![Auth - Sign Out](/docs/images/auth_sign_out.jpg)
 
 <br>
 <br>
@@ -170,7 +172,7 @@ Notes: Upon signing out an empty array is returned to reflect the succesful sign
 
 HTTP Request: **GET**
 
-URL: localhost:4000/users/610deeb7af330020b19d6219
+URL: localhost:4000/users/610e07f14cd8c527ae5a4b50
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -189,7 +191,7 @@ URL: localhost:4000/users/user_label/610e018e4cd8c527ae5a4b3b
 
 *the ID used in the URL is the ID of the document within the database*
 
-Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved (based on certain criteria) from the database and the image is retrieved from Cloudinary, the cloud storage solution. 
+Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved (based on certain criteria) from the database and the image is retrieved from Cloudinary, the cloud storage solution. This route was create as a way to show the username and their avatar image in select areas of the application. 
 
 ![Users - Get Profile](/docs/images/users_getprofile_sendcertainitems.jpg)
 
@@ -215,11 +217,11 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is update from t
 
 HTTP Request: **DELETE**
 
-URL: localhost:4000/users/ 610e04e54cd8c527ae5a4b46
+URL: localhost:4000/users/6114eb20d888927974a444f4
 
 *the ID used in the URL is the ID of the document within the database*
 
-Notes: With a Json Web Token (JWT) as authentication, a profile is deleted from the database and the image is deleted from Cloudinary, the cloud storage solution. 
+Notes: With a Json Web Token (JWT) as authentication, a profile is deleted from the database and the image is deleted from Cloudinary, the cloud storage solution. The empty response in Postman reflects the successful deletion.
 
 ![Users - Delete Profile](/docs/images/users_delete_profile.jpg)
 
