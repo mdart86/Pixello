@@ -8,12 +8,12 @@ const Comment = new Schema({
     default: Date.now
   },
   type: String,
-  author: {
-    type: Schema.ObjectId,
+  userId: {
+    type: String,
     ref: 'user'
   },
-  post: {
-    type: Schema.ObjectId,
+  postId: {
+    type: String,
     ref: 'post'
   }
 });

@@ -16,12 +16,18 @@ const User = new Schema({
     username:{
         type: String,
         required: true,
-        unique: true
+        unique: true, 
+        trim: true,
+        minlength: 3,
+        maxlength: 30
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        trim: true,
+        minlength: 3,
+        maxlength: 50
     }, 
     hash_password:{
         type: String, 
@@ -29,7 +35,10 @@ const User = new Schema({
     },
     bio: {
         type: String,
-        required: true
+        required: true,
+        trim: true,
+        minlength: 3,
+        maxlength: 200
     },
     avatarUrl: {
         type: String,

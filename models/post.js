@@ -5,11 +5,17 @@ const normalize = require('normalize-mongoose')
 const Post = new Schema({
     username: {
         type: String, 
-        required: true
+        required: true,
+        trim: true,
+        minlength: 3,
+        maxlength: 30
     },
     caption: {
         type: String, 
-        required: true
+        required: true,
+        trim: true,
+        minlength: 3,
+        maxlength: 100
     },
     category: {
         type: String,

@@ -16,7 +16,7 @@ const getUserLabel = function (req, res){
             res.status(404)
             return res.json({error: err.message})
         } 
-        res.send({username: user.username, avatarUrl: user.avatarUrl, _id: user._id})
+        res.send({username: user.username, avatarUrl: user.avatarUrl, id: user.id})
     })
 }
 
