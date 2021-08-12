@@ -2,12 +2,15 @@
 const Comment = require ('../models/comment')
 
 // Helper function to find comment by id
-const getCommentById = function (){
-    // return Comment.find({postId: req.comment.postId})
-    return Comment.find()
+const getCommentById = function () {
+    // Comment.find({postId: {$all : [post._id]}})
+    // Comment.find({})
+    //         .where(postId).equals(postId)
+    // Comment.query.select(postId)
+    const Comment = query.Comment.$where(function () {
+        return postId === postId
+    })
 }
-
-console.log(getCommentById, "test console")
 
 // Helper function to find comment by id and remove
 const deleteComment = function(id){
