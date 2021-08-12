@@ -33,7 +33,7 @@ export const ViewPost = () => {
     const { id } = useParams()
 
     const { store } = useGlobalState()
-    const { loggedInJWT } = store
+    const { loggedInJWT, loggedInUserId } = store
 
     //placeholder to remove errors
     const category = "film"
@@ -100,7 +100,11 @@ export const ViewPost = () => {
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
-                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
+                { userId && userId === loggedInUserId && window.innerWidth < 600 ? 
+                <PermissionsBar/> 
+                : userId && userId === loggedInUserId && window.innerWidth >= 600 ?
+                <PermissionsBar desktop="true"/>
+                : null }
                 <Link to={`/profile/${id}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
                 <Caption viewPost="true">{caption}</Caption>
