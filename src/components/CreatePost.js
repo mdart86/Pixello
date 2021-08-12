@@ -77,7 +77,7 @@ export const CreatePost = ({ history }) => {
                     if (res.data) {
                         setIsLoading(false)
                         //redirect user to the post they just created
-                        history.push(`/post/${res.data.id}`)
+                        history.push(`/post/${res.data._id}`)
                     } 
                 })
                 .catch(err => {
