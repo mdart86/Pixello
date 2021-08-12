@@ -17,6 +17,7 @@ export const Input = styled.input`
     ${props => props.login && props.username ? "margin-top: 15vh;" : null}
     ${props => props.signup && props.username ? "margin-top: 50px;" : null}
     ${props => props.filter ? "width: 140px;" : null}
+    ${props => props.createPost && props.type === "submit" ? "margin: 5px auto 0;" : null}
     &:focus {
         outline: none;
         border: 3px solid var(--dark-pink);

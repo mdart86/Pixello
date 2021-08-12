@@ -62,11 +62,14 @@ export const TextUserMessages = styled.p`
 `
 
 //login
-export const TextLoginSignup = styled.p`
+//signup
+//create post
+export const TextFormFeedback = styled.p`
     width: 80%;
     font-size: 0.8rem;
     position: absolute;
     left: 10%;
     font-style: italic;
-    ${props => props.signup ? "left: 2%; bottom: -1.5%;" : null}
+    ${props => props.signup || props.login ? "left: 2%; bottom: -1.5%;" : null}
+    ${props => props.createpost ? "bottom: 14%;" : null}
 `

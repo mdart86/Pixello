@@ -14,7 +14,7 @@ import { BackgroundBox } from './styled/Box.styled'
 import { Header } from './styled/Header.styled'
 import { Form } from './styled/Form.styled'
 import { CircleLabel } from './styled/Label.styled'
-import { TextLoginSignup } from './styled/Text.styled'
+import { TextFormFeedback } from './styled/Text.styled'
 import { StyledLink } from './styled/StyledLink.styled'
 
 export const LogIn = ({ history }) => {
@@ -54,6 +54,10 @@ export const LogIn = ({ history }) => {
                             type: "setJWT",
                             data: res.data.jwt
                         })
+                        dispatch({
+                            type: "setLoggedInUsername",
+                            data: res.data.username
+                        })
                         setIsLoading(false)
                         //redirect to the home page
                         history.push('/home')
@@ -76,8 +80,8 @@ export const LogIn = ({ history }) => {
             </PinkFeature>
             <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox login="true">
-                {isLoading ? <TextLoginSignup>We're checking your credentials...</TextLoginSignup> : null}
-                {loginFailed ? <TextLoginSignup>Invalid login, please try again or <StyledLink to="/signup">sign up</StyledLink>.</TextLoginSignup> : null}
+                {isLoading ? <TextFormFeedback login="true">We're checking your credentials...</TextFormFeedback> : null}
+                {loginFailed ? <TextFormFeedback login="true">Invalid login, please try <br/>again or <StyledLink to="/signup">sign up</StyledLink>.</TextFormFeedback> : null}
                 <Form onSubmit={submitFormData}>
                     <Input required login="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required login="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
