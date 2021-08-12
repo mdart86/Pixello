@@ -71,5 +71,5 @@ export const TextFormFeedback = styled.p`
     left: 10%;
     font-style: italic;
     ${props => props.signup || props.login ? "left: 2%; bottom: -1.5%;" : null}
-    ${props => props.createpost ? "bottom: 14%;" : null}
+    ${props => props.createpost ? "top: 390px;" : null}
 `
