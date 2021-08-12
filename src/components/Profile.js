@@ -42,6 +42,10 @@ export const Profile = () => {
     //stores posts (created by the selected user) retreived by the axios request
     const [userPosts, setUserPosts ] = useState("")
 
+    //stores the like and post tally which is displayed under user avatar
+    const [likeTotal, setLikeTotal] = useState("")
+    const [postTotal, setPostTotal] = useState("")
+
     useEffect(() => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
@@ -63,12 +67,16 @@ export const Profile = () => {
 
                     //isolate posts that belong to this user
                     let requestedPosts = []
+                    let likeCounter = []
                     for (let post of retrievedData) {
                         if (post.userId === id) {
                             requestedPosts.push(post)
+                            likeCounter.push(post.likes)
                         }
                     }
+                    setPostTotal(requestedPosts.length)
                     setUserPosts(requestedPosts)
+                    setLikeTotal(likeCounter.reduce((a, b) => a + b, 0))
                 })
                 .catch(err => console.log(err))
         }
@@ -91,8 +99,8 @@ export const Profile = () => {
                     <Avatar unClickable="true" profile="true" src={avatarUrl || placeholderImage} alt="profile picture"/>
                 </AvatarContainer>
                 <Summary>
-                    <Count><Span>Posts: </Span>9</Count>
-                    <Count><Span>Likes: </Span>2.5K</Count>
+                    <Count><Span>Posts: </Span>{postTotal}</Count>
+                    <Count><Span>Likes: </Span>{likeTotal}</Count>
                 </Summary>
                 <GridContainer>
                     <PhotoGrid>
