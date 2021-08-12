@@ -60,7 +60,7 @@ export const LogIn = ({ history }) => {
                         })
                         dispatch({
                             type: "setLoggedInUserId",
-                            data: res.data.userId
+                            data: res.data._id
                         })
                         setIsLoading(false)
                         //redirect to the home page

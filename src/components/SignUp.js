@@ -104,7 +104,7 @@ export const SignUp = ({history}) => {
                         })
                         dispatch({
                             type: "setLoggedInUserId",
-                            data: res.data.userId
+                            data: res.data._id
                         })
                         setIsLoading(false)
                         //redirect to home page
