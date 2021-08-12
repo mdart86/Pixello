@@ -17,8 +17,9 @@ import { Caption } from './styled/Caption.styled'
 export const Post = ({ post }) => {
 
     //deconstruct post data for use in render
-    const {username, caption, photoUrl, id, userId} = post 
+    const {username, caption, photoUrl, id, userId, likes} = post 
 
+    console.log("likes: ", likes)
     const { store } = useGlobalState()
     const { loggedInJWT } = store
 
@@ -42,12 +43,24 @@ export const Post = ({ post }) => {
         }
     }, [userId, loggedInJWT])
 
+    async function addLike(jwt, postId) {
+        const authorisation = {
+            headers: { Authorization: `Bearer ${jwt}` }
+        };
+        await axios.put(`https://pixello.herokuapp.com/posts/update_likes/${postId}`, authorisation)
+            .catch(err => console.log(err))
+    }
+
+    function handleLike() {
+        addLike(loggedInJWT, id)
+    }
+
     return (
         <>
             <Link to={`/post/${id}`}><Photo post="true" src={photoUrl || placeholderImage} alt={caption}/></Link>
             <ContainerPost>
                 <Link to={`/profile/${userId}`}><Avatar post="true" src={userData.avatarUrl || placeholderImage} alt="profile picture"/></Link>
-                <IconPost src={like} alt="like button"/>
+                <IconPost src={like} alt="like button" onClick={handleLike}/>
                 <StyledLink to={`/profile/${userId}`}><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
                 <Caption post="true">{caption}</Caption>
             </ContainerPost>
