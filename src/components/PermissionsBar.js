@@ -15,21 +15,29 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
     const { loggedInJWT } = store
 
     const [error, setError] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     async function handleEdit() {
 
     }
 
     async function handleDeletePost() {
+        // let userInput = prompt("This content will be permanently deleted, are you sure you want to continue? (Type 'yes' to proceed.)")
+        // if (userInput !== "yes" || userInput !== "Yes") {
+        //     return 
+        // }
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
+        setLoading(true)
+        setError(false)
         await axios.delete(`https://pixello.herokuapp.com/posts/${postId}`, authorisation)
                 .then(() => {
-                    setError(false)
+                    setLoading(false)
                     history.push("/home")
                 })
                 .catch(err => {
+                    setLoading(false)
                     setError(true)
                     console.log(err)
                 })
@@ -39,9 +47,11 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
+        setLoading(true)
+        setError(false)
         await axios.delete(`https://pixello.herokuapp.com/users/${profileId}`, authorisation)
                 .then(() => {
-                    setError(false)
+                    setLoading(false)
                     dispatch({
                         type: "logOutUser",
                         data: ""
@@ -49,6 +59,7 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
                     history.push("/")
                 })
                 .catch(err => {
+                    setLoading(false)
                     setError(true)
                     console.log(err)
                 })
@@ -67,6 +78,8 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
             <BoxPermissionsBar desktop="true">
                 <IconPermissionsBar desktop="true" src={edit} alt="edit pencil icon"/>
                 <IconPermissionsBar desktop="true" src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
+                {loading ? <TextFormFeedback permissions="true">Loading...</TextFormFeedback> : null}
+                {error ? <TextFormFeedback permissions="true">There was a problem with your request.</TextFormFeedback> : null}
             </BoxPermissionsBar> 
         )
     } else {
@@ -75,7 +88,8 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
             <BoxPermissionsBar>
                 <IconPermissionsBar src={edit} alt="edit pencil icon" onClick={handleEdit}/>
                 <IconPermissionsBar src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
-                {error? <TextFormFeedback postpermissions="true">There was a problem with your request.</TextFormFeedback> : null}
+                {loading ? <TextFormFeedback permissions="true">Loading...</TextFormFeedback> : null}
+                {error ? <TextFormFeedback permissions="true">There was a problem with your request.</TextFormFeedback> : null}
             </BoxPermissionsBar> 
         )
     }

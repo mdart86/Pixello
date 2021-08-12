@@ -65,12 +65,12 @@ export const TextUserMessages = styled.p`
 //signup
 //create post
 export const TextFormFeedback = styled.p`
-    width: 80%;
+    width: ${props => !props.permissions ? "80%;" : "300px;"}
     font-size: 0.8rem;
     position: absolute;
-    left: 10%;
+    left: ${props => props.permissions ? "70px;" : "10%;"}
     font-style: italic;
-    color: ${props => props.createpost ? "var(--charcoal);" : "var(--white);"}
+    color: ${props => props.createpost || props.permissions ? "var(--charcoal);" : "var(--white);"}
     ${props => props.signup || props.login ? "left: 2%; bottom: -1.5%;" : null}
     ${props => props.createpost ? "top: 390px;" : null}
     ${props => props.passconf ? "top: 290px; font-size: 0.7rem; color: var(--charcoal);" : null}
