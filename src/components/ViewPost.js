@@ -38,32 +38,73 @@ export const ViewPost = () => {
     //placeholder to remove errors
     const category = "film"
 
-    //stores data retreived by the axios request
+    //stores post data retreived by the axios request
     const [postData, setPostData ] = useState("")
-    
+    const {username, caption, photoUrl, userId} = postData
+
+    //stores user data retreived by the axios request
+    const [userData, setUserData ] = useState("")
+    //deconstruct user data for use in render
+    const {avatarUrl} = userData
+
+    //stores comment data retreived by the axios request
+    const [commentData, setCommentData ] = useState("")
+
     useEffect(() => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
-        async function fetchData() {
+        async function fetchPostData() {
             await axios.get(`https://pixello.herokuapp.com/posts/${id}`, authorisation)
                 .then(res => {
-                    setPostData(res.data)
+                    if (res.data) {
+                        setPostData(res.data)
+                    }
                 })
                 .catch(err => console.log(err))
         }
-        fetchData()
-    }, [id, loggedInJWT])
+        async function fetchUserData() {
+            await axios.get(`https://pixello.herokuapp.com/users/${userId}`, authorisation)
+                .then(res => {
+                    if (res.data) {
+                        setUserData(res.data)
+                    } 
+                })
+                .catch(err => console.log(err))
+        }
+        async function fetchCommentData() {
+            await axios.get(`https://pixello.herokuapp.com/comments/get_comments`, authorisation)
+                .then(res => {
+                    if (res.data) {
+                        //sort reverses order of data so that newer comments appear higher up
+                        const retrievedData = res.data.sort((a,b) => b - a)
+                        
+                        //isolate comments that belong to this post
+                        let requestedComments = []
+                        for (let comment of retrievedData) {
+                            if (comment.postId === id) {
+                                requestedComments.push(comment)
+                            }
+                        }
+                        setCommentData(requestedComments)
+                    } 
+                })
+                .catch(err => console.log(err))
+        }
+        fetchPostData()
+        fetchUserData()
+        fetchCommentData()
+    }, [id, loggedInJWT, userId])
 
     return (
         <>
             {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
                 {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
-                <Link to={`/profile/${id}`}><Avatar viewPost="true" src={placeholderImage} alt="A man's profile picture."/></Link>
-                <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">{postData.username}</Username></StyledLink>
-                <Caption viewPost="true">{postData.caption}</Caption>
-                <Photo unClickable="true" viewPost="true" src={postData.avatarUrl || placeholderImage} alt="A candid photo of people on the beach."/>
+                <Link to={`/profile/${id}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
+                <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
+                <Caption viewPost="true">{caption}</Caption>
+                <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
                 <CategoryContainer>
                     <Link to={`/posts/${category}`}><IconViewPost src={film} alt="film category"/></Link>
@@ -72,13 +113,10 @@ export const ViewPost = () => {
                 </CategoryContainer>
                 <CommentsContainer>
                     <AddComment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
-                    <Comment/>
+                    {commentData ? 
+                        commentData.map(obj => {
+                            return <Comment commentData={obj} userData={userData} key={obj.id}/>
+                            }) : <p>This post doesn't have any comments yet.</p>}
                 </CommentsContainer>
                 {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </PostContainer>

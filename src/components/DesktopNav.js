@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import { Link } from "react-router-dom";
+import { useGlobalState } from '../utils/context';
 //image imports: 
 import home from '../images/home.svg'
 import category from '../images/category-search.svg'
@@ -20,8 +21,8 @@ import { StyledLink } from './styled/StyledLink.styled';
 
 const DesktopNav = ( { excludedUrls } ) => {
 
-    //placeholder to remove errors
-    const id = 12345
+    const { store } = useGlobalState()
+    const { loggedInUserId } = store
 
     if (excludedUrls.includes(window.location.pathname)) {
         //return null on pages where the nav bar should not be rendered
@@ -36,7 +37,7 @@ const DesktopNav = ( { excludedUrls } ) => {
                     {window.location.pathname === "/home" ? <Link to='/filter'><IconDesktopNav src={category} alt="search by category icon"/></Link> : <Link to="/home"><IconDesktopNav src={home} alt="home page icon"/></Link>}
                     <Link to="/messages"><IconDesktopNav src={messages} alt="private messages icon"/></Link>
                     <Link to="/notifications"><IconDesktopNav src={notifications} alt="notification bell icon"/></Link>
-                    <Link to={`/profile/${id}`}><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
+                    <Link to={`/profile/${loggedInUserId}`}><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
                 </IconsContainer>
             </BoxDesktopNavNoPlus>
         )
@@ -50,7 +51,7 @@ const DesktopNav = ( { excludedUrls } ) => {
                 {window.location.pathname === "/home" ? <Link to='/filter'><IconDesktopNav src={category} alt="search by category icon"/></Link> : <Link to="/home"><IconDesktopNav src={home} alt="home page icon"/></Link>}
                 <Link to="/messages"><IconDesktopNav src={messages} alt="private messages icon"/></Link>
                 <Link to="/notifications"><IconDesktopNav src={notifications} alt="notification bell icon"/></Link>
-                <Link to={`/profile/${id}`}><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
+                <Link to={`/profile/${loggedInUserId}`}><IconDesktopNav profile="true" src={profile} alt="user profile icon"/></Link>
             </IconsContainer>
         </BoxDesktopNav>
     )

@@ -17,17 +17,20 @@ import { BoxComment } from './styled/Box.styled'
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
 
-export const Comment = () => {
+export const Comment = ({ commentData, userData }) => {
+    
+    //deconstruct comment data for use in render
+    const {username, comment} = commentData
 
     //placeholder to remove errors
     const id = 12345
 
     return (
             <BoxComment>
-                <Link to={`/profile/${id}`}><Avatar comment="true" src={placeholderImage} alt="A man's profile picture."/></Link>
+                <Link to={`/profile/${id}`}><Avatar comment="true" src={userData.avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
                 <IconComment src={like} alt="like button"/>
-                <StyledLink to={`/profile/${id}`}><Username comment="true" fontSize="0.8rem">john_wilson</Username></StyledLink>
-                <Caption comment="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </Caption>
+                <StyledLink to={`/profile/${id}`}><Username comment="true" fontSize="0.8rem">{username}</Username></StyledLink>
+                <Caption comment="true">{comment}</Caption>
                 <PermissionsBar comment="true"/>
             </BoxComment>
     )

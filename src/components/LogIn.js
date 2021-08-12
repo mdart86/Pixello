@@ -58,6 +58,10 @@ export const LogIn = ({ history }) => {
                             type: "setLoggedInUsername",
                             data: res.data.username
                         })
+                        dispatch({
+                            type: "setLoggedInUserId",
+                            data: res.data._id
+                        })
                         setIsLoading(false)
                         //redirect to the home page
                         history.push('/home')

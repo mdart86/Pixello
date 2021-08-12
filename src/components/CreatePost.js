@@ -22,10 +22,11 @@ import { TextFormFeedback } from './styled/Text.styled'
 export const CreatePost = ({ history }) => {
     
     const { store } = useGlobalState()
-    const { loggedInJWT, loggedInUsername, categoryList } = store 
+    const { loggedInJWT, loggedInUsername, loggedInUserId, categoryList } = store 
 
     const initialFormData = { 
         username: loggedInUsername,
+        userId: loggedInUserId,
         caption: "", 
         category: ""
     }
@@ -72,7 +73,7 @@ export const CreatePost = ({ history }) => {
                     'Authorization': `Bearer ${loggedInJWT}`
                 }
             };
-            await axios.post("https://pixello.herokuapp.com/posts/new_post", fd, config)
+            await axios.post(`https://pixello.herokuapp.com/posts/new_post/${loggedInUserId}`, fd, config)
                 .then(res => {
                     if (res.data) {
                         setIsLoading(false)
