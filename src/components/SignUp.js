@@ -33,13 +33,17 @@ export const SignUp = ({history}) => {
         image: ""
     }
 
-    //used to notify the user if their login attempt failed
+    //used to notify the user if their signup attempt failed
     const [signupFailed, setSignupFailed] = useState("")
 
     //used to notify the user that their form submission was received
     const [isLoading, setIsLoading] = useState(false)
 
+    //stores form data (except the photo)
     const [formData, setFormData] = useState(initialFormData)
+
+    //stores the photo
+    const [uploadedPhoto, setUploadedPhoto] = useState("")
 
     //used to display file name to user when they upload an image
     const [fileName, setFileName] = useState("No File Chosen")
@@ -47,10 +51,7 @@ export const SignUp = ({history}) => {
     //save image data to state, and isolate file name to display to user
     function handleImageFile(e) {
         setFileName(e.target.files[0].name)
-        setFormData({
-            ...formData,
-            image: e.target.value
-        })
+        setUploadedPhoto(e.target.files[0])
     }
     
     function handleFormData(e) {
@@ -67,13 +68,15 @@ export const SignUp = ({history}) => {
         setIsLoading(true)
         setSignupFailed(false)
         async function fetchData() {
+            const fd = new FormData()
+            Object.keys(formData).forEach(key => fd.append(key, formData[key]))
+            fd.append('image', uploadedPhoto, fileName)
             const config = {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                    'Credentials': 'same origin'
                 }
             };
-            await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
+            await axios.post("https://pixello.herokuapp.com/auth/sign_up", fd, config)
                 .then(res => {
                     //if a jwt is returned, save to global state for authorisation purposes
                     if (res.data.jwt) {
@@ -95,27 +98,6 @@ export const SignUp = ({history}) => {
         fetchData()
     }
 
-    // async function submitFormData(e) {
-    //     e.preventDefault()
-    //     dispatch({
-    //         type: "setLoggedInUser",
-    //         data: formData.username
-    //     })
-    //     // // const data = new FormData(formData)
-        
-    //     // const config = {
-    //     //     headers: {
-    //     //         'content-type': 'multipart/form-data',
-                        // 'origin': 'https://www.pixellophotos.com/'
-    //     //       }
-    //     // };
-    //     // await axios.post("https://pixello.herokuapp.com/auth/sign_up", formData, config)
-    //     //     .then(res => console.log("Response: " + res.data))
-    //     //     .catch(err => console.log(err))
-    //     // // setFormData(initialFormData)
-    //     history.push('/home')
-    // }
-
     return (
         <>
             <PinkFeature>
@@ -128,7 +110,7 @@ export const SignUp = ({history}) => {
                     <Input required signup="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
-                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" value={formData.passwordConfirmation} onChange={handleFormData}/>
+                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password"/>
                     <Textarea required signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
