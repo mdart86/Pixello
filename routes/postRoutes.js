@@ -47,21 +47,19 @@ router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
 router.put('/update_likes/:id', async (req, res) => {
-    //get the post by id
-    let post = await Post.findById(req.params.id);
-    console.log("likes", post.likes)
-    //increase post's likes +1
-    post.likes++
-    console.log("likes + 1", post.likes)
-    //update it in the database
-    Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, post)=>{
-      if (err){
-          res.status(404)
-          return res.json({error: err.message})
-      }
-      res.status(200)
-      res.send(post)
-    })
+  //get the post by id
+  let post = await Post.findById(req.params.id);
+  //increase post's likes +1
+  post.likes++
+  //update it in the database
+  Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, card)=>{
+    if (err){
+        res.status(404)
+        return res.json({error: err.message})
+    }
+    res.status(200)
+    res.send(card)
+  })
 });
 
 router.put("/:id", upload.single("image"), async (req, res) => {

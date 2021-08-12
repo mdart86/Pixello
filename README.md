@@ -2,7 +2,48 @@
 
 <br>
 
-## **Introduction**
+Welcome to Pixello! A full-stack photo sharing application created by Michael Dart and Emily Mills as a part of our final assignment at Coder Academy.
+
+To connect with us, please see us on LinkedIn and Twitter where you will be kept up to date on our future projects.
+
+[Michael Dart - LinkedIn](https://www.linkedin.com/in/michael-dart-537a3b57/)
+
+[Michael Dart - Twitter](https://twitter.com/michaeldart12)
+
+<br>
+
+[Emily Mills - LinkedIn](https://www.linkedin.com/in/emilymills95/)
+
+[Emily Mills - Twitter](https://twitter.com/emigraced)
+
+<br>
+
+## **CONTENTS** 
+
+- [Introduction](#introduction)
+- [Hosting Service Access](#hosting-service-access)
+- [Application Login Details](#application-login-details)
+- [POSTMAN - Testing Pixello](#postman---testing-pixello)
+    - [AUTHORISATION](#authorisation)
+        - [Sign Up](#sign-up)
+        - [Sign In](#sign-in)
+        - [Sign Out](#sign-out)
+    - [USERS](#users)
+        - [Read User Profile](#read-user-profile)
+        - [Update User Profile](#update-user-profile)
+        - [Delete User Profile](#delete-user-profile)
+    - [POSTS](#posts)
+        - [Create Post](#create-post)
+        - [Read All Posts](#read-all-posts)
+        - [Read Posts by User](#read-posts-by-user)
+        - [Read a Single Post](#read-a-single-post)
+        - [Update Post](#update-post)
+        - [Update Post - Likes only](#update-post---likes-only)
+        - [Delete Post](#delete-post)      
+    
+<br>
+
+## **INTRODUCTION**
 
 As our application has been built using the MERN stack (MongoDB, Express, React.js and Node.js), our database is ofcourse, Mongo. We have deployed our database to Mongo Atlas, the cloud version of MongoDB
 
@@ -13,7 +54,7 @@ The server-side of this application is deployed to Heroku. To connect with our d
 <br>
 <br>
 
-**HOSTING SERVICE ACCESS**
+## **HOSTING SERVICE ACCESS**
 
 <br>
 
@@ -75,7 +116,7 @@ Any Json Web Token (JWT) that is retrieved in the application, was utilised as a
 
 ### **AUTHORISATION**
 
-**Sign Up** 
+#### **Sign Up** 
 
 HTTP Request: **POST**
 
@@ -88,7 +129,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is created in th
 <br>
 <br>
 
-**Sign In**
+#### **Sign In**
 
 HTTP Request: **POST**
 
@@ -110,7 +151,7 @@ JSON Format:
 <br>
 <br>
 
-**Sign Out**
+#### **Sign Out**
 
 HTTP Request: **POST**
 
@@ -124,7 +165,7 @@ Notes: Upon signing out an empty array is returned to reflect the succesful sign
 
 ### **USERS**
 
-**Read User Profile**
+#### **Read User Profile**
 
 HTTP Request: **GET**
 
@@ -139,7 +180,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved fro
 <br>
 <br>
 
-**Update User Profile**
+#### **Update User Profile**
 
 HTTP Request: **PUT**
 
@@ -154,7 +195,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is update from t
 <br>
 <br>
 
-**Delete User Profile**
+#### **Delete User Profile**
 
 HTTP Request: **DELETE**
 
@@ -172,7 +213,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is deleted from 
 
 ### **POSTS**
 
-**Create Post**
+#### **Create Post**
 
 HTTP Request: **POST**
 
@@ -185,7 +226,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 <br>
 <br>
 
-**Read All Posts**
+#### **Read All Posts**
 
 HTTP Request: **GET**
 
@@ -198,7 +239,7 @@ Notes: With a Json Web Token (JWT) as authentication, all posts are retrieved fr
 <br>
 <br>
 
-**Read Posts By User**
+#### **Read Posts By User**
 
 HTTP Request: **GET**
 
@@ -211,7 +252,7 @@ Notes: With a Json Web Token (JWT) as authentication, posts of a user are retrie
 <br>
 <br>
 
-**Read Posts - Individually**
+#### **Read a Single Post**
 
 HTTP Request: **GET**
 
@@ -226,7 +267,7 @@ Notes: With a Json Web Token (JWT) as authentication, a posts is retrieved from 
 <br>
 <br>
 
-**Update Post**
+#### **Update Post**
 
 HTTP Request: **PUT**
 
@@ -241,7 +282,22 @@ Notes: With a Json Web Token (JWT) as authentication, a post is updated in the d
 <br>
 <br>
 
-**Delete Post**
+#### **Update Post - Likes only**
+
+HTTP Request: **PUT**
+
+URL: localhost:4000/posts/update_likes/610e03184cd8c527ae5a4b3e
+
+*the ID used in the URL is the ID of the document within the database*
+
+Notes: With a Json Web Token (JWT) as authentication, a post is updated in the database and the image is updated from Cloudinary, the cloud storage solution. 
+
+![Post - Create Post](/docs/images/posts_update_likesonpost.jpg)
+
+<br>
+<br>
+
+#### **Delete Post**
 
 HTTP Request: **DELETE**
 
