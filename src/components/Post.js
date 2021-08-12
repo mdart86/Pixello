@@ -43,15 +43,15 @@ export const Post = ({ post }) => {
         }
     }, [userId, loggedInJWT])
 
-    async function addLike(jwt, postId) {
-        const authorisation = {
-            headers: { Authorization: `Bearer ${jwt}` }
-        };
-        await axios.put(`https://pixello.herokuapp.com/posts/update_likes/${postId}`, authorisation)
-            .catch(err => console.log(err))
-    }
 
     function handleLike() {
+        async function addLike(jwt, postId) {
+            const authorisation = {
+                headers: { Authorization: `Bearer ${jwt}` }
+            };
+            await axios.put(`https://pixello.herokuapp.com/posts/update_likes/${postId}`, authorisation)
+                .catch(err => console.log(err))
+        }
         addLike(loggedInJWT, id)
     }
 

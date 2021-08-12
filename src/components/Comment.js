@@ -36,7 +36,7 @@ export const Comment = ({ commentData, userData }) => {
                 <StyledLink to={`/profile/${id}`}><Username comment="true" fontSize="0.8rem">{username}</Username></StyledLink>
                 <Caption comment="true">{comment}</Caption>
                 { id && (id === loggedInUserId) ? 
-                <PermissionsBar comment="true"/>
+                <PermissionsBar comment="true" commentId={commentData.id}/>
                 : null }
             </BoxComment>
     )

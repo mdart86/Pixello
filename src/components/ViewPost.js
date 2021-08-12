@@ -21,7 +21,7 @@ import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
 
-export const ViewPost = () => {
+export const ViewPost = ({ history }) => {
     
     const { id } = useParams()
 
@@ -70,7 +70,7 @@ export const ViewPost = () => {
                     if (res.data) {
                         //sort reverses order of data so that newer comments appear higher up
                         const retrievedData = res.data.sort((a,b) => b - a)
-                        
+                        console.log("all comments: ", retrievedData)
                         //isolate comments that belong to this post
                         let requestedComments = []
                         for (let comment of retrievedData) {
@@ -95,20 +95,31 @@ export const ViewPost = () => {
         fetchCommentData()
     }, [id, loggedInJWT, userId])
 
+    function handleLike() {
+        async function addLike(jwt, postId) {
+            const authorisation = {
+                headers: { Authorization: `Bearer ${jwt}` }
+            };
+            await axios.put(`https://pixello.herokuapp.com/posts/update_likes/${postId}`, authorisation)
+                .catch(err => console.log(err))
+        }
+        addLike(loggedInJWT, id)
+    }
+
     return (
         <>
             {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
                 { userId && (userId === loggedInUserId) && window.innerWidth < 600 ? 
-                <PermissionsBar/> 
+                <PermissionsBar postId={id} history={history}/> 
                 : userId && (userId === loggedInUserId) && window.innerWidth >= 600 ?
-                <PermissionsBar desktop="true"/>
+                <PermissionsBar desktop="true" postId={id} history={history}/>
                 : null }
                 <Link to={`/profile/${userId}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${userId}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
                 <Caption viewPost="true">{caption}</Caption>
                 <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
-                <IconViewPost src={like} alt="like button"/>
+                <IconViewPost src={like} alt="like button" onClick={handleLike}/>
                 <CommentsContainer>
                     {noComments ? <AddComment noComments="true"/> : <AddComment/> }
                     {commentData ? 
