@@ -5,4 +5,10 @@ const getCommentById = function (id){
     return Comment.findById(id)
 }
 
-module.exports = {getCommentById}
+// To delete a comment
+const deleteComment = function(id){
+    return Comment.findByIdAndRemove(id)
+}
+
+
+module.exports = {getCommentById, deleteComment}
