@@ -19,7 +19,6 @@ import { BoxComment } from './styled/Box.styled'
 
 export const Comment = ({ commentData, userData }) => {
     
-    console.log(userData)
     //deconstruct comment data for use in render
     const {username, comment} = commentData
 

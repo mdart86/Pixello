@@ -49,7 +49,6 @@ export const ViewPost = () => {
 
     //stores comment data retreived by the axios request
     const [commentData, setCommentData ] = useState("")
-    console.log(commentData)
 
     useEffect(() => {
         const authorisation = {

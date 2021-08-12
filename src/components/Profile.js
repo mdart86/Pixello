@@ -64,7 +64,6 @@ export const Profile = () => {
                     //isolate posts that belong to this user
                     let requestedPosts = []
                     for (let post of retrievedData) {
-                        console.log("profile post test: ", post)
                         if (post.userId === id) {
                             requestedPosts.push(post)
                         }
