@@ -17,22 +17,20 @@ import { Caption } from './styled/Caption.styled'
 export const Post = ({ post }) => {
 
     //deconstruct post data for use in render
-    const {username, caption, avatarUrl, id} = post 
+    const {username, caption, avatarUrl, postId, userId} = post 
 
     const { store } = useGlobalState()
     const { loggedInJWT } = store
 
     //stores data retreived by the axios request
     const [userData, setUserData ] = useState("")
-
-    console.log("user data state: ", userData)
     
     useEffect(() => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
         async function fetchData() {
-            await axios.get(`https://pixello.herokuapp.com/posts/${id}`, authorisation)
+            await axios.get(`https://pixello.herokuapp.com/users/user_label/${userId}`, authorisation)
                 .then(res => {
                     setUserData(res.data)
                 })
@@ -42,15 +40,15 @@ export const Post = ({ post }) => {
         return () => {
             setUserData("")
         }
-    }, [id, loggedInJWT])
+    }, [userId, loggedInJWT])
 
     return (
         <>
-            <Link to={`/post/${id}`}><Photo post="true" src={avatarUrl} alt={caption}/></Link>
+            <Link to={`/post/${postId}`}><Photo post="true" src={avatarUrl} alt={caption}/></Link>
             <ContainerPost>
-                <Link to={`/profile/${id}`}><Avatar post="true" src={placeholderImage} alt="profile picture"/></Link>
+                <Link to={`/profile/${userId}`}><Avatar post="true" src={userData.avatarUrl || placeholderImage} alt="profile picture"/></Link>
                 <IconPost src={like} alt="like button"/>
-                <StyledLink to={`/profile/${id}`}><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
+                <StyledLink to={`/profile/${userId}`}><Username post="true" fontSize="0.9rem">{username}</Username></StyledLink>
                 <Caption post="true">{caption}</Caption>
             </ContainerPost>
         </>
