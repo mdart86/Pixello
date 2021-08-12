@@ -128,7 +128,7 @@ export const SignUp = ({history}) => {
                     <Input required signup="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
-                    {/* <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" value={formData.passwordConfirmation} onChange={handleFormData}/> */}
+                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" value={formData.passwordConfirmation} onChange={handleFormData}/>
                     <Textarea required signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
@@ -143,8 +143,8 @@ export const SignUp = ({history}) => {
                     </CircleLabel>
                     <input type="submit" id="submitButton" hidden/>
                 </Form>
-                {isLoading ? <TextLoginSignup>We're creating your account...</TextLoginSignup> : null}
-                {signupFailed ? <TextLoginSignup>Usernames must be unique, please try again.</TextLoginSignup> : null}
+                {isLoading ? <TextLoginSignup signup="true">We're creating <br/>your account...</TextLoginSignup> : null}
+                {signupFailed ? <TextLoginSignup signup="true">Your username must be <br/>unique, please try again.</TextLoginSignup> : null}
             </BackgroundBox>
             <Logo signup="true">Pixello</Logo>
         </>
