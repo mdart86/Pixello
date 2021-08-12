@@ -70,6 +70,8 @@ export const TextFormFeedback = styled.p`
     position: absolute;
     left: 10%;
     font-style: italic;
+    color: var(--white);
     ${props => props.signup || props.login ? "left: 2%; bottom: -1.5%;" : null}
     ${props => props.createpost ? "top: 390px;" : null}
+    ${props => props.passconf ? "top: 290px; font-size: 0.7rem; color: var(--charcoal);" : null}
 `

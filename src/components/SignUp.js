@@ -41,6 +41,9 @@ export const SignUp = ({history}) => {
     //stores form data (except the photo)
     const [formData, setFormData] = useState(initialFormData)
 
+    //used to notify the user of a password mismatch
+    const [passwordMatch, setPasswordMatch] = useState(false)
+    
     //stores the photo
     const [uploadedPhoto, setUploadedPhoto] = useState("")
 
@@ -59,9 +62,23 @@ export const SignUp = ({history}) => {
             [e.target.id]: e.target.value
         })
     }
+
+    function validatePassword() {
+        let pass1 = document.getElementById("password")
+        let pass2 = document.getElementById("passwordConfirmation")
+        if (pass1.value === pass2.value) {
+            setPasswordMatch(true)
+        } else {
+            setPasswordMatch(false)
+        }
+
+    }
     
     function submitFormData(e) {
         e.preventDefault()
+        if (!passwordMatch) {
+            return 
+        }
         setIsLoading(true)
         setSignupFailed(false)
         async function fetchData() {
@@ -111,7 +128,8 @@ export const SignUp = ({history}) => {
                     <Input required title="username must be at least 3 characters" signup="true" username="true" type="text" id="username" placeholder="Username" pattern=".{3,}" value={formData.username} onChange={handleFormData}/>
                     <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
-                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password"/>
+                    <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" onChange={validatePassword}/>
+                    {!passwordMatch && <TextFormFeedback passconf="true">Your passwords must match.</TextFormFeedback>}
                     <Textarea required signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>

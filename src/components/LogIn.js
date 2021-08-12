@@ -81,7 +81,7 @@ export const LogIn = ({ history }) => {
             <Link to="/"><IconLogin back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox login="true">
                 {isLoading ? <TextFormFeedback login="true">We're checking your credentials...</TextFormFeedback> : null}
-                {loginFailed ? <TextFormFeedback login="true">Invalid login, please try <br/>again or <StyledLink to="/signup">sign up</StyledLink>.</TextFormFeedback> : null}
+                {loginFailed ? <TextFormFeedback login="true">Invalid login, please try <br/>again or <StyledLink to="/signup" white="true">sign up</StyledLink>.</TextFormFeedback> : null}
                 <Form onSubmit={submitFormData}>
                     <Input required login="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required login="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
