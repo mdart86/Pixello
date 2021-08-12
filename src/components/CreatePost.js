@@ -73,7 +73,7 @@ export const CreatePost = ({ history }) => {
                     'Authorization': `Bearer ${loggedInJWT}`
                 }
             };
-            await axios.post("https://pixello.herokuapp.com/posts/new_post", fd, config)
+            await axios.post(`https://pixello.herokuapp.com/posts/new_post/${loggedInUserId}`, fd, config)
                 .then(res => {
                     if (res.data) {
                         setIsLoading(false)
