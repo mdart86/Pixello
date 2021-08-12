@@ -5,9 +5,6 @@ import { useGlobalState } from '../utils/context'
 //image imports:
 import placeholderImage from '../images/image-loading.png'
 import like from '../images/like-green.svg'
-import film from '../images/film.svg'
-import water from '../images/water.svg'
-import candid from '../images/candid.svg'
 //react component imports: 
 import { Comment } from './Comment'
 import { AddComment } from './AddComment'
@@ -18,37 +15,32 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
-import { PostContainer, CommentsContainer, CategoryContainer} from './styled/Container.styled'
+import { PostContainer, CommentsContainer } from './styled/Container.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
-
-// NOTE TO SELF: add logic to show the permissions bar 
-//only when the user is an admin, or is the 
-//owner of the post/comment/profile
 
 export const ViewPost = () => {
     
     const { id } = useParams()
 
     const { store } = useGlobalState()
-    const { loggedInJWT } = store
-
-    //placeholder to remove errors
-    const category = "film"
+    const { loggedInJWT, loggedInUserId } = store
 
     //stores post data retreived by the axios request
-    const [postData, setPostData ] = useState("")
+    const [ postData, setPostData ] = useState("")
     const {username, caption, photoUrl, userId} = postData
 
     //stores user data retreived by the axios request
-    const [userData, setUserData ] = useState("")
+    const [ userData, setUserData ] = useState("")
     //deconstruct user data for use in render
     const {avatarUrl} = userData
 
     //stores comment data retreived by the axios request
-    const [commentData, setCommentData ] = useState("")
+    const [ commentData, setCommentData ] = useState("")
+
+    const [ noComments, setNoComments ] = useState(false)
 
     useEffect(() => {
         const authorisation = {
@@ -84,12 +76,19 @@ export const ViewPost = () => {
                         for (let comment of retrievedData) {
                             if (comment.postId === id) {
                                 requestedComments.push(comment)
-                            }
-                        }
-                        setCommentData(requestedComments)
+                            } 
+                        } 
+                        if (requestedComments.length > 0) {
+                            setCommentData(requestedComments)
+                        } else {
+                            setNoComments(true)
+                        }                        
                     } 
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    console.log(err)
+                    setNoComments(true)
+                })
         }
         fetchPostData()
         fetchUserData()
@@ -98,27 +97,26 @@ export const ViewPost = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
-                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
+                { userId && (userId === loggedInUserId) && window.innerWidth < 600 ? 
+                <PermissionsBar/> 
+                : userId && (userId === loggedInUserId) && window.innerWidth >= 600 ?
+                <PermissionsBar desktop="true"/>
+                : null }
                 <Link to={`/profile/${id}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
                 <Caption viewPost="true">{caption}</Caption>
                 <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
-                <CategoryContainer>
-                    <Link to={`/posts/${category}`}><IconViewPost src={film} alt="film category"/></Link>
-                    <Link to={`/posts/${category}`}><IconViewPost water="true" src={water} alt="water category"/></Link>
-                    <Link to={`/posts/${category}`}><IconViewPost src={candid} alt="candid category"/></Link>
-                </CategoryContainer>
                 <CommentsContainer>
-                    <AddComment/>
+                    {noComments ? <AddComment noComments="true"/> : <AddComment/> }
                     {commentData ? 
                         commentData.map(obj => {
                             return <Comment commentData={obj} userData={userData} key={obj.id}/>
-                            }) : <p>This post doesn't have any comments yet.</p>}
+                            }) : null}
                 </CommentsContainer>
-                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+                {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </PostContainer>
         </>
     )

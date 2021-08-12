@@ -17,7 +17,7 @@ export const Notifications = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
                 <Avatar unClickable="true" notifications="true" src={profilePicture} alt="Pixello Logo"/>
                 <Username fontSize="1.2rem">Pixello</Username>
@@ -28,7 +28,7 @@ export const Notifications = () => {
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
                 <ReceivedMessage notification="true"/>
-                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+                {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
         </>
     )

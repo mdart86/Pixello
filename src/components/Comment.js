@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useGlobalState } from '../utils/context'
 //image imports: 
 import like from '../images/like-pink.svg'
 import placeholderImage from '../images/image-loading.png'
@@ -18,12 +19,15 @@ import { BoxComment } from './styled/Box.styled'
 //owner of the post/comment/profile
 
 export const Comment = ({ commentData, userData }) => {
+
+    const { store } = useGlobalState()
+    const { loggedInUserId } = store
     
     //deconstruct comment data for use in render
     const {username, comment} = commentData
 
-    //placeholder to remove errors
-    const id = 12345
+    console.log("userdata ", userData)
+    const {id} = userData
 
     return (
             <BoxComment>
@@ -31,7 +35,9 @@ export const Comment = ({ commentData, userData }) => {
                 <IconComment src={like} alt="like button"/>
                 <StyledLink to={`/profile/${id}`}><Username comment="true" fontSize="0.8rem">{username}</Username></StyledLink>
                 <Caption comment="true">{comment}</Caption>
+                { id && (id === loggedInUserId) ? 
                 <PermissionsBar comment="true"/>
+                : null }
             </BoxComment>
     )
 }

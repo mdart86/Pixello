@@ -72,7 +72,7 @@ export const CategoryFilter = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
+            {window.innerWidth < 600 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
             <IconsContainer refresh="true">
                 <IconHome refresh="true" onClick={handleClick} src={refresh} alt="refresh icon"/>
                 <Link to="/filter"><IconHome filter="true" src={filter} alt="filter icon"/></Link>
@@ -88,7 +88,7 @@ export const CategoryFilter = () => {
                             <p><em>Loading {category} photos...</em></p>
                         </CenteringContainer>        
             }
-            {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+            {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }

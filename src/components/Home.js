@@ -50,7 +50,7 @@ export const Home = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
+            {window.innerWidth < 600 ? <Logo home="true">Pixello</Logo> : <TopClearance/>}
             <IconsContainer refresh="true"><IconHome onClick={handleClick} src={refresh} alt="refresh icon"/></IconsContainer>
             {postData ? 
                 postData.map(obj => <Post post={obj} key={obj.id}/>) :
@@ -58,7 +58,7 @@ export const Home = () => {
                     <p><em>Loading photos...</em></p>
                 </CenteringContainer>
             }
-            {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+            {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }

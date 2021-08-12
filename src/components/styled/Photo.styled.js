@@ -10,7 +10,7 @@ const Image = styled.img`
 //  view post
 export const Photo = styled(Image)`
     border-radius: 5px;
-    max-width: ${props => props.post ? "92%;" : "100%;"}
+    width: ${props => props.post ? "92%;" : "100%;"}
     ${props => props.post ? "margin: 8px 4% 0 4%;"  : null}
     ${props => props.viewPost ? "margin-top: 10px;" : null}
 `

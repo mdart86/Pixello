@@ -22,8 +22,8 @@ export const Avatar = styled.img`
     ${props => props.profile ? "width: 90px; height: 90px;" : null}
     ${props => props.userMessages ? "height: 65px; width: 65px; border: 4px solid var(--blue); margin-right: 10px;" : null}
     ${props => props.viewPost ? "margin: 35px 10px 10px 0;" : null}
-    ${props => props.viewPost && window.innerWidth < 450 ? "width: 70px; height: 70px;" : null}
-    ${props => props.viewPost && window.innerWidth >= 450 ? "width: 80px; height: 80px; margin-top: 30px;" : null}
+    ${props => props.viewPost && window.innerWidth < 600 ? "width: 70px; height: 70px;" : null}
+    ${props => props.viewPost && window.innerWidth >= 600 ? "width: 80px; height: 80px; margin-top: 30px;" : null}
     &:hover {
         ${props => !props.unClickable? "opacity: 0.7;" : null}
     }

@@ -98,8 +98,8 @@ export const IconsContainer = styled.div`
 //notifications
 export const MessagesContainer = styled.section`
     ${props => !props.messages ? "margin: 20px auto 5px; width: 90%;" : null}
-    ${props => props.messages && window.innerWidth < 450 ? "margin-top: 210px;" : null}
-    ${props => props.messages && window.innerWidth >= 450 ? "margin-top: 50px;" : null}
+    ${props => props.messages && window.innerWidth < 600 ? "margin-top: 210px;" : null}
+    ${props => props.messages && window.innerWidth >= 600 ? "margin-top: 50px;" : null}
     display: flex;
     flex-direction: column;
 `
@@ -109,7 +109,7 @@ export const PostContainer = styled.section`
     margin: 0;
     padding: 0 4%;
     position: absolute;
-    ${window.innerWidth < 450 ? "top: 0px;" : "top: 65px;" }
+    ${window.innerWidth < 600 ? "top: 0px;" : "top: 65px;" }
 `
 
 //profile
@@ -119,5 +119,5 @@ export const ProfileContainer = styled.section`
     display: flex;
     flex-direction: column;
     text-align: center;
-    ${window.innerWidth >= 450 ? "position: absolute; top: 65px;" : null}
+    ${window.innerWidth >= 600 ? "position: absolute; top: 65px;" : null}
 `

@@ -32,7 +32,7 @@ export const Profile = () => {
     const { id } = useParams()
 
     const { store } = useGlobalState()
-    const { loggedInJWT } = store
+    const { loggedInJWT, loggedInUserId } = store
 
     //stores user data retreived by the axios request
     const [userData, setUserData ] = useState("")
@@ -41,6 +41,10 @@ export const Profile = () => {
 
     //stores posts (created by the selected user) retreived by the axios request
     const [userPosts, setUserPosts ] = useState("")
+
+    //stores the like and post tally which is displayed under user avatar
+    const [likeTotal, setLikeTotal] = useState("")
+    const [postTotal, setPostTotal] = useState("")
 
     useEffect(() => {
         const authorisation = {
@@ -63,12 +67,16 @@ export const Profile = () => {
 
                     //isolate posts that belong to this user
                     let requestedPosts = []
+                    let likeCounter = []
                     for (let post of retrievedData) {
                         if (post.userId === id) {
                             requestedPosts.push(post)
+                            likeCounter.push(post.likes)
                         }
                     }
+                    setPostTotal(requestedPosts.length)
                     setUserPosts(requestedPosts)
+                    setLikeTotal(likeCounter.reduce((a, b) => a + b, 0))
                 })
                 .catch(err => console.log(err))
         }
@@ -82,17 +90,21 @@ export const Profile = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
-            <ProfileContainer>
-                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
+            <ProfileContainer>    
+                {(id === loggedInUserId) && window.innerWidth < 600 ? 
+                <PermissionsBar/> 
+                : (id === loggedInUserId) && window.innerWidth >= 600 ?
+                <PermissionsBar desktop="true"/>
+                : null }
                 <Username fontSize="1.5rem" profile="true">{username}</Username>
                 <Bio profile="true">{bio}</Bio>
                 <AvatarContainer>
                     <Avatar unClickable="true" profile="true" src={avatarUrl || placeholderImage} alt="profile picture"/>
                 </AvatarContainer>
                 <Summary>
-                    <Count><Span>Posts: </Span>9</Count>
-                    <Count><Span>Likes: </Span>2.5K</Count>
+                    <Count><Span>Posts: </Span>{postTotal}</Count>
+                    <Count><Span>Likes: </Span>{likeTotal}</Count>
                 </Summary>
                 <GridContainer>
                     <PhotoGrid>
