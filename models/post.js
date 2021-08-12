@@ -6,9 +6,6 @@ const Post = new Schema({
     username: {
         type: String, 
         required: true,
-        trim: true,
-        minlength: 3,
-        maxlength: 30
     },
     caption: {
         type: String, 

@@ -1,25 +1,27 @@
-const express = require('express');
-const commentRouter = express.Router();
+// requiring express into router file
+const express = require('express')
 
-const { loginRequired } = require('../controllers/authController');
+// Configured express router
+const router = express.Router()
 
-const User = require('../models/user')
+const {loginRequired} = require('../controllers/authController')
+const {getCommentId} = require('../controllers/commentController')
+
+
 const Post = require('../models/post')
-
+const Comment = require('../models/comment')
 
 router.use(loginRequired)
 
-router.post('/create_comment', async (req, res, id) => {
+router.post('/create_comment/:id', async (req, res) => {
+    //get the post by id
+    let postId = await Post.findById(req.params.id);
+    
     try {
-        let user = await User.findById(id);
-        let post = await Post.findById(id);
-        
-        userId = user(res.send({_id: user._id}))
-        postId = post(res.send({_id: post._id}))
-        
         const newComment = new Comment (req.body)
-        newComment.userId = userId
         newComment.postId = postId
+
+        console.log(newComment, "New Comment Console Details")
 
         await newComment.save((err, comment) => {
             if(err) {
@@ -36,8 +38,24 @@ router.post('/create_comment', async (req, res, id) => {
     }
 })
 
-// router.get('/:postId', retrieveComments);
+router.get('/:id', getCommentId);
 
-// router.delete('/:commentId', deleteComment);
+// router.delete('/:id', () => {
+//     //get the post by id
+//     Comment.findByIdAndRemove(req.params.id).exec((err)=>{
+//         if (err){
+//             res.status(404)
+//             return res.json({error: err.message})
+//         }
+//         res.sendStatus(204)
+//     })
+    
+//     // catch (err) {
+//     // console.log(err);
+//     // } 
+// })
+
+// findByIdAndRemove
+
 
 module.exports = router

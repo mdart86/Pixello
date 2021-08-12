@@ -54,7 +54,7 @@ router.put('/update_likes/:id', async (req, res) => {
   //update it in the database
   Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, savedPostLike)=>{
     if (err){
-        res.status(404)
+g
         return res.json({error: err.message})
     }
     res.status(200)
