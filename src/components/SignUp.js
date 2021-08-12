@@ -129,12 +129,12 @@ export const SignUp = ({history}) => {
             <Link to="/"><IconSignUp back="true" src={arrow} alt="go back arrow"/></Link>
             <BackgroundBox signup="true">
                 <Form signup="true" onSubmit={submitFormData}>
-                    <Input required title="username must be at least 3 characters" signup="true" username="true" type="text" id="username" placeholder="Username" pattern=".{3,}" value={formData.username} onChange={handleFormData}/>
+                    <Input required minLength="3" signup="true" username="true" type="text" id="username" placeholder="Username" value={formData.username} onChange={handleFormData}/>
                     <Input required signup="true" type="email" id="email" placeholder="Email" value={formData.email} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="password" placeholder="Password" value={formData.password} onChange={handleFormData}/>
                     <Input required signup="true" type="password" id="passwordConfirmation" placeholder="Confirm password" onChange={validatePassword}/>
                     {!passwordMatch && <TextFormFeedback passconf="true">Your passwords must match.</TextFormFeedback>}
-                    <Textarea required signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
+                    <Textarea required minLength="3" signup="true" type="text" id="bio" placeholder="Your bio" value={formData.bio} onChange={handleFormData}/>
                     <p>Your avatar:</p>
                     <FileName>{fileName}</FileName>
                     <Label signup="true" htmlFor="image">

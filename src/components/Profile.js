@@ -37,7 +37,7 @@ export const Profile = () => {
     //stores user data retreived by the axios request
     const [userData, setUserData ] = useState("")
     //deconstruct user data for use in render
-    const {username, bio, avatarUrl, userId} = userData
+    const {username, bio, avatarUrl} = userData
 
     //stores posts (created by the selected user) retreived by the axios request
     const [userPosts, setUserPosts ] = useState("")
@@ -89,7 +89,7 @@ export const Profile = () => {
                 <GridContainer>
                     <PhotoGrid>
                     {userPosts ? userPosts.map((obj) => {
-                        <Link key={obj.id} to={`/post/${obj.id}`}><PhotoPreview src={obj.avatarUrl || placeholderImage} alt={obj.caption}/></Link>
+                        return <Link key={obj.id} to={`/post/${obj.id}`}><PhotoPreview src={obj.avatarUrl || placeholderImage} alt={obj.caption}/></Link>
                         }) : null }
                     </PhotoGrid>
                 </GridContainer>
