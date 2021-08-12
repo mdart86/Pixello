@@ -115,9 +115,9 @@ export const ViewPost = () => {
                 <CommentsContainer>
                     <AddComment/>
                     {commentData ? 
-                        commentData.map(obj => <Comment commentData={obj} key={obj.id}/>) : <p>This post doesn't have any comments yet.</p>}
-                   
-                    
+                        commentData.map(obj => {
+                            return <Comment commentData={obj} userData={userData} key={obj.id}/>
+                            }) : <p>This post doesn't have any comments yet.</p>}
                 </CommentsContainer>
                 {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </PostContainer>
