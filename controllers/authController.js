@@ -14,7 +14,7 @@ const signIn = function(req,res){
             res.status(400)
             return res.json({message: "Authentication failed"})
         }
-        return res.json({username: user.username, jwt: jwt.sign({username: user.username, _id: user._id},process.env.SECRET_KEY, { expiresIn: 1800 })})
+        return res.json({username: user.username, _id: user._id, jwt: jwt.sign({username: user.username, _id: user._id},process.env.SECRET_KEY, { expiresIn: 1800 })})
     })
 }
 

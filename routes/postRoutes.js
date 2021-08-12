@@ -4,7 +4,8 @@ const express = require('express')
 // Configured express router
 const router = express.Router()
 
-// requiring Post model into file
+// requiring model into file
+const User = require('../models/user')
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
@@ -17,12 +18,14 @@ const upload = require('../utils/multer')
 
 router.use(loginRequired)
 
-router.post('/new_post', upload.single("image"), async (req, res) => {
+router.post('/new_post/:id', upload.single("image"), async (req, res) => {
     try {
+    let userId = await User.findById(req.params.id);  
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
     // Create new post
     const newPost = new Post(req.body)
+    newPost.userId = userId._id
     newPost.avatarUrl = result.secure_url
     newPost.imageId = result.public_id
     console.log(newPost)
@@ -72,6 +75,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         const result = await cloudinary.uploader.upload(req.file.path);
       const data = {
         username: req.body.username || post.username,
+        userId: req.body.userId || post.userId,
         caption: req.body.caption || post.caption,
         category: req.body.category || post.category,
         likes: req.body.likes || post.likes,
@@ -91,7 +95,6 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
       // Find user by id
-      console.log(req.params.id)
       let post = await Post.findById(req.params.id);
       // Delete image from cloudinary
       console.log(post)

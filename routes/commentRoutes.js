@@ -19,7 +19,7 @@ router.post('/create_comment/:id', async (req, res) => {
     
     try {
         const newComment = new Comment (req.body)
-        newComment.postId = postId
+        newComment.postId = postId._id
 
         console.log(newComment, "New Comment Console Details")
 
