@@ -14,7 +14,7 @@ export const Messages = () => {
     
     return (
         <>
-            {window.innerWidth < 450 
+            {window.innerWidth < 600 
             ? 
             <PinkFeature>
                 <CircleMessages>
@@ -40,7 +40,7 @@ export const Messages = () => {
                 <UserMessages/>
                 <UserMessages/>
             </MessagesContainer>
-            {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+            {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )
 }

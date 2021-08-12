@@ -30,7 +30,7 @@ export const FilterForm = ({ history }) => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <CenteringContainer filter="true">
                 <Header>Filter by category</Header>
                 <p>Choose from the options below, and we'll show you the photos in that category.</p>

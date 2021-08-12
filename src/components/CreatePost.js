@@ -92,7 +92,7 @@ export const CreatePost = ({ history }) => {
     
     return (
         <>  
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <ContainerCreatePost>
                 <Header createPost="true">Hey there, john_wilson,</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>

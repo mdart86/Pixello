@@ -9,7 +9,7 @@ export const PhotoGrid = styled.div`
     row-gap: 8px;
     column-gap: 8px;
     margin: 10px auto;
-    ${window.innerWidth < 450 ? "margin-bottom: 115px;": "margin-bottom: 10px;"}
+    ${window.innerWidth < 600 ? "margin-bottom: 115px;": "margin-bottom: 10px;"}
     width: 90%;
     justify-content: center;
     &>*{

@@ -98,7 +98,7 @@ export const ViewPost = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
                 { userId && userId === loggedInUserId && window.innerWidth < 600 ? 
                 <PermissionsBar/> 
@@ -122,7 +122,7 @@ export const ViewPost = () => {
                             return <Comment commentData={obj} userData={userData} key={obj.id}/>
                             }) : <p>This post doesn't have any comments yet.</p>}
                 </CommentsContainer>
-                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+                {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </PostContainer>
         </>
     )

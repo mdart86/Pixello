@@ -64,7 +64,7 @@ export const BoxDesktopNav = styled(BoxDesktopNavNoPlus)`
 export const BoxMobileNavNoPlus = styled.nav`
     background: var(--blue);
     width: 100%;
-    max-width: 450px;
+    max-width: 600px;
     height: 80px;
     position: fixed;
     bottom: 0;

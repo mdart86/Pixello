@@ -15,7 +15,7 @@ export const SubHeader = styled.h2`
     font-size: 1rem;
     font-weight: 300;
     font-style: italic;
-    ${window.innerWidth < 450 ? null : "text-align: center"}
+    ${window.innerWidth < 600 ? null : "text-align: center"}
 `
 
 //about 
@@ -30,5 +30,5 @@ export const Header = styled.h1`
     ${props => props.hey ? "font-size: 2.5rem;": null}
     ${props => props.name ? "font-size: 1.4rem;" : null}
     ${props => props.createPost ? "margin-top: 20px; font-size: 1.5rem;" : null}
-    ${props => props.createPost && window.innerWidth >= 450 ?"text-align: center;" : null}
+    ${props => props.createPost && window.innerWidth >= 600 ?"text-align: center;" : null}
 `

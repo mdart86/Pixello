@@ -29,7 +29,7 @@ export const Message = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <DetailsContainer>
                 <Link to={`/profile/${id}`}><Avatar message="true" src={placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${id}`}><Username fontSize="1.2rem">john_wilson</Username></StyledLink>
@@ -47,7 +47,7 @@ export const Message = () => {
                         <img src={plus} alt="plus sign"/>
                     </CircleMessage>
                 </NewMessage>
-                {window.innerWidth < 450 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
+                {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
         </>
     )

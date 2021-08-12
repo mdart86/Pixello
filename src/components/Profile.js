@@ -82,9 +82,9 @@ export const Profile = () => {
 
     return (
         <>
-            {window.innerWidth < 450 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
+            {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <ProfileContainer>
-                {window.innerWidth < 450 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
+                {window.innerWidth < 600 ? <PermissionsBar/> : <PermissionsBar desktop="true"/> }
                 <Username fontSize="1.5rem" profile="true">{username}</Username>
                 <Bio profile="true">{bio}</Bio>
                 <AvatarContainer>
