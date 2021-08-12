@@ -45,7 +45,7 @@ export const App = () => {
   }
 
   useEffect(() => {
-    let categories = ["history", "dance", "sport", "fashion", "animal", "event", "travel", "DIY", "games", "food", "outdoor", "indoor", "vehicular", "architecture", "art", "light", "shadow", "candid"]
+    let categories = ["family", "history", "dance", "sport", "fashion", "animal", "event", "travel", "DIY", "games", "food", "outdoor", "indoor", "vehicular", "architecture", "art", "light", "shadow", "candid"]
     setCategoryList(categories)
   }, [])
 
