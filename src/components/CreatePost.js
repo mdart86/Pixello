@@ -105,7 +105,7 @@ export const CreatePost = ({ history }) => {
                         <TextCreatePost>{fileName}</TextCreatePost>
                     </Label>
                     <input required type="file" id="image" accept=".png, .jpg, .jpeg" hidden onChange={displayFileInfo}/>
-                    <Textarea required placeholder="Give it a caption" id="caption" value={formData.caption} onChange={handleFormData}/>
+                    <Textarea required minLength="3" maxLength="100" placeholder="Give it a caption" id="caption" value={formData.caption} onChange={handleFormData}/>
                     <Select required value={formData.category} id="category" onChange={handleFormData}>
                         <option value="" hidden disabled>Categories</option>
                         {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)}

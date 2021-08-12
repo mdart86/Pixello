@@ -24,10 +24,6 @@ import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
 
-// NOTE TO SELF: add logic to show the permissions bar 
-//only when the user is an admin, or is the 
-//owner of the post/comment/profile
-
 export const ViewPost = () => {
     
     const { id } = useParams()
@@ -100,9 +96,9 @@ export const ViewPost = () => {
         <>
             {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <PostContainer>
-                { userId && userId === loggedInUserId && window.innerWidth < 600 ? 
+                { userId && (userId === loggedInUserId) && window.innerWidth < 600 ? 
                 <PermissionsBar/> 
-                : userId && userId === loggedInUserId && window.innerWidth >= 600 ?
+                : userId && (userId === loggedInUserId) && window.innerWidth >= 600 ?
                 <PermissionsBar desktop="true"/>
                 : null }
                 <Link to={`/profile/${id}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
