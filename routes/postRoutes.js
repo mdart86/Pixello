@@ -26,7 +26,7 @@ router.post('/new_post/:id', upload.single("image"), async (req, res) => {
     // Create new post
     const newPost = new Post(req.body)
     newPost.userId = userId._id
-    newPost.avatarUrl = result.secure_url
+    newPost.photoUrl = result.secure_url
     newPost.imageId = result.public_id
     console.log(newPost)
     // Save post
@@ -79,7 +79,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         caption: req.body.caption || post.caption,
         category: req.body.category || post.category,
         likes: req.body.likes || post.likes,
-        avatarUrl: result.secure_url || post.avatarUrl,
+        photoUrl: result.secure_url || post.photoUrl,
         imageId: result.public_id || post.imageId,
       };
       post = await Post.findByIdAndUpdate(req.params.id, data, {

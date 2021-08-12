@@ -22,7 +22,7 @@ const Post = new Schema({
         type: String,
         required: true
     },
-    avatarUrl: {
+    photoUrl: {
         type: String,
         required: false
     },
