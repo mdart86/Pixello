@@ -1,34 +1,43 @@
-// const express = require('express');
-// const commentRouter = express.Router();
+const express = require('express');
+const commentRouter = express.Router();
 
-// const { loginRequired } = require('../controllers/authController');
+const { loginRequired } = require('../controllers/authController');
 
-// const User = require('../models/user')
-// const Post = require('../models/post')
+const User = require('../models/user')
+const Post = require('../models/post')
 
 
-// router.use(loginRequired)
+router.use(loginRequired)
 
-// router.post('/create_post, a
+router.post('/create_comment', async (req, res, id) => {
+    try {
+        let user = await User.findById(id);
+        let post = await Post.findById(id);
+        
+        userId = user(res.send({_id: user._id}))
+        postId = post(res.send({_id: post._id}))
+        
+        const newComment = new Comment (req.body)
+        newComment.userId = userId
+        newComment.postId = postId
 
-// router.put('/update_likes/:id', async (req, res) => {
-//     //get the post by id
-//     let post = await Post.findById(req.params.id);
-//     //increase post's likes +1
-//     post.likes++
-//     //update it in the database
-//     Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, card)=>{
-//       if (err){
-//           res.status(404)
-//           return res.json({error: err.message})
-//       }
-//       res.status(200)
-//       res.send(card)
-//     })
-//   });
+        await newComment.save((err, comment) => {
+            if(err) {
+                res.status(500)
+                return res.json({error: err.message})
+            }
+            console.log("Comment saved")
+            res.status(200)
+            res.send(comment)
+            })
+        }
+        catch (err) {
+            console.log("Comment NOT saved")
+    }
+})
 
 // router.get('/:postId', retrieveComments);
 
 // router.delete('/:commentId', deleteComment);
 
-// module.exports = router
+module.exports = router

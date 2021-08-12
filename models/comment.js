@@ -3,18 +3,23 @@ const Schema = mongoose.Schema;
 const normalize = require('normalize-mongoose')
 
 const Comment = new Schema({
-  date: {
-    type: Date,
-    default: Date.now
-  },
-  type: String,
+  comment: {
+    type: String,
+    requird: true,
+    minlength: 3,
+    maxlength: 75
+  },  
   userId: {
     type: String,
-    ref: 'user'
+    requird: true
   },
   postId: {
     type: String,
-    ref: 'post'
+    requird: true
+  },
+  created_at: {
+    type: Date,
+    required: false
   }
 });
 

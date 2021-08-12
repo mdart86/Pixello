@@ -52,13 +52,13 @@ router.put('/update_likes/:id', async (req, res) => {
   //increase post's likes +1
   post.likes++
   //update it in the database
-  Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, card)=>{
+  Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, savedPostLike)=>{
     if (err){
         res.status(404)
         return res.json({error: err.message})
     }
     res.status(200)
-    res.send(card)
+    res.send(savedPostLike)
   })
 });
 
