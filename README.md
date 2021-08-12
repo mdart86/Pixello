@@ -335,7 +335,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is deleted from the
 
 ### **COMMENTS**
 
-#### **Create Post**
+#### **Create Comment**
 
 HTTP Request: **GET**
 
