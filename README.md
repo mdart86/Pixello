@@ -333,6 +333,10 @@ Notes: With a Json Web Token (JWT) as authentication, a post is deleted from the
 
 ![Post - Create Post](/docs/images/posts_delete_postbyid.jpg)
 
+<br>
+<br>
+<br>
+
 ### **COMMENTS**
 
 #### **Create Comment**
