@@ -27,7 +27,7 @@ import { Bio } from './styled/Bio.styled'
 //work out the post and like count
 //for images, map through userPosts, 
 
-export const Profile = () => {
+export const Profile = ({ history }) => {
    
     const { id } = useParams()
 
@@ -93,9 +93,9 @@ export const Profile = () => {
             {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : null}
             <ProfileContainer>    
                 {(id === loggedInUserId) && window.innerWidth < 600 ? 
-                <PermissionsBar profileId={id}/> 
+                <PermissionsBar profileId={id} history={history}/> 
                 : (id === loggedInUserId) && window.innerWidth >= 600 ?
-                <PermissionsBar desktop="true" profileId={id}/>
+                <PermissionsBar desktop="true" profileId={id} history={history}/>
                 : null }
                 <Username fontSize="1.5rem" profile="true">{username}</Username>
                 <Bio profile="true">{bio}</Bio>

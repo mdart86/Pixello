@@ -9,9 +9,9 @@ import { IconPermissionsBar } from './styled/Icon.styled'
 import { BoxPermissionsBar } from './styled/Box.styled'
 import { TextFormFeedback } from './styled/Text.styled'
 
-export const PermissionsBar = ( { history, comment, desktop, postId } ) => {
+export const PermissionsBar = ( { history, comment, desktop, postId, profileId } ) => {
 
-    const { store } = useGlobalState()
+    const { dispatch, store } = useGlobalState()
     const { loggedInJWT } = store
 
     const [error, setError] = useState(false)
@@ -34,6 +34,25 @@ export const PermissionsBar = ( { history, comment, desktop, postId } ) => {
                     console.log(err)
                 })
     }
+
+    async function handleDeleteProfile() {
+        const authorisation = {
+            headers: { Authorization: `Bearer ${loggedInJWT}` }
+        };
+        await axios.delete(`https://pixello.herokuapp.com/users/${profileId}`, authorisation)
+                .then(() => {
+                    setError(false)
+                    dispatch({
+                        type: "logOutUser",
+                        data: ""
+                    })
+                    history.push("/")
+                })
+                .catch(err => {
+                    setError(true)
+                    console.log(err)
+                })
+    }
     
     if (comment) {
         //styled for comment permissions
@@ -47,7 +66,7 @@ export const PermissionsBar = ( { history, comment, desktop, postId } ) => {
         return (
             <BoxPermissionsBar desktop="true">
                 <IconPermissionsBar desktop="true" src={edit} alt="edit pencil icon"/>
-                <IconPermissionsBar desktop="true" src={deleteIcon} alt="delete bin icon"/>
+                <IconPermissionsBar desktop="true" src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
             </BoxPermissionsBar> 
         )
     } else {
@@ -55,7 +74,7 @@ export const PermissionsBar = ( { history, comment, desktop, postId } ) => {
         return (
             <BoxPermissionsBar>
                 <IconPermissionsBar src={edit} alt="edit pencil icon" onClick={handleEdit}/>
-                <IconPermissionsBar src={deleteIcon} alt="delete bin icon" onClick={handleDeletePost}/>
+                <IconPermissionsBar src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
                 {error? <TextFormFeedback postpermissions="true">There was a problem with your request.</TextFormFeedback> : null}
             </BoxPermissionsBar> 
         )

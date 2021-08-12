@@ -113,7 +113,7 @@ export const ViewPost = ({ history }) => {
                 { userId && (userId === loggedInUserId) && window.innerWidth < 600 ? 
                 <PermissionsBar postId={id} history={history}/> 
                 : userId && (userId === loggedInUserId) && window.innerWidth >= 600 ?
-                <PermissionsBar desktop="true" postId={id}/>
+                <PermissionsBar desktop="true" postId={id} history={history}/>
                 : null }
                 <Link to={`/profile/${userId}`}><Avatar viewPost="true" src={avatarUrl || placeholderImage} alt="A man's profile picture."/></Link>
                 <StyledLink to={`/profile/${userId}`}><Username fontSize="1.2rem" viewPost="true">{username}</Username></StyledLink>
