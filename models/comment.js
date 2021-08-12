@@ -9,9 +9,9 @@ const Comment = new Schema({
     minlength: 3,
     maxlength: 75
   },  
-  userId: {
-    type: String,
-    requird: true
+  username: {
+    type: String, 
+    required: true,
   },
   postId: {
     type: String,
