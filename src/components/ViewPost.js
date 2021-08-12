@@ -5,9 +5,6 @@ import { useGlobalState } from '../utils/context'
 //image imports:
 import placeholderImage from '../images/image-loading.png'
 import like from '../images/like-green.svg'
-import film from '../images/film.svg'
-import water from '../images/water.svg'
-import candid from '../images/candid.svg'
 //react component imports: 
 import { Comment } from './Comment'
 import { AddComment } from './AddComment'
@@ -18,7 +15,7 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
-import { PostContainer, CommentsContainer, CategoryContainer} from './styled/Container.styled'
+import { PostContainer, CommentsContainer } from './styled/Container.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
@@ -106,11 +103,6 @@ export const ViewPost = () => {
                 <Caption viewPost="true">{caption}</Caption>
                 <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button"/>
-                <CategoryContainer>
-                    <Link to={`/posts/${category}`}><IconViewPost src={film} alt="film category"/></Link>
-                    <Link to={`/posts/${category}`}><IconViewPost water="true" src={water} alt="water category"/></Link>
-                    <Link to={`/posts/${category}`}><IconViewPost src={candid} alt="candid category"/></Link>
-                </CategoryContainer>
                 <CommentsContainer>
                     <AddComment/>
                     {commentData ? 
