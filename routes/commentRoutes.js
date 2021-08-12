@@ -5,7 +5,7 @@ const express = require('express')
 const router = express.Router()
 
 const {loginRequired} = require('../controllers/authController')
-const {getCommentId} = require('../controllers/commentController')
+const {getCommentId, removeComment} = require('../controllers/commentController')
 
 
 const Post = require('../models/post')
@@ -38,24 +38,6 @@ router.post('/create_comment/:id', async (req, res) => {
     }
 })
 
-router.get('/:id', getCommentId);
-
-// router.delete('/:id', () => {
-//     //get the post by id
-//     Comment.findByIdAndRemove(req.params.id).exec((err)=>{
-//         if (err){
-//             res.status(404)
-//             return res.json({error: err.message})
-//         }
-//         res.sendStatus(204)
-//     })
-    
-//     // catch (err) {
-//     // console.log(err);
-//     // } 
-// })
-
-// findByIdAndRemove
-
+router.delete('/:id', removeComment);
 
 module.exports = router
