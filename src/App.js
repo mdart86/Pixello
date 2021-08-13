@@ -23,6 +23,7 @@ import { Notifications } from './components/Notifications';
 import { NotFound } from './components/NotFound';
 import { PleaseSignIn } from './components/PleaseSignIn'
 import { UpdatePost } from './components/UpdatePost'
+import { UpdateProfile } from './components/UpdateProfile'
 
 export const App = () => {
 
@@ -67,6 +68,7 @@ export const App = () => {
             <Route exact path="/filter" component={ loggedInJWT ? FilterForm : PleaseSignIn }/>
             <Route exact path="/posts/:category" component={ loggedInJWT ? CategoryFilter : PleaseSignIn }/>
             <Route exact path="/profile/:id" component={ loggedInJWT ? Profile : PleaseSignIn }/>
+            <Route exact path="/update-profile/:id" component={ loggedInJWT ? UpdateProfile : PleaseSignIn }/>
             <Route exact path="/new" component={ loggedInJWT ? CreatePost : PleaseSignIn }/>
             <Route exact path="/update-post/:id" component={ loggedInJWT ? UpdatePost : PleaseSignIn }/>
             <Route exact path="/messages" component={ loggedInJWT ? Messages : PleaseSignIn }/>

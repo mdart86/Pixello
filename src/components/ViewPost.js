@@ -69,7 +69,6 @@ export const ViewPost = ({ history }) => {
                     if (res.data) {
                         //sort reverses order of data so that newer comments appear higher up
                         const retrievedData = res.data.sort((a,b) => b - a)
-                        console.log("all comments: ", retrievedData)
                         //isolate comments that belong to this post
                         let requestedComments = []
                         for (let comment of retrievedData) {

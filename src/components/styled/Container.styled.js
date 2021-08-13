@@ -122,3 +122,19 @@ export const ProfileContainer = styled.section`
     text-align: center;
     ${window.innerWidth >= 600 ? "position: absolute; top: 65px;" : null}
 `
+
+//coming soon
+export const ComingSoonContainer = styled.div`
+    position: fixed;
+    height: 150px;
+    width: 150px;
+    background: var(--green);
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px dotted var(--dark-pink);
+    top: 100px;
+    right: 20px;
+`

@@ -19,14 +19,6 @@ import { Span } from './styled/Span.styled'
 import { Count } from './styled/Count.styled'
 import { Bio } from './styled/Bio.styled'
 
-// NOTE TO SELF: add logic to show the permissions bar 
-//only when the user is an admin, or is the 
-//owner of the post/comment/profile
-
-//to-do
-//work out the post and like count
-//for images, map through userPosts, 
-
 export const Profile = ({ history }) => {
    
     const { id } = useParams()

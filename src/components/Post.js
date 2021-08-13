@@ -17,9 +17,8 @@ import { Caption } from './styled/Caption.styled'
 export const Post = ({ post }) => {
 
     //deconstruct post data for use in render
-    const {username, caption, photoUrl, id, userId, likes} = post 
+    const {username, caption, photoUrl, id, userId} = post 
 
-    console.log("likes: ", likes)
     const { store } = useGlobalState()
     const { loggedInJWT } = store
 
