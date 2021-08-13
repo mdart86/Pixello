@@ -26,12 +26,13 @@ Emily Mills
 ## **CONTENTS** 
 
 - [INTRODUCTION](#introduction)
+
     - [Hosting Service Access](#hosting-service-access)
     - [Application Login Details](#application-login-details)
 - [LOCAL INSTALLATION](#local-installation)
 - [PACKAGES](#packages)
 - [PROJECT MANAGEMENT](#project-management)
-    - [GitHub Screenshots](#github-screenshots)
+- [GITHUB SCREENSHOTS](#github-screenshots)
 - [POSTMAN - Testing Pixello](#postman---testing-pixello)
     - [AUTHORISATION](#authorisation)
         - [Sign Up](#sign-up)
@@ -58,6 +59,12 @@ Emily Mills
 - [PLAN A DOCUMENTATION](#planning-documentation)
 - [CHANGES](#changes-made)
 
+<br>
+
+To see our planning documentation, please navigate to the below:
+
+**[PLANNING DOCUMENTATION](#planning-documentation)**
+
 
 <br>
 <br>
@@ -71,7 +78,7 @@ A cloud storage solution, Cloudinary, has been employed to securely store the im
 <br>
 <br>
 
-## **HOSTING SERVICE ACCESS**
+## **Hosting Service Access**
 
 <br>
 
@@ -100,7 +107,7 @@ A cloud storage solution, Cloudinary, has been employed to securely store the im
 <br>
 <br>
 
-## **APPLICATION LOGIN DETAILS**
+## **Application Login Details**
 
 <br>
 
