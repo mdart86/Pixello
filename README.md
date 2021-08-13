@@ -55,7 +55,10 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Create Comment](#create-comment)
         - [Get Comments](#get-comments)
         - [Delete Comment](#delete-comment)
-- [Part A Documentation](#part-a-documentation)
+
+<br>
+
+### **[Part A Documentation](#part-a-documentation)**
 
 <br>
 
@@ -413,6 +416,8 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 <br>
 <br>
 <br>
+
+<a href="#top">Back to top</a>
 
 ## Part A Documentation
 
