@@ -486,9 +486,45 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 
 ## **USER TESTING**
 
-User: Demelza
+**User:** Josh
 
-Feedback: the application has a nice flow and was impress by the UI. Demelza believe it is great to give the user the opportunity to edit the photo before saving a profile so the user can really be comfortable with what they are sharing to the world.
+**Device:** Laptop
+
+**Feedback 1:** In the about creators page, circles are slightly off the page. See below screenshot.
+
+![About the creators](/docs/images/testing-mobile-aboutcreators-page.jpg)
+
+<br>
+
+**Feedback 2:** Hard coding of Posts and Likes tally on main page. This has now been resolved to increment. See below screenshot.
+
+**Feedback 3:** Avatar not displaying on profile page when clicking on user label on the post.
+
+![Profile](/docs/images/testing-profile.jpg)
+
+<br>
+
+**Feedback 4:** Likes counter not incrementing when clicking on the heart. See below screenshot
+
+![Likes](/docs/images/testing-likes.jpg)
+
+<br>
+
+**Feedback 5:** Photos not displaying on grid view in profile page. See below sceenshot
+
+![Grid View](/docs/images/testing-profile-grid.jpg)
+
+<br>
+<br>
+<br>
+
+**User:** Demelza
+
+**Device:** Mobile
+
+**Feedback:** the application has a nice flow and was impress by the UI. Demelza believe it is great to give the user the opportunity to edit the photo before saving a profile so the user can really be comfortable with what they are sharing to the world.
+
+![Sign Up](/docs/images/testing-Sign_up.jpg)
 
 <br>
 <br>
