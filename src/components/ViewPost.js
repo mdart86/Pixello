@@ -41,8 +41,6 @@ export const ViewPost = ({ history }) => {
     //stores comment data retreived by the axios request
     const [ commentData, setCommentData ] = useState("")
 
-    const [ noComments, setNoComments ] = useState(false)
-
     useEffect(() => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
@@ -81,14 +79,11 @@ export const ViewPost = ({ history }) => {
                         } 
                         if (requestedComments.length > 0) {
                             setCommentData(requestedComments)
-                        } else {
-                            setNoComments(true)
-                        }                        
+                        }                      
                     } 
                 })
                 .catch(err => {
                     console.log(err)
-                    setNoComments(true)
                 })
         }
         fetchPostData()
