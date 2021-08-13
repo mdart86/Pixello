@@ -1,4 +1,4 @@
-# <a href="#top">Documentation for Pixello Server</a>
+# <a id="top">Documentation for Pixello Server</a>
 
 <br>
 
@@ -6,32 +6,29 @@ Welcome to Pixello! A full-stack photo sharing application created by Michael Da
 
 Visit the site here: [Pixello](https://www.pixellophotos.com/)
 
-To view our repositories, we have created an [organisation within Github](https://github.com/CA-Pixello)
-Which will include:
+To view our repositories, we have created an [organisation within Github](https://github.com/CA-Pixello) which includes: 
 
 - Pixello Server
 - Pixello Client
-- Pixello Documentation (as part of Part A)
+- Pixello Documentation (Part A of our assessment)
 
-To connect with us, please see us on LinkedIn and Twitter where you will be kept up to date on our future projects.
+To connect with us, you can find us on LinkedIn and Twitter where you will be kept up to date on our future projects:
 
-[Michael Dart - LinkedIn](https://www.linkedin.com/in/michael-dart-537a3b57/)
+Michael Dart  
+- [LinkedIn](https://www.linkedin.com/in/michael-dart-537a3b57/)
+- [Twitter](https://twitter.com/michaeldart12)
 
-[Michael Dart - Twitter](https://twitter.com/michaeldart12)
+Emily Mills
+- [LinkedIn](https://www.linkedin.com/in/emilymills95/)
+- [Twitter](https://twitter.com/emigraced)
 
-<br>
-
-[Emily Mills - LinkedIn](https://www.linkedin.com/in/emilymills95/)
-
-[Emily Mills - Twitter](https://twitter.com/emigraced)
-
-<br>
 
 ## **CONTENTS** 
 
 - [INTRODUCTION](#introduction)
-- [HOSTING SERVICE ACCESS](#hosting-service-access)
-- [APPLICATION LOGIN DETAILS](#application-login-details)
+
+    - [Hosting Service Access](#hosting-service-access)
+    - [Application Login Details](#application-login-details)
 - [LOCAL INSTALLATION](#local-installation)
 - [PACKAGES](#packages)
 - [PROJECT MANAGEMENT](#project-management)
@@ -59,6 +56,8 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Get Comments](#get-comments)
         - [Delete Comment](#delete-comment)
 - [USER TESTING](#user-testing)
+- [PLAN A DOCUMENTATION](#planning-documentation)
+- [CHANGES](#changes-made)
 
 <br>
 
@@ -66,21 +65,20 @@ To see our planning documentation, please navigate to the below:
 
 **[PLANNING DOCUMENTATION](#planning-documentation)**
 
+
 <br>
 <br>
 
 ## **INTRODUCTION**
 
-As our application has been built using the MERN stack (MongoDB, Express, React.js and Node.js), our database is ofcourse, Mongo. We have deployed our database to Mongo Atlas, the cloud version of MongoDB
+Our application has been built using the MERN stack (MongoDB, Express.js, React.js and Node.js), and deployed to Netlify, Heroku, and Mongo Atlas. (To connect with our database and our storage soluation, the environment variables are stored within the deployed application that exists in Heroku.)
 
-A cloud storage solution, Cloudinary has been employed to securely store the images a user uploads. The Cloudinary URL and Image ID is then passed to the database, Mongo Atlas to connect to a user profile or the post that is created.
-
-The server-side of this application is deployed to Heroku. To connect with our database and our storage soluation, the environment variables are stored within the deployed application that exists in Heroku.
+A cloud storage solution, Cloudinary, has been employed to securely store the images a user uploads. The Cloudinary URL and Image ID is then passed to the database, Mongo Atlas, to connect to a user profile or post.
 
 <br>
 <br>
 
-## **HOSTING SERVICE ACCESS**
+## **Hosting Service Access**
 
 <br>
 
@@ -109,7 +107,7 @@ The server-side of this application is deployed to Heroku. To connect with our d
 <br>
 <br>
 
-## **APPLICATION LOGIN DETAILS**
+## **Application Login Details**
 
 <br>
 
@@ -134,7 +132,7 @@ The server-side of this application is deployed to Heroku. To connect with our d
 
 To install on your own device, please:
 
-- Clone each repository in GitHub using: ```git clone```
+- Clone each repository in GitHub using: ```git clone <repo-link>```
 - Run: ```npm install``` on both the client-side and server-side to install any packages
 - To start the server within Pixello-Server run: ```npm start```
 
@@ -162,19 +160,21 @@ Production Dependencies
 - Mongoose - used to run queries on the database
 - Multer - to assist with Cloudinary image upload
 - Multer Storage Cloudinary - to assist with Cloudinary image upload
-- Normalize - the normalize package is used to allow us 
+- Normalize - the normalize package is used to allow us to access the id without an underscore.
 - Path
 
 Development Dependencies
 - Cypress - used for automated testing
 - Eslint Plugin Cypress - used alongside Cypress to analyse the code for any problems
-- Nodmemon - used to prevent server crashes when errors come through on the server log
+- Nodemon - used to prevent server crashes when errors come through on the server log
 
 <br>
 
 To test that information was pass to and from our database and our cloud storage solution successfully, the [Postman](https://www.postman.com/) application was used.
 
 Any Json Web Token (JWT) that is retrieved in the application, was utilised as authentication as a Bearer Token via the Authorization tab.
+
+**Note that Firefox was the browser used in the front-end development process, so some discrepancies may be found in other browsers.**
 
 <br>
 <br>
@@ -536,11 +536,15 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 <br>
 <br>
 
+## Video Walkthrough
+
+A 7 minute walkthrough of our app has been recorded and is available to be viewed [here](https://youtu.be/8i7mTHPpQwQ) on YouTube.
+
 <a href="#top">Back to top</a>
 
 ## PLANNING DOCUMENTATION
 
-The Part A docmentation has been merged into this file for ease reference. Part A documentation covers all the planning of our application which was a crucial part of project to ensure we had structure during our build process
+The Part A docmentation has been merged into this file for ease reference. Part A documentation covers all the planning of our application which was a crucial part of project to ensure we had structure during our build process. At the end of this document, we discuss any changes to the final application that differed from our Part A plan.
 
 **Contents** 
 
@@ -950,6 +954,29 @@ Included below are some screenshots of our Trello board (which can be viewed [he
 
 ![fifth trello screenshot](/docs/images/final-trello-screenshot.png)
 
+**PART B TRELLO SCREENSHOTS** 
+
+**Board at part B start:**
+
+![trello screenshot 1A](/docs/images/trello-start-P1.png)
+![trello screenshot 1B](/docs/images/trello-start-P2.png)
+
+**Board at midway point** 
+
+![trello screenshot 2A](/docs/images/trello-mid-P1.png)
+![trello screenshot 2B](/docs/images/trello-mid-P2.png)
+
+**Board in final week:**
+
+![trello screenshot 3A](/docs/images/trello-final-week-P1.png)
+![trello screenshot 3B](/docs/images/trello-final-week-P2.png)
+
+**Board at project end:**
+
+![trello screenshot 4A](/docs/images/trello-end-P1.png)
+![trello screenshot 4B](/docs/images/trello-end-P2.png)
+
+
 ## Github
 
 Our Github repository for this project (Part A) can be accessed [here](https://github.com/mdart86/T3A2_Fullstack_Application). *Please note that this repo is private, but the relevant educators have been added as collaborators.*
@@ -957,5 +984,17 @@ Our Github repository for this project (Part A) can be accessed [here](https://g
 Below is a screenshot:
 
 ![github repo screenshot](/docs/images/github-screenshot.png)
+
+## CHANGES MADE 
+
+Thankfully, our thorough design planning in part A meant that very minimal style changes needed to happen in the development stage. Though we did decide to make the following changes: 
+- increased the width of the home page post container in desktop mode, as this allows users (photography enthusiasts) to more clearly see the photos. 
+- decided to limit category selection to one category per post. As such, we didn't need multiple icons on the view-post page to represent the categories. Instead, we simply have the name of the category listed under the image. 
+- finally, we determined that the coloured circles in the background of the desktop view were too distracting. Therefore, we kept the background white to ensure the photos take all the attention. 
+
+On the front-end, some problems were encountered with mixing styled components and conditional logic to change elements of the navbar depending on the route. As users clicked through links in the app, the navbar styling would not update unless the page was refreshed. The solution to this problem was to write some not very dry code in the nav components, which is unfortunate, but every effort was made to find a better solution, with no success.
+
+Due to time restraints, we weren't able to fully implement the private messaging and notification features. Though, these were listed in our 'additional features' from the start, and we're very pleased to have implemented multiple other extra features from this list. The decision was made to include our progress with these features in production, with an added notice to the user that these features are coming soon. We feel that this adds to the user experience by letting them know that Pixello's developers are actively working on new features for them to enjoy. 
+
 
 <a href="#top">Back to top</a>
