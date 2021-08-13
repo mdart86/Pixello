@@ -7,7 +7,7 @@ import placeholderImage from '../images/image-loading.png'
 import like from '../images/like-green.svg'
 //react component imports: 
 import { Comment } from './Comment'
-import { AddComment } from './AddComment'
+import AddComment from './AddComment'
 import { PermissionsBar } from './PermissionsBar'
 //styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
@@ -120,10 +120,10 @@ export const ViewPost = ({ history }) => {
                     <StyledLink category="true" to={`/posts/${category}`}><CategoryText>{category}</CategoryText></StyledLink>
                 </CategoryContainer>
                 <CommentsContainer>
-                    <AddComment/>
+                    <AddComment postId={id}/>
                     {commentData ? 
                         commentData.map(obj => {
-                            return <Comment commentData={obj} userData={userData} key={obj.id}/>
+                            return <Comment commentData={obj} postOwnerData={userData} key={obj.id}/>
                             }) : null}
                 </CommentsContainer>
                 {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
