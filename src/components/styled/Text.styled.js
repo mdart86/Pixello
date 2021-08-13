@@ -81,11 +81,7 @@ export const TextFormFeedback = styled.p`
 `
 
 //view post
-export const TextNoComments = styled.p`
-    font-size: 0.8rem;
-    width: 300px;
-    position: absolute;
-    margin-top: -30px;
-    left: 50%;
-    margin-left: -112.5px;
+export const CategoryText = styled.p`
+    font-family: 'Pacifico', cursive;
+    margin: 0;
 `

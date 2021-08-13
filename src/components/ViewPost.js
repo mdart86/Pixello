@@ -15,11 +15,12 @@ import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
 import { BottomClearance } from './styled/BottomClearance.styled'
 import { Username } from './styled/Username.styled'
-import { PostContainer, CommentsContainer } from './styled/Container.styled'
+import { PostContainer, CommentsContainer, CategoryContainer } from './styled/Container.styled'
 import { Photo } from './styled/Photo.styled'
 import { IconViewPost } from './styled/Icon.styled'
 import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
+import { CategoryText } from './styled/Text.styled'
 
 export const ViewPost = ({ history }) => {
     
@@ -30,7 +31,7 @@ export const ViewPost = ({ history }) => {
 
     //stores post data retreived by the axios request
     const [ postData, setPostData ] = useState("")
-    const {username, caption, photoUrl, userId} = postData
+    const {username, caption, photoUrl, userId, category} = postData
 
     //stores user data retreived by the axios request
     const [ userData, setUserData ] = useState("")
@@ -120,8 +121,11 @@ export const ViewPost = ({ history }) => {
                 <Caption viewPost="true">{caption}</Caption>
                 <Photo unClickable="true" viewPost="true" src={photoUrl || placeholderImage} alt="A candid photo of people on the beach."/>
                 <IconViewPost src={like} alt="like button" onClick={handleLike}/>
+                <CategoryContainer>
+                    <StyledLink category="true" to={`/posts/${category}`}><CategoryText>{category}</CategoryText></StyledLink>
+                </CategoryContainer>
                 <CommentsContainer>
-                    {noComments ? <AddComment noComments="true"/> : <AddComment/> }
+                    <AddComment/>
                     {commentData ? 
                         commentData.map(obj => {
                             return <Comment commentData={obj} userData={userData} key={obj.id}/>
