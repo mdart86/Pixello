@@ -71,6 +71,12 @@ const corsOptions = {
     credentials: true
 }
 
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "https://www.pixellophotos.com");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 // app.get function gets cors and sends a response to server-side deployment (Heroku) with below message
 app.get("/", cors(corsOptions),(req, res) => {
     res.send("Pixello testing... 1, 2, 3, if you're seeing this then all is working as it should")
