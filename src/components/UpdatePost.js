@@ -25,7 +25,6 @@ export const UpdatePost = ({ history }) => {
 
     //stores post data retreived by the axios request
     const [ postData, setPostData ] = useState("")
-    console.log(postData)
     
     //used to notify user if post update failed
     const [updateFailed, setUpdateFailed] = useState("")

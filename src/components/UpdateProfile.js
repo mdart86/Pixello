@@ -24,7 +24,6 @@ export const UpdateProfile = ({ history }) => {
 
     //stores user data retreived by the axios request
     const [ userData, setUserData ] = useState("")
-    console.log(userData)
     
     //used to notify user if profile update failed
     const [updateFailed, setUpdateFailed] = useState("")

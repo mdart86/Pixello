@@ -14,7 +14,10 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId, 
     const { dispatch, store } = useGlobalState()
     const { loggedInJWT } = store
 
+    //used to notify the user of an update/delete error
     const [error, setError] = useState(false)
+
+    //used to notify the user that their form submission has been received
     const [loading, setLoading] = useState(false)
 
     async function handleEditPost() {

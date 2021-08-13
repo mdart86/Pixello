@@ -15,10 +15,6 @@ import { Avatar } from './styled/Avatar.styled'
 import { Caption } from './styled/Caption.styled'
 import { BoxComment } from './styled/Box.styled'
 
-// NOTE TO SELF: add logic to show the permissions bar 
-//only when the user is an admin, or is the 
-//owner of the post/comment/profile
-
 export const Comment = ({ commentData, history }) => {
 
     const { store } = useGlobalState()

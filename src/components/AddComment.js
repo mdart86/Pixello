@@ -37,7 +37,6 @@ const AddComment = ({history, postId}) => {
         })
     }
 
-    console.log(formData)
     function handleSubmit(e) {
         e.preventDefault()
         setIsLoading(true)
@@ -52,7 +51,6 @@ const AddComment = ({history, postId}) => {
                 .then(res => {
                     if (res.data) {
                         setIsLoading(false)
-                        //redirect user to the post that owns the comment they just created
                         history.push('/home')
                     } 
                 })
