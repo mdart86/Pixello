@@ -4,11 +4,12 @@ const express = require('express')
 // Configured express router
 const router = express.Router()
 
-// requiring Post model into file
+// requiring model into file
+const User = require('../models/user')
 const Post = require('../models/post')
 
 // Requiring functions that sit within controllers
-const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost, updateLikesOnPost} = require('../controllers/postController')
+const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -17,13 +18,15 @@ const upload = require('../utils/multer')
 
 router.use(loginRequired)
 
-router.post('/new_post', upload.single("image"), async (req, res) => {
+router.post('/new_post/:id', upload.single("image"), async (req, res) => {
     try {
+    let userId = await User.findById(req.params.id);  
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
     // Create new post
     const newPost = new Post(req.body)
-    newPost.avatarUrl = result.secure_url
+    newPost.userId = userId._id
+    newPost.photoUrl = result.secure_url
     newPost.imageId = result.public_id
     console.log(newPost)
     // Save post
@@ -46,25 +49,40 @@ router.get('/', getAllDatabasePosts)
 router.get('/user_posts', getPostsforUser)
 router.get('/:id', getIndividualUserPost)
 
-router.put('/:id/update_likes', updateLikesOnPost)
+router.put('/update_likes/:id', async (req, res) => {
+  //get the post by id
+  let post = await Post.findById(req.params.id);
+  //increase post's likes +1
+  post.likes++
+  //update it in the database
+  Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, savedPostLike)=>{
+    if (err){
+g
+        return res.json({error: err.message})
+    }
+    res.status(200)
+    res.send(savedPostLike)
+  })
+});
 
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
         // Retreive Post
-            let post = await Post.findById(req.params.id);
+        let post = await Post.findById(req.params.id);
         // Delete image from Cloudinary
-            await cloudinary.uploader.destroy(post.imageId);
+        await cloudinary.uploader.destroy(post.imageId);
         // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path);
+        const result = await cloudinary.uploader.upload(req.file.path);
       const data = {
         username: req.body.username || post.username,
+        userId: req.body.userId || post.userId,
         caption: req.body.caption || post.caption,
         category: req.body.category || post.category,
         likes: req.body.likes || post.likes,
-        avatarUrl: result.secure_url || post.avatarUrl,
+        photoUrl: result.secure_url || post.photoUrl,
         imageId: result.public_id || post.imageId,
       };
-      user = await Post.findByIdAndUpdate(req.params.id, data, {
+      post = await Post.findByIdAndUpdate(req.params.id, data, {
     new: true
     });
       res.json(post);
@@ -77,7 +95,6 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 router.delete("/:id", async (req, res) => {
     try {
       // Find user by id
-      console.log(req.params.id)
       let post = await Post.findById(req.params.id);
       // Delete image from cloudinary
       console.log(post)

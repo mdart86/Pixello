@@ -1,3 +1,4 @@
+// requires post scheema/model into file to allow helper functions to access data
 const Post = require ('../models/post')
 
 // Helper function to get all posts of all users
@@ -15,9 +16,5 @@ const getUserPostById = function (id){
     return Post.findById(id)
 }
 
-const getPostByIdForLikes = function (req) {
-    return Post.findOneAndUpdate(req({likes: req.post.likes, _id: post._id}))
-    console.log(req.post.likes)
-}
-
-module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById, getPostByIdForLikes}
+// Helper functions are exported from this file and passed to the /controllers/postController.js
+module.exports = {getAllUserPosts, getAllPostsOfUser, getUserPostById}

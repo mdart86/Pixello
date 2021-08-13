@@ -8,7 +8,7 @@ const router = express.Router()
 const User = require('../models/user')
 
 // Requiring functions that sit within controllers
-const {getUser} = require('../controllers/userController')
+const {getUser, getUserLabel} = require('../controllers/userController')
 const {loginRequired} = require('../controllers/authController')
 
 // requiring files within utils file
@@ -18,6 +18,7 @@ const upload = require('../utils/multer')
 router.use(loginRequired)
 
 router.get('/:id', getUser)
+router.get('/user_label/:id', getUserLabel)
 
 // router function to update user profile including image in cloudinary
 router.put("/:id", upload.single("image"), async (req, res) => {
