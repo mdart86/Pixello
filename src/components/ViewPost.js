@@ -123,7 +123,7 @@ export const ViewPost = ({ history }) => {
                     <AddComment postId={id}/>
                     {commentData ? 
                         commentData.map(obj => {
-                            return <Comment commentData={obj} postOwnerData={userData} key={obj.id}/>
+                            return <Comment history={history} commentData={obj} key={obj.id}/>
                             }) : null}
                 </CommentsContainer>
                 {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}

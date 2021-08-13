@@ -19,16 +19,13 @@ import { BoxComment } from './styled/Box.styled'
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
 
-export const Comment = ({ commentData, postOwnerData }) => {
+export const Comment = ({ commentData, history }) => {
 
     const { store } = useGlobalState()
     const { loggedInUserId, loggedInJWT } = store
     
     //deconstruct comment data for use in render
     const {username, comment} = commentData
-
-    //post owner id for permissions bar authorisation purposes
-    const {id} = postOwnerData
 
     //stores user data retreived by the axios request
     const [ userData, setUserData ] = useState("")
@@ -57,8 +54,8 @@ export const Comment = ({ commentData, postOwnerData }) => {
                 <IconComment src={like} alt="like button"/>
                 <StyledLink to={`/profile/${loggedInUserId}`}><Username comment="true" fontSize="0.8rem">{username}</Username></StyledLink>
                 <Caption comment="true">{comment}</Caption>
-                { id && (id === loggedInUserId) ? 
-                <PermissionsBar comment="true" commentId={commentData.id}/>
+                { userData.id === loggedInUserId ? 
+                <PermissionsBar comment="true" commentId={commentData._id} history={history}/>
                 : null }
             </BoxComment>
     )
