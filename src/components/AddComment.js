@@ -53,7 +53,7 @@ const AddComment = ({history, postId}) => {
                     if (res.data) {
                         setIsLoading(false)
                         //redirect user to the post that owns the comment they just created
-                        history.go()
+                        history.push('/home')
                     } 
                 })
                 .catch(err => {
