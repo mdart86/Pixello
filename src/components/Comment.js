@@ -19,7 +19,7 @@ import { BoxComment } from './styled/Box.styled'
 //only when the user is an admin, or is the 
 //owner of the post/comment/profile
 
-export const Comment = ({ commentData, postOwnerData }) => {
+export const Comment = ({ commentData, postOwnerData, history }) => {
 
     const { store } = useGlobalState()
     const { loggedInUserId, loggedInJWT } = store
@@ -57,8 +57,8 @@ export const Comment = ({ commentData, postOwnerData }) => {
                 <IconComment src={like} alt="like button"/>
                 <StyledLink to={`/profile/${loggedInUserId}`}><Username comment="true" fontSize="0.8rem">{username}</Username></StyledLink>
                 <Caption comment="true">{comment}</Caption>
-                { id && (id === loggedInUserId) ? 
-                <PermissionsBar comment="true" commentId={commentData.id}/>
+                { userData.id === loggedInUserId ? 
+                <PermissionsBar comment="true" commentId={commentData._id} history={history}/>
                 : null }
             </BoxComment>
     )
