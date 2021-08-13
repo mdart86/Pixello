@@ -62,43 +62,46 @@ router.put('/update_likes/:id', async (req, res) => {
   let post = await Post.findById(req.params.id);
   //increase post's likes +1
   post.likes++
-  //update it in the database
+  //update it in the database by finding the post by id
   Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, savedPostLike)=>{
     if (err){
         return res.json({error: err.message})
     }
     res.status(200)
-    res.send(savedPostLike)
+    res.send(savedPostLike) // return saved like
   })
 });
 
+// router function to update the post
 router.put("/:id", upload.single("image"), async (req, res) => {
     try {
-        // Retreive Post
+        // Retreive Post by Id
         let post = await Post.findById(req.params.id);
-        // Delete image from Cloudinary
+        // Delete image from Cloudinary that currently exists
         await cloudinary.uploader.destroy(post.imageId);
-        // Upload image to cloudinary
+        // Upload new image to cloudinary
         const result = await cloudinary.uploader.upload(req.file.path);
+        // Updated post which will pass data by what the user sends. Data is dictated by the model as below
       const data = {
         username: req.body.username || post.username,
         userId: req.body.userId || post.userId,
         caption: req.body.caption || post.caption,
         category: req.body.category || post.category,
-        likes: req.body.likes || post.likes,
-        photoUrl: result.secure_url || post.photoUrl,
-        imageId: result.public_id || post.imageId,
+        likes: req.body.likes || post.likes, 
+        photoUrl: result.secure_url || post.photoUrl, // new photoUrl that comes from Cloudinary
+        imageId: result.public_id || post.imageId, // new Image ID that comes from Cloudinary
       };
       post = await Post.findByIdAndUpdate(req.params.id, data, {
     new: true
     });
-      res.json(post);
+      res.json(post); // response sends post
     } 
     catch (err) {
-        console.log(err)
+        console.log(err) // catches error
     }
 });
 
+// router function to delete post from database
 router.delete("/:id", async (req, res) => {
     try {
       // Find user by id
@@ -112,10 +115,10 @@ router.delete("/:id", async (req, res) => {
             res.status(404)
             return res.json({error: err.message})
         }
-        res.sendStatus(204)
+        res.sendStatus(204) // send successfull status
     })} 
     catch (err) {
-    console.log(err);
+    console.log(err); // catches error logged to console
     } 
   });
 
