@@ -1,4 +1,4 @@
-# Documentation for Pixello Server
+# <a href="#top">Documentation for Pixello Server</a>
 
 <br>
 
@@ -7,7 +7,7 @@ Welcome to Pixello! A full-stack photo sharing application created by Michael Da
 Visit the site here: [Pixello](https://www.pixellophotos.com/)
 
 To view our repositories, we have created an [organisation within Github](https://github.com/CA-Pixello)
-Within this organisation, you will see:
+Which will include:
 
 - Pixello Server
 - Pixello Client
@@ -833,3 +833,5 @@ Our Github repository for this project (Part A) can be accessed [here](https://g
 Below is a screenshot:
 
 ![github repo screenshot](/docs/images/github-screenshot.png)
+
+<a href="#top">Back to top</a>
