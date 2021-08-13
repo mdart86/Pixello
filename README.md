@@ -531,7 +531,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 
 ## Video Walkthrough
 
-A 7 minute walkthrough of our app has been recorded and is available to be viewed [here]() on Google Drive
+A 7 minute walkthrough of our app has been recorded and is available to be viewed [here](https://youtu.be/8i7mTHPpQwQ) on YouTube.
 
 <a href="#top">Back to top</a>
 
