@@ -1,3 +1,4 @@
+// requiring helper functions from Utils that query the database into the controller to be passed onto the routes
 const {getCommentById, deleteComment} = require('../utils/commentUtils')
 
 // controller function to return all comments, comments by post id to be controlled on the front end. Passed to/from the utils/routes files for comments.
@@ -22,5 +23,5 @@ const removeComment = function(req, res){
     })
 }
 
-// functions are exported to be used in auth routes file
+// functions are exported to be used in comments routes file
 module.exports = {getCommentId, removeComment}

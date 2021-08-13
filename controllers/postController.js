@@ -1,3 +1,4 @@
+// requiring helper functions from Utils that query the database into the controller to be passed onto the routes
 const {getAllUserPosts, getAllPostsOfUser, getUserPostById} = require('../utils/postsUtils')
 
 // controller function to return all posts for all users
@@ -33,4 +34,5 @@ const getIndividualUserPost = function (req, res){
     })
 }
 
+// functions are exported to be used in post routes file
 module.exports = {getAllDatabasePosts, getPostsforUser, getIndividualUserPost}

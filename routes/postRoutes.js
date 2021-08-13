@@ -4,7 +4,7 @@ const express = require('express')
 // Configured express router
 const router = express.Router()
 
-// requiring model into file
+// requiring models into file
 const User = require('../models/user')
 const Post = require('../models/post')
 
@@ -16,27 +16,30 @@ const {loginRequired} = require('../controllers/authController')
 const cloudinary = require('../utils/cloudinary')
 const upload = require('../utils/multer') 
 
+// function to ensure the router uses the login required function
 router.use(loginRequired)
 
+// new post router function created with id from user model 
 router.post('/new_post/:id', upload.single("image"), async (req, res) => {
     try {
+    // user is found by id and stored into variable
     let userId = await User.findById(req.params.id);  
     // Upload image to cloudinary
     const result = await cloudinary.uploader.upload(req.file.path);
-    // Create new post
+    // Create new post which is stored in a variable - passes body dictated by the model with other variables passed to once received
     const newPost = new Post(req.body)
-    newPost.userId = userId._id
-    newPost.photoUrl = result.secure_url
-    newPost.imageId = result.public_id
+    newPost.userId = userId._id // only user id is sent to post
+    newPost.photoUrl = result.secure_url // URL retrieved from Cloudinary
+    newPost.imageId = result.public_id // id retrieved from Cloudinary
     console.log(newPost)
-    // Save post
+    // Saved post
     await newPost.save((err, post)=>{
         if(err){
             res.status(500)
             return res.json({error: err.message})
         }
         console.log("Image upload successful")
-        return res.json({username: post.username, caption: post.caption, category: post.category, imageId: post.imageId, _id: post._id}) 
+        return res.json({username: post.username, caption: post.caption, category: post.category, imageId: post.imageId, _id: post._id}) // post is returned as a confirmation
         });
     } 
     // error received
@@ -45,8 +48,13 @@ router.post('/new_post/:id', upload.single("image"), async (req, res) => {
     }
 }); 
 
+// router function to get all database posts - for home page
 router.get('/', getAllDatabasePosts)
+
+// router function to get all user posts - for user profile
 router.get('/user_posts', getPostsforUser)
+
+// router function to get post by id - to view individual post
 router.get('/:id', getIndividualUserPost)
 
 router.put('/update_likes/:id', async (req, res) => {
@@ -57,7 +65,6 @@ router.put('/update_likes/:id', async (req, res) => {
   //update it in the database
   Post.findByIdAndUpdate(req.params.id, post, {new: true}).exec((err, savedPostLike)=>{
     if (err){
-g
         return res.json({error: err.message})
     }
     res.status(200)
@@ -112,4 +119,5 @@ router.delete("/:id", async (req, res) => {
     } 
   });
 
+// router exported to app.js file for app to use
 module.exports = router

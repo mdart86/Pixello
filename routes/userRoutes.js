@@ -66,4 +66,5 @@ router.delete("/:id", async (req, res) => {
   } 
 });
 
+// router exported to app.js file for app to use
 module.exports = router

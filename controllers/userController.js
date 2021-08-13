@@ -1,5 +1,7 @@
+// requiring helper functions from Utils that query the database into the controller to be passed onto the routes
 const {getUserById} = require('../utils/usersUtils')
 
+// controller function to get user by id
 const getUser = function (req, res){
     getUserById(req.params.id).exec((err, user)=>{
         if (err){
@@ -10,6 +12,7 @@ const getUser = function (req, res){
     })
 }
 
+// controller function to get user by id but only sending username, avatarUrl and id into database
 const getUserLabel = function (req, res){
     getUserById(req.params.id).exec((err, user)=>{
         if (err){
@@ -20,5 +23,5 @@ const getUserLabel = function (req, res){
     })
 }
 
-
+// functions are exported to be used in user routes file
 module.exports = {getUser, getUserLabel}
