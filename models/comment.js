@@ -9,7 +9,7 @@ const Comment = new Schema({
   // comment, type is string, it is required with a min-length of 3 characters and a max-length of 75
   comment: {
     type: String,
-    requird: true,
+    required: true,
     trim: true,
     minlength: 3,
     maxlength: 75
@@ -22,7 +22,7 @@ const Comment = new Schema({
   // postId, type is string and is required, this is used to link a comment to a post
   postId: {
     type: String,
-    requird: true
+    required: true
   },
   // created_at is used to record when the post is created
   created_at: {
