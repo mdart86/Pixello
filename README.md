@@ -29,13 +29,13 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
 
 ## **CONTENTS** 
 
-- [Introduction](#introduction)
-- [Hosting Service Access](#hosting-service-access)
-- [Application Login Details](#application-login-details)
+- [INTRODUCTION](#introduction)
+- [HOSTING SERVICE ACCESS](#hosting-service-access)
+- [APPLICATION LOGIN DETAILS](#application-login-details)
 - [LOCAL INSTALLATION](#local-installation)
 - [PACKAGES](#packages)
 - [PROJECT MANAGEMENT](#project-management)
-- [GitHub Screenshots](#github-screenshots)
+- [GITHUB SCREENSHOTS](#github-screenshots)
 - [POSTMAN - Testing Pixello](#postman---testing-pixello)
     - [AUTHORISATION](#authorisation)
         - [Sign Up](#sign-up)
@@ -61,6 +61,8 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
 - [USER TESTING](#user-testing)
 
 <br>
+
+To see our planning documentation, please navigate to the below:
 
 **[PLANNING DOCUMENTATION](#planning-documentation)**
 
