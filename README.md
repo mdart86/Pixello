@@ -57,12 +57,14 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Create Comment](#create-comment)
         - [Get Comments](#get-comments)
         - [Delete Comment](#delete-comment)
+- [PROJECT MANAGEMENT](#project-management)
 - [USER TESTING](#user-testing)
 
 <br>
 
 ### **[Part A Documentation](#part-a-documentation)**
 
+<br>
 <br>
 
 ## **INTRODUCTION**
@@ -155,9 +157,11 @@ To install on your own device, please:
 - Run: ```npm install``` to install any packages
 - To start the server within Pixello-Server run: ```npm start```
 
-## **PACKAGES**
+<br>
+<br>
+<br>
 
-## **POSTMAN - Testing Pixello**
+## **PACKAGES**
 
 **Server Side**
 
@@ -186,6 +190,10 @@ To test that information was pass to and from our database and our cloud storage
 Any Json Web Token (JWT) that is retrieved in the application, was utilised as authentication as a Bearer Token via the Authorization tab.
 
 <br>
+<br>
+<br>
+
+## **POSTMAN - Testing Pixello**
 
 ### **AUTHORISATION**
 
@@ -452,11 +460,26 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 <br>
 <br>
 
+## **PROJECT MANAGEMENT**
+
+**Task Delegation**
+
+During the build Emily focused on the client-side (front-end) and Michael focused on the server-side(back-end)
+
+We followed the Kanban style in our approach to tasks. Each task had a label, description, difficulty level, a due date. Each member assigned a task to themselves using the members function to the card. Each trello card was then linked to a GitHub commit for easy reference of the code.
+
+The below is a typical example of our Trello Card
+![Trello Card Example](/docs/images/trello-card-example.png.jpg)
+
+<br>
+<br>
+<br>
+
 ## **USER TESTING**
 
 User: Demelza
 
-Feedback: the application flowerd 
+Feedback: the application has a nice flow and was impress by the UI. Demelza believe it is great to give the user the opportunity to edit the photo before saving a profile so the user can really be comfortable with what they are sharing to the world.
 
 <br>
 <br>
