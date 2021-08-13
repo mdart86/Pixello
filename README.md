@@ -130,12 +130,10 @@ The server-side of this application is deployed to Heroku. To connect with our d
 
 ## **LOCAL INSTALLATION**
 
-<br>
-
 To install on your own device, please:
 
 - Clone each repository in GitHub using: ```git clone```
-- Run: ```npm install``` to install any packages
+- Run: ```npm install``` on both the client-side and server-side to install any packages
 - To start the server within Pixello-Server run: ```npm start```
 
 <br>
@@ -143,6 +141,12 @@ To install on your own device, please:
 <br>
 
 ## **PACKAGES**
+
+**Client Side**
+- Axios - for API requests
+- Cypress - for testing
+- Styled Componenets - to style the application in a component structure with CSS syntax
+- React-Router-Dom - for routing in a single page application (SPA)
 
 **Server Side**
 
