@@ -57,6 +57,7 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Create Comment](#create-comment)
         - [Get Comments](#get-comments)
         - [Delete Comment](#delete-comment)
+- [USER TESTING](#user-testing)
 
 <br>
 
@@ -158,27 +159,25 @@ To install on your own device, please:
 
 ## **POSTMAN - Testing Pixello**
 
-
-
 **Server Side**
-Production Dependencies
 
-- Bcrypt
-- Cloudinary
-- Cors
-- Dotenv
-- Express
-- JsonWebToken
-- Mongoose
-- Multer
-- Multer Storage Cloudinary
-- Normalize
+Production Dependencies
+- Bcrypt - allows us to securely store passwords in the database through hashing
+- Cloudinary - for image storage
+- Cors - to enable CORS through express
+- Dotenv - used for encyrpting secure information
+- Express - a server-side middleware for MERN that is useed to handle routing
+- JsonWebToken - used for our user session authentication
+- Mongoose - used to run queries on the database
+- Multer - to assist with Cloudinary image upload
+- Multer Storage Cloudinary - to assist with Cloudinary image upload
+- Normalize - the normalize package is used to allow us 
 - Path
 
 Development Dependencies
-- Cypres
-- Eslint Plugin Cypress
-- Nodmemon
+- Cypress - used for automated testing
+- Eslint Plugin Cypress - used alongside Cypress to analyse the code for any problems
+- Nodmemon - used to prevent server crashes when errors come through on the server log
 
 <br>
 
@@ -448,6 +447,16 @@ URL: localhost:4000/comments/61150d0d80d1f72d167021c1
 Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution. The empty response in Postman reflects the successful deletion.
 
 ![Comment - Delete Comment](/docs/images/comments_delete_comment.jpg)
+
+<br>
+<br>
+<br>
+
+## **USER TESTING**
+
+User: Demelza
+
+Feedback: the application flowerd 
 
 <br>
 <br>
