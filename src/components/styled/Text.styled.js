@@ -68,20 +68,20 @@ export const TextFormFeedback = styled.p`
     width: ${props => !props.permissions ? "80%;" : "300px;"}
     font-size: 0.8rem;
     position: absolute;
-    left: ${props => props.permissions ? "70px;" : "10%;"}
+    ${props => !props.permissions ? "left: 10%;" : null}
+    ${props => props.permissions && window.innerWidth < 600 ? "left: 70px;" : null}
+    ${props => props.permissions && window.innerWidth >= 600 ? "right: 30px;" : null }
     font-style: italic;
-    color: ${props => props.createpost || props.permissions ? "var(--charcoal);" : "var(--white);"}
+    color: ${props => props.createpost || props.permissions || props.updatepost ? "var(--charcoal);" : "var(--white);"}
     ${props => props.signup || props.login ? "left: 2%; bottom: -1.5%;" : null}
     ${props => props.createpost ? "top: 390px;" : null}
+    ${props => props.createpost && window.innerWidth >= 600 ? "top: 470px;" : null}
+    ${props => props.updatepost ? "top: 280px;" : null}
     ${props => props.passconf ? "top: 290px; font-size: 0.7rem; color: var(--charcoal);" : null}
 `
 
 //view post
-export const TextNoComments = styled.p`
-    font-size: 0.8rem;
-    width: 300px;
-    position: absolute;
-    margin-top: -30px;
-    left: 50%;
-    margin-left: -112.5px;
+export const CategoryText = styled.p`
+    font-family: 'Pacifico', cursive;
+    margin: 0;
 `

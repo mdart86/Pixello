@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 //used in:
 //  create post
+//  update post
 export const ContainerCreatePost = styled.section`
     margin: 0 20px;
 `

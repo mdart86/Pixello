@@ -94,7 +94,7 @@ export const CreatePost = ({ history }) => {
         <>  
             {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <ContainerCreatePost>
-                <Header createPost="true">Hey there, john_wilson,</Header>
+                <Header createPost="true">Hey there, {loggedInUsername},</Header>
                 <SubHeader>We're excited to see what you'll share!</SubHeader>
                 <Form onSubmit={submitFormData}>
                     <Label createPost="true" htmlFor="image">
