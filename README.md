@@ -32,9 +32,10 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
 - [Introduction](#introduction)
 - [Hosting Service Access](#hosting-service-access)
 - [Application Login Details](#application-login-details)
-- [GitHub Screenshots](#github-screenshots)
 - [LOCAL INSTALLATION](#local-installation)
 - [PACKAGES](#packages)
+- [PROJECT MANAGEMENT](#project-management)
+- [GitHub Screenshots](#github-screenshots)
 - [POSTMAN - Testing Pixello](#postman---testing-pixello)
     - [AUTHORISATION](#authorisation)
         - [Sign Up](#sign-up)
@@ -57,7 +58,6 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
         - [Create Comment](#create-comment)
         - [Get Comments](#get-comments)
         - [Delete Comment](#delete-comment)
-- [PROJECT MANAGEMENT](#project-management)
 - [USER TESTING](#user-testing)
 
 <br>
@@ -128,25 +128,6 @@ The server-side of this application is deployed to Heroku. To connect with our d
 <br>
 <br>
 
-## **GitHub Screenshots**
-
-**Organisation**
-![GitHub Organisation](/docs/images/github-screenshot-client.png.jpg)
-
-<br>
-
-**Client**
-![GitHub Client](/docs/images/github-screenshot-client.png.jpg)
-
-<br>
-
-**Server**
-![GitHub Server](/docs/images/github-screenshot-server.png.jpg)
-
-<br>
-<br>
-<br>
-
 ## **LOCAL INSTALLATION**
 
 <br>
@@ -188,6 +169,40 @@ Development Dependencies
 To test that information was pass to and from our database and our cloud storage solution successfully, the [Postman](https://www.postman.com/) application was used.
 
 Any Json Web Token (JWT) that is retrieved in the application, was utilised as authentication as a Bearer Token via the Authorization tab.
+
+<br>
+<br>
+<br>
+
+## **PROJECT MANAGEMENT**
+
+**Task Delegation**
+
+During the build Emily focused on the client-side (front-end) and Michael focused on the server-side(back-end)
+
+We followed the Kanban style in our approach to tasks. Each task had a label, description, difficulty level, a due date. Each member assigned a task to themselves using the members function to the card. Each trello card was then linked to a GitHub commit for easy reference of the code.
+
+The below is a typical example of our Trello Card
+![Trello Card Example](/docs/images/trello-card-example.png.jpg)
+
+<br>
+<br>
+<br>
+
+## **GitHub Screenshots**
+
+**Organisation**
+![GitHub Organisation](/docs/images/github-screenshot-client.png.jpg)
+
+<br>
+
+**Client**
+![GitHub Client](/docs/images/github-screenshot-client.png.jpg)
+
+<br>
+
+**Server**
+![GitHub Server](/docs/images/github-screenshot-server.png.jpg)
 
 <br>
 <br>
@@ -455,21 +470,6 @@ URL: localhost:4000/comments/61150d0d80d1f72d167021c1
 Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution. The empty response in Postman reflects the successful deletion.
 
 ![Comment - Delete Comment](/docs/images/comments_delete_comment.jpg)
-
-<br>
-<br>
-<br>
-
-## **PROJECT MANAGEMENT**
-
-**Task Delegation**
-
-During the build Emily focused on the client-side (front-end) and Michael focused on the server-side(back-end)
-
-We followed the Kanban style in our approach to tasks. Each task had a label, description, difficulty level, a due date. Each member assigned a task to themselves using the members function to the card. Each trello card was then linked to a GitHub commit for easy reference of the code.
-
-The below is a typical example of our Trello Card
-![Trello Card Example](/docs/images/trello-card-example.png.jpg)
 
 <br>
 <br>
