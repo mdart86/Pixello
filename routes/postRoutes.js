@@ -12,7 +12,7 @@ const Post = require('../models/post')
 const {getAllDatabasePosts, getPostsforUser, getIndividualUserPost} = require('../controllers/postController')
 const {loginRequired} = require('../controllers/authController')
 
-// requiring files within utils file
+// requiring files within utils folder - this middleware assists with image uploads to Cloudinary
 const cloudinary = require('../utils/cloudinary')
 const upload = require('../utils/multer') 
 
@@ -91,6 +91,7 @@ router.put("/:id", upload.single("image"), async (req, res) => {
         photoUrl: result.secure_url || post.photoUrl, // new photoUrl that comes from Cloudinary
         imageId: result.public_id || post.imageId, // new Image ID that comes from Cloudinary
       };
+      // Post find by Id and update based on data above
       post = await Post.findByIdAndUpdate(req.params.id, data, {
     new: true
     });
@@ -104,12 +105,11 @@ router.put("/:id", upload.single("image"), async (req, res) => {
 // router function to delete post from database
 router.delete("/:id", async (req, res) => {
     try {
-      // Find user by id
+      // Find user by id and stored inside a variable
       let post = await Post.findById(req.params.id);
-      // Delete image from cloudinary
-      console.log(post)
+      // Delete image from cloudinary using imageId which matches the ID in the database
       await cloudinary.uploader.destroy(post.imageId);
-      // Delete user from DB
+      // Finds Post by ID and removes from Database
       Post.findByIdAndRemove(req.params.id).exec((err)=>{
         if (err){
             res.status(404)

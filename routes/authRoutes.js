@@ -14,7 +14,7 @@ const router = express.Router()
 // Requiring functions that sit within controllers
 const {signIn, signOut} = require('../controllers/authController')
 
-// requiring files within utils file
+// requiring files within utils folder - this middleware assists with image uploads to Cloudinary
 const cloudinary = require('../utils/cloudinary')
 const upload = require('../utils/multer') 
 
