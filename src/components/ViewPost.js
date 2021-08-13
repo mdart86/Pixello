@@ -120,7 +120,7 @@ export const ViewPost = ({ history }) => {
                     <StyledLink category="true" to={`/posts/${category}`}><CategoryText>{category}</CategoryText></StyledLink>
                 </CategoryContainer>
                 <CommentsContainer>
-                    <AddComment/>
+                    <AddComment postId={id}/>
                     {commentData ? 
                         commentData.map(obj => {
                             return <Comment commentData={obj} userData={userData} key={obj.id}/>
