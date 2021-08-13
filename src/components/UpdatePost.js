@@ -19,7 +19,7 @@ export const UpdatePost = ({ history }) => {
     const {id} = useParams()
 
     const { store } = useGlobalState()
-    const { loggedInJWT, loggedInUserId, loggedInUsername, categoryList } = store 
+    const { loggedInJWT, categoryList } = store 
 
     //stores post data retreived by the axios request
     const [ postData, setPostData ] = useState("")
