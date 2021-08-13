@@ -216,7 +216,7 @@ The below is a typical example of our Trello Card
 
 HTTP Request: **POST**
 
-URL: localhost:4000/auth/sign_up
+URL: https://pixello.herokuapp.com/auth/sign_up
 
 Notes: With a Json Web Token (JWT) as authentication, a profile is created in the database and the image is stored in Cloudinary, the cloud storage solution. As confirmation for a successful sign-up, a JWT is returned along with the Username and User ID.
 
@@ -229,7 +229,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is created in th
 
 HTTP Request: **POST**
 
-URL: localhost:4000/auth/sign_up
+URL: https://pixello.herokuapp.com/auth/sign_up
 
 Notes: Upon signing in a Json Web Token (JWT) is returned along with the Username and User ID.
 
@@ -237,7 +237,7 @@ JSON Format:
 
 ```json
 {
-    "username": "mickey0",
+    "username": "josephine",
     "password": "abc12345"
 }
 ```
@@ -251,7 +251,7 @@ JSON Format:
 
 HTTP Request: **GET**
 
-URL: localhost:4000/auth/sign_out
+URL: https://pixello.herokuapp.com/auth/sign_out
 
 Notes: Upon signing out an empty array is returned to reflect a destroyed user session for the succesful sign out.
 
@@ -267,7 +267,7 @@ Notes: Upon signing out an empty array is returned to reflect a destroyed user s
 
 HTTP Request: **GET**
 
-URL: localhost:4000/users/610e07f14cd8c527ae5a4b50
+URL: https://pixello.herokuapp.com/users/610e07f14cd8c527ae5a4b50
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -282,7 +282,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved fro
 
 HTTP Request: **GET**
 
-URL: localhost:4000/users/user_label/610e018e4cd8c527ae5a4b3b
+URL: https://pixello.herokuapp.com/users/user_label/610e018e4cd8c527ae5a4b3b
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -297,7 +297,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is retrieved (ba
 
 HTTP Request: **PUT**
 
-URL: localhost:4000/users/610deeb7af330020b19d6219
+URL: https://pixello.herokuapp.com/users/610deeb7af330020b19d6219
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -312,7 +312,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is update from t
 
 HTTP Request: **DELETE**
 
-URL: localhost:4000/users/6114eb20d888927974a444f4
+URL: https://pixello.herokuapp.com/users/611626511a27bc00044e82da
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -330,7 +330,7 @@ Notes: With a Json Web Token (JWT) as authentication, a profile is deleted from 
 
 HTTP Request: **POST**
 
-URL: localhost:4000/posts/new_post/610e07f14cd8c527ae5a4b50
+URL: https://pixello.herokuapp.com/posts/new_post/61152631562065000424bf0c
 
 *the ID used in the URL is the ID of the User that exists in the User database*
 
@@ -345,7 +345,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 
 HTTP Request: **GET**
 
-URL: localhost:4000/posts/
+URL: https://pixello.herokuapp.com/posts/
 
 Notes: With a Json Web Token (JWT) as authentication, all posts are retrieved from the database and the image is retrieved from Cloudinary, the cloud storage solution. 
 
@@ -358,7 +358,7 @@ Notes: With a Json Web Token (JWT) as authentication, all posts are retrieved fr
 
 HTTP Request: **GET**
 
-URL: localhost:4000/posts/user_posts
+URL: https://pixello.herokuapp.com/posts/user_posts
 
 Notes: With a Json Web Token (JWT) as authentication, posts of a user are retrieved from the database and the image is retrieved from Cloudinary, the cloud storage solution. 
 
@@ -371,7 +371,7 @@ Notes: With a Json Web Token (JWT) as authentication, posts of a user are retrie
 
 HTTP Request: **GET**
 
-URL: localhost:4000/posts/610e03644cd8c527ae5a4b40
+URL: https://pixello.herokuapp.com/posts/61152868562065000424bf6a
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -386,7 +386,7 @@ Notes: With a Json Web Token (JWT) as authentication, a posts is retrieved from 
 
 HTTP Request: **PUT**
 
-URL: localhost:4000/posts/610df8bd4cd8c527ae5a4b35
+URL: https://pixello.herokuapp.com/posts/61162a171a27bc00044e832c
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -401,7 +401,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is updated in the d
 
 HTTP Request: **PUT**
 
-URL: localhost:4000/posts/update_likes/610e03184cd8c527ae5a4b3e
+URL: https://pixello.herokuapp.com/posts/update_likes/61152868562065000424bf6a
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -416,7 +416,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is updated in the d
 
 HTTP Request: **DELETE**
 
-URL: localhost:4000/posts/610e03c44cd8c527ae5a4b42
+URL: https://pixello.herokuapp.com/posts/61152631562065000424bf0c
 
 *the ID used in the URL is the ID of the document within the database*
 
@@ -434,11 +434,20 @@ Notes: With a Json Web Token (JWT) as authentication, a post is deleted from the
 
 HTTP Request: **POST**
 
-URL: localhost:4000/comments/new_comment/61150b9df8b32a2c8dd59232
+URL: https://pixello.herokuapp.com/comments/new_comment/61152caa562065000424bfd3
 
 *the ID used in the URL is the ID of the Post that exists in the Post database*
 
 Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution.
+
+JSON Format:
+
+```json
+{
+    "comment": "Fooood!",
+    "username": "josephine"
+}
+```
 
 ![Comment - Create Comment](/docs/images/comments_create_comment.jpg)
 
@@ -449,7 +458,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 
 HTTP Request: **GET**
 
-URL: localhost:4000/comments/get_comments
+URL: https://pixello.herokuapp.com/comments/get_comments
 
 Notes: With a Json Web Token (JWT) as authentication, a post is created in the database and the image is stored in Cloudinary, the cloud storage solution.
 
@@ -463,7 +472,7 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 
 HTTP Request: **DELETE**
 
-URL: localhost:4000/comments/61150d0d80d1f72d167021c1
+URL: https://pixello.herokuapp.com/comments/61162c891a27bc00044e83aa
 
 *the ID used in the URL is the ID of the document within the database*
 
