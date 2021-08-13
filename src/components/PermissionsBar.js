@@ -17,15 +17,11 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
     const [error, setError] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    async function handleEdit() {
-
+    async function handleEditPost() {
+        history.push(`/update-post/${postId}`)
     }
 
     async function handleDeletePost() {
-        // let userInput = prompt("This content will be permanently deleted, are you sure you want to continue? (Type 'yes' to proceed.)")
-        // if (userInput !== "yes" || userInput !== "Yes") {
-        //     return 
-        // }
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
@@ -86,7 +82,7 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId }
         //default styling (mobile-first)
         return (
             <BoxPermissionsBar>
-                <IconPermissionsBar src={edit} alt="edit pencil icon" onClick={handleEdit}/>
+                <IconPermissionsBar src={edit} alt="edit pencil icon" onClick={handleEditPost}/>
                 <IconPermissionsBar src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
                 {loading ? <TextFormFeedback permissions="true">Loading...</TextFormFeedback> : null}
                 {error ? <TextFormFeedback permissions="true">There was a problem with your request.</TextFormFeedback> : null}
