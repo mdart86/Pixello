@@ -62,7 +62,7 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
 
 <br>
 
-### **[Part A Documentation](#part-a-documentation)**
+**[PLANNING DOCUMENTATION](#planning-documentation)**
 
 <br>
 <br>
@@ -496,7 +496,7 @@ Feedback: the application has a nice flow and was impress by the UI. Demelza bel
 
 <a href="#top">Back to top</a>
 
-## Part A Documentation
+## PLANNING DOCUMENTATION
 
 The Part A docmentation has been merged into this file for ease reference. Part A documentation covers all the planning of our application which was a crucial part of project to ensure we had structure during our build process
 
