@@ -5,6 +5,7 @@ import placeholderImage from '../images/image-loading.png'
 import plus from '../images/plus-white.svg'
 //react component imports: 
 import { ReceivedMessage } from './ReceivedMessage'
+import { ComingSoon } from './ComingSoon'
 //styled component imports: 
 import { StyledLink } from './styled/StyledLink.styled'
 import { WhiteFeature } from './styled/WhiteFeature.styled'
@@ -49,6 +50,7 @@ export const Message = () => {
                 </NewMessage>
                 {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
+            <ComingSoon/>
         </>
     )
 }

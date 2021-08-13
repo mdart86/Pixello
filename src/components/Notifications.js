@@ -3,6 +3,7 @@ import React from 'react'
 import profilePicture from '../images/pixello-logo.png'
 //react component imports: 
 import { ReceivedMessage } from './ReceivedMessage'
+import { ComingSoon } from './ComingSoon'
 //styled component imports: 
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
@@ -30,6 +31,7 @@ export const Notifications = () => {
                 <ReceivedMessage notification="true"/>
                 {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
             </MessagesContainer>
+            <ComingSoon/>
         </>
     )
 }

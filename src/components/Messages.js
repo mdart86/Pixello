@@ -1,6 +1,7 @@
 import React from 'react'
 //react component imports: 
 import { UserMessages } from './UserMessages'
+import { ComingSoon } from './ComingSoon'
 //styled component imports: 
 import { WhiteFeature } from './styled/WhiteFeature.styled'
 import { PinkFeature } from './styled/PinkFeature.styled'
@@ -40,6 +41,7 @@ export const Messages = () => {
                 <UserMessages/>
                 <UserMessages/>
             </MessagesContainer>
+            <ComingSoon/>
             {window.innerWidth < 600 ? <BottomClearance/> : <BottomClearance desktop="true"/>}
         </>
     )

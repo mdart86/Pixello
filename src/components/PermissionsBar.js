@@ -21,6 +21,10 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId, 
         history.push(`/update-post/${postId}`)
     }
 
+    async function handleEditProfile() {
+        history.push(`/update-profile/${profileId}`)
+    }
+
     async function handleDeleteComment() {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
@@ -90,7 +94,7 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId, 
         //styled for desktop view
         return (
             <BoxPermissionsBar desktop="true">
-                <IconPermissionsBar desktop="true" src={edit} alt="edit pencil icon"/>
+                <IconPermissionsBar desktop="true" src={edit} alt="edit pencil icon" onClick={(postId && handleEditPost) || (profileId && handleEditProfile)}/>
                 <IconPermissionsBar desktop="true" src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
                 {loading ? <TextFormFeedback permissions="true">Loading...</TextFormFeedback> : null}
                 {error ? <TextFormFeedback permissions="true">There was a problem with your request.</TextFormFeedback> : null}
@@ -100,7 +104,7 @@ export const PermissionsBar = ( { history, comment, desktop, postId, profileId, 
         //default styling (mobile-first)
         return (
             <BoxPermissionsBar>
-                <IconPermissionsBar src={edit} alt="edit pencil icon" onClick={handleEditPost}/>
+                <IconPermissionsBar src={edit} alt="edit pencil icon" onClick={(postId && handleEditPost) || (profileId && handleEditProfile)}/>
                 <IconPermissionsBar src={deleteIcon} alt="delete bin icon" onClick={(postId && handleDeletePost) || (profileId && handleDeleteProfile)}/>
                 {loading ? <TextFormFeedback permissions="true">Loading...</TextFormFeedback> : null}
                 {error ? <TextFormFeedback permissions="true">There was a problem with your request.</TextFormFeedback> : null}

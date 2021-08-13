@@ -85,3 +85,11 @@ export const CategoryText = styled.p`
     font-family: 'Pacifico', cursive;
     margin: 0;
 `
+
+//coming soon 
+
+export const TextComingSoon = styled.p`
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+`

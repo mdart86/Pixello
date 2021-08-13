@@ -10,24 +10,23 @@ import { PinkFeature } from './styled/PinkFeature.styled'
 import { TopClearance } from './styled/TopClearance.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { SubHeader, Header } from './styled/Header.styled'
-import { Select } from './styled/Select.styled'
 import { Input } from './styled/Input.styled'
 import { Form } from './styled/Form.styled'
 import { ContainerCreatePost } from './styled/Container.styled'
 import { TextFormFeedback } from './styled/Text.styled'
 
-export const UpdatePost = ({ history }) => {
+export const UpdateProfile = ({ history }) => {
     
     const {id} = useParams()
 
     const { store } = useGlobalState()
-    const { loggedInJWT, categoryList } = store 
+    const { loggedInJWT } = store 
 
-    //stores post data retreived by the axios request
-    const [ postData, setPostData ] = useState("")
-    console.log(postData)
+    //stores user data retreived by the axios request
+    const [ userData, setUserData ] = useState("")
+    console.log(userData)
     
-    //used to notify user if post update failed
+    //used to notify user if profile update failed
     const [updateFailed, setUpdateFailed] = useState("")
 
     //used to notify the user that their form submission was received
@@ -37,21 +36,21 @@ export const UpdatePost = ({ history }) => {
         const authorisation = {
             headers: { Authorization: `Bearer ${loggedInJWT}` }
         };
-        async function fetchPostData() {
-            await axios.get(`https://pixello.herokuapp.com/posts/${id}`, authorisation)
+        async function fetchUserData() {
+            await axios.get(`https://pixello.herokuapp.com/users/${id}`, authorisation)
                 .then(res => {
                     if (res.data) {
-                        setPostData(res.data)
+                        setUserData(res.data)
                     } 
                  })
                 .catch(err => console.log(err))
         }
-        fetchPostData()
+        fetchUserData()
     }, [id, loggedInJWT])
 
     function handleFormData(e) {
-        setPostData({
-            ...postData, 
+        setUserData({
+            ...userData, 
             [e.target.id]: e.target.value
         })
     }
@@ -66,12 +65,12 @@ export const UpdatePost = ({ history }) => {
                     'Authorization': `Bearer ${loggedInJWT}`
                 }
             };
-            await axios.put(`https://pixello.herokuapp.com/posts/${id}`, postData, config)
+            await axios.put(`https://pixello.herokuapp.com/users/${id}`, userData, config)
                 .then(res => {
                     if (res.data) {
                         setIsLoading(false)
-                        //redirect user to their updated post
-                        history.push(`/post/${res.data._id}`)
+                        //redirect user to their updated profile
+                        history.push(`/users/${res.data._id}`)
                     } 
                 })
                 .catch(err => {
@@ -87,16 +86,12 @@ export const UpdatePost = ({ history }) => {
         <>  
             {window.innerWidth < 600 ? <PinkFeature><WhiteFeature/></PinkFeature> : <TopClearance/>}
             <ContainerCreatePost>
-                <Header createPost="true">Update your post</Header>
-                <SubHeader>Edit your post's caption or category:</SubHeader>
+                <Header createPost="true">Update your profile</Header>
+                <SubHeader>Edit your bio:</SubHeader>
                 <Form onSubmit={submitFormData}>
-                    <Textarea required minLength="3" maxLength="100" id="caption" value={postData.caption} onChange={handleFormData}/>
-                    <Select required value={postData.category} id="category" onChange={handleFormData}>
-                        <option value="" hidden disabled>Categories</option>
-                        {categoryList.map((category, index) => <option key={index} value={category}>{category}</option>)}
-                    </Select>
+                    <Textarea required minLength="3" maxLength="100" id="caption" value={userData.bio} onChange={handleFormData}/>
                     <Input createPost="true" type="submit" value="Update!"/>
-                    {isLoading ? <TextFormFeedback updatepost="true">We're updating your post...</TextFormFeedback> : null}
+                    {isLoading ? <TextFormFeedback updatepost="true">We're updating your profile...</TextFormFeedback> : null}
                     {updateFailed ? <TextFormFeedback updatepost="true">Something went wrong, please try again.</TextFormFeedback> : null}
                 </Form>
             </ContainerCreatePost>
