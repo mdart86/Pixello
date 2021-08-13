@@ -4,6 +4,15 @@
 
 Welcome to Pixello! A full-stack photo sharing application created by Michael Dart and Emily Mills as a part of our final assignment at Coder Academy.
 
+Visit the site here: [Pixello](https://www.pixellophotos.com/)
+
+To view our repositories, we have created an [organisation within Github](https://github.com/CA-Pixello)
+Within this organisation, you will see:
+
+- Pixello Server
+- Pixello Client
+- Pixello Documentation (as part of Part A)
+
 To connect with us, please see us on LinkedIn and Twitter where you will be kept up to date on our future projects.
 
 [Michael Dart - LinkedIn](https://www.linkedin.com/in/michael-dart-537a3b57/)
@@ -23,6 +32,7 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
 - [Introduction](#introduction)
 - [Hosting Service Access](#hosting-service-access)
 - [Application Login Details](#application-login-details)
+- [GitHub Screenshots](#github-screenshots)
 - [POSTMAN - Testing Pixello](#postman---testing-pixello)
     - [AUTHORISATION](#authorisation)
         - [Sign Up](#sign-up)
@@ -93,7 +103,7 @@ The server-side of this application is deployed to Heroku. To connect with our d
 
 <br>
 
-**Username:** mickey0
+**Username:** mickey
 
 **Password:** abc12345
 
@@ -101,12 +111,31 @@ The server-side of this application is deployed to Heroku. To connect with our d
 
 <br>
 
-**Username:** mickey1
+**Username:** josephine
 
 **Password:** abc12345
 
 **Role:** Standard User
 
+<br>
+<br>
+
+## **GitHub Screenshots**
+
+**Organisation**
+![GitHub Organisation](/docs/images/github-screenshot-client.png.jpg)
+
+<br>
+
+**Client**
+![GitHub Client](/docs/images/github-screenshot-client.png.jpg)
+
+<br>
+
+**Server**
+![GitHub Server](/docs/images/github-screenshot-server.png.jpg)
+
+<br>
 <br>
 <br>
 
