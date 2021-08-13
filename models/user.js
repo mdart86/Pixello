@@ -28,7 +28,7 @@ const User = new Schema({
         unique: true,
         trim: true,
         minlength: 3,
-        maxlength: 50
+        maxlength: 75
     }, 
     // the password is stored in the database as a hash password to ensure encryption. It is a required element of every profile and is a string.
     hash_password:{

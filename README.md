@@ -33,6 +33,8 @@ To connect with us, please see us on LinkedIn and Twitter where you will be kept
 - [Hosting Service Access](#hosting-service-access)
 - [Application Login Details](#application-login-details)
 - [GitHub Screenshots](#github-screenshots)
+- [LOCAL INSTALLATION](#local-installation)
+- [PACKAGES](#packages)
 - [POSTMAN - Testing Pixello](#postman---testing-pixello)
     - [AUTHORISATION](#authorisation)
         - [Sign Up](#sign-up)
@@ -142,7 +144,41 @@ The server-side of this application is deployed to Heroku. To connect with our d
 <br>
 <br>
 
+## **LOCAL INSTALLATION**
+
+<br>
+
+To install on your own device, please:
+
+- Clone each repository in GitHub using: ```git clone```
+- Run: ```npm install``` to install any packages
+- To start the server within Pixello-Server run: ```npm start```
+
+## **PACKAGES**
+
 ## **POSTMAN - Testing Pixello**
+
+
+
+**Server Side**
+Production Dependencies
+
+- Bcrypt
+- Cloudinary
+- Cors
+- Dotenv
+- Express
+- JsonWebToken
+- Mongoose
+- Multer
+- Multer Storage Cloudinary
+- Normalize
+- Path
+
+Development Dependencies
+- Cypres
+- Eslint Plugin Cypress
+- Nodmemon
 
 <br>
 
