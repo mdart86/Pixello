@@ -72,7 +72,7 @@ export const TextFormFeedback = styled.p`
     ${props => props.permissions && window.innerWidth < 600 ? "left: 70px;" : null}
     ${props => props.permissions && window.innerWidth >= 600 ? "right: 30px;" : null }
     font-style: italic;
-    color: ${props => props.createpost || props.permissions || props.updatepost ? "var(--charcoal);" : "var(--white);"}
+    color: ${props => props.createpost || props.permissions || props.updatepost || props.savecomment ? "var(--charcoal);" : "var(--white);"}
     ${props => props.signup || props.login ? "left: 2%; bottom: -1.5%;" : null}
     ${props => props.createpost ? "top: 390px;" : null}
     ${props => props.createpost && window.innerWidth >= 600 ? "top: 470px;" : null}

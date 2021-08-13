@@ -11,11 +11,12 @@ import { Form } from './styled/Form.styled'
 import { Textarea } from './styled/Textarea.styled'
 import { TextFormFeedback } from './styled/Text.styled'
 import { Input } from './styled/Input.styled'
+import { withRouter } from 'react-router-dom'
 
-export const AddComment = ({ id, history }) => {
+const AddComment = ({history, postId}) => {
 
     const { store } = useGlobalState()
-    const { loggedInJWT } = store 
+    const { loggedInJWT, loggedInUsername } = store 
 
     //used to notify user if comment creation failed
     const [creationFailed, setCreationFailed] = useState("")
@@ -27,7 +28,7 @@ export const AddComment = ({ id, history }) => {
     const [clicked, setClicked] = useState(false)
 
     //stores form data 
-    const [formData, setFormData] = useState("")
+    const [formData, setFormData] = useState({username: loggedInUsername})
 
     function handleFormData(e) {
         setFormData({
@@ -36,6 +37,7 @@ export const AddComment = ({ id, history }) => {
         })
     }
 
+    console.log(formData)
     function handleSubmit(e) {
         e.preventDefault()
         setIsLoading(true)
@@ -43,16 +45,15 @@ export const AddComment = ({ id, history }) => {
         async function fetchData() {
             const config = {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
                     'Authorization': `Bearer ${loggedInJWT}`
                 }
             };
-            await axios.post(`https://pixello.herokuapp.com/comments/new_comment/${id}`, formData, config)
+            await axios.post(`https://pixello.herokuapp.com/comments/new_comment/${postId}`, formData, config)
                 .then(res => {
                     if (res.data) {
                         setIsLoading(false)
                         //redirect user to the post that owns the comment they just created
-                        history.push(`/post/${id}`)
+                        history.push(`/post/${postId}`)
                     } 
                 })
                 .catch(err => {
@@ -86,3 +87,5 @@ export const AddComment = ({ id, history }) => {
         </>
     )
 }
+
+export default withRouter(AddComment)
