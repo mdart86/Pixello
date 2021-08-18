@@ -6,11 +6,19 @@ Welcome to Pixello! A full-stack photo sharing application created by Michael Da
 
 Visit the site here: [Pixello](https://www.pixellophotos.com/)
 
+<<<<<<< HEAD
 This repository is split up into three parts:
 
 - Pixello Server - server-side
 - Pixello Client - client-side
 - Pixello Documentation - planning documentation (which has been merged into this document)
+=======
+To view our repositories, we have created an [organisation within Github](https://github.com/CA-Pixello) which includes: 
+
+- Pixello Server
+- Pixello Client
+- Pixello Documentation (Part A of our assessment)
+>>>>>>> 087390b8796449e548f270be3b9cc7b7b52e7f1c
 
 To connect with us, you can find us on LinkedIn and Twitter where you will be kept up to date on our future projects:
 
@@ -26,6 +34,11 @@ Emily Mills
 ## **CONTENTS** 
 
 - [INTRODUCTION](#introduction)
+<<<<<<< HEAD
+=======
+
+    - [Hosting Service Access](#hosting-service-access)
+>>>>>>> 087390b8796449e548f270be3b9cc7b7b52e7f1c
     - [Application Login Details](#application-login-details)
 - [LOCAL INSTALLATION](#local-installation)
 - [PACKAGES](#packages)
@@ -38,7 +51,11 @@ Emily Mills
         - [Sign Out](#sign-out)
     - [USERS](#users)
         - [Read User Profile](#read-user-profile)
+<<<<<<< HEAD
         - [Read User Profile - Certain Items](#read-user-profile---certain-items)      
+=======
+        - [  Read User Profile - Certain Items](#read-user-profile---certain-items)      
+>>>>>>> 087390b8796449e548f270be3b9cc7b7b52e7f1c
         - [Update User Profile](#update-user-profile)
         - [Delete User Profile](#delete-user-profile)
     - [POSTS](#posts)
@@ -54,11 +71,25 @@ Emily Mills
         - [Get Comments](#get-comments)
         - [Delete Comment](#delete-comment)
 - [USER TESTING](#user-testing)
+<<<<<<< HEAD
 - [VIDEO WALKTHROUGH](#video-walkthrough)
 - [PLANNING DOCUMENTATION](#planning-documentation)
 - [CHANGES](#changes-made)
 
 <br>
+=======
+- [PLAN A DOCUMENTATION](#planning-documentation)
+- [CHANGES](#changes-made)
+
+<br>
+
+To see our planning documentation, please navigate to the below:
+
+**[PLANNING DOCUMENTATION](#planning-documentation)**
+
+
+<br>
+>>>>>>> 087390b8796449e548f270be3b9cc7b7b52e7f1c
 <br>
 
 ## **INTRODUCTION**
@@ -70,6 +101,38 @@ A cloud storage solution, Cloudinary, has been employed to securely store the im
 <br>
 <br>
 
+<<<<<<< HEAD
+=======
+## **Hosting Service Access**
+
+<br>
+
+**Host:** [Mongo Atlas](https://www.mongodb.com/cloud/atlas)
+
+**Username:** mdart86@hotmail.com
+
+**Password:** Emmd2021!
+
+<br>
+
+**Host:** [Cloudinary](https://cloudinary.com/)
+
+**Username:** mdart86@hotmail.com
+
+**Password:** Emmd2021!
+
+<br>
+
+**Host:** [Heroku](https://id.heroku.com/login)
+
+**Username:** mdart86@hotmail.com
+
+**Password:** Emmd2021!
+
+<br>
+<br>
+
+>>>>>>> 087390b8796449e548f270be3b9cc7b7b52e7f1c
 ## **Application Login Details**
 
 <br>
@@ -499,7 +562,11 @@ Notes: With a Json Web Token (JWT) as authentication, a post is created in the d
 <br>
 <br>
 
+<<<<<<< HEAD
 ## VIDEO WALKTHROUGH
+=======
+## Video Walkthrough
+>>>>>>> 087390b8796449e548f270be3b9cc7b7b52e7f1c
 
 A 7 minute walkthrough of our app has been recorded and is available to be viewed [here](https://youtu.be/8i7mTHPpQwQ) on YouTube.
 
