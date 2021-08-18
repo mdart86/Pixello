@@ -1,0 +1,8 @@
+{
+  "short_name": "Pixello",
+  "name": "Pixello Photo Sharing App",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#EFD1CE",
+  "background_color": "#ffffff"
+}
